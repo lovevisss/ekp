@@ -47,6 +47,8 @@ public class KmCarmngApplication extends BaseAuthModel implements IAttachment,
 	/*
 	 * 申请部门
 	 */
+
+	//display="none"
 	protected SysOrgElement fdApplicationDept;
 
 	public SysOrgElement getFdApplicationDept() {
