@@ -37,6 +37,7 @@ public class KmCarmngCategory extends SysSimpleCategoryAuthTmpModel implements
 		super();
 	}
 
+	//change by lizhaojie 2018-11-13
 	/**
 	 * @return 返回 创建时间
 	 */
