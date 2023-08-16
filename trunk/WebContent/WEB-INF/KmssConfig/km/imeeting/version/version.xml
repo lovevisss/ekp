@@ -1,0 +1,4271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../version.xsd">
+	<modifies>
+		<modify>
+			<description>#169580 优化 会议纪要列表页PC移动端筛选项保持一致</description>
+			<author>郑操辉</author>
+			<revision-time>2022-08-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170658 修复 移动端新建方案选择议题后，议题材料负责人丢失的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170332 修复 移动端查看录入公文纪要的会议通知报错</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#111677 新增 移动端应该支持编辑方案</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169650 修复 公文审批人如果没权限编辑正文，点击纳入议题摁扭无响应的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169533 优化 会议辅助设备弹出框样式</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169860 修复 方案移动端全文检索失效</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169579 修复 移动端通知筛选结果与PC端不一致的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168368 优化 二级页面列表中，会议议题和会议方案的创建时间改为日期时间展示</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169461 修复 方案移动端编辑时先删除议题后再新增，新增的议题无法保存的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169464 优化 去除通知编辑页面的职务下划线</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169465 优化 方案时间校验器提示内容展示逻辑</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169537 优化 移动端人员过多时出现更多“...”按钮样式</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169257 修复 后台文档维护页面，某些排序项导出数据无法加载的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169380 修复 会议辅助设备或者会议辅助服务的可维护者在二级页面删除失败的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169306 修复 方案待我审的二级页面展示字段与默认后台设置不一致的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169381 修复 会议议题分类权限变更失败</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168817 优化 起草人编辑草稿会议议题时，移动端仅可进行编辑操作，不需要向右箭头显示出更多操作</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169529 修复 通知引入方案后通知编辑页可修改会议时间和参会人员的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169530 修复 引入了方案的通知在移动端编辑页中的议题无序号划分的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169571 修复 未召开且录入纪要的会议在移动端不可取消会议</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169535 优化 右侧审批模式下，优化会议纪要的会议时间展示</description>
+			<author>凌海洋</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169576 优化 会议通知座席安排/会议室座席设置时，添加座席模板的提示语：坐席改成座席</description>
+			<author>凌海洋</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169578 优化 会议通知的会议时间展示优化</description>
+			<author>凌海洋</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169539 修复 会议纪要的历时不是整点时，右侧审批模式下右边的基本信息“历时”没有展示分钟的问题</description>
+			<author>凌海洋</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164866 优化 findList查询</description>
+			<author>凌海洋</author>
+			<revision-time>2022-07-14</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169160 优化 会议GBT 2016 国标适配符合性测试优化</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168529 修复 方案模板及通用表单创建了映射表，但是方案表单数据映射列表显示空白的问题</description>
+			<author>凌海洋</author>
+			<revision-time>2022-07-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168513 修复 会议后台-座席模板，搜索失效问题</description>
+			<author>凌海洋</author>
+			<revision-time>2022-07-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166127 修复 会议后台权限问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166127 修复 会议后台权限问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#167940 修复 会议管理后台文档维护的会议方案页面中创建时间展示空白</description>
+			<author>郑操辉</author>
+			<revision-time>2022-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166539 修复 没有删除议题角色的分类可维护者可以删除其维护分类下文档的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2022-06-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166615 修复 后台文档维护目录，无法通过已选分类或模板发起新建的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-06-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165359 修复 附件机制的预览方式是加载项的时候，新建纪要的时候正文编辑还是用的金格</description>
+			<author>郑操辉</author>
+			<revision-time>2022-06-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165790 修复 移除会议议题审批、方案审批、通知审批、纪要审批、废弃箱里的新建按钮</description>
+			<author>郑操辉</author>
+			<revision-time>2022-06-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166531 修复 系统导出CSV漏洞</description>
+			<author>郑操辉</author>
+			<revision-time>2022-06-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165850 优化 后台会议角色权限描述文字</description>
+			<author>郑操辉</author>
+			<revision-time>2022-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165771 修复 选择会议室的弹出框页面出现两个取消摁扭的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2022-05-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165068 优化 使用WPS中台方式，纪要的编辑页面隐藏正文编辑方式选择</description>
+			<author>郑操辉</author>
+			<revision-time>2022-05-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#134796 修复 当公文在线编辑正文之后，纳入议题的正文附件并未更新编辑之后的内容的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2022-05-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164824 优化 个人流程中心会议通知流程显示名称修改</description>
+			<author>郑操辉</author>
+			<revision-time>2022-05-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#162121 修复 没有sys/task任务管理模块，会议纪要移动端访问会议报错</description>
+			<author>郑操辉</author>
+			<revision-time>2022-05-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#157436 优化 移动端会议联络员同时选择多个议题参会，已选议题展示错乱</description>
+			<author>郑操辉</author>
+			<revision-time>2022-04-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160656 修复 移动端查看会议会议时间显示不出来。</description>
+			<author>凌海洋</author>
+			<revision-time>2022-04-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#150742 修复 坐席打印页面，标题居中</description>
+			<author>凌海洋</author>
+			<revision-time>2022-03-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#158745 修复 会议变更之后处于待审状态却处于起草节点，移动端也是一样的问题</description>
+			<author>凌海洋</author>
+			<revision-time>2022-03-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160664 修复 移动端会议提交变更后重新发起会议通知起草流程的通知审批不了一直在转圈</description>
+			<author>凌海洋</author>
+			<revision-time>2022-03-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160416 修复 会议室统计在SqlServer数据报错的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160350 修复 会议室有坐席模板的时候，点击重置之后人员消失的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#157430 优化 会议联络员二次报名编辑提交的提示</description>
+			<author>郑操辉</author>
+			<revision-time>2022-03-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#155616 优化 会议方案正文展示逻辑</description>
+			<author>郑操辉</author>
+			<revision-time>2022-03-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#161237 修复 会议联络员移动端回执页面无法打开的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-03-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160901 优化 会议室分类页面提示信息</description>
+			<author>郑操辉</author>
+			<revision-time>2022-03-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160853 优化 会议角色权限说明描述</description>
+			<author>郑操辉</author>
+			<revision-time>2022-03-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160416 修复 会议室统计在SqlServer数据报错的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160350 修复 会议室有坐席模板的时候，点击重置之后人员消失的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#159562 移除 会议工作台数字点击超链接</description>
+			<author>朱湖强</author>
+			<revision-time>2022-02-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#158304 优化 会议坐席安排增加不同方向椅子</description>
+			<author>朱湖强</author>
+			<revision-time>2022-01-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#157073 修复 会议联络员二次回执时提交报错的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#156876 修复 移动端新建会议通知选择会议方案的弹窗显示异常</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#156809 优化 新建会议室预约，选择会议室的页面，会议室数目较少时，下方会出现大片空白的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#156782 修复 移动端新建会议室预约或者新建会议通知，选择会议室的弹窗一片空白</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#157074 修复 会议回执移动端校验器导致页面顶部空白的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145382 优化 会议方案正文页签展示逻辑</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151321 优化 会议坐席人员信息中，该分类无人员时的显示逻辑</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#152793 新增 会议管理二级列表页中流程字段</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#146492 修复 会议的高级搜索条件中，假如已经筛选出分类/模板，新建文档时无法自动定位该分类/模板</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#149672 修复 会议议题查看页面没有展示附件但编辑页面可查看附件的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-11-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151913 修复 用户无会议管理的任何数据时，工作台与会类型统计报错</description>
+			<author>郑操辉</author>
+			<revision-time>2021-10-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151327 修复 变更后的会议通知打印失败的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-10-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151323 修复 议题汇报人为空时，坐席排版人员为空的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-10-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151299 修复 开启公文纪要，已取消的会议能被选到的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2021-10-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151214 修复 议题汇报人为空时，移动端会议通知查看页预计参会人数没有展示</description>
+			<author>郑操辉</author>
+			<revision-time>2021-10-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151195 修复 会议方案审批通过后，在列表中仍然展示为待审状态的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2021-10-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145386 优化 通知引用议题，议题没有汇报人，调整议题列表样式</description>
+			<author>郑操辉</author>
+			<revision-time>2021-09-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145468 优化 会议模块与公文解耦</description>
+			<author>蒋志广</author>
+			<revision-time>2021-07-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#143864 修复 当会议通知会议室是外部地点时，取消会议失败</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#141914 优化 会议议题属性列表必选必填项调整</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#142759 优化 会议方案的表单控件的必选必填调整</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#143979 修复 周期会议室预约，编辑当前会议，下一次会议室预约不正确的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#134519 优化 参数设置的单词错误</description>
+			<author>郑操辉</author>
+			<revision-time>2021-02-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#134035 修复 会议方案查看页详情页签出现无法找到页面的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2021-02-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#134073 修复 右侧审批下会议通知新建页面-会议辅助信息展示异常</description>
+			<author>郑操辉</author>
+			<revision-time>2021-02-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#134035 修复 会议方案查看页详情页签出现无法找到页面的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2021-02-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#134057 修复 会议议题分类的可维护者不可见该分类下的所有文档的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2021-02-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#130695 新增 会控人员和监票人员可见所有议题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-01-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#129184 新增 会议通知变更的功能</description>
+			<author>郑操辉</author>
+			<revision-time>2021-01-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#122977 新增 会议室维护角色</description>
+			<author>郑操辉</author>
+			<revision-time>2021-01-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#114296 优化 伯恩无纸化会议管理系统 GKP 适配</description>
+			<author>郑操辉</author>
+			<revision-time>2021-01-06</revision-time>
+			<relation>
+				<relation-module>third/meeting</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#96363 新增 金格国产化控件在国产操作系统下的适配</description>
+			<author>张成才</author>
+			<revision-time>2020-03-24</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#96363 新增 金格国产化控件在国产操作系统下的适配</description>
+			<author>张成才</author>
+			<revision-time>2020-03-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#98286 新增 wps-WebOffice在线预览编辑</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-21</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#99196 修复 选择会议室时，会议预约时间是8-9点，会议安排选择9-10的无法选择到该会议室</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议预约右侧空白</description>
+			<author>谢幸</author>
+			<revision-time>2020-03-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#98701 优化 会议室使用时长校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95462 新增 集团分级授权下，拥有场所XXXX_阅读文档权限的用户不能通过url访问其他场所的文档</description>
+			<author>叶正平</author>
+			<revision-time>2020-03-18</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/authorization</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#98963 修复 was环境移动端，会议管理模块报错</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#98791 修复 会议管理修改下属机制的单子导致会议工作台的会议室预约查看页面报错</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#98173 新增 会议流程通过后，钉钉内会议详情页可发起DING通知。</description>
+			<author>钟清学</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95996 优化 会议管理PC段多语言支持</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95989 优化 会议管理PC端多语言支持</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#96104 优化 会议管理门户部件优化</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#98058 优化 会议安排日历界面查看弹窗框显示会议室设备信息</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#97247 修复 会议工作台日历界面未显示周期性会议安排及显示无权限查看数据问题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#96404 新增 会议纪要新增电子签署功能</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-10</revision-time>
+			<relation>
+				<relation-module>elec/device</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93504 修复 未开启视频会议，移动端新建应跳转到会议室页面及查看页按钮显示问题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95983 修复 移动端预约多语言问题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95992 修复 移动端英文环境显示中文问题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#97693 修复 开启视频会议功能时，普通用户没有创建会议的权限，但能在工作台看到视频会议入口</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95524 修复 会议管理下属机制兼容问题</description>
+			<author>钟清学</author>
+			<revision-time>2020-03-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93461 优化 会议管理门户部件样例数据优化</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#96907 修复 移动端列表模式显示无权限查看数据</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95518 新增 会议管理后台的会议室查询页面的会议室预约加上“待审核”和“已拒绝”2种状态</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95969 修复 英文环境下移动端会议新建页面的重复信息的摘要展示不正常</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94578 优化 议题查看范围限制</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95408 移除 会议安排页面“视频会议”新建入口</description>
+			<author>蒋志广</author>
+			<revision-time>2020-02-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95348 优化 移动端首页加载速度优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-02-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93183 优化 会议安排日历界面查看弹窗框显示会议室设备信息</description>
+			<author>蒋志广</author>
+			<revision-time>2020-02-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94922 修复 进行中的周期会议也可进行工作交接</description>
+			<author>蒋志广</author>
+			<revision-time>2020-02-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94404 优化 底部页签优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-02-20</revision-time>
+			<relation>
+				<relation-module>sys/task</relation-module>
+				<relation-module>sys/attend</relation-module>
+				<relation-module>km/vote</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>km/supervise</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94101 优化 进入模块，点击“后台配置”目录，请求的url需要显示在地址栏中</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95865 修复 移动端新建会议时选择议题的弹窗的“全部”选择框样式错乱</description>
+			<author>杨铮</author>
+			<revision-time>2020-02-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95404 修复 关闭视频会议后，移动端首页新建按钮点击应该跳转到会议室页面</description>
+			<author>蒋志广</author>
+			<revision-time>2020-02-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94606 修复 会议安排暂存提交，回执截止时间校验器报错</description>
+			<author>蒋志广</author>
+			<revision-time>2020-02-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94822 修复 会议过期待办定时任务执行报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-02-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94212 修复 会议目的输入特殊字符，在查看页被转义</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94458 修复 员工黄页会议列表和会议纪要列表显示两个标题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95135 修复 移动端只有审批通过且未召开的会议预约才可生成会议</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#91192 优化 会议移动端优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-21</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/mportal</relation-module>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93467 优化 优化预览窗口大小，增加横向滚动条，图片部署模式则将图片居中显示</description>
+			<author>钟清学</author>
+			<revision-time>2020-01-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92079 新增 周期性会议安排和预约支持对发起人进行工作交接</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#91969 新增 后台新增会议回执列表查看开关，可配置什么人员可以查看会议回执页签</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92769 修复 未设置日程提醒，只给会议发起人生成了日程</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-15</revision-time>
+			<relation>
+				<relation-module>sys/agenda</relation-module>
+				<relation-module>km/calendar</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#83531 新增 移动端会议安排支持组织人承接工作</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93200 修复 周期会议取消后续会议报错</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93369 新增 关联控件支持选择会议预约</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93895 修复 服务器停止后在启动时，周期性会议定时任务过期无法创建下一个会议</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92536 修复 员工黄页他人数据权限过滤问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92879 修复 员工黄页的统计有逻辑需要调整</description>
+			<author>陈尉建</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92896 修复 IE8下工作台日历样式错乱</description>
+			<author>郑操辉</author>
+			<revision-time>2020-01-12</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>km/magazine</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93089 优化 新建会议安排时，选择议题时的按钮栏样式优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93363 修复 日历界面非周期会议有重复信息属性</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92438 修复 会议室分类的默认访问者无使用会议室分类的权限</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#84138 修复 下属会议中按会议状态“不限”条件筛选会议，显示 600 （服务器数据错误）</description>
+			<author>潘永辉</author>
+			<revision-time>2020-01-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89029 修复 控件与rtf来回切换时控件不隐藏问题</description>
+			<author>张成才</author>
+			<revision-time>2019-12-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#84613 优化 议题样式调整优化</description>
+			<author>朱湖强</author>
+			<revision-time>2019-12-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92987 修复 会议安排列表页历时字段显示错误</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92243 修复 从门户部件新建会议纪要，取消选择模板仍然可以成功新建会议纪要</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88546 修复 ie8下会议工作台显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-12-30</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89520 优化 规则引擎部署到重要的应用模块和编写部署手册,多部署优化</description>
+			<author>苏运彬</author>
+			<revision-time>2019-12-27</revision-time>
+			<relation>
+				<relation-module>sys/lbpm</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/rule</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92080 修复 Weblogic环境打开邀请参加会议的回执时报错</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92296 修复 会议详情页面查看报错</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#91678 修复 移动端会议管理的多语言问题</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#90665 修复 周期性会议日历界面显示时间与会议实际开始时间不服</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89839 修复 pc端进入的会议室预约展现的默认分类和移动端不一致</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#90403 修复 移动端周期会议变更当前会变更所有周期会议，变更后续不会保留当前会议</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92159 修复 从门户部件新建会议管理，取消选择模板仍然可以成功新建会议</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#91910 修复 会议管理移动端日历展示有问题</description>
+			<author>黎凯麟</author>
+			<revision-time>2019-12-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#91801 修复 会议移动端查看页报错</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#90631 修复 新建会议安排时，查询空余资源任然可查询到非空闲的资源</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#91488 优化 右侧审批模式页面滚动问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-12-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87960 优化 移动性能体验</description>
+			<author>陈平山</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#90198 优化 阿里云会议取消后，‘承接工作安排’的入口显示逻辑</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89607 修复 英文环境下会议模块2020年后不能预约的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88969 修复 会议管理多语言问题</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-03</revision-time>
+			<relation>
+				<relation-module>sys/attend</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89670 优化 我参加的会议列表页加载很慢</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89974 机器人对接接口优化</description>
+			<author>袁汉祥</author>
+			<revision-time>2019-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89494 修复 移动端周期性会议 变更和取消操作未选择是当前还是后续就进行到下一步</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88368 修复 部门会议统计未统计周期性会议</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#83552 新增 会议预约新增提前结束功能</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88824 优化 个人门户组件会议数量统计优化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88579 优化 日常提醒设置不成功的消息提醒只给会议发起人发送此待阅提醒</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-02</revision-time>
+			<relation>
+				<relation-module>km/calendar</relation-module>
+				<relation-module>sys/agenda</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89097 修复 周期会议创建后，新建会议选择同一人员、非第一次周期会议的时间，日程检测不会提示冲突</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87917 新增 阿里云视频会议集成</description>
+			<author>朱湖强</author>
+			<revision-time>2019-12-01</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>third/im/kk_V6</relation-module>
+				<relation-module>third/alimeeting</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#82510 新增 会议纪要页面可以发起督办</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87910 修复 会议工作台日历会议安排弹窗显示信息问题及会议资源日历刷新按钮未更新数据状态</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87764 修复 坐席安排会议已召开隐藏坐席安排查看页编辑按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87833 修复 坐席安排safari浏览器重置人员按钮无效</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88331 修复 周期性会议及预约在会议室统计中统计时长错误</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88313 修复 使用链接直接新建会议，取消模板选择，并不关闭页面，还是能提交申请，并无法审批处理</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88183 修复 移动端会议查看页预计参与人员未去重的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2019-11-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87066 优化 议题建议列席/旁听单位联络员收到待办文字优化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87657 修复 会议工作台/会议辅助设备点击查看会议弹出框显示不全</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88022 修复 通过初始化数据包导入的会议设备和服务权限不正确</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#82291 新增 移动端创建会议可以选择辅助设备和辅助服务</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88139 修复 删除进行过坐席安排的会议时报错</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#53359 新增 移动门户快捷方式选择系统引入的时候没有任何EKP模块</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#82284 新增 移动端会议预约可以生成会议</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#81770 新增 座席安排</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-06</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#83749 优化 会议管理设置提醒时间，当发布时间与开始时间之差少于提醒时间长度时，会提示同步不成功</description>
+			<author>何协殷</author>
+			<revision-time>2019-11-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87310 修复 集团分级迁移失败问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-11-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#84151 优化 会议统计横坐标轴显示</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#81348 优化 查看页页签调整</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#84616 优化 议题新建后列表刷新</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#84033 优化 非右侧审批模式下，回执截止时间校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#84145 日历上进行会议室预约时，保管者显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#84184 修复 word纪要新建问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#84131 修复 我已审的议题添加状态筛选</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#84131 修复 我已审的议题添加状态筛选</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#80988 修复 已删除的文档还显示在流程监控中心，无法删除，打开报错的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2019-10-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#83595 优化 新建会议，组织人员和组织部门联动</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 铂恩会议对接</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-17</revision-time>
+			<relation>
+				<relation-module>third/meeting</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#82803 修复 流程模板为自由流，新建显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#81614 优化 隐藏“云会议”后台配置项</description>
+			<author>郑操辉</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#51376 优化 当会议安排填写了会议纪要人员，将目前给会议纪要人员发送待阅改成发送待办</description>
+			<author>郑操辉</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#80100 修复 移动端查看页参会人员显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#70625 优化 并发提交会议安排，地点重复校验加锁</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#83618 优化 右侧审批调整</description>
+			<author>王逍</author>
+			<revision-time>2019-10-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#81952 修复 智能门户工作推荐接口参数问题</description>
+			<author>袁汉祥</author>
+			<revision-time>2019-09-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#81682 修复 移动端有两个议题子分类，选择议题时却只显示了一个子分类</description>
+			<author>何协殷</author>
+			<revision-time>2019-09-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#78115 新增 会议管理移动端新增会议引入议题选择设计</description>
+			<author>何协殷</author>
+			<revision-time>2019-09-10</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#79471 优化 会议工作台的日历以周显示，左侧的日期显示与右侧的按钮显示重叠</description>
+			<author>郑超</author>
+			<revision-time>2019-08-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#79285 优化 会议工作台的日历以列表形式显示时，去掉滚动条</description>
+			<author>郑超</author>
+			<revision-time>2019-08-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#79711 优化 未选择会议室之前会保管者会出现‘（已禁用）’文字，把这几个文字去掉</description>
+			<author>郑超</author>
+			<revision-time>2019-08-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#61022 修复 字体变大后页面自适应问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-08-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#78066 修复 会议管理去掉云会议之后，需要将在移动端会议详情页面中，钉钉下发起电话会议的功能还原</description>
+			<author>陈亮</author>
+			<revision-time>2019-08-22</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#79911 修复 进入会议管理我参加的会报错问题</description>
+			<author>郑操辉</author>
+			<revision-time>2019-08-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#80100 修复 移动端查看页参会人员显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-08-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#79789 修复 右侧审批模式下周期性会议的标识显示在文字上</description>
+			<author>郑操辉</author>
+			<revision-time>2019-08-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#78127 新增 优化手机端端也可以上传材料</description>
+			<author>郑操辉</author>
+			<revision-time>2019-08-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#76290 修复 安全漏洞报告，请产品评估处理</description>
+			<author>郑操辉</author>
+			<revision-time>2019-08-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#78976 修复 上会材料上传不成功问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-08-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#78953 优化 开启了议题管理，材料负责人不需要发送待办</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73222 优化 会议预约的显示如果是周期性会议未按照会议时间显示</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72935 优化 首页显示的会议纪要增加后台筛选，只显示发布状态的会议纪要</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#77616 修复 sql盲注入</description>
+			<author>叶正平</author>
+			<revision-time>2019-07-30</revision-time>
+			<relation>
+				<relation-module>sys/category</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#78269 修复 会议开始一分钟内不能进行提前结束操作</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#77993 修复 项目过程管理，在工作项中新建会议安排，无法关联</description>
+			<author>郑鑫</author>
+			<revision-time>2019-07-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#76219 修复 会议纪要实际与会人联动问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#78090 修复 右侧审批模式导致会议安排查看页底部页签丢失</description>
+			<author>潘永辉</author>
+			<revision-time>2019-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#77779 修复 下属工作会议查看页报错</description>
+			<author>潘永辉</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#77339 新增 ekp-cloud智能门户推荐所需接口</description>
+			<author>袁汉祥</author>
+			<revision-time>2019-07-12</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73076 新增 移动端支持会议预约的编辑和删除功能</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73823 新增 会议纪要的沉淀功能</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73380 修复 移动端取消会议未发送待阅提醒</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73156 优化 会议室保管员被置为无效之后，会议室预约页面依旧显示无效人员</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#52771 优化 查看页路径跳转问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#76298 修复 下属工作列表页错误修复</description>
+			<author>潘永辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#76828 优化 列表宽度调整</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-11</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#74476 修复 驳回到起草节点的文档，起草人编辑时无暂存按钮</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73802 修复 会议纪要列表选择了分类-卡片后新建文档还是需要先选择分类-模板</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73923 修复 会议室预约的审批页面，‘请审批’按钮鼠标移到时颜色显示奇怪</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73925 修复 移动端新增会议预约的编辑删除，编辑要审批的预约提交后，审批人收到的待办是已审核的提示</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73976 修复 移动端新增会议预约的编辑和删除，编辑重复会议预约界面结束条件为空</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73595 新增 会议议题管理</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-11</revision-time>
+			<relation>
+				<relation-module>sys/unit</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#74757 优化 模块新建的url与个人流程中心新建的url保持一致</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#70861 优化 工作交接明细列表添加按标题搜索功能</description>
+			<author>杨铮</author>
+			<revision-time>2019-07-06</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73965 修复 移动端会议纪要rtf中表格滚动问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-06-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73589 修复 会议列表未选择数据进行删除动作报错</description>
+			<author>蒋志广</author>
+			<revision-time>2019-06-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73513 优化 aip数据接口，当开始时间与结束时间相等时，删除该条记录</description>
+			<author>蒋志广</author>
+			<revision-time>2019-06-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73120 修复 如果纪要是word格式，沉淀后基本信息中的会议决议部分显示了控件</description>
+			<author>蒋志广</author>
+			<revision-time>2019-06-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73109 修复 未设置默认沉淀路径的文档沉淀时选择保存审批意见不生效</description>
+			<author>蒋志广</author>
+			<revision-time>2019-06-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72048 修复 会议移动端查看页存在字段未翻译</description>
+			<author>蒋志广</author>
+			<revision-time>2019-06-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#70960 新增 会议纪要支持流程结束后沉淀到知识库</description>
+			<author>蒋志广</author>
+			<revision-time>2019-06-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73516 修复 会议管理模块index页面报错</description>
+			<author>黄伟强</author>
+			<revision-time>2019-05-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72530 优化 ‘我参加的’页面下筛选器去掉审批状态筛选器</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#68294 修复 会议资源日历门户上进行预约的窗口兼容边缘数据</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#71944 修复 exchange同步会议日程报错</description>
+			<author>黄伟强</author>
+			<revision-time>2019-04-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72040 修复 会议预约删除按周数据错误</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#68771 新增 新增下属工作组件，实现领导和上级领导查看下属工作/数据，可设置人员范围和业务范围</description>
+			<author>潘永辉</author>
+			<revision-time>2019-04-23</revision-time>
+			<relation>
+				<relation-module>sys/subordinate</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69795 优化 会议回执界面按钮显示优化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69807 修复 移动端英文环境下显示中文问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#71966 修复 会议预约设置按周重复编辑报错</description>
+			<author>彭伟聪</author>
+			<revision-time>2019-04-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#70493 优化 exchange新建会议同步到EKP，去掉会议目的字段</description>
+			<author>黄伟强</author>
+			<revision-time>2019-04-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69796 修复 会议纪要新建时，未选择纪要通知人，审批报错</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69804 修复 移动端英文环境下中文未翻译</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69658 修复 英文环境下中文未翻译</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69177 优化 会议安排组织部门可选择部门或机构</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69630 优化 周期性会议的创建逻辑优化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#60064 修复 会议纪要新建页，默认加载了金格控件；下方一大片空白区域</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69072 修复 云会议移动端提交失败</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69591 修复 移动端预约未占用时间，提示占用</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69628 修复 周期性会议中，会议议程和会议纪要完成时间不需要继承</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#62183 新增 会议安排支持周期性发起</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69820 修复 移动端会议室界面显示空白</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65428 新增 部署事项（业务）工作交接，交接字段为“会议室保管员”</description>
+			<author>潘永辉</author>
+			<revision-time>2019-04-09</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#68532 修复 会议纪要通知对象在提交后的编辑页中勾选状态有误</description>
+			<author>蒋志广</author>
+			<revision-time>2019-03-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#42367 优化 统计图表里面工具栏功能按钮的提示信息显示不完全</description>
+			<author>朱国荣</author>
+			<revision-time>2019-03-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67692 优化 会议辅助服务、辅助设备查看页界面优化</description>
+			<author>彭伟聪</author>
+			<revision-time>2019-03-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67671 修复 会议资源日历门户部件中日和周无法切换，审批中的会议颜色标错</description>
+			<author>彭伟聪</author>
+			<revision-time>2019-03-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64259 优化 关于会议变更参会人去重逻辑，参会人由岗位/部门/常用群组调整为个人时，需要考虑变更前后的人员去重</description>
+			<author>陈尉建</author>
+			<revision-time>2019-03-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67353 优化 会议室新建权限由可维护者控制</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-28</revision-time>
+			<relation>
+				<relation-module>sys/simplecategory</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67495 修复 会议参会人员没有做回执，如果会议召开之后提前结束或未召开之前变更会议时间，邀请参加会议的待办不会在会议结束之后自行消失</description>
+			<author>蒋志广</author>
+			<revision-time>2019-03-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65397 新增 exchange会议同步到ekp</description>
+			<author>黄伟强</author>
+			<revision-time>2019-02-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67703 优化 移动端会议查看页的会议时间显示优化一下</description>
+			<author>彭伟聪</author>
+			<revision-time>2019-02-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67605 优化 移动端会议室名称界面上方字体有隐藏</description>
+			<author>彭伟聪</author>
+			<revision-time>2019-02-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67698 修复 后台文档维护列表的删除按钮未做权限过滤</description>
+			<author>彭伟聪</author>
+			<revision-time>2019-02-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67143 修复 会议室预约在跨天的情况下，设置按天重复时，时间上存在冲突时重复2次依旧可提交</description>
+			<author>陈尉建</author>
+			<revision-time>2019-02-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#66403 修复 会议卡片历史数据筛选问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65835 优化 移动端新建会议新增议程 1.优化样式2.添加相关材料3.时间检验等</description>
+			<author>胡永方</author>
+			<revision-time>2018-12-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65640 新增 移动端新建模板会议议程的汇报人、汇报时间、材料汇报人等字段</description>
+			<author>胡永方</author>
+			<revision-time>2018-12-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#62643 优化 繁体语言下时间管理日历视图显示</description>
+			<author>陈尉建</author>
+			<revision-time>2018-12-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65431 修复 会议管理模块会议辅助服务显示的顺序和排序号想反</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-12-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64886 修复 V15待发布流，新建并审批会议纪要，审批通过后状态没有变成发布</description>
+			<author>陈尉建</author>
+			<revision-time>2018-12-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65046 修复 移动端新建会议议程非空验证无效</description>
+			<author>胡永方</author>
+			<revision-time>2018-12-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65059 优化 移动端名称统一规范为：会议预约、临时会议、会议安排</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65053 优化 移动端新建会议参会人地址本所选类型为所有类型</description>
+			<author>胡永方</author>
+			<revision-time>2018-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65050 修复 移动端新建会议会议组织部门等字段缺失导致会议变更后信息丢失的问题</description>
+			<author>胡永方</author>
+			<revision-time>2018-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64866 优化 移动端新建会议增加议程按钮可点击范围</description>
+			<author>胡永方</author>
+			<revision-time>2018-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64847 修复 移动端编辑会议后议程信息丢失的问题</description>
+			<author>胡永方</author>
+			<revision-time>2018-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64870 优化 取消移动端新建会议默认展示一行空的议程</description>
+			<author>胡永方</author>
+			<revision-time>2018-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64840 修复 移动端会议支持会议变更，组织人以及角色权限者变更后界面显示无权限阅读</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#62177 优化 会议安排支持移动端编辑</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#63536 移除 移动UI组件单独定义日期格式</description>
+			<author>陈尉建</author>
+			<revision-time>2018-12-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#63720 优化 会议卡片中设置的自动发布，在移动端创建时未继承</description>
+			<author>胡永方</author>
+			<revision-time>2018-11-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64306 修复 英文环境下，会议管理Meeting Agenda Information明细表中出现下图所示的XX Days</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-11-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端新建会议没有继承会议卡片库里的模板中的日程信息</description>
+			<author>胡永方</author>
+			<revision-time>2018-11-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端新建会议不能继承卡片库权限</description>
+			<author>胡永方</author>
+			<revision-time>2018-11-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议管理移动端优化</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-11-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动创建模板会议界面，会议议题输入框宽度调整 避免文字与删除按钮重叠</description>
+			<author>胡永方</author>
+			<revision-time>2018-11-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64027 优化 会议预约时，结束时间比开始时间早时未做校验</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-11-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#63863 修复 模块设置-&gt;参数设置-&gt;纪要通知对象默认值；都不勾选时点击保存，保存后结果为都已勾选</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#63729 修复 移动端不支持会议的编辑，屏蔽此按钮</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-11-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#62535 优化 筛选器中的日期筛选项的校验有误</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-11-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议预约审核时，更改预约会议的信息后重新发起会议预约审核，之前的审核待办未收回</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议资源日历处，英文环境下，会议显示的颜色与所应显示的颜色不符</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-11-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议资源日历处，查看预与会议时，日期显示不正确</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-11-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议回执单中，会议地点的显示，外部会议地点的地址图标显示有问题</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 V15会议室统计处，请求数据一直出错</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 与会人员字段长度及提示信息优化</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 MAXHUB端，环境为weblogic中间件时，会出现显示乱码的问题</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-11-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 一个会议关联多个会议室要同步实现移动端</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-11-08</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 支持一个会议关联多个会议室</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件上传后支持预览－－第二阶段</description>
+			<author>安浩峰</author>
+			<revision-time>2018-11-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 调整英文包中的日期格式为日月年，会议安排中会议历时计算有误</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 周期性会议预定</description>
+			<author>周梓凡</author>
+			<revision-time>2018-10-24</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议预约的审批通过后，如果预约人将预约改成了重复预约，不会发起重新审批，逻辑不合理</description>
+			<author>陈尉建</author>
+			<revision-time>2018-10-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端首页点击新建按钮跳转至会议室界面后有个提示，去掉该提示</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端会议纪要界面如果是跨天的会议时间显示改成日期+时间</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端的首页和纪要列表页面图标和文字感觉没在同一水平线</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议预约的删除点击删除直接成功，无提示，加个提示以防误操作</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端会议室界面选择会议室后弹出的弹层中‘已选择’处UI需要优化</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 MAXHUB会议地图，已取消会议无显示（pc端有）</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 UI显示未满足需求的问题</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<relation>
+				<relation-module>third/maxhub</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 MAXHUB端智能会议应用-会议地图</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<relation>
+				<relation-module>third/maxhub</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端会议室审批列表页待审的数据放顶部</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端会议室界面的类别切换后，发现过去的时间点的会议室还是可选的状态</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议室界面的4中状态中的‘已选择’去掉，取而代之的是‘审核中’</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端的纪要列表页的时间换成纪要时间，现在是会议召开时间</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端会议室显示空白</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议室界面不显示数据了</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端会议室预约审批时改成提示框不消失的基础上弹出必填提示吗</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议室界面选择会议室后‘取消’按钮太小，点击取消后选定的会议室也不应该再是选定状态</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端首页优化</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端会议室界面日期选择改成类似日期控件样式</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端会议室预约审批时，选择驳回时，弹出的提示框未注明驳回理由直接确定时，提示框消失然后弹出必填提示，可以改成提示框不消失的基础上弹出必填提示吗</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端进入列表页返回后都是回到首页去了，理想是默认回到之前的页面</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议室预约审批界面如果选择拒绝未填写拒绝理由时弹出的提示框优化；理由框加必填星号</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端首页的状态加一个审核中，颜色为橙色，与PC端保持一致</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复【服务问题单】【会议管理-修复】移动会议管理中，会议安排，苹果端日期时间不能正常显示by 胡永方</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 【会议管理】新建模板会议时，流程状态直接变成了发布状态</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 【会议管理-修复】移动端新增创建会议安排，界面优化</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 【会议管理-优化】 移动端新建会议</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化【会议管理-优化】云会议新建界面丢了更多信息</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化【会议移动端优化】V15会议移动端，新建的云会议，属性值iscluod 为0</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 Maxhub投票管理</description>
+			<author>周梓凡</author>
+			<revision-time>2018-10-17</revision-time>
+			<relation>
+				<relation-module>km/vote</relation-module>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议室审批界面审核弹出框点取消的×，界面会自动刷新；在提交右侧加取消按钮</description>
+			<author>陈尉建</author>
+			<revision-time>2018-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 maxhub端任务信息导航</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 钉钉会议电话功能</description>
+			<author>孙佳</author>
+			<revision-time>2018-08-13</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议卡片库设置增加备注字段，新建会议安排可带出对应卡片备注的内容</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议室类别如果进行了权限控制可使用者，不可使用者还是可以在所有会议室展示界面看到该类别下的会议室</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议回执名单导出，Firefox下导出文件名乱码</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 当会议室预约界面只有1-2个会议室时，会议卡片出现遮挡现象</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 在会议室预定界面的操作刷新按钮后，总是回到默认的周视图</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 web端会议管理模块全部日历优化</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-26</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 在会议室预定界面的操作刷新按钮后，总是回到默认的周视图</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 在IE8下点击会议预定界面点击会议室未显示卡片</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 【服务问题单】管理员创建的会议，从待办进入会议通知单无法进行“回执”（优先级：普通）</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端新建会议支持跨天，时间自动计算历时</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 web端支持人员查看默认的会议室</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议室预约审核</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端新建会议修改时间后提交不校验导致会议时间重复</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 回执参会人员的名单（按部门）增加导出excel功能</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议纪要通知对象可选</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 【服务问题单】【会议管理】移动端点击会议回执查看明细，无法跳转（优先级：高）</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议纪要以word模式时，移动端查看页显示有问题</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议安排筛选项已发布和取消状态冲突</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议纪要-会议决议，word方式编辑保存后，没有以h5页面展示</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议议程中把 所需上会材料 和 材料责任人 加到查看页里面去，目前编辑页与查看页字段不一致</description>
+			<author>陈尉建</author>
+			<revision-time>2018-08-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 切换会议室分类后分类条无法滚动</description>
+			<author>周梓凡</author>
+			<revision-time>2018-08-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议起草人既是组织人，也是会议参与人时，收到待办消息，但是点击进去是会议查看界面，无法处理该待办消息</description>
+			<author>陈经纬</author>
+			<revision-time>2018-07-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 智能场景的接口提供</description>
+			<author>陈亮</author>
+			<revision-time>2018-07-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议室分类及其子分类没有使用权限时，资源日历中不显示该分类</description>
+			<author>周梓凡</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 云会议不部署流程引擎</description>
+			<author>周梓凡</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 金格控件2015集成部署</description>
+			<author>张成才</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 组织人员查看会议信息时历时没显示，其它参与人员查看正常</description>
+			<author>陈尉建</author>
+			<revision-time>2018-07-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 Maxhub会议集成</description>
+			<author>周梓凡</author>
+			<revision-time>2018-07-03</revision-time>
+			<relation>
+				<relation-module>third/maxhub</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/attend</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端新建会议历时无默认值，且无必填校验</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 从统一消息中心查看会议的待办异常</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台文档维护选择了具体分类下的文档时，筛选器应该默认就已经筛选至该分类，文档数据没问题，只是筛选器有问题</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议管理的类别维护人员在后台查看不到文档的列表数据，包括会议安排和会议纪要</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>会议管理 普通用户对后台的会议辅助设备可见删除按钮，实际删除不成功，此处应该不显示删除按钮</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议变更待办提示，中途受邀进来的用户，收到待办之后，在门户待办中点击无法打开待办</description>
+			<author>陈尉建</author>
+			<revision-time>2018-06-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议吞吐量列表页面，页签线条很粗，是页面多了一层iframe导致的，请去除</description>
+			<author>陈经纬</author>
+			<revision-time>2018-05-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议同步不生效的问题以及ICS加开关</description>
+			<author>黄伟强</author>
+			<revision-time>2018-05-15</revision-time>
+			<relation>
+				<relation-module>third/emeeting</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议过期清理定时任务取出过多的会议记录导致内存溢出</description>
+			<author>潘永辉</author>
+			<revision-time>2018-03-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 日历体现排班，移动端也要增加</description>
+			<author>陈亮</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议管理：推送日程重复</description>
+			<author>陈尉建</author>
+			<revision-time>2018-02-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 ios会议室预约页面，会议室无法加载问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 流程管理、公文政务版、会议管理、调查管理、资产管理新增模板停用开关。</description>
+			<author>吴志斌</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 list页面新增导出功能，根据页面勾选的数据导出，结合自定义列表显示功能</description>
+			<author>陈经纬</author>
+			<revision-time>2018-01-11</revision-time>
+			<relation>
+				<relation-module>sys/transport</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 列表自定义按模块部署</description>
+			<author>陈经纬</author>
+			<revision-time>2018-01-11</revision-time>
+			<relation>
+				<relation-module>sys/profile</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台文档维护功能改成新UI，并且增加筛选功能</description>
+			<author>张成才</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议管理移动端和PC端的日历，不要显示已取消的会议</description>
+			<author>陈尉建</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议室预约横屏之后滚动不全问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文环境下，移动端新建预约和会议提交失败问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议纪要录入权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 既是审批人又是协助人，会议发布后查看信息不完整问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议统计时间校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 跨天会议显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议纪要新建时支持管理会议通知单</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议纪要支持打印</description>
+			<author>张成才</author>
+			<revision-time>2018-01-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议纪要支持二维码的打印，可自主选择是否打印二维码</description>
+			<author>张成才</author>
+			<revision-time>2018-01-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议管理，上传上会资料点击-提交报错</description>
+			<author>陈尉建</author>
+			<revision-time>2017-12-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议日历加载更多图标路径问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议分类转移报js错误</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议变更时，会议地点显示异常问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 门户日历点击查看会议没反应</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议卡片状态关闭，隐藏会议安排链接</description>
+			<author>陈尉建</author>
+			<revision-time>2017-11-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议卡片添加 开启、关闭状态</description>
+			<author>陈尉建</author>
+			<revision-time>2017-11-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端组织人查看待办消息跳转问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议纪要查看权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端新建的会议不再单独使用云会议模板展现</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议室信息支持快速排序</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议室信息支持快速排序</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 其他会议地点字段部署地图组件</description>
+			<author>崔文坚</author>
+			<revision-time>2017-11-07</revision-time>
+			<relation>
+				<relation-module>sys/attend</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议签到增加签到时间点及迟到统计</description>
+			<author>林秀贤</author>
+			<revision-time>2017-11-07</revision-time>
+			<relation>
+				<relation-module>sys/attend</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台模板支持快速新建操作</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议卡片库筛选了会议分类之后，点击删除按钮无效</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端新建会议室预约权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议模板删除提示</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建会议纪要，地点单选的情况下不出现权限按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 审批滞后的会议，相关人员无法查看会议问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议提前结束，释放已占用的会议室资源</description>
+			<author>陈尉建</author>
+			<revision-time>2017-09-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 发起会议签到只能是会议发起人、会议组织人、会议主持人</description>
+			<author>林秀贤</author>
+			<revision-time>2017-09-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议发起人支持录入纪要</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 签到服务左侧导航会议页签调整</description>
+			<author>林秀贤</author>
+			<revision-time>2017-09-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议室预约页面显示null问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议记录查询权限失效修正</description>
+			<author>林秀贤</author>
+			<revision-time>2017-09-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 类别模板设置多语言支持</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表数据展示样式优化</description>
+			<author>陈经纬</author>
+			<revision-time>2017-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 待办多语言</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-02</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议管理_批量修改权限的描述有误</description>
+			<author>潘永辉</author>
+			<revision-time>2017-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 部门字段支持显示层级结构，可以由系统提供统一接口（显示末级或显示层级，显示最近的几级）</description>
+			<author>潘永辉</author>
+			<revision-time>2017-08-19</revision-time>
+			<relation>
+				<relation-module>sys/organization</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 资源日历中点击查看会议无反应问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-08-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 资源日历页面，比当前时间早的日期，点击不出现“会议室预约”和“会议安排”按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2017-08-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 若会议已结束则不能发起签到</description>
+			<author>林秀贤</author>
+			<revision-time>2017-07-31</revision-time>
+			<relation>
+				<relation-module>sys/attend</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议扫码签到失效问题</description>
+			<author>林秀贤</author>
+			<revision-time>2017-07-31</revision-time>
+			<relation>
+				<relation-module>sys/attend</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议修改回执在KK下点击无反应问题</description>
+			<author>周梓凡</author>
+			<revision-time>2017-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议扫码签到成功后，会议直接定位在签到页签</description>
+			<author>周梓凡</author>
+			<revision-time>2017-07-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议纪要列表，模块管理员选择文档执行分类转移操作，没有弹出分类选择框</description>
+			<author>郑超</author>
+			<revision-time>2017-07-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 我的会议日历中，打开会议预约提示“该文档不存在”问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-07-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议发起签到事项</description>
+			<author>周梓凡</author>
+			<revision-time>2017-07-05</revision-time>
+			<relation>
+				<relation-module>sys/attend</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 员工黄页进入“他的会议”，默认选中“需要他参加的”</description>
+			<author>郑超</author>
+			<revision-time>2017-07-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端新建会议安排，会议室使用时长为0时校验不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-06-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 “我的会议日历”只显示“待我参加”和“我已参加”的会议</description>
+			<author>朱湖强</author>
+			<revision-time>2017-06-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 驳回的会议通过流程的提交操作直接提交没有进行资源冲突校验</description>
+			<author>朱湖强</author>
+			<revision-time>2017-06-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 审批滞后的会议无法录入纪要问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-06-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端屏蔽会议纪要按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2017-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 员工个人信息里面的“会议”数量显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 当浏览器窗口大小变化后，资源日历点击会议室预约，时间显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 在非中文环境下，建议为空提示去除中文文字</description>
+			<author>崔文坚</author>
+			<revision-time>2017-05-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台配置中心-会议管理-模块设置-会议卡片设置：召开周期选择定期，催办提示校验有问题</description>
+			<author>张佳奇</author>
+			<revision-time>2017-05-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议纪要待阅提交人变成最后一个审批人</description>
+			<author>林秀贤</author>
+			<revision-time>2017-05-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动会议统计当类型为自定义时,显示null问题</description>
+			<author>周梓凡</author>
+			<revision-time>2017-05-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动会议室选择优化</description>
+			<author>周梓凡</author>
+			<revision-time>2017-04-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 通过代理和邀请参加会议的人员无法查询我要参加的会议</description>
+			<author>朱湖强</author>
+			<revision-time>2017-04-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 二级页面左侧导航增加选中效果</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-31</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议回执特殊符号显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端会议安排查看和列表页面，文档状态标签颜色不一致，建议保持一致</description>
+			<author>张佳奇</author>
+			<revision-time>2017-03-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议资源日历采用分页加载，加载更多样式优化</description>
+			<author>张佳奇</author>
+			<revision-time>2017-03-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建会议室预约窗口，点击关闭按钮建议给出提示信息</description>
+			<author>张佳奇</author>
+			<revision-time>2017-03-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 编号机制访问权限泄漏问题</description>
+			<author>林秀贤</author>
+			<revision-time>2017-03-08</revision-time>
+			<relation>
+				<relation-module>sys/number</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议地点或者会议名称包含有英文的单引号就是这个【'】时，在新建会议安排选择会议地点时，选不中，报js错</description>
+			<author>张佳奇</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议资源日历刷新按钮点击无效</description>
+			<author>张佳奇</author>
+			<revision-time>2017-03-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端图表区间条件字段显示</description>
+			<author>周梓凡</author>
+			<revision-time>2017-03-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议室名称特殊字符处理</description>
+			<author>朱湖强</author>
+			<revision-time>2017-02-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 路径中文处理</description>
+			<author>朱湖强</author>
+			<revision-time>2017-02-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 更多按钮有展开和伸缩的效果</description>
+			<author>崔文坚</author>
+			<revision-time>2017-02-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 EKP_Web安全漏洞扫描</description>
+			<author>陈晓文</author>
+			<revision-time>2017-02-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表页人员名字链接到员工黄页</description>
+			<author>朱湖强</author>
+			<revision-time>2017-01-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加关联控件的关联模块扩展点</description>
+			<author>朱国荣</author>
+			<revision-time>2017-01-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议纪要二级页面“分类转移”按钮点击没反应</description>
+			<author>朱湖强</author>
+			<revision-time>2017-01-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 资源日历显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-01-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 查看页面偶发无法显示会议统计</description>
+			<author>周梓凡</author>
+			<revision-time>2016-12-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 文档权限的工作交接</description>
+			<author>陈经纬</author>
+			<revision-time>2016-12-21</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 云会议查看页面自适应宽度</description>
+			<author>周梓凡</author>
+			<revision-time>2016-12-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 冰蓝主题，新建会议纪要页面显示异常</description>
+			<author>张佳奇</author>
+			<revision-time>2016-12-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 冰蓝主题，会议纪要list页面，会议时间字段展示建议控制在两行</description>
+			<author>张佳奇</author>
+			<revision-time>2016-12-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 在bam模块添加会议管理，新建会议安排，然后新建该会议安排的会议纪要报错，直接在会议模块创建会议纪要正常</description>
+			<author>张成才</author>
+			<revision-time>2016-11-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 钉一下配置修改</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-21</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+				<relation-module>sys/profile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议安排列表页，不同状态的会议建议用不同颜色来区分</description>
+			<author>张佳奇</author>
+			<revision-time>2016-11-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议日历翻页时不会返回到第一页</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议纪要查看页面报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 获取默认待办值接口调用调整</description>
+			<author>林秀贤</author>
+			<revision-time>2016-10-31</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 A发起云会议，邀请B和C参加，A在会议未开始前取消会议，会议状态为已取消，但B和C在移动端查看会议详情仍可立即入会</description>
+			<author>张佳奇</author>
+			<revision-time>2016-10-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 A发起云会议，会议超过结束时间后，在PC端和移动端打开看会议详情，立即入会按钮灰色不可点击，请调整为按钮显示会议已结束</description>
+			<author>张佳奇</author>
+			<revision-time>2016-10-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复新会议管理会议纪要查看页面中未翻译的字段</description>
+			<author>张佳奇</author>
+			<revision-time>2016-10-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 list列表页操作栏中的“删除”按钮调整命名为“批量删除”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心由“后台管理”角色控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端主持人待办跳转到PC端页面问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>移除 会议回执提交后返回按钮</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议回执请他人代理加入参与人数的统计</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议资源日历页面默认加载了所有会议室，当会议室过多时（超过100个）打开页面加载比较慢，改为分步加载</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议状态的图标文字与图案重叠</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议新建点击下一步前不会校验当前页面字段</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 参会人从待办点进去会议通知单邀请别人参加，提交失败(偶发)</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议变更后会议待办信息发起人变成了审批人</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端新建会议，选择会议室页面没有返回操作</description>
+			<author>周梓凡</author>
+			<revision-time>2016-09-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 微会议开发</description>
+			<author>陈亮</author>
+			<revision-time>2016-09-28</revision-time>
+			<relation>
+				<relation-module>third/ywork</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 当新建会议设置参与人为部门时，变更会议后不会删除旧的日程信息</description>
+			<author>周梓凡</author>
+			<revision-time>2016-09-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 发起会议预约时，会议召开时间默认为当前时间的下一个整点，默认会议历时一小时。</description>
+			<author>崔文坚</author>
+			<revision-time>2016-09-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 极简非云会议Portlet未显示分类</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分类转移多语言</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议室查看页面列宽</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 云会议Portlet未显示发布时间问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建会议室报错</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议管理、会议辅助设备、会议室管理的会议辅助服务 增加可维护者和可使用者</description>
+			<author>陈晓文</author>
+			<revision-time>2016-07-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议主持人在参与人列表被过滤掉了</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 资源日历设备详情字段存在转移字符</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建会议页面在1280 * 1024分辨率下显示问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 是否云会议按钮采用切换样式</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-25</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议资源日历当前时间取服务器端</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 “新建云会议”权限使用单独角色控制</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议与全时同步失败时不抛出异常，只捕获记录日志。避免主业务受影响</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议纪要页面</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议辅助设备弹出框</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 云会议下修改会议历时会议结束时间不会同步修改问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端国际化</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议管理新建会议安排，选择会议地点，有数据却显示不出来</description>
+			<author>陈晓文</author>
+			<revision-time>2016-06-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 云会议新建权限问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-06-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端列表图像加载性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-14</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端头像大小性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 给予用户转移文档和分类权限扩充的角色，在模块列表中转移文档时不能选择所有类别</description>
+			<author>潘永辉</author>
+			<revision-time>2016-06-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 回执后待办未消失问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-06-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议管理自动化测试运行错误：会议室选择时，选择当前行无法被选中</description>
+			<author>陈晓文</author>
+			<revision-time>2016-06-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议模块与全时对接</description>
+			<author>周梓凡</author>
+			<revision-time>2016-06-06</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议管理新建会议安排，选择会议地点的弹出框中，当鼠标移至会议室名称时，考虑增加业务浮标信息</description>
+			<author>陈晓文</author>
+			<revision-time>2016-06-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 pc端待审、发布状态下的收藏保持与移动端同步</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议辅助设备权限控制</description>
+			<author>周梓凡</author>
+			<revision-time>2016-05-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 暂存会议打开查看页面报错</description>
+			<author>周梓凡</author>
+			<revision-time>2016-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议主持人回执会议后时间管理未生成对应日程</description>
+			<author>周梓凡</author>
+			<revision-time>2016-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 今日、明日、近期会议Portlet按召开时间升序排列</description>
+			<author>周梓凡</author>
+			<revision-time>2016-04-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 批量修改权限由模块角色控制，如果模块没配置则由全局分类的“类别维护人员角色”控制</description>
+			<author>周梓凡</author>
+			<revision-time>2016-04-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议纪要录入角色（允许替任意会议录入纪要）</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 批量修改权限由模块角色控制，如果模块没配置则由全局分类的“类别维护人员角色”控制</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议portlet按召开时间排序</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议列表页面注入</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议类别名字长度校验</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议变更注入问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 纪要催办天数设置默认值</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议室类别名称字段长度未校验问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议辅助设备、会议辅助服务查看页面</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 从会议日历下创建会议（时间早于当前时间），会出现冗余的校验提示</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 标准校验提示语颜色风格统一</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议进行中会议通知单就不要显示上传按钮了</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议地点为空时复制会议报错</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议纪要时间选择框</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议变更时没有带出外部地点</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 可做冲突检测的会议辅助设备</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端明细表上会材料列</description>
+			<author>周梓凡</author>
+			<revision-time>2016-02-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 回执改为不参加状态后会议回执中的实际参与人清空</description>
+			<author>周梓凡</author>
+			<revision-time>2016-01-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 PC端增加回执来自</description>
+			<author>周梓凡</author>
+			<revision-time>2016-01-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 起草节点必选下一节点审批人情况下会议变更流程出错</description>
+			<author>周梓凡</author>
+			<revision-time>2016-01-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议室查询时间控件未校验</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 portlet描述提示</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议预约转会议安排功能</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 流程相关校验在离开流程页签时及时校验</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议卡片库校验</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议室选择框注入问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议室资源排序号</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议不存在议程的情况下不显示上传会议材料按钮</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端订一下功能</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-09</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>移除 会议移动端新建按钮</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 WAS环境下会议统计报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议室占用校验后跳到了权限页签的错误</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建会议纪要无故显示JG控件提示信息</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议回执增加邀请他人类型</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 没有内部人员的时候会议取消报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端列表的记录div标签，添加属性fdId的值</description>
+			<author>李启龙</author>
+			<revision-time>2015-11-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建会议页面布局</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议资源日历portlet</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议历时校验提示</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议室选择框复选框无法取消选中</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文环境下时间轴页签无法显示</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 定时任务的详细描述</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议室最大使用时长功能</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表页面列宽</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-03</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议预约备注字段XSS注入</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议统计明细在没有数据的情况下报JS错误</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议统计部门过多时报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 weblogic环境下，会议吞吐量统计周期选项乱码</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 was环境下会议纪要报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 XSS安全问题</description>
+			<author>李启龙</author>
+			<revision-time>2015-10-16</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>移除 会议自动取消功能</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 admin.do不配置exchange时不显示绑定exchange节点</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 明细表select、textarea控件拖拽过程中值丢失问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议通知单可以查看会议回执情况</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议即时删除待办定时器</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端会议回执页签下暂无数据图标位置过高</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 复制会议不带出旧的会议纪要完成时间</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议纪要提前催办时间不正确问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议卡片库里的纪要模板在新建纪要时未带出</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议保管者接收的通知信息增加召开时间和会议地点</description>
+			<author>周娅</author>
+			<revision-time>2015-09-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 IE11下校验定位问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端如果会议议程为0不显示题头</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议纪要新建页面添加暂不支持页面</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 纪要portlet按创建时间排序</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议新建页面缺少发布机制代码</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 保存并新建会议室时带出了上次保存的图片</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端会议回执部分样式调整</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议资源日历字段显示有误</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 点击会议变更不提交导致流程重启</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议时间轴</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端上会材料不支持页面</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-02</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>third/pda</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议结束时间点清空时又自动补上日期问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 分类选择checkbox按钮消失问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-08-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端正文附件改为在线浏览模式</description>
+			<author>周梓凡</author>
+			<revision-time>2015-08-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议模块支持exchange同步</description>
+			<author>周梓凡</author>
+			<revision-time>2015-08-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 已召开的会议就不显示上传议会材料按钮了</description>
+			<author>周梓凡</author>
+			<revision-time>2015-08-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议议程明细表</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-31</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 参与人太多时提示框被无限撑大问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端weblogic乱码问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 没有内部参与人时点击催办报错问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 IE11下会议纪要校验时间问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 多行文本框输入时支持输入框高度自动拉伸</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-09</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加后台配置角色</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加后台配置角色</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议变更提示里出现重复用户名</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 环境不带项目名点击日历会议室报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 其他会议地点字段增加到1000</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议回执排序</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端查看会议收藏</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议html注入问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议纪要实际参与人员有值时不再从与会人员、列席人员中继承</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 xform:text标签长度校验</description>
+			<author>魏本源</author>
+			<revision-time>2015-06-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端注入问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 资源日历上会议分类筛选注入问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议时间轴注入问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文环境下预约会议室报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议回执页签下分页事件重复绑定问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议室类别修改后没有修改者和修改时间</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议室中包含html标签被解析问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议目的、变更理由字段中包含html标签时在查看页面被解析</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 与会人员为空时点击日程安排检测给出提示</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 上会材料查看页面不显示外部主持人和外部地点问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 统计页面标题在IE下重影问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 资源日历样式</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-02</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议设备列表页面列宽度</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-02</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 纪要时间校验问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 地点楼层输入大小限制</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2015-05-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 oracle下查看预约js报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 oracle数据库下待办出现null</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模块搜索配置</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模块搜索配置</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 火狐浏览器下权限页签样式出错问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-04-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 上传上会材料权限问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-04-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 会议纪要采用aspose查看</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-31</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 可见他人草稿问题处理</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 二级页面按钮操作栏翻页功能</description>
+			<author>王腾飞</author>
+			<revision-time>2015-01-16</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 待办发起人为空问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-01-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 工作交接注册服务</description>
+			<author>王腾飞</author>
+			<revision-time>2014-12-10</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 全文搜索部署与修改</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 表单输入框宽度规范化</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 xform:text标签长度校验</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 会议管理模块</description>
+			<author>周梓凡</author>
+			<revision-time>2014-08-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+	</modifies>
+</version>

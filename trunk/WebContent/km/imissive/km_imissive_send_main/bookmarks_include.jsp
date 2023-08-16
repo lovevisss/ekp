@@ -1,0 +1,131 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/resource/jsp/common.jsp"%>
+<%@page import="com.landray.kmss.km.imissive.forms.KmImissiveSendMainForm"%>
+<%@ page import="org.json.simple.JSONObject"%>
+<%@ page import="com.landray.kmss.util.StringUtil"%>
+<%
+    KmImissiveSendMainForm kmImissiveSendMainForm = (KmImissiveSendMainForm)request.getAttribute("kmImissiveSendMainForm");
+	JSONObject json = new JSONObject();
+	if(kmImissiveSendMainForm!=null){
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getDocSubject())){
+			json.put("docsubject",kmImissiveSendMainForm.getDocSubject());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdDocTypeName())){
+			json.put("doctype",kmImissiveSendMainForm.getFdDocTypeName());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdSendtoUnitName())){
+			String unitName = kmImissiveSendMainForm.getFdSendtoUnitName();
+			if("2".equals(kmImissiveSendMainForm.getFdIsJoint())){
+				unitName += ";"+kmImissiveSendMainForm.getFdOtherSendUnitNames();
+			}
+			json.put("sendunit",unitName);
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdDocNum())){
+			json.put("docnum",kmImissiveSendMainForm.getFdDocNum());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdSecretGradeName())){
+			json.put("secretgrade",kmImissiveSendMainForm.getFdSecretGradeName());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdCheckerName())){
+			json.put("checker",kmImissiveSendMainForm.getFdCheckerName());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdEmergencyGradeName())){
+			json.put("emergency",kmImissiveSendMainForm.getFdEmergencyGradeName());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdSignatureName())){
+			json.put("signature",kmImissiveSendMainForm.getFdSignatureName());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdDraftUnitName())){
+			json.put("draftunit",kmImissiveSendMainForm.getFdDraftUnitName());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdDraftDeptName())){
+			json.put("draftdept",kmImissiveSendMainForm.getFdDraftDeptName());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdDrafterName())){
+			json.put("drafter",kmImissiveSendMainForm.getFdDrafterName());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdDraftTime())){
+			json.put("drafttime",kmImissiveSendMainForm.getFdDraftTime());
+		}
+		
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdDeadTime())){
+			json.put("deadtime",kmImissiveSendMainForm.getFdDeadTime());
+		}
+		
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdPrintUnitName())){
+			json.put("printunit",kmImissiveSendMainForm.getFdPrintUnitName());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdPrintTime())){
+			json.put("printtimen",kmImissiveSendMainForm.getFdPrintTime());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdPrintTimeNum())){
+			json.put("printtime",kmImissiveSendMainForm.getFdPrintTimeNum());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getDocPublishTimeUpper())){
+			json.put("printtimecn",kmImissiveSendMainForm.getFdPrintTimeUpper());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdLevel())){
+			json.put("level",kmImissiveSendMainForm.getFdLevel());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdVersion())){
+			json.put("version",kmImissiveSendMainForm.getFdVersion());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdSecretYear())){
+			json.put("secretyear",kmImissiveSendMainForm.getFdSecretYear());
+		}
+		
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdContent())){
+			json.put("content",kmImissiveSendMainForm.getFdContent());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getDocPublishTimeUpper())){
+			json.put("signdatecn",kmImissiveSendMainForm.getDocPublishTimeUpper());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getDocPublishTimeNum())){
+			json.put("signdate",kmImissiveSendMainForm.getDocPublishTimeNum());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getDocPublishTime())){
+			json.put("signdaten",kmImissiveSendMainForm.getDocPublishTime());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdPrintNum())){
+			json.put("printnum",kmImissiveSendMainForm.getFdPrintNum());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdPrintPageNum())){
+			json.put("printpagenum",kmImissiveSendMainForm.getFdPrintPageNum());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdCopytoNames())){
+			json.put("copytounit",kmImissiveSendMainForm.getFdCopytoNames());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdMaintoNames())){
+			json.put("maintounit",kmImissiveSendMainForm.getFdMaintoNames());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdReporttoNames())){
+			json.put("reporttounit",kmImissiveSendMainForm.getFdReporttoNames());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdMissiveMpersonNames())){
+			json.put("maintoperson",kmImissiveSendMainForm.getFdMissiveMpersonNames());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdMissiveCpersonNames())){
+			json.put("copytoperson",kmImissiveSendMainForm.getFdMissiveCpersonNames());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdMissiveRpersonNames())){
+			json.put("reporttoperson",kmImissiveSendMainForm.getFdMissiveRpersonNames());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdReserveOne())){
+			json.put("reserveone",kmImissiveSendMainForm.getFdReserveOne());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdReserveTwo())){
+			json.put("reservetwo",kmImissiveSendMainForm.getFdReserveTwo());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdReserveThree())){
+			json.put("reservethree",kmImissiveSendMainForm.getFdReserveThree());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdReserveFour())){
+			json.put("reservefour",kmImissiveSendMainForm.getFdReserveFour());
+		}
+		if(StringUtil.isNotNull(kmImissiveSendMainForm.getFdReserveFive())){
+			json.put("reservefive",kmImissiveSendMainForm.getFdReserveFive());
+		}
+	}
+	request.setAttribute("bookmarkJson",json.toString());
+	//System.out.println(json.toString());
+%>

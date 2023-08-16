@@ -1,0 +1,7 @@
+WebContent/WEB-INF/KmssConfig/sys/metadata/design.xml=91e8679270d3dfb434b1045b31ad1076
+WebContent/WEB-INF/KmssConfig/sys/metadata/plugin.xml=bd63a1885b6ed469369433b899589a5e
+WebContent/WEB-INF/KmssConfig/sys/metadata/spring.xml=424ad3c114aae334cff1a50e24ab588b
+WebContent/WEB-INF/KmssConfig/sys/metadata/version/description.xml=e5e9056b8a6b370d437f655b362fbdb9
+WebContent/WEB-INF/KmssConfig/sys/metadata/version/version.xml=08f0c2f7253c8ba8880acf6808cdf854
+WebContent/WEB-INF/lib/kmss_sys_metadata.jar=b893a94ec9c6e54c5031047e47f23008
+README.md=d41d8cd98f00b204e9800998ecf8427e

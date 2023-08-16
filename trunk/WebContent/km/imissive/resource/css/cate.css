@@ -1,0 +1,143 @@
+.createPanelContainer{
+    background: #fff;
+    display:table;
+    width:100%;
+}
+.createPanelItem{
+    display:table-cell;
+    vertical-align:top;
+    margin:0 5px;
+    width:33.333%;
+    background: #f7f7f7;
+    border-right:1px solid #eee;
+}
+.createPanelItem:first-child{
+    padding-left:0;
+}
+
+/* 公文簿 */
+.gkp-cate-list-wrap {
+    background: #Fff;
+    padding: 20px;
+}
+
+.gkp-cate-list-head {
+    color: #F25643;
+    text-align: Center;
+    font-size: 24px;
+    /* padding-top: 20px; */
+    font-weight: 500;
+    /* padding-bottom:25px; */
+}
+
+.gkp-cate-list-head-decorate:before {
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: url(../images/icon-star@2x.png);
+    background-size: 11px auto;
+    position: absolute;
+    top: -20px;
+}
+
+.gkp-cate-list-head-decorate {
+    height: 2px;
+    background: #fff;
+    display: block;
+    margin-top: 24px;
+    border-top: 2px solid #F25643;
+    border-bottom: 1px solid #F25643;
+    position: relative;
+}
+
+.gkp-cate-list-content {
+    padding: 15px 0;
+    height:350px;
+    overflow: hidden;
+}
+
+.gkp-cate-list {
+    list-style: none;
+}
+
+.gkp-cate-list li {
+    margin-bottom: 8px;
+}
+
+.gkp-cate-list li a {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.gkp-cate-list li a:before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #ccc;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: 3px;
+}
+
+.gkp-cate-list-footer {
+    border-top: 1px solid #eee;
+    padding: 15px 0 0;
+    overflow: hidden;
+}
+
+.gkp-cate-btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #F25643;
+    padding: 0 10px;
+    border-radius: 13px;
+    color: #F25643;
+    cursor: pointer;
+}
+
+.gkp-cate-btn:after {
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 14px;
+    background: url(../images/icon-arrow-r@2x.png) no-repeat center;
+    background-size: 9px;
+    vertical-align: -2px;
+    margin-left: 5px;
+}
+
+.gkp-cate-setting-btn {
+    float: right;
+    color: #999;
+    cursor: pointer;
+}
+
+.gkp-cate-setting-btn:before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    background: url(../images/icon-setting@2x.png) no-repeat center;
+    vertical-align: -2px;
+    background-size: 14px auto;
+    margin-right: 5px;
+}
+
+@media \0screen\ {
+    .gkp-cate-list-head-decorate:before {
+        background-image: url(../images/icon-star.png);
+    }
+
+    .gkp-cate-btn:after {
+        background-image: url(../images/icon-arrow-r.png);
+    }
+
+    .gkp-cate-setting-btn:before {
+        background-image: url(../images/icon-setting.png);
+    }
+}

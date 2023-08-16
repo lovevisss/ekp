@@ -1,0 +1,189 @@
+{
+	"data": [
+	{
+		"fdName" : "公文管理政务版二级页",
+		"fdUrl" : "/km/imissive__and__/km/imissive/index.jsp"
+	},
+	{
+		"fdName" : "发文查看页",
+		"fdUrl" : "/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view"
+	},
+	{
+		"fdName" : "发文新建、编辑页",
+		"fdUrl" : "/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=add__and__/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=edit"
+	},
+	{
+		"fdName" : "收文查看页",
+		"fdUrl" : "/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=view"
+	},
+	{
+		"fdName" : "收文新建、编辑页",
+		"fdUrl" : "/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=add__and__/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=edit"
+	},
+	{
+		"fdName" : "签报查看页",
+		"fdUrl" : "/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=view"
+	},
+	{
+		"fdName" : "签报新建、编辑页",
+		"fdUrl" : "/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=add__and__/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=edit"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.displayConfig",
+		"fdUrl" : "/sys/appconfig/sys_appconfig/sysAppConfig.do?method=edit&modelName=com.landray.kmss.km.imissive.model.KmImissiveConfig"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.xianBanRiQiSheZhi",
+		"fdUrl" : "/km/imissive/km_imissive_deadline_config/kmImissiveDeadLineConfig.do?method=edit"
+	},
+	{
+		"fdName" : "km-imissive:table.kmImissiveType", 
+		"fdUrl" : "/km/imissive/km_imissive_type/index.jsp"
+	},
+	{
+		"fdName" : "km-imissive:table.kmImissiveSecretGrade",
+		"fdUrl" : "/km/imissive/km_imissive_secret_grade/index.jsp"
+	},
+	{
+		"fdName" : "km-imissive:table.kmImissiveEmergencyGrade",
+		"fdUrl" : "/km/imissive/km_imissive_emergency_grade/index.jsp"
+	},
+	{
+		"fdName" : "km-imissive:table.kmImissiveUnitCategory",
+		"fdUrl" : "/sys/unit/km_imissive_unit_category/kmImissiveUnitCategory_tree.jsp"
+	},
+	{
+		"fdName" : "km-imissive:table.kmImissiveUnit",
+		"fdUrl" : "/sys/unit/km_imissive_unit/index.jsp"
+	},
+	{
+		"fdName" : "交换单位",
+		"fdUrl" : "/sys/unit/km_imissive_unit/indexOuter.jsp"
+	},
+	{
+		"fdName" : "km-imissive:kmImissiveTemplateCfg.tree.config",
+		"fdUrl" : "/km/imissive/km_imissive_template_cfg/index.jsp"
+	},
+	{
+		"fdName" : "sys-profile:sys.profile.list.display.config",
+		"fdUrl" : "/sys/profile/listShow/sys_listshow_category/index.jsp"
+	},
+	{
+		"fdName" : "km-imissive:km.missive.send.categoryconfig",
+		"fdUrl" : "/sys/category/sys_category_main/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate&mainModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain&templateName=fdTemplate&categoryName=docCategory&authReaderNoteFlag=2"
+	},
+	{
+		"fdName" : "km-imissive:km.missive.send.templateconfig",
+		"fdUrl" : "/km/imissive/km_imissive_send_template/index.jsp"
+	},
+	{
+		"fdName" : "km-imissive:kmImissiveSend.tree.redhead.template",
+		"fdUrl" : "/km/imissive/km_imissive_redhead_template/kmImissiveRedHeadTemplate_tree.jsp?modelName=com.landray.kmss.km.imissive.model.KmImissiveRedHeadTemplate&actionUrl=/km/imissive/km_imissive_redhead_template/kmImissiveRedHeadTemplate.do&formName=kmImissiveRedHeadTemplateForm&authReaderNoteFlag=2"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.commonSendNumber",
+		"fdUrl" : "/sys/number/sys_number_main/index.jsp?modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.mainMissiveSendFlow",
+		"fdUrl" : "/sys/lbpmservice/support/lbpm_template/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate&fdKey=sendMainDoc"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.commonSendXform",
+		"fdUrl" : "/sys/xform/sys_form_common_template/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate&fdKey=sendMainDoc&fdMainModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.commonSendXformCfg",
+		"fdUrl" : "/sys/xform/base/sys_form_db_table/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain&fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate&fdKey=sendMainDoc"
+	},
+	{
+		"fdName" : "km-imissive:KmImissiveSendMain.search",
+		"fdUrl" : "/sys/search/sys_search_main/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain&fdTemplateModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate&fdKey=sendMainDoc"
+	},
+	{
+		"fdName" : "km-imissive:km.missive.receive.categoryconfig",
+		"fdUrl" : "/sys/category/sys_category_main/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate&mainModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain&templateName=fdTemplate&categoryName=docCategory&authReaderNoteFlag=2"
+	},
+	{
+		"fdName" : "km-imissive:km.missive.receive.templateconfig",
+		"fdUrl" : "/km/imissive/km_imissive_receive_template/index.jsp"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.commonReceiveNumber",
+		"fdUrl" : "/sys/number/sys_number_main/index.jsp?modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.mainMissiveReceiveFlow",
+		"fdUrl" : "/sys/lbpmservice/support/lbpm_template/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate&fdKey=receiveMainDoc"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.commonReceiveXform",
+		"fdUrl" : "/sys/xform/sys_form_common_template/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate&fdKey=receiveMainDoc&fdMainModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.commonReceiveXformCfg",
+		"fdUrl" : "/sys/xform/base/sys_form_db_table/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain&fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate&fdKey=receiveMainDoc"
+	},
+	{
+		"fdName" : "km-imissive:KmImissiveReceiveMain.search",
+		"fdUrl" : "/sys/search/sys_search_main/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain&fdTemplateModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate&fdKey=receiveMainDoc"
+	},
+	{
+		"fdName" : "km-imissive:km.missive.sign.categoryconfig",
+		"fdUrl" : "/sys/category/sys_category_main/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate&mainModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain&templateName=fdTemplate&categoryName=docCategory&authReaderNoteFlag=2"
+	},
+	{
+		"fdName" : "km-imissive:km.missive.sign.templateconfig",
+		"fdUrl" : "/km/imissive/km_imissive_sign_template/index.jsp"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.commonSignNumber",
+		"fdUrl" : "/sys/number/sys_number_main/index.jsp?modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+	},
+	
+	{
+		"fdName" : "km-imissive:kmMissive.tree.mainMissiveSignFlow",
+		"fdUrl" : "/sys/lbpmservice/support/lbpm_template/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate&fdKey=signMainDoc"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.commonSignXform",
+		"fdUrl" : "/sys/xform/sys_form_common_template/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate&fdKey=signMainDoc&fdMainModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+	},
+	{
+		"fdName" : "km-imissive:kmMissive.tree.commonSignXformCfg",
+		"fdUrl" : "/sys/xform/base/sys_form_db_table/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain&fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate&fdKey=signMainDoc"
+	},
+	{
+		"fdName" : "km-imissive:KmImissiveSignMain.search",
+		"fdUrl" : "/sys/search/sys_search_main/index.jsp?fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain&fdTemplateModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate&fdKey=signMainDoc"
+	},
+	{
+		"fdName" : "缓存编号查询",
+		"fdUrl" : "/km/imissive/km_imissive_number/index.jsp"
+	},
+	{
+		"fdName" : "km-imissive:kmImissive.tree.manage.send",
+		"fdUrl" : "/km/imissive/km_imissive_send_main/kmImissiveSendMain_manageList.jsp"
+	},
+	{
+		"fdName" : "km-imissive:kmImissive.tree.manage.receive",
+		"fdUrl" : "/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_manageList.jsp"
+	},
+	{
+		"fdName" : "km-imissive:kmImissive.tree.manage.sign",
+		"fdUrl" : "/km/imissive/km_imissive_sign_main/kmImissiveSignMain_manageList.jsp"
+	},
+	{
+		"fdName" : "权限扩散日志",
+		"fdUrl" : "/km/imissive/km_imissive_spreadauth_log/index.jsp"
+	},
+	{
+		"fdName" : "发往平台公文队列",
+		"fdUrl" : "/km/imissive/km_imissive_reg_qu/index.jsp"
+	},
+	{
+		"fdName" : "发往平台公文队列",
+		"fdUrl" : "/km/imissive/km_imissive_regdetail_list_qu/index.jsp"
+	}
+	]
+}

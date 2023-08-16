@@ -1,0 +1,10 @@
+{
+	"id": "kmImissiveApprovaledTiny",
+	"title": "公文政务版我已审的二级页面列表",
+	"desc": "公文政务版我已审的二级页面列表个性文件",
+	"jsList": [
+	    "/km/imissive/mobile/imissive_approvaled/js/",
+	    "/sys/mobile/js/mui/list/CardItemDListMixin.js",
+		"/sys/mobile/js/mui/list/item/CardItemDMixin.js"
+	]
+}

@@ -1,0 +1,15 @@
+.kmImeetingCri .muiHeaderView {
+	white-space: nowrap;
+	display: -webkit-box;
+	overflow-x: auto;
+	/* 适应苹果 */
+	-webkit-overflow-scrolling: touch;
+}
+
+.kmImeetingCri .muiHeaderView::-webkit-scrollbar{
+	display: none;
+}
+
+#kmImeeting_header:after {
+	display: none;
+}

@@ -1,0 +1,35 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveAdviceRelation",
+        "messageKey": "km-imissive:table.KmImissiveAdviceRelation",
+        "displayProperty": "activityType",
+        "table": "km_imissive_advice_relation"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "processId":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveAdviceRelation.processId",
+            "column": "process_id",
+            "length": "36"
+        },
+        "activityType":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveAdviceRelation.activityType",
+            "column": "activity_type",
+            "length": "36"
+        },
+        "taskId":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveAdviceRelation.taskId",
+            "column": "task_id",
+            "length": "36"
+        }
+    }
+}

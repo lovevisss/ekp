@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.km.carmng.model.KmCarmngInfringeInfo"
+		table="km_carmng_infringe_info">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+		<property
+			name="fdInfringeTime"
+			column="fd_infringe_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdInfringeFee"
+			column="fd_infringe_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdInfringeSite"
+			column="fd_infringe_site"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdInfringePersonId"
+			column="fd_infringe_person_id"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdInfringePersonName"
+			column="fd_infringe_person_name"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdRemark"
+			column="fd_remark"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="docCreateTime"
+			column="doc_create_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<many-to-one
+			name="fdVehiclesInfo"
+			column="fd_vehicles_info_id"
+			update="true"
+			insert="true" />
+		<many-to-one
+			name="docCreator"
+			column="doc_creator_id"
+			update="true"
+			insert="true" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,2125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+	<!-- 权限控制 -->
+	<module
+		messageKey="km-imissive:module.km.imissive"
+		defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)"
+		urlPrefix="/km/imissive/">
+		<roles>
+			ROLE_KMIMISSIVE_DEFAULT;
+		    ROLE_KMIMISSIVE_CONFIG_SETTING;
+		    ROLE_KMIMISSIVE_SEND_CIRCULATION_CREATE;
+			ROLE_KMIMISSIVE_RECEIVE_CIRCULATION_CREATE;
+			ROLE_KMIMISSIVE_SIGN_CIRCULATION_CREATE;
+			ROLE_KMIMISSIVE_PRINT;
+			ROLE_KMIMISSIVE_PRINTBATCH;
+			ROLE_KMIMISSIVE_SEND_PRINTCONTENT;
+			ROLE_KMIMISSIVE_RECEIVE_PRINTCONTENT;
+			ROLE_KMIMISSIVE_SIGN_PRINTCONTENT;
+			ROLE_KMIMISSIVE_ANONYMPUBLISH;
+			ROLE_KMIMISSIVE_VIEWMYDEPTDOC_SEND;
+			ROLE_KMIMISSIVE_VIEWMYDEPTDOC_RECEIVE;
+			ROLE_KMIMISSIVE_VIEWMYDEPTDOC_SIGN
+		</roles>
+		<areaRoles>
+			ROLE_KMIMISSIVE_SEND_OPTALL;
+			ROLE_KMIMISSIVE_RECEIVE_OPTALL;
+			ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER;
+			ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER;
+			ROLE_KMIMISSIVE_RECEIVE_CREATE;
+			ROLE_KMIMISSIVE_RECEIVE_DELETE;
+			ROLE_KMIMISSIVE_RECEIVE_CHANGERIGHT;
+			ROLE_KMIMISSIVE_RECEIVE_READER;
+			ROLE_KMIMISSIVE_RECEIVE_CHANGECATE;
+			ROLE_KMIMISSIVE_SEND_CREATE;
+			ROLE_KMIMISSIVE_SEND_DELETE;
+			ROLE_KMIMISSIVE_SEND_CHANGERIGHT;
+			ROLE_KMIMISSIVE_SEND_READER;
+			ROLE_KMIMISSIVE_SEND_CHANGECATE;
+			ROLE_KMIMISSIVE_FILING;
+			ROLE_KMIMISSIVE_SUBSIDE;
+			ROLE_KMIMISSIVE_REPORT;
+			ROLE_KMIMISSIVE_DISTRIBUTE;
+			ROLE_KMIMISSIVE_CHANGERECEIVE;
+			ROLE_KMIMISSIVE_CHANGESEND;
+			ROLE_KMIMISSIVE_COUNTERSIGN;
+			ROLE_KMIMISSIVE_REDHEAD_MAINTAINER;
+			ROLE_KMIMISSIVE_MANUALRECEIVEPUBLISH;
+			ROLE_KMIMISSIVE_MANUALSENDPUBLISH;
+		    ROLE_KMIMISSIVE_SIGN_OPTALL;
+			ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER;
+			ROLE_KMIMISSIVE_SIGN_CREATE;
+			ROLE_KMIMISSIVE_SIGN_DELETE;
+			ROLE_KMIMISSIVE_SIGN_CHANGERIGHT;
+			ROLE_KMIMISSIVE_SIGN_READER;
+			ROLE_KMIMISSIVE_SIGN_CHANGECATE;
+			ROLE_KMIMISSIVE_MANUALSIGNPUBLISH;
+			ROLE_KMIMISSIVE_RECEIVE_RETURNDOC;
+			ROLE_KMIMISSIVE_BACKSTAGE_MANAGER;
+			ROLE_KMIMISSIVE_SEND_DOWNLOADCONTENT;
+			ROLE_KMIMISSIVE_RECEIVE_DOWNLOADCONTENT;
+			ROLE_KMIMISSIVE_SIGN_DOWNLOADCONTENT;
+			ROLE_KMIMISSIVE_SEND_DOWNLOADPDFCONTENT;
+			ROLE_KMIMISSIVE_RECEIVE_DOWNLOADPDFCONTENT;
+			ROLE_KMIMISSIVE_SIGN_DOWNLOADPDFCONTENT;
+			ROLE_KMIMISSIVE_SEND_DOWNLOADCONTENT_EDIT;
+			ROLE_KMIMISSIVE_RECEIVE_DOWNLOADCONTENT_EDIT;
+			ROLE_KMIMISSIVE_SIGN_DOWNLOADCONTENT_EDIT;
+			ROLE_KMIMISSIVE_SEND_EDITDOCNUM;
+			ROLE_KMIMISSIVE_RECEIVE_EDITDOCNUM;
+			ROLE_KMIMISSIVE_SIGN_EDITDOCNUM;
+			ROLE_KMIMISSIVE_TRANSPORT_EXPORT;
+			ROLE_KMIMISSIVE_NUMBER;
+			ROLE_KMIMISSIVE_STAT_READER;
+			ROLE_KMIMISSIVE_STAT_EDITOR;
+			ROLE_KMIMISSIVE_STAT_OVERVIEW;
+			ROLE_KMIMISSIVE_MODIFY_SEND;
+			ROLE_KMIMISSIVE_SEND_CIRCULATION_DELETE;
+			ROLE_KMIMISSIVE_RECEIVE_CIRCULATION_DELETE;
+			ROLE_KMIMISSIVE_SIGN_CIRCULATION_DELETE;
+			ROLE_KMIMISSIVE_REG_DELETE;
+			ROLE_KMIMISSIVE_SEND_DOWNLOADOFDCONTENT;
+			ROLE_KMIMISSIVE_RECEIVE_DOWNLOADOFDCONTENT;
+			ROLE_KMIMISSIVE_SIGN_DOWNLOADOFDCONTENT;
+			ROLE_KMIMISSIVE_READER_OFFLINE
+		</areaRoles>
+		<request
+				path="km_imissive_main/downloadFile.jsp*"
+				defaultValidator="true" >
+		</request>
+		<request path="km_imissive_main/kmImissiveMain*" defaultValidator="false"> 
+			<query
+				queryString="method=getImissiveLibraryCount|getImissiveApprovalCount|getImissiveApprovaledCount|approvedImissiveChart|listDoc|listRead|view|queryIsExistViewPath|convertTypeInfo|existSursenSignFile"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)"/>
+			<query
+				queryString="method=printBatch"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_PRINTBATCH)" />
+		</request>		
+		<request
+			path="km_imissive_send_main/kmImissiveSendMainArchives.do*"
+			defaultValidator="true"/>
+		<request
+			path="km_imissive_receive_main/kmImissiveReceiveMainArchives.do*"
+			defaultValidator="true"/>
+		<request
+			path="km_imissive_sign_main/kmImissiveSignMainArchives.do*"
+			defaultValidator="true"/>
+		<request
+			path="km_imissive_main/kmImissiveSubside.do*"
+			defaultValidator="true"/>
+		<!-- 参数设置 -->
+		<request
+			path="tree.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)"/>
+		<request
+			path="km_imissive_spreadauth_log/index.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)"/>
+		<request
+			path="km_imissive_reg_qu/kmImissiveRegQu*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveRegQu"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)">
+		</request>
+		<request
+			path="km_imissive_regdetail_list_qu/kmImissiveRegDetailListQu*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveRegDetailListQu"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)">
+		</request>
+		
+		<request
+			path="km_imissive_opinion_in_qu/kmImissiveOpinionInQu*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveOpinionInQu"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)">
+		</request>
+		<request
+			path="km_imissive_opinion_out_qu/kmImissiveOpinionOutQu*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveOpinionOutQu"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)">
+		</request>
+		
+		
+		<request
+			path="km_imissive_type/kmImissiveType*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveType"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)">
+		</request>
+		
+		<request
+	      path="km_imissive_rule/kmImissiveRule*"
+	      validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveRule"
+	      defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)">
+	      <query
+	        queryString="method=add|save|saveadd|clone|view|edit|update|delete"
+	        validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+	    </request>
+		
+		<request
+			path="km_imissive_number/kmImissiveNumber*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveNumber"
+			defaultValidator="roleValidator(role=SYSROLE_USER)">
+			<query
+				queryString="method=list|delete|deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+		</request>
+		
+		<!-- 文种设置 -->
+		<request
+			path="km_imissive_type/kmImissiveType*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveType"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)">
+		</request>
+		<request
+			path="km_imissive_spreadauth_log/kmImissiveSpreadAuthLog*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSpreadAuthLog"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)">
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+		</request>	
+		<!-- 密级程度设置 -->
+		<request
+			path="km_imissive_secret_grade/kmImissiveSecretGrade*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSecretGrade"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)">
+		</request>
+		<!-- 缓急程度设置 -->
+		<request
+			path="km_imissive_emergency_grade/kmImissiveEmergencyGrade*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveEmergencyGrade"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)">
+		</request>
+		<!-- 转换设置 -->
+		<request
+			path="km_imissive_template_cfg/kmImissiveTemplateCfg*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveTemplateCfg">
+			<!-- 保存 -->
+			<query
+				queryString="method=add|save|saveadd|clone"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)" />
+			<query
+				queryString="method=edit|update|delete"
+				validator="authFieldValidator(type=SYS_EDITOR)" />
+		</request>
+		
+		<request path="km_imissive_send_dr/kmImissiveSendDR*">
+			<query queryString="method=distribute"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_DISTRIBUTE)|kmImissiveDRValidator(recid=fdMainId)" />
+			<query queryString="method=report"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_REPORT)|kmImissiveDRValidator(recid=fdMainId)" />
+		</request>
+		
+		<request path="import/lbpmAuditNote_list.jsp*"
+				defaultValidator="areaRoleValidator(role=ROLE_KMIMISSIVE_DISTRIBUTE)|areaRoleValidator(role=ROLE_KMIMISSIVE_REPORT)">
+		</request>
+		<request path="mobile/import/lbpmAuditNote_list.jsp*"
+				defaultValidator="areaRoleValidator(role=ROLE_KMIMISSIVE_DISTRIBUTE)|areaRoleValidator(role=ROLE_KMIMISSIVE_REPORT)">
+		</request>
+		
+		<request path="km_imissive_reg/kmImissiveReg_listNote.jsp*"
+				defaultValidator="areaRoleValidator(role=ROLE_KMIMISSIVE_DISTRIBUTE)|areaRoleValidator(role=ROLE_KMIMISSIVE_REPORT)">
+		</request>
+		
+		
+		<request path="km_imissive_receive_dr/kmImissiveReceiveDR*">
+			<query queryString="method=distribute"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_DISTRIBUTE)|kmImissiveDRValidator(recid=fdMainId)" />
+			<query queryString="method=report"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_REPORT)|kmImissiveDRValidator(recid=fdMainId)" />
+		</request>
+		
+		<request
+			path="km_imissive_template_cfg/kmImissiveTemplateCfg*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveTemplateCfg">
+			<!-- 保存 -->
+			<query
+				queryString="method=add|save|saveadd|clone"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)" />
+			<query
+				queryString="method=edit|update|delete"
+				validator="authFieldValidator(type=SYS_EDITOR)" />
+		</request>
+		
+		<!-- 发文模板设置 -->
+		<request
+			path="km_imissive_send_template/kmImissiveSendTemplate*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate">
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd"
+				validator="authCategoryReaderValidator(cateid=fdCategoryId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docCategory)" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="authFieldValidator(type=SYS_EDITOR)|authCategoryEditorValidator(property=docCategory)" />
+			<!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="authCategoryEditorValidator(cateid=parentId)" />
+			<!-- 拷贝 -->
+			<query
+				queryString="method=clone"
+				validator="authCategoryReaderValidator(recid=cloneModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate,property=docCategory)" />		
+		</request>
+		<!-- 内部请示模板设置 -->
+		<request
+			path="km_imissive_sign_template/kmImissiveSignTemplate*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate">
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd"
+				validator="authCategoryReaderValidator(cateid=fdCategoryId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docCategory)" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="authFieldValidator(type=SYS_EDITOR)|authCategoryEditorValidator(property=docCategory)" />
+			<!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="authCategoryEditorValidator(cateid=parentId)" />
+			<!-- 拷贝 -->
+			<query
+				queryString="method=clone"
+				validator="authCategoryReaderValidator(recid=cloneModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate,property=docCategory)" />		
+		</request>
+		<!-- 收文模板设置 -->
+		<request
+			path="km_imissive_receive_template/kmImissiveReceiveTemplate*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate">
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd"
+				validator="authCategoryReaderValidator(cateid=fdCategoryId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docCategory)" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="authFieldValidator(type=SYS_EDITOR)|authCategoryEditorValidator(property=docCategory)" />
+			<!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="authCategoryEditorValidator(cateid=parentId)" />
+			<!-- 拷贝 -->
+			<query
+				queryString="method=clone"
+				validator="authCategoryReaderValidator(recid=cloneModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate,property=docCategory)" />		
+		</request>
+		<!-- 红头模板设置 -->
+		<request
+			path="km_imissive_redhead_template/kmImissiveRedHeadTemplate*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveRedHeadTemplate,adminRoleName=ROLE_KMIMISSIVE_REDHEAD_MAINTAINER">
+			<!-- 新增 -->
+			<query
+				queryString="method=add"
+				validator="sysSimpleCategoryEditorValidator(recid=parentId)" />	
+			<!-- 复制 -->
+			<query
+				queryString="method=copy"
+				validator="sysSimpleCategoryEditorValidator(recid=fdCopyId)" />		
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="sysSimpleCategoryReaderValidator()" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="sysSimpleCategoryEditorValidator()" />		
+		</request>
+		
+		<request
+			path="km_imissive_sign_redhead_template/kmImissiveSignRedHeadTemplate*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSignRedHeadTemplate,adminRoleName=ROLE_KMIMISSIVE_REDHEAD_MAINTAINER">
+			<!-- 新增 -->
+			<query
+				queryString="method=add"
+				validator="sysSimpleCategoryEditorValidator(recid=parentId)" />	
+			<!-- 复制 -->
+			<query
+				queryString="method=copy"
+				validator="sysSimpleCategoryEditorValidator(recid=fdCopyId)" />		
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="sysSimpleCategoryReaderValidator()" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="sysSimpleCategoryEditorValidator()" />		
+		</request>
+		<!-- 发文主文档 -->
+		
+		<request
+			path="km_imissive_send_main/kmImissiveSendMain*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain,templatemodel=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate,adminRoleName=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SEND_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<query
+				queryString="method=addSend&amp;fdTemplateId=*"
+				validator="kmImissiveSignValidator(recid=fddetaiId)|authFieldValidator(type=changeSend,recid=fdReceiveId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)|kmImissiveChange2SendValidator(recid=fdReceiveId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SEND_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view|viewXformInfo"
+				validator="kmImissiveMyDeptSendValidator()|sysRecycleAuthFieldValidator(type=recycle)|authFieldValidator(type=SYS_READER,isArea=true)|authCategoryEditorValidator(property=fdTemplate)" />
+			<query
+				queryString="method=printFileDoc"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SEND_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />	
+			<!-- 沉淀 -->
+			<query
+				queryString="method=printSubsideDoc"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SUBSIDE)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SEND_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />		
+			<query
+				queryString="method=listSend"
+				validator="authFieldValidator(type=SYS_READER,isArea=true,recid=fdMainId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)" />
+			<!-- 批量打印 -->
+			<query
+				queryString="method=printBatch"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_PRINTBATCH)" />
+			<query
+				queryString="method=readViewLog"
+				validator="kmImissiveMyDeptSendValidator()|authFieldValidator(type=viewlog)|authFieldValidator(type=creator)|areaRoleValidator(role=ROLE_KMIMISSIVE_SEND_READER)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="fieldValueValidator(fieldproperty=docStatus,except=00;30;41)&amp;authFieldValidator(type=SYS_EDITOR)|fieldValueValidator(fieldproperty=docStatus,value=30)&amp;roleValidator(role=ROLE_KMIMISSIVE_MODIFY_SEND)|fieldValueValidator(fieldproperty=docStatus,except=00;30;41)&amp;kmImissivePrivilegerValidator(recid=fdId)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)&amp;kmImissiveDraftValidator()|areaRoleValidator(role=ROLE_KMIMISSIVE_SEND_DELETE)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SEND_OPTALL)|areaRoleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		    <!-- 删除所有 -->
+		    <query
+				queryString="draft=true&amp;method=deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+			 <query
+				queryString="method=getContentCount"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_DELETE)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_SEND_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			
+		   <query
+				queryString="method=changeTemplate&amp;nodeType=*"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_CHANGECATE)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_SEND_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 转移模板提交 -->
+			<query
+				queryString="method=changeTemplate&amp;categoryId=*"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SEND_CHANGECATE)" />
+			<!-- 修改文号 -->
+			<query
+				queryString="method=editDocNum"
+				validator="authFieldValidator(type=editdocnum)" />
+			<query
+				queryString="method=distribute"
+				validator="authFieldValidator(type=distribute)" />
+			<query
+				queryString="method=report"
+				validator="authFieldValidator(type=report)" />
+			<query
+				queryString="method=sign"
+				validator="authFieldValidator(type=sign)" />
+			<query
+				queryString="method=counterSign"
+				validator="authFieldValidator(type=counterSign)" />
+			<!-- 打印 -->
+			<query
+				queryString="method=print"
+				validator="[roleValidator(role=ROLE_KMIMISSIVE_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)&amp;[sysRecycleAuthFieldValidator(type=recycle)|authFieldValidator(type=SYS_READER,isArea=true)|authCategoryEditorValidator(property=fdTemplate)]]|sysSubFormValidator(property=fdTemplate)" />
+			<!-- 归档 -->
+			<query
+				queryString="method=filing"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SEND_OPTALL)|areaRoleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="method=filingall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_SEND_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 维护界面 -->
+			<query
+				queryString="method=manageList"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)|fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)" />
+			<!-- 线下发文 -->
+			<query
+			    queryString="method=addOffLine"
+			    validator="areaRoleValidator(role=ROLE_KMIMISSIVE_READER_OFFLINE)&amp;areaRoleValidator(role=ROLE_KMIMISSIVE_SEND_CREATE)" />
+		</request>
+		
+		<request path="km_imissive_att_track/kmImissiveAttTrack*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveAttTrack"
+			defaultValidator="false"> 
+			<query
+				queryString="method=view"
+				validator="sysAttTrackValidator2()|areaRoleValidator(role=ROLE_KMIMISSIVE_SEND_READER)"/>
+			<query
+				queryString="method=list"
+				validator="sysAttTrackValidator(recid=fdMainId)|areaRoleValidator(role=ROLE_KMIMISSIVE_SEND_READER)"/>
+		</request>
+		<request path="km_imissive_return_opinion/kmImissiveReturnOpinion*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveReturnOpinion"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)"> 
+			<query
+				queryString="method=add|save"
+				validator="kmImissiveReturnOpinionValidator(recid=fddetaiId,rectype=isOuter)"/>
+		</request>
+		
+		<request path="km_imissive_regdetail_opinion/kmImissiveRegDetailOpinion*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveRegDetailOpinion"
+			defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)"> 
+			<query
+				queryString="method=addOuter|addSignOpinion|saveOuter"
+				validator="kmImissiveRegDetailOpinionValidator(recid=fddetaiId)"/>
+		</request>
+		
+		<request path="km_imissive_circulation/kmImissiveCirculation*">
+		    <query
+				queryString="method=add|save|saveadd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_CIRCULATION_CREATE,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)&amp;fieldValueValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain,fieldproperty=docStatus,value=00;11;20;30)" />
+		    <query
+				queryString="method=add|save|saveadd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_CIRCULATION_CREATE,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)&amp;fieldValueValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain,fieldproperty=docStatus,value=00;11;20;30)" />
+			<query
+				queryString="method=add|save|saveadd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SIGN_CIRCULATION_CREATE,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)&amp;fieldValueValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain,fieldproperty=docStatus,value=00;11;20;30)" />
+		</request>
+			<!--内部请示主文档 -->
+		<request
+			path="km_imissive_sign_main/kmImissiveSignMain*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain,templatemodel=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate,adminRoleName=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SIGN_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SIGN_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 修改文号 -->
+			<query
+				queryString="method=editDocNum"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SIGN_EDITDOCNUM)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view|viewXformInfo"
+				validator="kmImissiveMyDeptSignValidator()|sysRecycleAuthFieldValidator(type=recycle)|authFieldValidator(type=SYS_READER,isArea=true)|authCategoryEditorValidator(property=fdTemplate)" />
+			<query
+				queryString="method=printFileDoc"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SIGN_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />			
+			<!-- 沉淀 -->
+			<query
+				queryString="method=printSubsideDoc"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SUBSIDE)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SIGN_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 批量打印 -->
+			<query
+				queryString="method=printBatch"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_PRINTBATCH)" />
+			<query
+				queryString="method=readViewLog"
+				validator="kmImissiveMyDeptSignValidator()|authFieldValidator(type=viewlog)|authFieldValidator(type=creator)|areaRoleValidator(role=ROLE_KMIMISSIVE_SIGN_READER)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)|fieldValueValidator(fieldproperty=docStatus,except=00;30;41)&amp;kmImissivePrivilegerValidator(recid=fdId)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)&amp;kmImissiveDraftValidator()|areaRoleValidator(role=ROLE_KMIMISSIVE_SIGN_DELETE)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SIGN_OPTALL)|areaRoleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		   <query
+				queryString="draft=true&amp;method=deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+			 <query
+				queryString="method=getContentCount"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+		    <!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SIGN_DELETE)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_SIGN_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="method=changeTemplate&amp;nodeType=*"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SIGN_CHANGECATE)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_SIGN_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 转移模板提交 -->
+			<query
+				queryString="method=changeTemplate&amp;categoryId=*"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SIGN_CHANGECATE)" />
+			<!-- 打印 -->
+			<query
+				queryString="method=print"
+				validator="[roleValidator(role=ROLE_KMIMISSIVE_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)&amp;[sysRecycleAuthFieldValidator(type=recycle)|authFieldValidator(type=SYS_READER,isArea=true)|authCategoryEditorValidator(property=fdTemplate)]]|sysSubFormValidator(property=fdTemplate)" />
+			<!-- 归档 -->
+			<query
+				queryString="method=filing"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SIGN_OPTALL)|areaRoleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="method=filingall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_SIGN_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 维护界面 -->
+			<query
+				queryString="method=manageList"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)|fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)" />
+			<!-- 线下签报 -->
+			<query
+				queryString="method=addOffLine"
+			   	validator="areaRoleValidator(role=ROLE_KMIMISSIVE_READER_OFFLINE)&amp;areaRoleValidator(role=ROLE_KMIMISSIVE_SIGN_CREATE)" />
+		</request>
+		<!-- 收文主文档 -->
+		<request
+			path="km_imissive_receive_main/kmImissiveReceiveMain*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain,templatemodel=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate,adminRoleName=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVE_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<query
+				queryString="method=addReceive&amp;fdTemplateId=*"
+				validator="kmImissiveSignValidator(recid=fddetaiId)|authFieldValidator(type=changeReceive,recid=fdReceiveId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)|kmImissiveChange2ReceiveValidator(recid=fdReceiveId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVE_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 修改文号 -->
+			<query
+				queryString="method=editDocNum"
+				validator="authFieldValidator(type=editdocnum)" />
+			<!-- 批量打印 -->
+			<query
+				queryString="method=printBatch"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_PRINTBATCH)" />
+			<query
+				queryString="method=listReceive"
+				validator="authFieldValidator(type=SYS_READER,isArea=true,recid=fdMainId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view|viewXformInfo"
+				validator="kmImissiveMyDeptReceiveValidator()|sysRecycleAuthFieldValidator(type=recycle)|authFieldValidator(type=SYS_READER,isArea=true)|authCategoryEditorValidator(property=fdTemplate)" />
+			<!-- 沉淀 -->
+			<query
+				queryString="method=printSubsideDoc"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SUBSIDE)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_RECEIVE_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 归档 -->
+			<query
+				queryString="method=printFileDoc"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_RECEIVE_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="method=distribute"
+				validator="authFieldValidator(type=distribute)" />
+			<query
+				queryString="method=report"
+				validator="authFieldValidator(type=report)" />
+			<!-- 退文  -->
+			<query
+				queryString="method=returnDoc"
+				validator="kmReturnAuthFieldValidator()|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVE_RETURNDOC)"/>
+			<query
+				queryString="method=readViewLog"
+				validator="kmImissiveMyDeptReceiveValidator()|authFieldValidator(type=viewlog)|authFieldValidator(type=creator)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVE_READER)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)|fieldValueValidator(fieldproperty=docStatus,except=00;30;41)&amp;kmImissivePrivilegerValidator(recid=fdId)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)&amp;kmImissiveDraftValidator()|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVE_DELETE)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_RECEIVE_OPTALL)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		    <query
+				queryString="draft=true&amp;method=deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+			 <query
+				queryString="method=getContentCount"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+		    <!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_DELETE)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			 <query
+				queryString="method=changeTemplate&amp;nodeType=*"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_CHANGECATE)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 转移模板提交 -->
+			<query
+				queryString="method=changeTemplate&amp;categoryId=*"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVE_CHANGECATE)" />
+			<query
+				queryString="method=changeReceive"
+				validator="authFieldValidator(type=changeReceive)" />
+			<query
+				queryString="method=changeSend"
+				validator="authFieldValidator(type=changeSend)" />
+			<!-- 打印 -->
+			<query
+				queryString="method=print"
+				validator="[roleValidator(role=ROLE_KMIMISSIVE_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)&amp;[sysRecycleAuthFieldValidator(type=recycle)|authFieldValidator(type=SYS_READER,isArea=true)|authCategoryEditorValidator(property=fdTemplate)]]|sysSubFormValidator(property=fdTemplate)" />
+			<!-- 归档 -->
+			<query
+				queryString="method=filing"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_RECEIVE_OPTALL)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		    <!-- 删除所有 -->
+			<query
+				queryString="method=filingall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 维护界面 -->
+			<query
+				queryString="method=manageList"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)|fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)" />
+			<!-- 线下收文 -->
+			<query queryString="method=addOffLine"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_READER_OFFLINE)&amp;areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVE_CREATE)" />
+		</request>
+		<!-- 登记单明细 -->
+		<request
+			path="km_imissive_regdetail_list/kmImissiveRegDetailList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveRegDetailList">
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVE_DELETE)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_RECEIVE_OPTALL)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		    <!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_DELETE)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 签收 -->
+			<query
+				queryString="method=updateSign"
+				validator="authFieldValidator(type=sign)" />
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=viewDoc)" />
+			 <query
+				queryString="method=getContentCount"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+		</request>
+		<!-- 登记单明细 -->
+		<request
+			path="km_imissive_regdetail_list_outer/kmImissiveRegDetailListOuter*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveRegDetailListOuter">
+			<!-- 签收 -->
+			<query
+				queryString="method=updateSign"
+				validator="authFieldValidator(type=sign)" />
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=viewDoc)" />
+			<query
+				queryString="method=delete|deleteall|edit|update"
+				validator="false"/>
+			<query
+				queryString="method=batchReceive"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_BATCHRECEIVE)" />
+			 <query
+				queryString="method=getContentCount"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+		</request>
+		<request
+			path="km_imissive_reg/kmImissiveReg*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveReg">
+			<!-- 删除 -->
+			<query
+				queryString="method=edit"
+				validator="authFieldValidator(type=SYS_EDITOR)" />
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)" />
+			<!-- 删除 -->
+			<query
+				queryString="method=delete|deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_REG_DELETE)" />
+			 <query
+				queryString="method=getContentCount"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+		</request>
+		 <request 
+            path="km_imissive_stat/kmImissiveStat_overview.jsp*" 
+            defaultValidator="roleValidator(role=ROLE_KMIMISSIVE_STAT_OVERVIEW)"/>
+		<request
+			path="km_imissive_stat/kmImissiveStat*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveStat">
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)" />
+			<query
+				queryString="method=add|edit|delete|deleteall"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_STAT_EDITOR)" />
+		</request>
+		<filters modelName="com.landray.kmss.km.imissive.model.KmImissiveStat">
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_STAT_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_STAT_EDITOR)" />
+		</filters>
+		<filters
+			modelName="com.landray.kmss.km.imissive.model.KmImissiveRegDetailList">
+			<filter
+				type="sign"
+				expression="authFieldFilter(field=fdOrg.fdId)"/>
+			<filter
+				type="viewDoc"
+				expression="authFieldFilter(field=fdOrg.fdId)"/>
+			<filter
+				type="viewDoc"
+				expression="authFieldFilter(field=fdReg.docCreator.fdId)"/>
+		</filters>
+		
+		<filters
+			modelName="com.landray.kmss.km.imissive.model.KmImissiveRegDetailListOuter">
+			<filter
+				type="sign"
+				expression="authFieldFilter(field=fdOrg.fdId)"/>
+			<filter
+				type="viewDoc"
+				expression="authFieldFilter(field=fdOrg.fdId)"/>
+		</filters>
+		
+		<filters
+			modelName="com.landray.kmss.km.imissive.model.KmImissiveReg">
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=docCreator.fdId)"/>
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=docCreator.fdId)"/>
+		</filters>
+		<filters
+			modelName="com.landray.kmss.km.imissive.model.KmImissiveTemplateCfg">
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authEditors.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+		</filters>
+		<filters
+			modelName="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate">
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_SYSCATEGORY_MAINTAINER)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)"/>				
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_SYSCATEGORY_MAINTAINER)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)"/>				
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 红头模板 -->
+		<filters
+				modelName="com.landray.kmss.km.imissive.model.KmImissiveRedHeadTemplate">
+			<filter
+					type="SYS_READER"
+					expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+					type="SYS_READER"
+					expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+		</filters>
+		<filters
+				modelName="com.landray.kmss.km.imissive.model.KmImissiveSignRedHeadTemplate">
+			<filter
+					type="SYS_READER"
+					expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+					type="SYS_READER"
+					expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+		</filters>
+		<!-- 内部请示模板filter -->
+		<filters
+			modelName="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate">
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_SYSCATEGORY_MAINTAINER)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)"/>				
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_SYSCATEGORY_MAINTAINER)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)"/>				
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<filters
+			modelName="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate">
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_SYSCATEGORY_MAINTAINER)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)"/>				
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_SYSCATEGORY_MAINTAINER)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)"/>				
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 发文主文档过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="viewlog"
+				expression="authFieldFilter(field=authAppRecAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_SEND_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+			<filter
+				type="editdocnum"
+				expression="authFieldFilter(field=fdSendtoUnit.fdSecretary.fdId)" />
+			<filter
+				type="editdocnum"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_SEND_EDITDOCNUM)" />
+			<filter
+				type="distribute"
+				expression="authFieldFilter(field=fdSendtoUnit.fdSecretary.fdId)" />
+			<filter
+				type="distribute"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_DISTRIBUTE)" />
+			<filter
+				type="report"
+				expression="authFieldFilter(field=fdSendtoUnit.fdSecretary.fdId)" />
+			<filter
+				type="report"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_REPORT)" />
+			<filter
+				type="counterSign"
+				expression="authFieldFilter(field=fdSendtoUnit.fdSecretary.fdId)" />
+			<filter
+				type="counterSign"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_COUNTERSIGN)" />
+			<filter
+				type="sign"
+				expression="authFieldFilter(field=fdSendtoUnit.fdSecretary.fdId)" />
+		</filters>
+				<!-- 内部请示过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="viewlog"
+				expression="authFieldFilter(field=authAppRecAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_SIGN_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 收文主文档过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="editdocnum"
+				expression="authFieldFilter(field=fdReceiveUnit.fdSecretary.fdId)" />
+			<filter
+				type="editdocnum"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_RECEIVE_EDITDOCNUM)" />
+			<filter
+				type="viewlog"
+				expression="authFieldFilter(field=authAppRecAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_RECEIVE_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+			<filter
+				type="distribute"
+				expression="authFieldFilter(field=fdReceiveUnit.fdSecretary.fdId)" />
+			<filter
+				type="distribute"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_DISTRIBUTE)" />
+			<filter
+				type="report"
+				expression="authFieldFilter(field=fdReceiveUnit.fdSecretary.fdId)" />
+			<filter
+				type="report"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_REPORT)" />
+			<filter
+				type="changeReceive"
+				expression="authFieldFilter(field=fdReceiveUnit.fdSecretary.fdId)" />
+			<filter
+				type="changeReceive"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_CHANGERECEIVE)" />
+			<filter
+				type="changeSend"
+				expression="authFieldFilter(field=fdReceiveUnit.fdSecretary.fdId)" />
+			<filter
+				type="changeSend"
+				expression="roleFilter(role=ROLE_KMIMISSIVE_CHANGESEND)" />
+			<filter
+				type="sign"
+				expression="authFieldFilter(field=fdReceiveUnit.fdSecretary.fdId)" />
+		</filters>
+	</module>
+	<module urlPrefix="/sys/transport/">
+		<request path="sys_transport_export/SysTransportExport*">
+			<query validator="roleValidator(role=ROLE_KMIMISSIVE_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<query validator="roleValidator(role=ROLE_KMIMISSIVE_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<query validator="roleValidator(role=ROLE_KMIMISSIVE_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+		</request>
+	</module>
+	<!-- 档案管理发文归档权限 -->
+	<module urlPrefix="/sys/archives/">
+		<request path="sys_archives_file_template/sysArchivesFileTemplate*">
+			<query
+				queryString="method=fileDocAll&amp;modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId,templatemodel=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate)|roleValidator(role=ROLE_KMIMISSIVE_SEND_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="method=fileDoc&amp;modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SEND_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+	</module>
+	<!-- 档案管理收文归档权限 -->
+	<module urlPrefix="/sys/archives/">
+		<request path="sys_archives_file_template/sysArchivesFileTemplate*">
+			<query
+				queryString="method=fileDocAll&amp;modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId,templatemodel=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="method=fileDoc&amp;modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_RECEIVE_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+	</module>
+	<!-- 档案管理签报归档权限 -->
+	<module urlPrefix="/sys/archives/">
+		<request path="sys_archives_file_template/sysArchivesFileTemplate*">
+			<query
+				queryString="method=fileDocAll&amp;modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId,templatemodel=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate)|roleValidator(role=ROLE_KMIMISSIVE_SIGN_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="method=fileDoc&amp;modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_FILING)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SIGN_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+	</module>
+	<module urlPrefix="/kms/multidoc/">
+		<request path="kms_multidoc_subside/kmsMultidocSubside*">
+			<query
+				queryString="method=fileDoc&amp;modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SUBSIDE)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SEND_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+	</module>
+	<!-- 沉淀权限 -->
+	<module urlPrefix="/kms/multidoc/">
+		<request path="kms_multidoc_subside/kmsMultidocSubside*">
+			<query
+				queryString="method=fileDoc&amp;modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SUBSIDE)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_RECEIVE_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+	</module>
+	<!-- 沉淀权限 -->
+	<module urlPrefix="/kms/multidoc/">
+		<request path="kms_multidoc_subside/kmsMultidocSubside*">
+			<query
+				queryString="method=fileDoc&amp;modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_SUBSIDE)&amp;[authCategoryEditorValidator(property=fdTemplate,role=ROLE_KMIMISSIVE_SIGN_OPTALL,recid=fdId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+	</module>
+	<!-- 类别设置目录下 替换处理人和 批量修改特权人 -->
+	<module urlPrefix="/sys/lbpmservice/">
+		<request 
+			path="support/lbpm_template/lbpmTemplate*">
+			<query
+				queryString="method=updateAuditor|updateTemplateAuditor|updateCategoryAuditor|doUpdateAuditor&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)" />
+			<query
+				queryString="method=updateAuditor|updateTemplateAuditor|updateCategoryAuditor|doUpdateAuditor&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)" />
+			<query
+				queryString="method=updateAuditor|updateTemplateAuditor|updateCategoryAuditor|doUpdateAuditor&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)" />
+		</request>
+		<request 
+			path="support/lbpm_template/lbpmPrivileger*">
+			<query
+				queryString="method=updatePrivileger|doUpdatePrivileger&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)" />
+			<query
+				queryString="method=updatePrivileger|doUpdatePrivileger&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)" />
+			<query
+				queryString="method=updatePrivileger|doUpdatePrivileger&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)" />
+		</request>
+		<request 
+			path="support/lbpm_template/lbpmNodes2Excel*">
+			<query
+				queryString="method=doExportNodesExcel&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)" />
+			<query
+				queryString="method=doExportNodesExcel&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)" />
+			<query
+				queryString="method=doExportNodesExcel&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)" />
+		</request>
+	</module>
+	<!-- 通用编号规则设置权限 -->
+	<module urlPrefix="/sys/number/">
+		<request path="sys_number_main/sysNumberMain*">
+			<query
+			    queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain" 
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)"/>
+			<query
+			    queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" 
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)"/>
+			<query
+			    queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain" 
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)"/>
+		</request>
+	</module>
+	<!-- 软删除权限 -->
+	<module urlPrefix="/sys/recycle/">
+		<request path="sys_recycle_doc/sysRecycle*"
+		   validatorParameter="recid=modelId,model=modelName">
+			<query
+			    queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain&amp;method=hardDelete|recover" 
+				validator="sysRecycleAuthFieldValidator(type=SYS_EDITOR)|sysRecycleAuthFieldValidator(type=recycle)|areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)"/>
+			<query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain&amp;method=hardDeleteAll|recoverAll"
+				validator="areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)" />
+		</request>
+		<request path="sys_recycle_log/sysRecycleLog*">
+			<query
+			    queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain" 
+				validator="areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)"/>
+		</request>	
+	</module>
+	<!-- 收文软删除权限 -->
+	<module urlPrefix="/sys/recycle/">
+		<request path="sys_recycle_doc/sysRecycle*"
+		   validatorParameter="recid=modelId,model=modelName">
+			<query
+			    queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain&amp;method=hardDelete|recover" 
+				validator="sysRecycleAuthFieldValidator(type=SYS_EDITOR)|sysRecycleAuthFieldValidator(type=recycle)|areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)"/>
+			<query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain&amp;method=hardDeleteAll|recoverAll"
+				validator="areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)" />
+		</request>
+		<request path="sys_recycle_log/sysRecycleLog*">
+			<query
+			    queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" 
+				validator="areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)"/>
+		</request>	
+	</module>
+	<!-- 签报软删除权限 -->
+	<module urlPrefix="/sys/recycle/">
+		<request path="sys_recycle_doc/sysRecycle*"
+		   validatorParameter="recid=modelId,model=modelName">
+			<query
+			    queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain&amp;method=hardDelete|recover" 
+				validator="sysRecycleAuthFieldValidator(type=SYS_EDITOR)|sysRecycleAuthFieldValidator(type=recycle)|areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)"/>
+			<query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain&amp;method=hardDeleteAll|recoverAll"
+				validator="areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)" />
+		</request>
+		<request path="sys_recycle_log/sysRecycleLog*">
+			<query
+			    queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain" 
+				validator="areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)"/>
+		</request>	
+	</module>
+	
+	<!-- 列表自定义权限 -->
+	<module urlPrefix="/sys/profile/">
+		<request 
+			path="listShow/sys_listShow/sysListShow*">
+			<query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain|com.landray.kmss.km.imissive.model.KmImissiveReceiveMain|com.landray.kmss.km.imissive.model.KmImissiveSignMain|com.landray.kmss.km.imissive.model.KmImissiveReg|com.landray.kmss.km.imissive.model.KmImissiveRegDetailList"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)&amp;roleValidator(role=ROLE_KMIMISSIVE_BACKSTAGE_MANAGER)&amp;roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+		</request>
+	</module>
+	<module urlPrefix="/sys/lbpmservice/">
+		<request
+			path="support/lbpm_audit_note/lbpmAuditNote*">
+			<query
+				queryString="method=listNote&amp;fdReadSendOpinion=true" 
+				validator="kmReadSendOpinionValidator(recid=fdReceiveId)"/>
+			<query
+				queryString="method=listNote&amp;fdReadMissiveOpinion=true" 
+				validator="kmReadMissiveOpinionValidator(recid=fdReceiveId)"/>
+			<query
+				queryString="method=listNote&amp;fdAdviceFlag=true" 
+				validator="kmReadSendOpinionAdviceValidator(recid=fdReceiveId)"/>
+		</request>
+	</module>
+	
+	
+	<module
+		urlPrefix="/sys/attachment/"
+		messageKey="sys-attachment:attachment.mechanism">
+		<request path="sys_att_main/sysAttMain.do?method=view">
+			<query
+					queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveAttTrack"
+					validator="sysAttTrackValidator(recid=fdSendId)&amp;sysAttachmentValidator()|areaRoleValidator(role=ROLE_KMIMISSIVE_SEND_READER)" />
+		</request>
+
+		<request path="sys_att_main/sysAttMain.*">
+			<query
+					queryString="method=download&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveAttTrack"
+					validator="sysAttachmentValidator()&amp;[roleValidator(role=ROLE_KMIMISSIVE_SEND_DOWNLOADCONTENT)|roleValidator(role=ROLE_KMIMISSIVE_SEND_DOWNLOADCONTENT_EDIT)]" />
+			<query
+					queryString="method=downloadContent&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+					validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_DOWNLOADCONTENT)|roleValidator(role=ROLE_KMIMISSIVE_SEND_DOWNLOADCONTENT_EDIT)" />
+			<query
+					queryString="method=downloadContent&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReg"
+					validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_DOWNLOADCONTENT)|roleValidator(role=ROLE_KMIMISSIVE_SEND_DOWNLOADCONTENT_EDIT)" />
+			<query
+					queryString="method=downloadContent&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+					validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_DOWNLOADCONTENT)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_DOWNLOADCONTENT_EDIT)" />
+			<query
+					queryString="method=downloadContent&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+					validator="roleValidator(role=ROLE_KMIMISSIVE_SIGN_DOWNLOADCONTENT)|roleValidator(role=ROLE_KMIMISSIVE_SIGN_DOWNLOADCONTENT_EDIT)" />
+			<query
+					queryString="method=printContent&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+					validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_PRINTCONTENT)" />
+			<query
+					queryString="method=printContent&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReg"
+					validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_PRINTCONTENT)" />
+			<query
+					queryString="method=printContent&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+					validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_PRINTCONTENT)" />
+			<query
+					queryString="method=printContent&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+					validator="roleValidator(role=ROLE_KMIMISSIVE_SIGN_PRINTCONTENT)" />
+					
+			<query
+					queryString="method=downloadPdf&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+					validator="sysAttachmentValidator()&amp;roleValidator(role=ROLE_KMIMISSIVE_SEND_DOWNLOADPDFCONTENT)" />
+			<query
+					queryString="method=downloadPdf&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+					validator="sysAttachmentValidator()&amp;roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_DOWNLOADPDFCONTENT)" />
+			<query
+					queryString="method=downloadPdf&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+					validator="sysAttachmentValidator()&amp;roleValidator(role=ROLE_KMIMISSIVE_SIGN_DOWNLOADPDFCONTENT)" />
+
+			<query
+					queryString="method=downloadOfd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+					validator="sysAttachmentValidator()&amp;roleValidator(role=ROLE_KMIMISSIVE_SEND_DOWNLOADOFDCONTENT)" />
+			<query
+					queryString="method=downloadOfd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+					validator="sysAttachmentValidator()&amp;roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_DOWNLOADOFDCONTENT)" />
+			<query
+					queryString="method=downloadOfd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+					validator="sysAttachmentValidator()&amp;roleValidator(role=ROLE_KMIMISSIVE_SIGN_DOWNLOADOFDCONTENT)" />
+					
+		</request>
+	</module>
+	<!--发布机制权限-->
+	<module
+		messageKey=""
+		urlPrefix="/sys/news/">
+		<request path="sys_news_publish_main/sysNewsPublishMain_viewManualFrame.jsp*">
+			<!--收文-->
+			<query
+				queryString="fdModelNameParam=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_MANUALRECEIVEPUBLISH)" />
+			<!--发文-->
+			<query
+				queryString="fdModelNameParam=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_MANUALSENDPUBLISH)" />
+			<!--内部请示-->
+			<query
+				queryString="fdModelNameParam=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_MANUALSIGNPUBLISH)" />
+		</request>
+		<request 
+				path="sys_news_main/sysNewsMain*">			
+			<query
+				queryString="method=editManualPublish&amp;fdModelNameParam=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_MANUALSENDPUBLISH,recid=fdModelIdParam,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)" />
+			<query
+				queryString="method=manualPublishAdd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_MANUALSENDPUBLISH,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)"/>
+			<query
+				queryString="method=editManualPublish&amp;fdModelNameParam=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_MANUALSIGNPUBLISH,recid=fdModelIdParam,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)" />
+			<query
+				queryString="method=manualPublishAdd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_MANUALSIGNPUBLISH,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)" />
+			<query
+				queryString="method=editManualPublish&amp;fdModelNameParam=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_MANUALRECEIVEPUBLISH,recid=fdModelIdParam,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)" />
+			<query
+				queryString="method=manualPublishAdd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="areaRoleValidator(role=ROLE_KMIMISSIVE_MANUALRECEIVEPUBLISH,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)" />
+		</request>
+	</module>
+	<!-- 收文传阅权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/circulation/">
+		<request 
+				path="sys_circulation_main/sysCirculationMain*">
+			<query
+				queryString="method=add|save|saveadd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_CIRCULATION_CREATE,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)&amp;fieldValueValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain,fieldproperty=docStatus,value=00;11;20;30)" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain&amp;method=delete"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_CIRCULATION_DELETE,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)&amp;[authCategoryEditorValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain,property=fdTemplate)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVE_OPTALL,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)]" />
+			<query
+				queryString="method=addCirculate|saveCirculate&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="sysCirculateCheckValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain)" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+		</request>
+	</module>
+
+	<!-- 发文传阅权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/circulation/">
+		<request 
+				path="sys_circulation_main/sysCirculationMain*">
+			<query
+				queryString="method=add|save|saveadd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_CIRCULATION_CREATE,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)&amp;fieldValueValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain,fieldproperty=docStatus,value=00;11;20;30)" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain&amp;method=delete"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_CIRCULATION_DELETE,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)&amp;[authCategoryEditorValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain,property=fdTemplate)|areaRoleValidator(role=ROLE_KMIMISSIVE_SEND_OPTALL,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)]" />
+			<query
+				queryString="method=addCirculate|saveCirculate&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="sysCirculateCheckValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain)" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+		</request>
+	</module>
+	
+	<!-- 内部请示传阅权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/circulation/">
+		<request 
+				path="sys_circulation_main/sysCirculationMain*">
+			<query
+				queryString="method=add|save|saveadd&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SIGN_CIRCULATION_CREATE,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)&amp;fieldValueValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain,fieldproperty=docStatus,value=00;11;20;30)" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain&amp;method=delete"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SIGN_CIRCULATION_DELETE,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)&amp;[authCategoryEditorValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain,property=fdTemplate)|areaRoleValidator(role=ROLE_KMIMISSIVE_SIGN_OPTALL,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)|areaRoleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER,recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)]" />
+			<query
+				queryString="method=addCirculate|saveCirculate&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="sysCirculateCheckValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain)" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+		</request>
+	</module>
+	
+	<module urlPrefix="/sys/workflow/">
+		<request path="sys_wf_common_template/sysWfCommonTemplate*">
+			<!-- 收文通用流程模板设置 -->
+			<query
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<!-- 发文通用流程模板设置 -->
+			<query
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<!-- 内部请示通用流程模板设置 -->
+			<query
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+		</request>
+		<request path="sys_wf_template/sysWfTemplate*">
+			<query
+				queryString="method=updateTemplateAuditor|updateAuditor&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+				validator="authCategoryEditorValidator(cateid=cateid)" />
+			<query
+				queryString="method=updateTemplateAuditor|updateAuditor&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+				validator="authCategoryEditorValidator(cateid=cateid)" />
+			<query
+				queryString="method=updateTemplateAuditor|updateAuditor&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+				validator="authCategoryEditorValidator(cateid=cateid)" />
+		</request>
+	</module>
+	
+	<!-- 文档视图列表批量修改权限 ,发文、收文和签报要分开配置，合并到一起不行-->
+	<module urlPrefix="/sys/right/">
+		<request path="cchange_doc_right/cchange_doc_right.jsp">
+			<query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_CHANGERIGHT)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId,model=com.landray.kmss.km.imissive.model.KmImissiveSendMain,templatemodel=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate)|roleValidator(role=ROLE_KMIMISSIVE_SEND_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+	        <query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_CHANGERIGHT)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain,templatemodel=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SIGN_CHANGERIGHT)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId,model=com.landray.kmss.km.imissive.model.KmImissiveSignMain,templatemodel=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate)|roleValidator(role=ROLE_KMIMISSIVE_SIGN_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+	    </request>
+	    <request path="cchange_tmp_right/cchange_tmp_right.jsp*">
+			<query
+				queryString="tmpModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate&amp;mainModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SEND_CHANGERIGHT)&amp;[authCategoryEditorValidator(cateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_SEND_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="tmpModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate&amp;mainModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_CHANGERIGHT)&amp;[authCategoryEditorValidator(cateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVE_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="tmpModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate&amp;mainModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_SIGN_CHANGERIGHT)&amp;[authCategoryEditorValidator(cateid=categoryId)|roleValidator(role=ROLE_KMIMISSIVE_SIGN_OPTALL)|roleValidator(role=ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />	
+		</request>
+	</module>
+	
+	<!-- 表单数据映射 -->
+	<module urlPrefix="/sys/xform/">
+		<request 
+			path="base/sys_form_db_table/sysFormDbTable*">
+			<!-- 通用表单模板表单数据映射 -->
+			<query
+				queryString="method=config|edit|save|delete&amp;fdFormType=common&amp;fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<!-- 一般模板表单数据映射 -->
+			<query
+				queryString="method=config|edit|save|delete&amp;fdFormType=template&amp;fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)|authFieldValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate,type=SYS_EDITOR)|authCategoryEditorValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate,property=docCategory)" />
+			<!-- 表单数据映射视图列表批量删除表单数据映射（含有通用和一般表单） -->
+			<query
+				queryString="method=deleteall&amp;fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<query
+				queryString="method=config|edit|save|delete&amp;fdFormType=common&amp;fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<!-- 一般模板表单数据映射 -->
+			<query
+				queryString="method=config|edit|save|delete&amp;fdFormType=template&amp;fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)|authFieldValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate,type=SYS_EDITOR)|authCategoryEditorValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate,property=docCategory)" />
+			<!-- 表单数据映射视图列表批量删除表单数据映射（含有通用和一般表单） -->
+			<query
+				queryString="method=deleteall&amp;fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+				<query
+				queryString="method=config|edit|save|delete&amp;fdFormType=common&amp;fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<!-- 一般模板表单数据映射 -->
+			<query
+				queryString="method=config|edit|save|delete&amp;fdFormType=template&amp;fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)|authFieldValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate,type=SYS_EDITOR)|authCategoryEditorValidator(recid=fdModelId,model=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate,property=docCategory)" />
+			<!-- 表单数据映射视图列表批量删除表单数据映射（含有通用和一般表单） -->
+			<query
+				queryString="method=deleteall&amp;fdTemplateModel=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+
+		</request>
+	</module>
+	
+	<!-- 通用表单模板设置权限 -->
+	<module urlPrefix="/sys/xform/">
+		<request 
+			path="sys_form_common_template/sysFormCommonTemplate*">
+			<query
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<query
+			queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+			validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+			<query
+			queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+			validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+		</request>
+	</module>
+	
+	<!-- 收文\发文\内部请示一般搜索权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/ftsearch/">
+		<request path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+			<query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+			<query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)" />
+		</request>
+	</module>
+	<module urlPrefix="/sys/search/">
+		<request path="sys_search_main/sysSearchMain*">
+			<query
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)"
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<query
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)"
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<query
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)"
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+		</request>
+		<request path="search*">
+			<query
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)"
+				queryString="method=exportResult&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<query
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)"
+				queryString="method=exportResult&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<query
+				validator="roleValidator(role=ROLE_KMIMISSIVE_DEFAULT)"
+				queryString="method=exportResult&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+		</request>
+	</module>
+	<!-- 发文转收文题头设置 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/appconfig/">
+		<request path="sys_appconfig/sysAppConfig*">
+			<query
+				queryString="modelName=com.landray.kmss.km.imissive.model.KmImissiveConfig"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_CONFIG_SETTING)" />
+		</request>
+	</module>
+	
+	<!-- 匿名机制权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/anonym/">
+		<request 
+				path="sys_anonym_main/sysAnonymMain_viewFrame.jsp*">			
+			<query
+				queryString="fdModelNameParam=com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_ANONYMPUBLISH)" />
+			<query
+				queryString="fdModelNameParam=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_ANONYMPUBLISH)" />
+			<query
+				queryString="fdModelNameParam=com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+				validator="roleValidator(role=ROLE_KMIMISSIVE_ANONYMPUBLISH)" />
+		</request>
+		<request path="sys_anonym_main/sysAnonymMain.*" >
+			<query 
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain&amp;method=publishToAnonym" 
+				validator="roleValidator(role=ROLE_KMIMISSIVE_ANONYMPUBLISH)" />
+			<query 
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain&amp;method=publishToAnonym" 
+				validator="roleValidator(role=ROLE_KMIMISSIVE_ANONYMPUBLISH)" />
+			<query 
+				queryString="fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain&amp;method=publishToAnonym" 
+				validator="roleValidator(role=ROLE_KMIMISSIVE_ANONYMPUBLISH)" />
+		</request>
+	</module>
+	
+	<!-- 清除文号缓存定时任务 -->
+	<quartz
+		cronExpression="0 0 1 * * ?"
+		jobService="kmImissiveNumberService"
+		messageKey="km-imissive:kmImissive.quartz.clearNumber"
+		jobMethod="deleteExpiredNum"
+		description="km-imissive:kmImissive.quartz.clearNumber.desc"/>
+	
+	<quartz
+		cronExpression="0 0/15 * * * ?"
+		jobService="kmImissiveRegQuService"
+		messageKey="km-imissive:kmImissive.quartz.kmImissiveRegQu.updateSendToDec"
+		jobMethod="updateSendToDec"
+		description="km-imissive:kmImissive.quartz.kmImissiveRegQu.updateSendToDec.description"/>
+	<quartz
+		cronExpression="0 0/15 * * * ?"
+		jobService="kmImissiveRegDetailListQuService"
+		messageKey="km-imissive:kmImissive.quartz.kmImissiveRegDetailListQu.updateReceiveFromToDec"
+		jobMethod="updateReceiveFromDec"
+		description="km-imissive:kmImissive.quartz.kmImissiveRegDetailListQu.updateReceiveFromToDec.description"/>
+		
+	<quartz
+		cronExpression="0 0/15 * * * ?"
+		jobService="kmImissiveOpinionOutQuService"
+		messageKey="km-imissive:kmImissive.quartz.kmImissiveOpinionOutQu.updateSendToDec"
+		jobMethod="updateSendToDec"
+		description="km-imissive:kmImissive.quartz.kmImissiveOpinionOutQu.updateSendToDec.description"/>
+	<quartz
+		cronExpression="0 0/15 * * * ?"
+		jobService="kmImissiveOpinionInQuService"
+		messageKey="km-imissive:kmImissive.quartz.kmImissiveOpinionInQu.updateReceiveFromToDec"
+		jobMethod="updateReceiveFromDec"
+		description="km-imissive:kmImissive.quartz.kmImissiveOpinionInQu.updateReceiveFromToDec.description"/>
+
+	<!-- 缓存清理任务 -->
+	<quartz
+			messageKey="km-imissive:kmImissiveSendMain.job.clearCache"
+			jobService="kmImissiveSendMainPortlet"
+			cronExpression="0 0 3 * * ?"
+			jobMethod="clearCache"
+			description="km-imissive:kmImissiveSendMain.job.clearCache.description"/>
+	<quartz
+			messageKey="km-imissive:kmImissiveReceiveMain.job.clearCache"
+			jobService="kmImissiveReceiveMainPortlet"
+			cronExpression="0 0 3 * * ?"
+			jobMethod="clearCache"
+			description="km-imissive:kmImissiveReceiveMain.job.clearCache.description"/>
+	<quartz
+			messageKey="km-imissive:kmImissiveSignMain.job.clearCache"
+			jobService="kmImissiveSignMainPortlet"
+			cronExpression="0 0 3 * * ?"
+			jobMethod="clearCache"
+			description="km-imissive:kmImissiveSignMain.job.clearCache.description"/>
+	
+	<search
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+		messageKey="km-imissive:kmImissive.tree.serach.send"
+		resultProperties="fdDocNum;docSubject;fdDraftUnit;fdDrafter;fdDraftTime;fdDistributer;fdDistributeTime;docPublishTime"
+		whereBlock="kmImissiveSendMain.docStatus != '10'" />
+	<search
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+		messageKey="km-imissive:kmImissive.tree.serach.sign"
+		resultProperties="fdDocNum;docSubject;fdDraftUnit;fdDrafter;fdDraftTime;docPublishTime"
+		whereBlock="kmImissiveSignMain.docStatus != '10'" />
+	<search
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+		messageKey="km-imissive:kmImissive.tree.serach.receive"
+		resultProperties="docSubject;fdRecorder;fdRecordTime;fdReceiveTime;fdReceiveUnit;fdSendtoUnit;fdReceiveNum;fdEmergencyGrade"
+		whereBlock="kmImissiveReceiveMain.docStatus != '10'" />
+	
+	<!-- 发文全文检索 -->
+	<ftSearch
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+		boost="2.0"
+		timeField="fdLastModifiedTime">
+		<!-- 更新时间 -->
+		<luceneField
+			name="subject"
+			property="docSubject"
+			type="text" />
+		<luceneField
+			name="category"
+			property="fdTemplate.docCategory.fdHierarchyId"
+			type="Text" />
+		<!-- 检索标题,只需要修改property，不需改name -->
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="text" />
+		<!-- 检索创建人,只需要修改property，不需改name -->
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />
+		<!-- 检索创建时间,只需要修改property，不需改name -->
+	</ftSearch>
+	
+	<!-- 签报全文检索 -->
+	<ftSearch
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+		boost="2.0"
+		timeField="fdLastModifiedTime">
+		<!-- 更新时间 -->
+		<luceneField
+			name="subject"
+			property="docSubject"
+			type="text" />
+		<luceneField
+			name="category"
+			property="fdTemplate.docCategory.fdHierarchyId"
+			type="Text" />
+		<!-- 检索标题,只需要修改property，不需改name -->
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="text" />
+		<!-- 检索创建人,只需要修改property，不需改name -->
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />
+		<!-- 检索创建时间,只需要修改property，不需改name -->
+	</ftSearch>
+
+	<!-- 收文全文检索 -->
+	<ftSearch
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+		boost="2.0"
+		timeField="fdLastModifiedTime">
+		<!-- 更新时间 -->
+		<luceneField
+			name="subject"
+			property="docSubject"
+			type="text" />
+		<luceneField
+			name="category"
+			property="fdTemplate.docCategory.fdHierarchyId"
+			type="Text" />
+		<!-- 检索标题,只需要修改property，不需改name -->
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="text" />
+		<!-- 检索创建人,只需要修改property，不需改name -->
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />
+		<!-- 检索创建时间,只需要修改property，不需改name -->
+	</ftSearch>
+	
+	<!-- 文档订阅机制配置 -->
+	<subscribe
+		messageKey="km-imissive:kmImissive.meun.send"
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+		timeField="docPublishTime"
+		whereBlock="kmImissiveSendMain.docStatus='30'"
+		replaceKey="km-imissive:kmImissiveSendMain.docCreateTime;km-imissive:kmImissiveSendMain.docCreateId;km-imissive:kmImissiveSendMain.docSubject" />
+	<subscribe
+		messageKey="km-imissive:kmImissive.meun.receive"
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+		timeField="docPublishTime"
+		whereBlock="kmImissiveReceiveMain.docStatus='30'"
+		replaceKey="km-imissive:kmImissiveReceiveMain.docCreateTime;km-imissive:kmImissiveReceiveMain.docCreateId;km-imissive:kmImissiveReceiveMain.docSubject" />
+	<subscribe
+		messageKey="km-imissive:kmImissive.meun.sign"
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+		timeField="docPublishTime"
+		whereBlock="kmImissiveSignMain.docStatus='30'"
+		replaceKey="km-imissive:kmImissiveSignMain.docCreateTime;km-imissive:kmImissiveSignMain.docCreateId;km-imissive:kmImissiveSignMain.docSubject" />
+	<!-- 收文全文检索 -->
+	<relation
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+		messageKey="km-imissive:kmImissive.meun.send" />
+	<relation
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+		messageKey="km-imissive:kmImissive.meun.sign" />
+	<relation
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+		messageKey="km-imissive:kmImissive.meun.receive" />
+	<!-- 公文管理配置 -->
+	<homePage
+		urlPrefix="km/imissive"
+		url="/sys/portal/page.jsp#j_start=/km/imissive/index.jsp&amp;j_target=_iframe"
+		messageKey="km-imissive:kmImissive.tree.title" 
+		config="/moduleindex_notopic.jsp?nav=/km/imissive/tree.jsp"/>
+		
+    <!-- 发文、收文、签报分类权限 -->	
+	<categoryMng
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+		serviceName="kmImissiveSendTemplateTreeService"
+		messageKey="km-imissive:kmMissive.tree.sendConfig"
+		adminRoleName="ROLE_KMIMISSIVE_SENDCATEGORY_MAINTAINER" />
+	<categoryMng
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+		serviceName="kmImissiveReceiveTemplateTreeService"
+		messageKey="km-imissive:kmMissive.tree.receiveConfig"
+		adminRoleName="ROLE_KMIMISSIVE_RECEIVECATEGORY_MAINTAINER" />
+	<categoryMng
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+		serviceName="kmImissiveSignTemplateTreeService"
+		messageKey="km-imissive:kmMissive.tree.signConfig"
+		adminRoleName="ROLE_KMIMISSIVE_SIGNCATEGORY_MAINTAINER" />
+	<!-- 发文主文档流程 -->
+	<flowDef
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+		templateModelName="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+		key="sendMainDoc"
+		templatePropertyName="fdTemplate"
+		moduleMessageKey="km-imissive:table.kmImissiveSendFlow"
+		type="oa">
+		<!-- 编辑正文 -->
+		<variant
+			name="editDocContent"
+			key="km-imissive:kmImissive.editDocContent" />
+		<variant
+			name="editAtt"
+			key="km-imissive:kmImissive.editAtt" />
+		<variant
+			name="saveRevisions"
+			key="km-imissive:kmImissive.saveRevisions" />
+		<variant
+			name="forceRevisions"
+			key="km-imissive:kmImissive.forceRevisions" />
+		<!-- 签章 -->
+		<variant
+			name="sigzq"
+			key="km-imissive:kmImissive.sigzq" />
+		<!-- 清稿 -->
+		<variant
+			name="cleardraft"
+			key="km-imissive:kmImissive.cleardraft" />
+		<!-- 文档编号 -->
+		<variant
+			name="modifyDocNum"
+			key="km-imissive:kmImissive.modifyDocNum" />
+		<!-- 套红头 -->
+		<variant
+			name="redhead"
+			key="km-imissive:kmImissive.redhead" />
+		<!-- 签发 -->
+		<variant
+			name="signature"
+			key="km-imissive:kmImissive.signature" />
+		<!-- 稿纸签章 -->
+		<variant
+			name="signaturehtml"
+			key="km-imissive:kmImissive.sightml" />
+		<!-- 分发 -->
+		<variant
+			name="distribute"
+			key="km-imissive:kmImissive.distribute" />
+		<!-- 上报 -->
+		<variant
+			name="report"
+			key="km-imissive:kmImissive.report" />
+		<!-- 正文易企签  -->
+		<variant
+			name="yqqSignzq"
+			key="km-imissive:kmImissive.yqqSignzq" 
+			depend="elec/yqqs"/>
+		<!-- OFD签章 -->
+		<variant
+				name="ofdCySign"
+				key="km-imissive:kmImissive.ofdCySign"/>
+		<!-- 书生OFD签章 -->
+		<variant
+				name="ofdSursenSign"
+				key="km-imissive:kmImissive.ofdSursenSign"/>
+		<!-- 金格PDF签章 -->
+		<variant
+				name="pdfJgSign"
+				key="km-imissive:kmImissive.pdfJgSign"/>
+		<!-- 点聚签章 -->
+		<variant
+				name="dianjuPdfSign"
+				key="km-imissive:kmImissive.dianjuPdfSign"
+				depend="third/dianju"/>
+		<variant
+				name="dianjuOfdSign"
+				key="km-imissive:kmImissive.dianjuOfdSign"
+				depend="third/dianju"/>
+		<!-- e签宝PDF -->
+		<variant
+			name="eqbSign"
+			key="km-imissive:kmImissive.eqbSign"
+			depend="elec/eqb"/>
+		<!-- e签宝OFD -->
+		<variant
+			name="ofdEqbSign"
+			key="km-imissive:kmImissive.ofdEqbSign"
+			depend="elec/eqbh"/>
+		<!-- 转pdf -->
+		<variant
+				name="convertPdf"
+				key="km-imissive:kmImissive.convertPdf" />
+		<!-- 转pdf -->
+		<variant
+				name="convertOfd"
+				key="km-imissive:kmImissive.convertOfd" />
+		<!-- CFCA  -->
+		<variant
+			name="sign"
+			key="elec-core:node.sign" 
+			depend="elec/signature"/>
+		<!-- 纳入议题 -->
+		<variant
+			name="addTopic"
+			key="km-imissive:kmImissive.addTopic"
+			depend="km/imeeting"/>
+		<!-- 纳入督办 -->
+		<variant
+			name="addSupervise"
+			key="km-imissive:kmImissive.addSupervise"
+			depend="km/supervise"/>
+		<!-- 核发督办 -->
+		<variant
+			name="confirmSupervise"
+			key="km-imissive:kmImissive.confirmSupervise"
+			depend="km/supervise"/>
+	</flowDef>
+	<!-- 发文主文档流程 -->
+	<!-- 收文主文档流程 -->
+	<flowDef
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+		templateModelName="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+		key="receiveMainDoc"
+		templatePropertyName="fdTemplate"
+		moduleMessageKey="km-imissive:table.kmImissiveReceiveFlow"
+		type="oa">
+		<variant
+			name="editDocContent"
+			key="km-imissive:kmImissive.editDocContent" />
+		<variant
+			name="editAtt"
+			key="km-imissive:kmImissive.editAtt" />
+		<variant
+			name="modifyDocNum"
+			key="km-imissive:kmImissive.modifyDocNum" />
+		<!-- 稿纸签章  -->
+		<variant
+			name="signaturehtml"
+			key="km-imissive:kmImissive.sightml" />
+		<!-- 分发 -->
+		<variant
+			name="distribute"
+			key="km-imissive:kmImissive.distribute" />
+		<!-- 上报 -->
+		<variant
+			name="report"
+			key="km-imissive:kmImissive.report" />
+		<!-- 转发文 -->
+		<variant
+			name="change2send"
+			key="km-imissive:kmImissiveReceiveMain.transferToSend" />
+		<!-- 转收文 -->
+		<variant
+			name="change2receive"
+			key="km-imissive:kmImissiveReceiveMain.transferToReceive" />
+		<!-- 纳入督办 -->
+		<variant
+			name="addSupervise"
+			key="km-imissive:kmImissive.addSupervise"
+			depend="km/supervise"/>
+		<!-- 核发督办 -->
+		<variant
+			name="confirmSupervise"
+			key="km-imissive:kmImissive.confirmSupervise"
+			depend="km/supervise"/>
+		<!-- 纳入议题 -->
+		<variant
+			name="addTopic"
+			key="km-imissive:kmImissive.addTopic"
+			depend="km/imeeting"/>
+		<!-- OFD签章 -->
+		<variant
+				name="ofdCySign"
+				key="km-imissive:kmImissive.ofdCySign"/>
+		<!-- 书生OFD签章 -->
+		<variant
+				name="ofdSursenSign"
+				key="km-imissive:kmImissive.ofdSursenSign"/>
+		<!-- 金格PDF签章 -->
+		<variant
+				name="pdfJgSign"
+				key="km-imissive:kmImissive.pdfJgSign"/>
+		<!-- 点聚签章 -->
+		<variant
+				name="dianjuPdfSign"
+				key="km-imissive:kmImissive.dianjuPdfSign"
+				depend="third/dianju"/>
+		<variant
+				name="dianjuOfdSign"
+				key="km-imissive:kmImissive.dianjuOfdSign"
+				depend="third/dianju"/>
+		<!-- 正文易企签  -->
+		<variant
+			name="yqqSignzq"
+			key="km-imissive:kmImissive.yqqSignzq" 
+			depend="elec/yqqs"/>
+		<!-- e签宝PDF -->
+		<variant
+			name="eqbSign"
+			key="km-imissive:kmImissive.eqbSign"
+			depend="elec/eqb"/>
+		<!-- e签宝OFD -->
+		<variant
+			name="ofdEqbSign"
+			key="km-imissive:kmImissive.ofdEqbSign"
+			depend="elec/eqbh"/>
+		<!-- 转pdf -->
+		<variant
+				name="convertPdf"
+				key="km-imissive:kmImissive.convertPdf" />
+		<!-- 转pdf -->
+		<variant
+				name="convertOfd"
+				key="km-imissive:kmImissive.convertOfd" />
+		<!-- CFCA  -->
+		<variant
+			name="sign"
+			key="elec-core:node.sign" 
+			depend="elec/signature"/>
+	</flowDef>
+	<!-- 内部请示主文档流程 -->  
+	<flowDef
+		modelName="com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+		templateModelName="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+		key="signMainDoc"
+		templatePropertyName="fdTemplate"
+		moduleMessageKey="km-imissive:table.kmImissiveSignFlow"
+		type="oa">
+		<!-- 编辑正文 -->
+		<variant
+			name="editDocContent"
+			key="km-imissive:kmImissive.editDocContent" />
+		<variant
+			name="editAtt"
+			key="km-imissive:kmImissive.editAtt" />
+		<!-- 签章 -->
+		<variant
+			name="sigzq"
+			key="km-imissive:kmImissive.sigzq" />
+		<variant
+			name="modifyDocNum"
+			key="km-imissive:kmImissive.modifyDocNum" />
+		<!-- 套红头 -->
+		<variant
+			name="redhead"
+			key="km-imissive:kmImissive.redhead" />
+			<!-- 签发 -->
+		<variant
+			name="signature"
+			key="km-imissive:kmImissive.signature" />
+		<!-- 稿纸签章 -->
+		<variant
+			name="signaturehtml"
+			key="km-imissive:kmImissive.sightml" />
+		<!-- 纳入督办 -->
+		<variant
+			name="addSupervise"
+			key="km-imissive:kmImissive.addSupervise"
+			depend="km/supervise"/>
+		<!-- 核发督办 -->
+		<variant
+			name="confirmSupervise"
+			key="km-imissive:kmImissive.confirmSupervise"
+			depend="km/supervise"/>
+		<!-- 纳入议题 -->
+		<variant
+			name="addTopic"
+			key="km-imissive:kmImissive.addTopic"
+			depend="km/imeeting"/>
+		<!-- OFD签章 -->
+		<variant
+				name="ofdCySign"
+				key="km-imissive:kmImissive.ofdCySign"/>
+		<!-- 书生OFD签章 -->
+		<variant
+				name="ofdSursenSign"
+				key="km-imissive:kmImissive.ofdSursenSign"/>
+		<!-- 金格PDF签章 -->
+		<variant
+				name="pdfJgSign"
+				key="km-imissive:kmImissive.pdfJgSign"/>
+		<!-- 点聚签章 -->
+		<variant
+				name="dianjuPdfSign"
+				key="km-imissive:kmImissive.dianjuPdfSign"
+				depend="third/dianju"/>
+		<variant
+				name="dianjuOfdSign"
+				key="km-imissive:kmImissive.dianjuOfdSign"
+				depend="third/dianju"/>
+		<!-- 正文易企签  -->
+		<variant
+			name="yqqSignzq"
+			key="km-imissive:kmImissive.yqqSignzq" 
+			depend="elec/yqqs"/>
+		<!-- e签宝PDF -->
+		<variant
+			name="eqbSign"
+			key="km-imissive:kmImissive.eqbSign"
+			depend="elec/eqb"/>
+		<!-- e签宝OFD -->
+		<variant
+			name="ofdEqbSign"
+			key="km-imissive:kmImissive.ofdEqbSign"
+			depend="elec/eqbh"/>
+		<!-- 转pdf -->
+		<variant
+				name="convertPdf"
+				key="km-imissive:kmImissive.convertPdf" />
+		<!-- 转pdf -->
+		<variant
+				name="convertOfd"
+				key="km-imissive:kmImissive.convertOfd" />
+		<!-- CFCA  -->
+		<variant
+			name="sign"
+			key="elec-core:node.sign" 
+			depend="elec/signature"/>
+	</flowDef>
+	<profileConfig
+	    key="km/imissive"
+		messageKey="{km-imissive:module.km.imissive}" 
+		url="/sys/profile/moduleindex.jsp?nav=/km/imissive/tree.jsp" 
+		icon="km_imissive"
+		type="ekp"
+		description="{km-imissive:kmImissive.profileCfg.description}"
+		order="102"/>
+</configs>

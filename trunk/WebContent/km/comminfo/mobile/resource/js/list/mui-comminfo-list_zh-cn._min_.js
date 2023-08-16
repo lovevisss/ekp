@@ -1,0 +1,1 @@
+define([],function(){return{"mui.kmComminfoMainPieces":"条","module.km.comminfo":"常用资料"}});

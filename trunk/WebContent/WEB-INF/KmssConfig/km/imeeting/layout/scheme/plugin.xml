@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../../plugin.xsd ">
+	<!-- 基本属性布局扩展 -->
+	<extension point="com.landray.kmss.sys.xform.fieldlayout" model="com.landray.kmss.km.imeeting.model.KmImeetingScheme">
+		<!-- 方案名称 -->
+	    <item name="config">
+			<param name="fieldIds" value="docSubject"></param>
+			<param name="fieldNames" value="{km-imeeting:kmImeetingMain.fdName}"></param>
+			<param name="required" value="true"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/docsubject/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/docsubject/docSubject"></param>
+		</item>
+		<!-- 主持人 -->
+		<item name="config">
+			<param name="fieldIds" value="fdHost"></param>
+			<param name="required" value="true"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/fdhost/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/fdhost/fdHost"></param>
+		</item>
+		<!-- 会议地点 -->
+		<item name="config">
+			<param name="fieldIds" value="fdSchemePlace"></param>
+			<param name="required" value="true"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/fdschemeplace/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/fdschemeplace/fdSchemePlace"></param>
+		</item>
+		<!-- 方案开始时间 -->
+	    <item name="config">
+			<param name="fieldIds" value="fdBeginDate"></param>
+			<param name="fieldNames" value="{km-imeeting:kmImeetingScheme.main.fdBeginDate}"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/fdbegindate/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/fdbegindate/fdBeginDate"></param>
+		</item>
+		<!-- 方案结束时间-->
+	    <item name="config">
+			<param name="fieldIds" value="fdEndDate"></param>
+			<param name="fieldNames" value="{km-imeeting:kmImeetingScheme.main.fdEndDate}"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/fdenddate/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/fdenddate/fdEndDate"></param>
+		</item>
+		<!-- 出席会议人员 -->
+		<item name="config">
+			<param name="fieldIds" value="requiredPersons"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/requiredpersons/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/requiredpersons/requiredPersons"></param>
+		</item>
+		<!-- 邀请参加人员-->
+		<item name="config">
+			<param name="fieldIds" value="invitationPersons"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/invitationpersons/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/invitationpersons/invitationPersons"></param>
+		</item>
+		<!-- 列席会议人员-->
+		<item name="config">
+			<param name="fieldIds" value="attendPersons"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/attendpersons/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/attendpersons/attendPersons"></param>
+		</item>
+		<!-- 议题-->
+		<item name="config">
+			<param name="fieldIds" value="fdSchemeTopic"></param>
+		    <param name="fieldNames" value="{km-imeeting:kmImeetingScheme.fdSchemeTopic}"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="sys/xform/designer/fieldlayout/default_layout/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/fdschemetopic/fdSchemeTopic"></param>
+		</item>
+		<!-- 有关工作安排 -->
+		<item name="config">
+			<param name="fieldIds" value="workArrangement"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/fdschemeplace/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/workarrangement/workArrangement"></param>
+		</item>
+		<!-- 方案编号 -->
+		<item name="config">
+			<param name="fieldIds" value="docNumber"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/docnumber/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/docnumber/docNumber"></param>
+		</item>
+		<!-- 职务 -->
+		<item name="config">
+			<param name="fieldIds" value="fdStaffingLevel"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/fdstaffinglevel/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/fdstaffinglevel/fdStaffingLevel"></param>
+		</item>
+		<!-- 方案正文附件 -->
+		<item name="config">
+			<param name="fieldIds" value="kmImeetingSchemeAtt"></param>
+		    <param name="fieldNames" value="{km-imeeting:kmImeetingScheme.fdSchemeAtt}"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="sys/xform/designer/fieldlayout/default_layout/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/fdschemeatt/fdSchemeAtt"></param>
+		</item>
+		<!-- 会议类型-->
+		<item name="config">
+			<param name="fieldIds" value="fdType"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/imeeting/fieldlayout/scheme/fdtype/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/scheme/fdtype/fdType"></param>
+		</item>
+	</extension>
+</plugin>

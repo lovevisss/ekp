@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.km.carmng.model.KmCarmngDriversInfo"
+		table="km_carmng_drivers_info">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+		<property
+			name="fdOrder"
+			column="fd_order"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdName"
+			column="fd_name"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdSysId"
+			column="fd_sys_id"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="36" />
+		<property
+			name="fdType"
+			column="fd_type"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2" />
+		<property
+			name="fdDriveYear"
+			column="fd_drive_year"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="10" />
+		<property
+			name="fdDriverNumber"
+			column="fd_driver_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdAnnualAuditingTime"
+			column="fd_annual_auditing_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdCredentialsType"
+			column="fd_credentials_type"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdCredentialsTime"
+			column="fd_credentials_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdValidTime"
+			column="fd_valid_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdAnnualExamFrequency"
+			column="fd_annual_exam_frequency"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="10" />
+		<property
+			name="fdCredentialsNumber"
+			column="fd_credentials_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdIdentificationNumber"
+			column="fd_identification_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdRelationInfo"
+			column="fd_relation_info"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1000" />
+		<property
+			name="fdRelationPhone"
+			column="fd_relation_phone"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdNotifyType"
+			column="fd_notify_type"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdRemark"
+			column="fd_remark"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="docCreateTime"
+			column="doc_create_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdIsValidation"
+			column="fd_is_validation"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<many-to-one
+			name="fdMotorcade"
+			column="fd_motorcade_id"
+			update="true"
+			insert="true">
+		</many-to-one>
+		<many-to-one
+			name="docCreator"
+			column="doc_creator_id"
+			update="true"
+			insert="true">
+		</many-to-one>
+		<bag
+			table="km_carmng_drivers_notify_list"
+			name="fdNotifyPersons"
+			lazy="true">
+			<key
+				column="fd_driver_id"></key>
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="fd_person_id" />
+		</bag>
+	</class>
+</hibernate-mapping>

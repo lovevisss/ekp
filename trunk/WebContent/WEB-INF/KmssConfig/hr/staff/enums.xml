@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<column-enums>
+	<!-- 员工状态 -->
+	<type name="hrStaffPersonInfo_fdStatus">
+	    <value-label>
+			<value>trial</value>
+			<label-key>hrStaffPersonInfo.fdStatus.trial</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		 <value-label>
+			<value>practice</value>
+			<label-key>hrStaffPersonInfo.fdStatus.practice</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>official</value>
+			<label-key>hrStaffPersonInfo.fdStatus.official</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>temporary</value>
+			<label-key>hrStaffPersonInfo.fdStatus.temporary</label-key>1
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>trialDelay</value>
+			<label-key>hrStaffPersonInfo.fdStatus.trialDelay</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>dismissal</value>
+			<label-key>hrStaffPersonInfo.fdStatus.dismissal</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>leave</value>
+			<label-key>hrStaffPersonInfo.fdStatus.leave</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>retire</value>
+			<label-key>hrStaffPersonInfo.fdStatus.retire</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	
+	<!-- 员工状态 -->
+	<type name="hrStaffPersonInfo_fdStatus_new">
+	    <value-label>
+			<value>trial</value>
+			<label-key>hrStaffPersonInfo.fdStatus.trial</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		 <value-label>
+			<value>practice</value>
+			<label-key>hrStaffPersonInfo.fdStatus.practice</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>official</value>
+			<label-key>hrStaffPersonInfo.fdStatus.official</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>temporary</value>
+			<label-key>hrStaffPersonInfo.fdStatus.temporary</label-key>1
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>trialDelay</value>
+			<label-key>hrStaffPersonInfo.fdStatus.trialDelay</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label> 
+	</type>
+	
+	<!-- 日志操作方法 -->
+	<type name="hrStaffPersonInfoLog_fdParaMethod">
+	    <value-label>
+			<value>save</value>
+			<label-key>hrStaffPersonInfoLog.fdParaMethod.save</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>update</value>
+			<label-key>hrStaffPersonInfoLog.fdParaMethod.update</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>delete</value>
+			<label-key>hrStaffPersonInfoLog.fdParaMethod.delete</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>sync</value>
+			<label-key>hrStaffPersonInfoLog.fdParaMethod.sync</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>import</value>
+			<label-key>hrStaffPersonInfoLog.fdParaMethod.import</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>attendanceManage</value>
+			<label-key>hrStaffPersonInfoLog.fdParaMethod.attendanceManage</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>updatePersonInfo</value>
+			<label-key>hrStaffPersonInfoLog.fdParaMethod.update</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	
+	<!-- 个人假期操作类型 -->
+	<type name="hrStaffAttendanceManageDetailed_fdType">
+	    <value-label>
+			<value>1</value>
+			<label-key>hrStaffAttendanceManageDetailed.fdType.leave</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>hrStaffAttendanceManageDetailed.fdType.overtime</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	
+	<!-- 个人假期操作类型 -->
+	<type name="hrStaffAttendanceManageDetailed_fdLeaveType">
+	    <value-label>
+			<value>takeWorking</value>
+			<label-key>hrStaff.robot.optionValue.overtime.takeWorking</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>annualLeave</value>
+			<label-key>hrStaff.robot.optionValue.overtime.annualLeave</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>sickLeave</value>
+			<label-key>hrStaff.robot.optionValue.overtime.sickLeave</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	
+	<!-- 合同类型 -->
+	<type name="hrStaffPersonExperienceContract_fdContType">
+		<value-label>
+			<value>1</value>
+			<label-key>hrStaffPersonExperience.contract.fdContType.1</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>hrStaffPersonExperience.contract.fdContType.2</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>3</value>
+			<label-key>hrStaffPersonExperience.contract.fdContType.3</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>4</value>
+			<label-key>hrStaffPersonExperience.contract.fdContType.4</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>5</value>
+			<label-key>hrStaffPersonExperience.contract.fdContType.5</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>6</value>
+			<label-key>hrStaffPersonExperience.contract.fdContType.6</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>7</value>
+			<label-key>hrStaffPersonExperience.contract.fdContType.7</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>8</value>
+			<label-key>hrStaffPersonExperience.contract.fdContType.8</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	
+	<!-- 签订标识 -->
+	<type name="hrStaffPersonExperienceContract_fdSignType">
+		<value-label>
+			<value>1</value>
+			<label-key>hrStaffPersonExperience.contract.fdSignType.1</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>hrStaffPersonExperience.contract.fdSignType.2</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	
+	<!-- 合同状态 -->
+	<type name="hrStaffPersonExperienceContract_fdContStatus">
+		<value-label>
+			<value>1</value>
+			<label-key>hrStaffPersonExperience.contract.fdContStatus.1</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>hrStaffPersonExperience.contract.fdContStatus.2</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>3</value>
+			<label-key>hrStaffPersonExperience.contract.fdContStatus.3</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	
+	<!-- 数据来源 -->
+	<type name="hrStaffEntry_fdDataFrom">
+		<value-label>
+			<value>1</value>
+			<label-key>hrStaffEntry.fdDataFrom.1</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>hrStaffEntry.fdDataFrom.2</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	<type name="hrStaffEntry_fdStatus">
+		<value-label>
+			<value>1</value>
+			<label-key>hrStaffEntry.fdStatus.1</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>hrStaffEntry.fdStatus.2</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>3</value>
+			<label-key>hrStaffEntry.fdStatus.3</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	
+	<!-- 工作变动类型 -->
+	<type name="hrStaffRatifyLog_fdRatifyType">
+		<value-label>
+			<value>entry</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.entry</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>positive</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.positive</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>transfer</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.transfer</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>leave</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.leave</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>fire</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.fire</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>retire</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.retire</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>rehire</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.rehire</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>salary</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.salary</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>sign</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.sign</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>change</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.change</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>remove</value>
+			<label-key>hrStaffRatifyLog.fdRatifyType.remove</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	
+	<type name="hrStaffPersonExperienceContract_fdBeginDateType">
+		<value-label>
+			<value>1</value>
+			<label-key>hrcontract.fdBeginDateType.1</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>hrcontract.fdBeginDateType.2</label-key>
+			<bundle>hr-staff</bundle>
+		</value-label>
+	</type>
+	
+	<type 
+        name="hr_organization_office_type">
+        <value-label>
+            <value>1</value>
+            <label-key>enums.office_type.1</label-key>
+            <bundle>hr-organization</bundle>
+        </value-label>
+        <value-label>
+            <value>2</value>
+            <label-key>enums.office_type.2</label-key>
+            <bundle>hr-organization</bundle>
+        </value-label>
+    </type>
+    
+    <type 
+        name="hr_staff_tract_record_fdStatus">
+        <value-label>
+            <value>1</value>
+            <label-key>enums.hr_staff_tract_record_fdStatus.1</label-key>
+            <bundle>hr-staff</bundle>
+        </value-label>
+        <value-label>
+            <value>2</value>
+            <label-key>enums.hr_staff_tract_record_fdStatus.2</label-key>
+            <bundle>hr-staff</bundle>
+        </value-label>
+        <value-label>
+            <value>3</value>
+            <label-key>enums.hr_staff_tract_record_fdStatus.3</label-key>
+            <bundle>hr-staff</bundle>
+        </value-label>
+    </type>
+    
+</column-enums>

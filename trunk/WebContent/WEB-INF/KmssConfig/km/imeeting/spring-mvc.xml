@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean
+		name="/km/imeeting/km_imeeting_calendar/kmImeetingCalendar.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingCalendarAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingMainForm" />
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_main_hasten/kmImeetingMainHasten.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingMainHastenAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingMainHastenForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="showHastenMeeting"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_hastenDialog.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_main_cancel/kmImeetingMainCancel.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingMainCancelAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingMainCancelForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="showCancelMeeting"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_cancelDialog.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_res_category/kmImeetingResCategory.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingResCategoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingResCategoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_res_category/kmImeetingResCategory_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_res_category/kmImeetingResCategory_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_res_category/kmImeetingResCategory_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_main_history/kmImeetingMainHistory.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingMainHistoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingMainHistoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_main_history/kmImeetingMainHistory_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_main_history/kmImeetingMainHistory_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_main_history/kmImeetingMainHistory_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_summary/kmImeetingSummary.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingSummaryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingSummaryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_summary/kmImeetingSummary_view.jsp" />
+				<entry
+					key="print"
+					value="/km/imeeting/km_imeeting_summary/kmImeetingSummary_print.jsp" />
+				<entry
+					key="printBatch"
+					value="/km/imeeting/km_imeeting_summary/kmImeetingSummary_print_batch.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imeeting/mobile/summary/summary_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_summary/kmImeetingSummary_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/third/pda/resource/jsp/mobile/warn.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_summary/kmImeetingSummary_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imeeting/km_imeeting_summary/kmImeetingSummary_list.jsp" />
+				<entry
+					key="listChildren.4m"
+					value="/km/imeeting/mobile/summary/summary_list.jsp" />
+				<entry
+					key="manageList"
+					value="/km/imeeting/km_imeeting_summary/kmImeetingSummary_list.jsp" />
+				<entry
+					key="optAllList"
+					value="/km/imeeting/km_imeeting_summary/kmImeetingSummary_list.jsp" />
+				<entry
+					key="subFilePrint"
+					value="/km/imeeting/km_imeeting_summary/kmImeetingSummary_subside.jsp" />
+				<entry 
+                    key="extendinfo" 
+                    value="/km/imeeting/yqq/extend_info.jsp"/>
+                <entry 
+                    key="yqqLoading" 
+                    value="/km/imeeting/yqq/yqq_loading.jsp"/>
+                <entry
+					key="viewBase"
+					value="/km/imeeting/km_imeeting_summary/import/kmImeetingSummary_viewBase.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_template/kmImeetingTemplate.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_template/kmImeetingTemplate_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_template/kmImeetingTemplate_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_template/kmImeetingTemplate_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imeeting/km_imeeting_template/kmImeetingTemplate_list.jsp" />
+				<entry
+					key="data"
+					value="/km/imeeting/km_imeeting_template/kmImeetingTemplate_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_scheme_template/kmImeetingSchemeTemplate.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingSchemeTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingSchemeTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_scheme_template/kmImeetingSchemeTemplate_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_scheme_template/kmImeetingSchemeTemplate_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_scheme_template/kmImeetingSchemeTemplate_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imeeting/km_imeeting_scheme_template/kmImeetingSchemeTemplate_list.jsp" />
+				<entry
+					key="data"
+					value="/km/imeeting/km_imeeting_scheme_template/kmImeetingSchemeTemplate_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_stat/kmImeetingStat.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingStatAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingStatForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_stat/kmImeetingStat_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imeeting/mobile/stat_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_stat/kmImeetingStat_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_stat/kmImeetingStat_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/imeeting/mobile/stat_list.jsp" />
+				<entry
+					key="barLine"
+					value="/km/imeeting/km_imeeting_stat/common/kmImeetingStat_barLine.jsp" />
+				<entry
+					key="barLine.4m"
+					value="/km/imeeting/mobile/stat/common/barLine.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_book/kmImeetingBook.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingBookAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingBookForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_book/kmImeetingBook_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_book/kmImeetingBook_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/imeeting/mobile/book/book_edit.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imeeting/mobile/book/book_view.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_book/kmImeetingBook_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/imeeting/mobile/book/book_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_device/kmImeetingDevice.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingDeviceAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingDeviceForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_device/kmImeetingDevice_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_device/kmImeetingDevice_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_device/kmImeetingDevice_list.jsp" />
+				<entry
+					key="data"
+					value="/km/imeeting/km_imeeting_device/kmImeetingDevice_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_res/kmImeetingRes.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingResAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingResForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_res/kmImeetingRes_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_res/kmImeetingRes_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_res/kmImeetingRes_list.jsp" />
+				<entry
+					key="data"
+					value="/km/imeeting/km_imeeting_res/kmImeetingRes_data.jsp" />
+				<entry
+					key="listResources"
+					value="/km/imeeting/km_imeeting_res/kmImeetingRes_listResources.jsp" />
+				<entry
+					key="listCategoryAndRes"
+					value="/km/imeeting/km_imeeting_res/kmImeetingRes_listCategoryAndRes.jsp" />
+				<entry
+					key="listUse"
+					value="/km/imeeting/km_imeeting_res/kmImeetingRes_listUse.jsp" />
+				<entry
+					key="listUseData"
+					value="/km/imeeting/km_imeeting_res/kmImeetingRes_listUseData.jsp" />
+				<entry
+					key="viewMeetingInfo"
+					value="/km/imeeting/km_imeeting_res/kmImeetingRes_meetingBaseInfo.jsp" />
+				<entry
+					key="viewMeetingInfo.4m"
+					value="/km/imeeting/mobile/res/meetingBaseInfo.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_main/kmImeetingMain.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imeeting/mobile/main/view.jsp" />
+				<entry
+					key="view.4mh"
+					value="/km/imeeting/maxhub/view.jsp" />
+				<entry
+					key="viewIndex"
+					value="/km/imeeting/maxhub/view_index.jsp" />
+				<entry
+					key="viewSignIn"
+					value="/km/imeeting/maxhub/view_signin.jsp" />
+				<entry
+					key="viewTask"
+					value="/km/imeeting/maxhub/view_task.jsp" />
+				<entry
+					key="add"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_add.jsp" />
+				<entry
+					key="add.4m"
+					value="/km/imeeting/mobile/edit.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/imeeting/mobile/main/edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/imeeting/mobile/main/list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_list.jsp" />
+				<entry
+					key="listChildren.4m"
+					value="/km/imeeting/mobile/main/list.jsp" />
+				<entry
+					key="coming.4m"
+					value="/km/imeeting/mobile/main/list_coming.jsp" />
+				<entry
+					key="myJoined.4m"
+					value="/km/imeeting/mobile/main/list.jsp" />
+				<entry
+					key="myDraft.4m"
+					value="/km/imeeting/mobile/main/list_draft.jsp" />
+				<entry
+					key="manageList"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_list.jsp" />
+				<entry
+					key="optAllList"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_list.jsp" />
+				<entry
+					key="viewUpdateAtt"
+					value="/km/imeeting/km_imeeting_uploadAtt/kmImeetingUploadAtt_view.jsp" />
+				<entry
+					key="viewUpdateAtt.4m"
+					value="/km/imeeting/mobile/uploadAtt_edit.jsp" />
+				<entry
+					key="editUpdateAtt"
+					value="/km/imeeting/km_imeeting_uploadAtt/kmImeetingUploadAtt_edit.jsp" />
+				<entry
+					key="editEmcee"
+					value="/km/imeeting/km_imeeting_emcc/kmImeetingMainEmcc.jsp" />
+				<entry
+					key="editEmcee.4m"
+					value="/km/imeeting/mobile/view.jsp" />
+				<entry
+					key="listMySummary"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_listMySummary.jsp" />
+				<entry
+					key="mhusuccess"
+					value="/km/imeeting/mobile/maxhub/success.jsp" />
+				<entry
+					key="admin"
+					value="/km/imeeting/km_imeeting_notify_letter/km_imeeting_notify_letter_admin.jsp" />
+				<entry
+					key="attend"
+					value="/km/imeeting/km_imeeting_notify_letter/km_imeeting_notify_letter_attend.jsp" />
+				<entry
+					key="assist"
+					value="/km/imeeting/km_imeeting_notify_letter/km_imeeting_notify_letter_assist.jsp" />
+				<entry
+					key="simple"
+					value="/km/imeeting/km_imeeting_notify_letter/km_imeeting_notify_letter_simple.jsp" />
+				<entry
+					key="boenSignList"
+					value="/km/imeeting/km_imeeting_main/import/kmImeeting_boenSignList.jsp" />
+				<entry
+					key="printBatch"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_print_batch.jsp" />
+				<entry
+					key="print"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMain_print.jsp" />
+				<entry
+					key="viewBase"
+					value="/km/imeeting/km_imeeting_main/import/kmImeetingMain_viewBase.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_agenda/kmImeetingAgenda.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingAgendaAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingAgendaForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_agenda/kmImeetingAgenda_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_agenda/kmImeetingAgenda_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_agenda/kmImeetingAgenda_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_main_feedback/kmImeetingMainFeedback.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingMainFeedbackAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingMainFeedbackForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_main_feedback/kmImeetingMainFeedback_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_main_feedback/kmImeetingMainFeedback_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/imeeting/mobile/feedback/edit_data.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_main_feedback/kmImeetingMainFeedback_list.jsp" />
+				<entry
+					key="listFeedback"
+					value="/km/imeeting/km_imeeting_main_feedback/kmImeetingMainFeedback_listFeedback.jsp" />
+				<entry
+					key="listShow"
+					value="/km/imeeting/km_imeeting_main_feedback/kmImeetingMainFeedback_listShow.jsp" />
+				<entry
+					key="listShow.4m"
+					value="/km/imeeting/mobile/main/feedback_listShow.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/imeeting/mobile/feedback_list.jsp" />
+				<entry
+					key="topicInfo.4m"
+					value="/km/imeeting/mobile/feedback/topicInfo_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_summary/kmImeetingSummaryPortlet.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingSummaryPortletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="listPortlet"
+					value="/km/imeeting/km_imeeting_summary/kmImeetingSummaryPortlet_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_main/kmImeetingMainPortlet.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingMainPortletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="listPortlet"
+					value="/km/imeeting/km_imeeting_main/kmImeetingMainPortlet_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_sync_mapping/kmImeetingSyncMapping.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingSyncMappingAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingSyncMappingForm" />
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_equipment/kmImeetingEquipment.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingEquipmentAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingEquipmentForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_equipment/kmImeetingEquipment_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_equipment/kmImeetingEquipment_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_equipment/kmImeetingEquipment_list.jsp" />
+				<entry
+					key="data"
+					value="/km/imeeting/km_imeeting_equipment/kmImeetingEquipment_data.jsp" />
+				<entry
+					key="listEquipment"
+					value="/km/imeeting/km_imeeting_equipment/kmImeetingEquipment_listEquipment.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_main/kmImeetingMainStat.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingMainStatAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+	</bean>
+	<bean
+		name="kmImeetingMainPortletController"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingMainPortletController">
+		<property name="kmImeetingMainService">
+			<ref bean="kmImeetingMainService" />
+		</property>
+	</bean>
+	<bean
+		name="kmImeetingSummaryPortletController"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingSummaryPortletController">
+		<property name="kmImeetingSummaryService">
+			<ref bean="kmImeetingSummaryService" />
+		</property>
+	</bean>
+	<bean
+		name="kmImeetingCalendarController"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingCalendarController">
+		<property name="kmImeetingResService">
+			<ref bean="kmImeetingResService" />
+		</property>
+		<property name="kmImeetingMainService">
+			<ref bean="kmImeetingMainService" />
+		</property>
+		<property name="kmImeetingBookService">
+			<ref bean="kmImeetingBookService" />
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imeeting/km_imeeting_topic_category/kmImeetingTopicCategory.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingTopicCategoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingTopicCategoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_topic_category/kmImeetingTopicCategory_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_topic_category/kmImeetingTopicCategory_edit.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imeeting/km_imeeting_topic_category/kmImeetingTopicCategory_list.jsp" />
+				<entry
+					key="data"
+					value="/km/imeeting/km_imeeting_topic_category/kmImeetingTopicCategory_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_topic/kmImeetingTopic.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingTopicAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingTopicForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_topic/kmImeetingTopic_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imeeting/mobile/topic/view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_topic/kmImeetingTopic_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/imeeting/mobile/topic/edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_topic/kmImeetingTopic_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/imeeting/mobile/topic/list.jsp" />
+				<entry
+					key="manageList"
+					value="/km/imeeting/km_imeeting_topic/kmImeetingTopic_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imeeting/km_imeeting_topic/kmImeetingTopic_list.jsp" />
+				<entry
+					key="listDraftBox"
+					value="/km/imeeting/km_imeeting_topic/kmImeetingTopic_listDraft.jsp" />
+				<entry
+					key="listDialog"
+					value="/km/imeeting/km_imeeting_topic/kmImeetingTopic_listDialog.jsp" />
+				<entry
+					key="listDialog.4m"
+					value="/km/imeeting/mobile/topic/agenda_list.jsp" />
+				<entry
+					key="printBatch"
+					value="/km/imeeting/km_imeeting_topic/kmImeetingTopic_print_batch.jsp" />
+				<entry
+					key="print"
+					value="/km/imeeting/km_imeeting_topic/kmImeetingTopic_print.jsp" />
+				<entry
+					key="viewBase"
+					value="/km/imeeting/km_imeeting_topic/import/kmImeetingTopic_viewBase.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_seat_template/kmImeetingSeatTemplate.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingSeatTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingSeatTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_seat_template/kmImeetingSeatTemplate_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_seat_template/kmImeetingSeatTemplate_edit.jsp" />
+				<entry
+					key="data"
+					value="/km/imeeting/km_imeeting_seat_template/kmImeetingSeatTemplate_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imeeting/km_imeeting_seat_plan/kmImeetingSeatPlan.do"
+		class="com.landray.kmss.km.imeeting.actions.KmImeetingSeatPlanAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imeeting.forms.KmImeetingSeatPlanForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_seat_plan/kmImeetingSeatPlan_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_seat_plan/kmImeetingSeatPlan_edit.jsp" />
+				<entry
+					key="print"
+					value="/km/imeeting/km_imeeting_seat_plan/kmImeetingSeatPlan_print.jsp" />	
+			</map>
+		</property>
+	</bean>
+	
+	<bean 
+        class="com.landray.kmss.km.imeeting.actions.KmImeetingOutsignAction" 
+        parent="KmssBaseAction" 
+        name="/km/imeeting/km_imeeting_outsign/kmImeetingOutsign.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.km.imeeting.forms.KmImeetingOutsignForm"/>
+        <property 
+            name="forwards">
+            <map/>
+        </property>
+    </bean>
+    
+    <bean 
+        class="com.landray.kmss.km.imeeting.actions.KmImeetingVoteAction" 
+        parent="KmssBaseAction" 
+        name="/km/imeeting/km_imeeting_vote/kmImeetingVote.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.km.imeeting.forms.KmImeetingVoteForm"/>
+        <property 
+            name="forwards">
+            <map>
+            	<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_vote/kmImeetingVote_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_vote/kmImeetingVote_edit.jsp" />
+				<entry
+					key="data"
+					value="/km/imeeting/km_imeeting_vote/kmImeetingVote_data.jsp" />
+            </map>
+        </property>
+    </bean>
+    
+    <bean 
+        class="com.landray.kmss.km.imeeting.actions.KmImeetingSchemeAction" 
+        parent="KmssBaseAction" 
+        name="/km/imeeting/km_imeeting_scheme/kmImeetingScheme.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.km.imeeting.forms.KmImeetingSchemeForm"/>
+        <property 
+            name="forwards">
+            <map>
+            	<entry
+					key="edit"
+					value="/km/imeeting/km_imeeting_scheme/kmImeetingScheme_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/imeeting/mobile/scheme/edit.jsp" />
+				<entry
+					key="listDialog"
+					value="/km/imeeting/km_imeeting_scheme/kmImeetingScheme_listDialog.jsp" />
+				<entry
+					key="data"
+					value="/km/imeeting/km_imeeting_scheme/kmImeetingScheme_data.jsp" />
+				<entry
+					key="dataDialog.4m"
+					value="/km/imeeting/mobile/scheme/dataDialog.jsp" />
+				<entry
+					key="data.4m"
+					value="/km/imeeting/mobile/scheme/data.jsp" />
+				<entry
+					key="view"
+					value="/km/imeeting/km_imeeting_scheme/kmImeetingScheme_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imeeting/mobile/scheme/view.jsp" />
+				<entry
+					key="list"
+					value="/km/imeeting/km_imeeting_scheme/kmImeetingScheme_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/imeeting/mobile/scheme/list.jsp" />
+				<entry
+					key="manageList"
+					value="/km/imeeting/km_imeeting_scheme/kmImeetingScheme_list.jsp" />
+				<entry
+					key="printBatch"
+					value="/km/imeeting/km_imeeting_scheme/kmImeetingScheme_print_batch.jsp" />
+				<entry
+					key="print"
+					value="/km/imeeting/km_imeeting_scheme/kmImeetingScheme_print.jsp" />
+				<entry
+					key="viewBase"
+					value="/km/imeeting/km_imeeting_scheme/import/kmImeetingScheme_viewBase.jsp" />
+            </map>
+        </property>
+    </bean>
+	
+</beans>

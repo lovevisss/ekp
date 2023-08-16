@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfo"
+		table="km_carmng_dispatchers_info">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+		<property
+			name="fdApplicationIds"
+			column="fd_application_ids"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="fdApplicationNames"
+			column="fd_application_Names"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="fdCarInfoIds"
+			column="fd_carinfo_ids"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="fdCarInfoNames"
+			column="fd_carinfo_Names"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="fdStartTime"
+			column="fd_start_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdEndTime"
+			column="fd_end_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdFlag"
+			column="fd_flag"
+			update="true"
+			insert="true"
+			not-null="false" />
+				<property
+			name="fdNotifyType"
+			column="fd_notify_type"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="docCreateTime"
+			column="doc_create_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdDispatchersType"
+			column="fd_dispatchers_type"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="36" />
+		<property
+			name="fdRemark"
+			column="fd_remark"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		
+		<many-to-one
+			name="fdRegister"
+			column="fd_register_id"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<many-to-one
+			name="docCreator"
+			column="doc_creator"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<bag 
+			name="fdUserFees" 
+			lazy="true"
+			cascade="all-delete-orphan">
+			<key 
+				column="fd_dispatchers_id"></key>
+			<one-to-many 
+				class="com.landray.kmss.km.carmng.model.KmCarmngUserFeeInfo"/>
+		</bag>
+		<bag
+			name="fdDispatchersInfoList"
+			inverse="true"
+			cascade="all-delete-orphan"
+			lazy="true">
+			<key
+				column="fd_dispatchers_id" />
+			<one-to-many
+				class="com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList"/>
+		</bag>
+		
+		<bag
+			name="authAllReaders"
+			table="km_carmng_dispatch_areader"
+			lazy="true">
+			<key
+				column="fd_dispatchers_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_all_reader_id" />
+		</bag>
+		
+		<bag
+			name="authAllEditors"
+			table="km_carmng_dispatch_aeditor"
+			lazy="true">
+			<key
+				column="fd_dispatchers_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_all_editor_id" />
+		</bag>
+	</class>
+</hibernate-mapping>

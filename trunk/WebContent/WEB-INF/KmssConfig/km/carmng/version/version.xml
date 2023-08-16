@@ -1,0 +1,1727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../version.xsd">
+	<modifies>
+		<modify>
+			<description>#172243 修复 用车申请流程报错</description>
+			<author>钟华阳</author>
+			<revision-time>2022-08-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#172223 修复 车队设置可维护者，可维护者查看车队下的车辆信息提示没有权限</description>
+			<author>周文</author>
+			<revision-time>2022-08-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#172030 修复 车辆管理二级页面隐藏车辆快捷搜索功能</description>
+			<author>潘永辉</author>
+			<revision-time>2022-08-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170860 修复 所有用车和我提交的列表筛选“完成”状态的用车申请时，显示无数据</description>
+			<author>周文</author>
+			<revision-time>2022-08-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169722 修复 更改回车登记员后收到了两条待办通知</description>
+			<author>王文豪</author>
+			<revision-time>2022-07-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169587 优化 移动端进行车辆调度时，点击添加车辆，弹出的页面搜索框，搜索车辆功能无效</description>
+			<author>苏琦</author>
+			<revision-time>2022-07-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168379 优化 更新数据时声明影响范围，避免二级缓存重建</description>
+			<author>周文</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169336 修复 车辆管理模块，调度车辆的时候，当回车登记员变更之后，没有给变更后的回车登记员发送邮件，还是给原来的回车登记员发邮件</description>
+			<author>王文豪</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168739 修复 新建车辆管理时，座位数、提前通知天数为非数值整数类型，提交时没有校验，默认取0</description>
+			<author>周文</author>
+			<revision-time>2022-07-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168076 修复 解除模块强关联</description>
+			<author>王文豪</author>
+			<revision-time>2022-06-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#167436 修复 联系人不是用车申请的申请人，当调度用车提交后，给联系人发送待阅通知，联系人通过待阅打开用车申请提示无权限</description>
+			<author>周文</author>
+			<revision-time>2022-06-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166863 新增 “授权范围”除了全局分类和简单分类，还需要处理其它非常规分类（如车辆保险，所属车辆）</description>
+			<author>王文豪</author>
+			<revision-time>2022-06-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166021 修复 数据字典缺陷导致数据管理模块功能异常</description>
+			<author>王文豪</author>
+			<revision-time>2022-06-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166361 修复 移动端车辆管理模块-新增用车申请-用车事由栏显示字数太少，输入字多时，无法看到全部，操作不方便</description>
+			<author>苏琦</author>
+			<revision-time>2022-06-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#141686 优化 优化数据权限管理权限校验逻辑</description>
+			<author>王文豪</author>
+			<revision-time>2022-05-12</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.5.R.20220527</baseline>
+		</modify>
+		<modify>
+			<description>#164197 修复 车辆管理中-用车申请打印时，标题和页面不一致</description>
+			<author>万里行</author>
+			<revision-time>2022-04-28</revision-time>
+			<baseline>V16.0.5.R.20220527</baseline>
+		</modify>
+		<modify>
+			<description>#162508 缺陷 oracle数据库执行全文索引任务报错</description>
+			<author>魏泽钧</author>
+			<revision-time>2022-04-08</revision-time>
+			<baseline>V16.0.5.R.20220527</baseline>
+		</modify>
+		<modify>
+			<description>#160740 修复 车辆管理、人事模块电话号码不支持香港号码</description>
+			<author>魏泽钧</author>
+			<revision-time>2022-03-04</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.4.R.20220318</baseline>
+		</modify>
+		<modify>
+			<description>#159759 修复 车辆使用统计第二页无法显示数据</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-02-18</revision-time>
+			<baseline>V16.0.4.R.20220318</baseline>
+		</modify>
+		<modify>
+			<description>#158021 修复 车辆调度时如果选了冲突的车辆，移动端提示信息最后少了一个括号</description>
+			<author>潘永辉</author>
+			<revision-time>2022-01-06</revision-time>
+			<baseline>V16.0.4.R.20220318</baseline>
+		</modify>
+		<modify>
+			<description>#157630 修复 车辆调度时如果选了冲突的车辆，描述中显示了&lt;font/&gt;标签</description>
+			<author>潘永辉</author>
+			<revision-time>2022-01-06</revision-time>
+			<baseline>V16.0.4.R.20220318</baseline>
+		</modify>
+		<modify>
+			<description>#156847 车辆管理-统计报表-保养统计：车辆类型选择当中可选区内容为空</description>
+			<author>张颖</author>
+			<revision-time>2021-12-29</revision-time>
+			<baseline>V16.0.3.R.20211231</baseline>
+		</modify>
+		<modify>
+			<description>#155348 修复 车辆管理车辆费用汇总统计只能导出前12条数据</description>
+			<author>魏泽钧</author>
+			<revision-time>2021-12-21</revision-time>
+			<baseline>V16.0.3.R.20211231</baseline>
+		</modify>
+		<modify>
+			<description>#156456 修复 车辆调度缺少部分信息</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-12-20</revision-time>
+			<baseline>V16.0.3.R.20211231</baseline>
+		</modify>
+		<modify>
+			<description>#154534 修复 车辆管理中人员可以看到所有车辆信息</description>
+			<author>王进府</author>
+			<revision-time>2021-12-17</revision-time>
+			<baseline>V16.0.3.R.20211231</baseline>
+		</modify>
+		<modify>
+			<description>#155581 修复 EKP低版本升级到高版本（比如V15升级到V16）,新增的必填字段，启动系统会导致新增字段未创建成功</description>
+			<author>魏泽钧</author>
+			<revision-time>2021-12-13</revision-time>
+			<relation>
+				<relation-module>sys/right</relation-module>
+			</relation>
+			<baseline>V16.0.3.R.20211231</baseline>
+		</modify>
+		<modify>
+			<description>#154063 修复 车辆管理迁移任务报错问题</description>
+			<author>苏琦</author>
+			<revision-time>2021-12-06</revision-time>
+			<baseline>V16.0.3.R.20211231</baseline>
+		</modify>
+		<modify>
+			<description>#149805 修复 数据字典问题</description>
+			<author>林宇超</author>
+			<revision-time>2021-12-03</revision-time>
+			<relation>
+				<relation-module>sys/right</relation-module>
+			</relation>
+			<baseline>V16.0.3.R.20211231</baseline>
+		</modify>
+		<modify>
+			<description>#154317 修复 车辆调度信息过滤报错问题</description>
+			<author>张颖</author>
+			<revision-time>2021-11-25</revision-time>
+			<baseline>V16.0.3.R.20211231</baseline>
+		</modify>
+		<modify>
+			<description>#149576 新增 mk数据源新版接口</description>
+			<author>林宇超</author>
+			<revision-time>2021-11-18</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V16.0.3.R.20211231</baseline>
+		</modify>
+		<modify>
+			<description>#148729 新增 帮助增加业务总图和场景体验</description>
+			<author>林宇超</author>
+			<revision-time>2021-11-04</revision-time>
+			<relation>
+				<relation-module>sys/help</relation-module>
+			</relation>
+			<baseline>V16.0.2.R.20211105</baseline>
+		</modify>
+		<modify>
+			<description>#152323 修复 车辆管理移动端车辆信息的电话号码无法拨打电话</description>
+			<author>潘永辉</author>
+			<revision-time>2021-11-03</revision-time>
+			<baseline>V16.0.2.R.20211105</baseline>
+		</modify>
+		<modify>
+			<description>#151342 修复 优化Oracle数据库统计出车时长逻辑</description>
+			<author>潘永辉</author>
+			<revision-time>2021-10-22</revision-time>
+			<baseline>V16.0.2.R.20211105</baseline>
+		</modify>
+		<modify>
+			<description>#149887 修复 修复国产数据库无法创建表</description>
+			<author>潘永辉</author>
+			<revision-time>2021-10-18</revision-time>
+			<baseline>V16.0.2.R.20211105</baseline>
+		</modify>
+		<modify>
+			<description>#149794 修复 车辆统计查询兼容所有数据库</description>
+			<author>潘永辉</author>
+			<revision-time>2021-10-18</revision-time>
+			<baseline>V16.0.2.R.20211105</baseline>
+		</modify>
+		<modify>
+			<description>#150937 修复 个人用车统计明细的标题显示乱码</description>
+			<author>潘永辉</author>
+			<revision-time>2021-10-12</revision-time>
+			<baseline>V16.0.2.R.20211105</baseline>
+		</modify>
+		<modify>
+			<description>#150595 修复 禁用后的驾驶员，在调度中不能被选择</description>
+			<author>潘永辉</author>
+			<revision-time>2021-10-11</revision-time>
+			<baseline>V16.0.2.R.20211105</baseline>
+		</modify>
+		<modify>
+			<description>#149153 修复 车辆使用统计点击车号查看明细，标题出现代码</description>
+			<author>王进府</author>
+			<revision-time>2021-09-18</revision-time>
+			<baseline>V16.0.2.R.20211105</baseline>
+		</modify>
+		<modify>
+			<description>#147029 修复 从V14升级到V15版本缺失调度数据迁移任务</description>
+			<author>王进府</author>
+			<revision-time>2021-08-19</revision-time>
+			<baseline>V16.0.1.R.20210910</baseline>
+		</modify>
+		<modify>
+			<description>#147190 修复 驾驶员出车统计人员数量过多时报错</description>
+			<author>潘永辉</author>
+			<revision-time>2021-08-23</revision-time>
+			<baseline>V16.0.1.R.20210910</baseline>
+		</modify>
+		<modify>
+			<description>#146179 修复 车辆使用人有多个的时候，在个人用车统计中会有统计明细缺失</description>
+			<author>王进府</author>
+			<revision-time>2021-08-04</revision-time>
+			<baseline>V16.0.1.R.20210910</baseline>
+		</modify>
+		<modify>
+			<description>#145405 优化 车牌字段展示太宽</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-07-27</revision-time>
+			<baseline>V16.0.1.R.20210910</baseline>
+		</modify>
+		<modify>
+			<description>#141857 修复 移动端调度车辆时如果选中不派车，没有带出不派车原因且无法提交</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-26</revision-time>
+			<baseline>V16.0.1.R.20210910</baseline>
+		</modify>
+		<modify>
+			<description>#142949 修复 普通用户在用车日历能看到与自己无关的车辆调度信息</description>
+			<author>苏琦</author>
+			<revision-time>2021-07-06</revision-time>
+			<baseline>V16.0.0.R.20210716</baseline>
+		</modify>
+		<modify>
+			<description>#138895 优化 CVE-2020-13936：Apache Velocity远程代码执行漏洞</description>
+			<author>叶正平</author>
+			<revision-time>2021-05-06</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#138987 修复 车辆管理，用车调度列表默认按照创建时间升序排序</description>
+			<author>王书强</author>
+			<revision-time>2021-04-29</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#138205 优化 车辆管理，录入驾驶员时选择注册用户还是可以手动填写，导致没有记录到对应人员</description>
+			<author>王书强</author>
+			<revision-time>2021-04-22</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#137102 修复 移动端调度信息修改没有校验结束日期早于开始时间</description>
+			<author>王京</author>
+			<revision-time>2021-04-19</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#137302 优化 模块列表页屏蔽“调度状态”字段，该字段与“用车状态”重复</description>
+			<author>潘永辉</author>
+			<revision-time>2021-04-15</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#137098 修复 车辆管理调度信息页面的回车登记员，现在显示成了登记号字段</description>
+			<author>王京</author>
+			<revision-time>2021-04-13</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#132869 修复 车辆信息页面需要调度车辆信息页面点击调度信息后保存报错</description>
+			<author>王京</author>
+			<revision-time>2021-04-13</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#137430 优化 移动重复的扩展点实现</description>
+			<author>潘永辉</author>
+			<revision-time>2021-04-10</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#135137 修复 车辆违章信息页面，重新编辑保存提交后，在操作成功的页面点击返回，返回的页面提示文档不存在</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-27</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#135182 修复 用车目的如果有英文分号，调度时报错</description>
+			<author>王书强</author>
+			<revision-time>2021-03-26</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#136071 修复 角色“车辆管理_用车调度”配合该车队调度员才能调度本车队</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-25</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#135467 新增 车辆信息增加支持半年检</description>
+			<author>苏琦</author>
+			<revision-time>2021-03-24</revision-time>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#135761 修复 Chrome浏览器从门户组件进入查看页，再编辑提交时，无法自动关闭页面</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-16</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.0.B3.20210507</baseline>
+		</modify>
+		<modify>
+			<description>#133291 修复 车辆处于报废状态，仍能接收到年检通知，报废车辆不应收到年检通知</description>
+			<author>苏琦</author>
+			<revision-time>2021-02-02</revision-time>
+			<baseline>V16.0.0.B2.20210305</baseline>
+		</modify>
+		<modify>
+			<description>#132110 修复 移动端用车信息显示不全</description>
+			<author>王京</author>
+			<revision-time>2021-01-27</revision-time>
+			<baseline>V16.0.0.B2.20210305</baseline>
+		</modify>
+		<modify>
+			<description>#131845 修复 回车登记 行驶公里数验证错误</description>
+			<author>王京</author>
+			<revision-time>2021-01-27</revision-time>
+			<baseline>V16.0.0.B2.20210305</baseline>
+		</modify>
+		<modify>
+			<description>#122796 修复 车辆管理模块数据字典表缺少字段描述</description>
+			<author>王雄峰</author>
+			<revision-time>2020-12-30</revision-time>
+			<baseline>V16.0.0.B2.20210305</baseline>
+		</modify>
+		<modify>
+			<description>#126461 修复 索配置中默认搜索模块中有”车辆管理“模块。但是在流程管理模块中关联车辆管理模块的文档 就显示”没有配置统一搜索服务“</description>
+			<author>苏琦</author>
+			<revision-time>2020-12-14</revision-time>
+			<relation>
+				<relation-module>sys/relation</relation-module>
+			</relation>
+			<baseline>V16.0.0.B1.20201231</baseline>
+		</modify>
+		<modify>
+			<description>#123106 修复 pc端，调度信息页面中用车事由存在xss漏洞</description>
+			<author>王京</author>
+			<revision-time>2020-12-14</revision-time>
+			<baseline>V16.0.0.B1.20201231</baseline>
+		</modify>
+		<modify>
+			<description>#128684 修复 用车申请单如果用车目的一样，合在一起调度，删除用车申请会报错</description>
+			<author>王京</author>
+			<revision-time>2020-12-10</revision-time>
+			<baseline>V16.0.0.B1.20201231</baseline>
+		</modify>
+		<modify>
+			<description>#124134 新增 回车添加变更行程里数的功能</description>
+			<author>王书强</author>
+			<revision-time>2020-11-17</revision-time>
+			<baseline>V16.0.0.B1.20201231</baseline>
+		</modify>
+		<modify>
+			<description>#124928 新增 移动端回车登记编辑功能</description>
+			<author>王书强</author>
+			<revision-time>2020-11-17</revision-time>
+			<baseline>V16.0.0.B1.20201231</baseline>
+		</modify>
+		<modify>
+			<description>#124698 修复 用车申请的用车目的带;号会报错，因为程序后台用了;号做特殊的分隔符，冲突了</description>
+			<author>徐斌</author>
+			<revision-time>2020-11-16</revision-time>
+			<baseline>V16.0.0.B1.20201231</baseline>
+		</modify>
+		<modify>
+			<description>#123099 新增 车辆管理，调度时候，把用车事由展示出来，车辆管理移动端查看页面增加 用车事由</description>
+			<author>王京</author>
+			<revision-time>2020-10-26</revision-time>
+			<baseline>V15.5.0.B3.20201111</baseline>
+		</modify>
+		<modify>
+			<description>#122194 优化 车辆管理-车辆使用统计-导出EXCEL中 列跟值不统一</description>
+			<author>王京</author>
+			<revision-time>2020-10-19</revision-time>
+			<baseline>V15.5.0.B3.20201111</baseline>
+		</modify>
+		<modify>
+			<description>#120838 优化 移动端页面车辆调度提示两个不能为空，但是无法填写信息，无法提交</description>
+			<author>潘永辉</author>
+			<revision-time>2020-10-09</revision-time>
+			<baseline>V15.5.0.B3.20201111</baseline>
+		</modify>
+		<modify>
+			<description>#119164 修复 送修状态的车辆不应该被调度的问题</description>
+			<author>王书强</author>
+			<revision-time>2020-09-15</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#114992 修复 钉钉端用车申请取消车队选择时页面报错</description>
+			<author>林剑文</author>
+			<revision-time>2020-08-25</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#113805 修复 车辆管理移动端数据待评价状态下，点击评价时，出现样式问题</description>
+			<author>苏琦</author>
+			<revision-time>2020-08-18</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#113427 修复 车辆管理保险费用计算逻辑有问题</description>
+			<author>苏琦</author>
+			<revision-time>2020-08-18</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#113127 修复 用车申请打印页面不应该显示二维码</description>
+			<author>林剑文</author>
+			<revision-time>2020-08-03</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#110490 修复 车辆管理模块，统计异常</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-31</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#113403 修复 列表页，列表中第二个字段信息居中对齐</description>
+			<author>苏琦</author>
+			<revision-time>2020-07-31</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#113249 修复 在调度信息页面输入模糊查询条件时页面报600错误</description>
+			<author>苏琦</author>
+			<revision-time>2020-07-28</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#110490 修复 车辆管理模块，统计异常</description>
+			<author>孙佳</author>
+			<revision-time>2020-07-24</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#112131 修复 kkios移动端车辆管理无法新建，新建用车页面一直刷不出来</description>
+			<author>苏琦</author>
+			<revision-time>2020-07-17</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#111698 修复 车辆管理模块中的车辆调度信息搜索结果有误</description>
+			<author>孙佳</author>
+			<revision-time>2020-07-15</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#111997 修复 车辆管理模块打印按钮没有去掉</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-15</revision-time>
+			<baseline>V15.5.0.B2.20200930</baseline>
+		</modify>
+		<modify>
+			<description>#111558 修复 车辆管理-统计报表-车辆使用统计，选择车辆，无法提交</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-07-10</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#111386 修复 移动端的车辆申请页面存在的重影问题</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#111075 修复 车辆使用统计导出车辆明细不全</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-08</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#109232 修复 可使用者未空时，移动端外部人员申请用车时，弹出空面板，应优化</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-07-07</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#102150 优化 车辆违章费用在移动端显示异常</description>
+			<author>孙佳</author>
+			<revision-time>2020-06-13</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#108360 修复 车辆管理，在新建时选择车队后刷新，提示报错车队获取流程实例失败</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-06-11</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#105652 优化 用车申请的车队选项数据同步接口</description>
+			<author>袁汉祥</author>
+			<revision-time>2020-05-28</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>106747 修复 车辆使用统计导出不全</description>
+			<author>林剑文</author>
+			<revision-time>2020-05-28</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#102144 修复 新建用车申请页面，外部用车人和随车人数显示异常</description>
+			<author>纪斌杰</author>
+			<revision-time>2020-04-29</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#102147 修复 车辆信息查看页面样式问题</description>
+			<author>纪斌杰</author>
+			<revision-time>2020-04-29</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#105172 修复 调度员选择不调度，保存成功，待办不消失</description>
+			<author>李文昌</author>
+			<revision-time>2020-05-12</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#102404 修复 车队调度员设置未岗位，岗位成员查看用车资源日历无法显示</description>
+			<author>陈尉建</author>
+			<revision-time>2020-04-16</revision-time>
+			<baseline>V15.5.0.B1.20200710</baseline>
+		</modify>
+		<modify>
+			<description>#100107 修复 车辆管理用车申请用车结束时间可以小于开始时间</description>
+			<author>陈尉建</author>
+			<revision-time>2020-03-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99145 修复 V15车辆管理门户部件，所有车辆申请部件展示有异常</description>
+			<author>陈尉建</author>
+			<revision-time>2020-03-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94838 修复 驾驶员信息新增页面，图片上传之后存在的页面问题</description>
+			<author>何协殷</author>
+			<revision-time>2020-03-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99119 修复 移动端车辆管理引用其它模块资源文件导致项目升级报错</description>
+			<author>纪斌杰</author>
+			<revision-time>2020-03-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#89289 修复 调度通知申请人和用车人的待阅标题，增加司机和联系电话信息</description>
+			<author>陈尉建</author>
+			<revision-time>2020-03-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94874 优化车辆管理移动端评价按钮样式</description>
+			<author>胡永方</author>
+			<revision-time>2020-02-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94692 修复 车辆管理移动端存在未翻译的地方</description>
+			<author>何协殷</author>
+			<revision-time>2020-02-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94101 优化 进入模块，点击“后台配置”目录，请求的url需要显示在地址栏中</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95211 修复 车辆管理模块用车申请移动端，行程两个字段没有标识</description>
+			<author>何协殷</author>
+			<revision-time>2020-02-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94413 优化 人事行政模块文档底部页签展现部署</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-13</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94670 修复 前端车辆管理存在未翻译的地方</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94839 修复 驾驶员信息新建页面，手机号码建议增加手机格式校验</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91195 优化 移动端车辆管理二级首页、列表页UI功能优化</description>
+			<author>杨铮</author>
+			<revision-time>2020-01-16</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92801 修复 驾驶员删除后，车辆绑定的驾驶员信息也应该清空</description>
+			<author>陈尉建</author>
+			<revision-time>2019-12-31</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90879 修复 在车辆管理中，新建用车申请，选择车队名称的时候，先选择一个车队，然后再切换选择其他车队，就会报错。</description>
+			<author>李飞</author>
+			<revision-time>2019-12-26</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87960 优化 移动性能体验</description>
+			<author>黎凯麟</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89493 修复 编号规则权限控制</description>
+			<author>陈尉建</author>
+			<revision-time>2019-11-30</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89192 优化 用车调度，移动端调度添加车辆时，如果添加的是重复车辆，提示内容多，展示窗口太小，展示时间短</description>
+			<author>孙佳</author>
+			<revision-time>2019-11-27</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89044 优化 其他操作下没有目录时，其他操作应该隐藏</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-25</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#53359 新增 移动门户快捷方式选择系统引入的时候没有任何EKP模块</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-11</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#84292 修复 车辆申请流程终审过后，系统自动发给调度员的待办，发起人是申请流程的最后处理人</description>
+			<author>陈尉建</author>
+			<revision-time>2019-11-08</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#84495 优化 车辆调度有时间冲突的车辆在移动端也能选到，在pc端有提示</description>
+			<author>孙佳</author>
+			<revision-time>2019-10-29</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83564 新增 后台配置优化，ekp各模块后台配置调整</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-21</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83690 修复 移动端页面，新建用车，选择车队后，再次点击选择，如果选中请选择栏，会出现报错</description>
+			<author>孙佳</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83944 修复 【专项测试任务12】【车辆管理】点击后台设置会显示车辆前台目录</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83709 修复 移动端进行调度时，选择驾驶员应该只能选择自己可以调度的车队的驾驶员</description>
+			<author>陈尉建</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83618 优化 右侧审批调整</description>
+			<author>王逍</author>
+			<revision-time>2019-10-16</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83572 修复 车辆管理移动端，调度时选择司机，无法进行搜索且结果点击无反应</description>
+			<author>陈尉建</author>
+			<revision-time>2019-10-14</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#81795 修复 用车状态和评价状态没翻译</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-17</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#81686 优化 车辆管理移动端，新建用车申请时，在还没有填写用车内容前。审批内容和流程图页签是可以进行切换显示</description>
+			<author>孙佳</author>
+			<revision-time>2019-09-16</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80617 修复 车辆管理模块非法引入资产管理的相关代码</description>
+			<author>郑楷山</author>
+			<revision-time>2019-09-16</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80456 修复 车队调度员为岗位时，岗位人员在移动端调度选择车辆显示空白，可以搜索</description>
+			<author>孙佳</author>
+			<revision-time>2019-09-11</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80263 修复 车辆管理的构造语句whereBlock会有问题</description>
+			<author>孙佳</author>
+			<revision-time>2019-08-27</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76055 优化 调度冲突的提示排除（回车）状态的调度单，回车状态的调度单不在冲突范围</description>
+			<author>孙佳</author>
+			<revision-time>2019-08-26</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78772 修复 车辆管理用车申请打印页面报错</description>
+			<author>陈尉建</author>
+			<revision-time>2019-07-30</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77994 修复 部门用车统计可以选机构</description>
+			<author>何协殷</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77557 修复 was环境下，新建用车申请，无法切换车队</description>
+			<author>黄泽凯</author>
+			<revision-time>2019-07-19</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77496 修复 打印页面添加申请单编号字段</description>
+			<author>陈尉建</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#75568 修复 流程右侧审批部署</description>
+			<author>郑鑫</author>
+			<revision-time>2019-07-16</revision-time>
+			<relation>
+				<relation-module>sys/lbpmext</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/authorization</relation-module>
+				<relation-module>sys/relation</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77339 新增 ekp-cloud智能门户推荐所需接口</description>
+			<author>袁汉祥</author>
+			<revision-time>2019-07-12</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75568 新增 流程右侧审批部署</description>
+			<author>郑鑫</author>
+			<revision-time>2019-07-11</revision-time>
+			<relation>
+				<relation-module>sys/lbpmext</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/authorization</relation-module>
+				<relation-module>sys/relation</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75636 修复 用户没有调度车辆和调度管理员权限，在申请单查看页可以进行调度</description>
+			<author>陈尉建</author>
+			<revision-time>2019-06-28</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74805 修复 对用车申请进行评价时，评价页的满意度与评价后的满意度不一致</description>
+			<author>陈尉建</author>
+			<revision-time>2019-06-17</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74750 修复 回车登记重复问题</description>
+			<author>陈尉建</author>
+			<revision-time>2019-06-13</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72824 优化 调度信息页面的申请单标题------鼠标移动到文字上，显示手型（蓝色字体样式），可链接查询申请单</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-29</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73862 修复 起草节点包含审批要点必填，移动端暂存提示必填</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-28</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72046 新增 移动端用车申请增加暂存功能</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-24</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72946 修复 车辆管理英文环境中，车辆调度信息中有一部份显示的是中文</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-17</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72035 优化 所有用车视图列表，筛选项增加用车开始时间和用车结束时间两项的查询建</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-07</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#67429 优化 车辆管理优化调度时选择用车信息页面</description>
+			<author>陈尉建</author>
+			<revision-time>2019-03-01</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#63522 优化 回车登记填写时，查出该车上一次的回车登记时填写的结束行驶里程数，默认带入到本次的开始行驶里程</description>
+			<author>陈尉建</author>
+			<revision-time>2019-02-22</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#67796 优化 用车申请单的“申请部门”文字调整为“用车部门”</description>
+			<author>陈尉建</author>
+			<revision-time>2019-02-22</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#67593 修复 用车满意度评价存在未翻译的，考虑国际化支持</description>
+			<author>陈尉建</author>
+			<revision-time>2019-02-22</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#67118 修复 手机端用车申请，填写完内容点下一步之后，就没法返回到上一页页签修改用车内容</description>
+			<author>陈尉建</author>
+			<revision-time>2019-01-22</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#65836 优化 车辆管理苹果移动端调度页面直接读取页面缓存，导致页面不能展示最新结果</description>
+			<author>胡永方</author>
+			<revision-time>2019-01-08</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63536 移除 移动UI组件单独定义日期格式</description>
+			<author>陈尉建</author>
+			<revision-time>2018-12-07</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>优化 用车管理移动端查看页开始时间和结束时间之间的指向图标错误</description>
+			<author>胡永方</author>
+			<revision-time>2018-11-23</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#62864 修复 移动端，英文环境下，设置其日期格式为日月年，但目前展示为月日年</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-22</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63460 修复 用车资源日历界面报错</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-21</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档等保存记录的日志中字段名存在非中文</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-14</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建申请单，提交后，查看页面和列表页面无申请单编号</description>
+			<author>安浩峰</author>
+			<revision-time>2018-11-08</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 更改车队的默认编号规则为引用其他编号规则，返回查看还是默认的编号规则</description>
+			<author>安浩峰</author>
+			<revision-time>2018-11-08</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建用车申请，提交报错</description>
+			<author>安浩峰</author>
+			<revision-time>2018-11-08</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 用车申请增加申请单编号字段，在车队设置中引入编号规则，并可设置通用编号规则</description>
+			<author>安浩峰</author>
+			<revision-time>2018-11-08</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 更改调度时，编辑通知方式，保存成功后，再次进入更改调度页面，还是保持原来的通知方式</description>
+			<author>安浩峰</author>
+			<revision-time>2018-11-05</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 更改调度时，编辑通知方式，保存成功后，再次进入更改调度页面，还是保持原来的通知方式</description>
+			<author>安浩峰</author>
+			<revision-time>2018-11-05</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端在用车申请时，提交的用车结束时间可以早于用车开始时间，没有提示（优先级：普通）</description>
+			<author>安浩峰</author>
+			<revision-time>2018-10-25</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 用车管理-调度不会通知到申请人，且更改调度后申请人也无从得知最新的调度信息</description>
+			<author>孙佳</author>
+			<revision-time>2018-09-27</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 同一辆车在同一时间段，有多个调度信息添加提示信息</description>
+			<author>孙佳</author>
+			<revision-time>2018-09-27</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 调度信息列表页，更改调度后的车辆信息，在“车牌号码”这一列未及时更新</description>
+			<author>孙佳</author>
+			<revision-time>2018-09-27</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除有关联数据的车队时页面转圈，无提示信息</description>
+			<author>孙佳</author>
+			<revision-time>2018-09-27</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化【移动端-大字体】车辆管理用车调度列表页面，内容显示不全</description>
+			<author>马泽棉</author>
+			<revision-time>2018-09-25</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化【移动端-大字体】车辆管理调度信息页面，内容文字和右侧状态图标重叠</description>
+			<author>马泽棉</author>
+			<revision-time>2018-09-25</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 用车申请界面，流程记录页签应该不展现查看调度信息</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-09-18</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 用车调度列表，进入用车申请单的查看页面，行程安排为空，编辑页面可正常加载行程安排</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-18</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化【移动端-大字体】用车申请界面，查看调度信息右侧的图标未居中显示</description>
+			<author>马泽棉</author>
+			<revision-time>2018-09-13</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端支持编辑用车申请单</description>
+			<author>陈尉建</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 用车调度列表页面，行程安排得加载顺序有误</description>
+			<author>崔文坚</author>
+			<revision-time>2018-08-21</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 用车查询结果中没显示行驶路线</description>
+			<author>崔文坚</author>
+			<revision-time>2018-08-07</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆信息不完整，建议增加车架号和发动机号，这两个是车辆的必备信息</description>
+			<author>陈经纬</author>
+			<revision-time>2018-07-19</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 智能场景的接口提供</description>
+			<author>陈亮</author>
+			<revision-time>2018-07-05</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 增加多个目的地，删除中间一个目的地，会出现多余一行</description>
+			<author>崔文坚</author>
+			<revision-time>2018-07-05</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>优化 回车登录待办重复过滤</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-02</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 有导出权限，导出时提示没权限</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-21</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>优化 用车申请单页面，车队名称为空时提交时，必填项提示语有问题</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-21</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 用车调度列表页面，用车目的字段重复显示，创建时间显示异常</description>
+			<author>陈经纬</author>
+			<revision-time>2018-03-13</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>部署 【后台配置】资产管理等11个模块列表自定义模块部署。</description>
+			<author>邵成成</author>
+			<revision-time>2018-02-09</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理，调度员在调度的时候还能看到报废车辆信息</description>
+			<author>孙佳</author>
+			<revision-time>2018-01-24</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>新增 各个模块的文档维护界面新增筛选器，并且使用新UI</description>
+			<author>张成才</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>新增 将表单数据 导出成HTML文件或WORD文件、PDF文件、图片快照等格式附件，作为备案存档</description>
+			<author>郑超</author>
+			<revision-time>2018-01-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>新增 各个模块的文档维护界面新增筛选器，并且使用新UI</description>
+			<author>张成才</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 oracle环境下流程结束后，文档状态仍为待审问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-12-25</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 用车申请人只能选择人员</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-09</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端地点支持地图查看位置</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-30</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆调度变更时，给原来的司机发送变更通知</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-30</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 was下 资源文件报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-10</revision-time>
+			<relation>
+				<relation-module>sys/attend</relation-module>
+			</relation>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 没有签到模块时，车辆打开报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-26</revision-time>
+			<relation>
+				<relation-module>sys/attend</relation-module>
+			</relation>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>新增 类别模板设置多语言支持</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表数据展示样式优化</description>
+			<author>陈经纬</author>
+			<revision-time>2017-09-04</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 待办多语言</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-02</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表数据展示样式优化，修改后的标题取消居中</description>
+			<author>陈经纬</author>
+			<revision-time>2017-08-08</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表数据展示样式优化，车辆管理模块porlet表头标题显示错乱</description>
+			<author>陈经纬</author>
+			<revision-time>2017-08-08</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理PC移动功能优化</description>
+			<author>朱湖强</author>
+			<revision-time>2017-08-08</revision-time>
+			<relation>
+				<relation-module>sys/attend</relation-module>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 目的地必填校验</description>
+			<author>朱湖强</author>
+			<revision-time>2017-07-14</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理当手动将随车人数改为空时，点击调度报错</description>
+			<author>陈晓文</author>
+			<revision-time>2017-05-11</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 地点选择使用地图服务组件</description>
+			<author>崔文坚</author>
+			<revision-time>2017-05-11</revision-time>
+			<relation>
+				<relation-module>sys/attend</relation-module>
+			</relation>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理门户组件标题居中</description>
+			<author>陈晓文</author>
+			<revision-time>2017-04-28</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建用车申请，车队名称默认无初始值</description>
+			<author>张建忠</author>
+			<revision-time>2017-04-28</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆调度问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-04-07</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理车辆违章统计在英文环境下导出excel的数据，违章时间的格式不对</description>
+			<author>陈晓文</author>
+			<revision-time>2017-04-07</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理车辆统计报表，要求是查询后再出导出按钮，参考流程管理的方式</description>
+			<author>陈晓文</author>
+			<revision-time>2017-04-07</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理车辆违章统计导出excel的数据，少了违章时间字段</description>
+			<author>陈晓文</author>
+			<revision-time>2017-04-05</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理左侧菜单增加选中效果</description>
+			<author>陈晓文</author>
+			<revision-time>2017-04-01</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 用车申请筛选器和列表页面的创建时间显示不一致的问题</description>
+			<author>张建忠</author>
+			<revision-time>2017-03-27</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理门户porlet新增：车辆申请，参照流程管理porlet实现</description>
+			<author>陈晓文</author>
+			<revision-time>2017-03-10</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理注册驾驶员信息的时候，建议选择组织架构的人员时自动带出手机号</description>
+			<author>陈晓文</author>
+			<revision-time>2017-03-09</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理移动端电话图标点击没有反应</description>
+			<author>陈晓文</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 谷歌下，打印页面放大缩小字体报错</description>
+			<author>朱湖强</author>
+			<revision-time>2017-02-20</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加关联控件的关联模块扩展点</description>
+			<author>朱国荣</author>
+			<revision-time>2017-01-20</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理没有后台配置权限，在点击导航某两应用时，出现后台配置</description>
+			<author>陈晓文</author>
+			<revision-time>2017-01-05</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 主题包车辆管理车辆申请打印界面，顶端按钮样式不是冰蓝皮肤样式，请修改</description>
+			<author>陈晓文</author>
+			<revision-time>2016-12-28</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理用车查询页面，输入车牌号码点击查询后，车牌号码中的汉字被解析了</description>
+			<author>陈晓文</author>
+			<revision-time>2016-12-27</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理用车查询页面，导出excel中显示字段不完整</description>
+			<author>陈晓文</author>
+			<revision-time>2016-12-23</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理&gt;&gt;车队设置，用车申请流程选择自定义，流程连线有问题</description>
+			<author>陈晓文</author>
+			<revision-time>2016-11-30</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理车辆信息中年检频率未做数值校验</description>
+			<author>陈晓文</author>
+			<revision-time>2016-11-22</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 钉一下配置修改</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-21</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+				<relation-module>sys/profile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理流程设置为起草节点下面是人工决策，用车申请中 每选择一次车队就提示选择流程分支走向，不合理</description>
+			<author>陈晓文</author>
+			<revision-time>2016-11-18</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理移动端调度单上增加主题及申请人电话</description>
+			<author>陈晓文</author>
+			<revision-time>2016-11-18</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理车辆信息无法导出初始化数据</description>
+			<author>陈晓文</author>
+			<revision-time>2016-11-09</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理通过流程管理模块启动车辆管理模块的子流程，用车流程通过后，无法进行调度</description>
+			<author>陈晓文</author>
+			<revision-time>2016-11-08</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理车队设置无法做初始化导出，请检查数据字典</description>
+			<author>陈晓文</author>
+			<revision-time>2016-10-26</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 list列表页操作栏中的“删除”按钮调整命名为“批量删除”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心由“后台管理”角色控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-17</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 车队设置权限问题</description>
+			<author>陈晓文</author>
+			<revision-time>2016-09-12</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理新建用车申请页面有报错</description>
+			<author>陈晓文</author>
+			<revision-time>2016-09-12</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理用车申请中选择车队进行权限过滤，支持集团分子公司场景下的使用</description>
+			<author>陈晓文</author>
+			<revision-time>2016-09-12</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理车队设置，新增是否有效的状态标识，若置为无效在所有选择车队的地方进行隐藏</description>
+			<author>陈晓文</author>
+			<revision-time>2016-07-04</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 违章信息、保养信息和保险信息列表页面，筛选器中输入车牌号码搜索无效</description>
+			<author>李启龙</author>
+			<revision-time>2016-07-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 调度信息编辑页面问题</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-30</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆申请编辑页面，车队名称显示不全</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-29</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 建用车申请选择车队时会对申请人电话做有效性校验，导致无法选择车队</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-27</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建用车申请，在切换车队时候出现审批节点提示错乱的情况</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-24</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆保养信息和违章信息在录入时增加附件上传功能</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-16</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆保养信息、违章信息、保险信息页面通病</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-16</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆保养信息、违章信息、保险信息列表调整排序</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-16</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端图像加载性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-14</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端头像大小性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-12</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端调度和回车登记页面在点击导航栏返回按钮时候应有退出编辑提示</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-30</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端调度页面联系电话的有效性校验</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-30</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端多语言</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-30</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 回车登记编辑页面点击驾驶人员和所属车队的选择按钮时报错</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-26</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑回车登记按钮，没有进入编辑页面，直接返回提交成功的信息</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 调度信息查看页面，只能看到内部用车人，外部用车人看不到</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-18</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 调度管理员重新更改调度，可以选择座位数比用车人数量少的车辆，没有做过滤</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-18</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>新增 支持在移动端进行车辆调度和回车登记</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-13</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 辆调度编辑页面，单独修改电话号码没有做校验，导致无法提交保存</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-06</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 调度员点击调度信息列表，后台报错</description>
+			<author>李启龙</author>
+			<revision-time>2016-04-26</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理新建用车申请，还没开始输入就直接提示结束时间不能为空不太友好，建议根据开始时间默认设置结束时间</description>
+			<author>陈晓文</author>
+			<revision-time>2016-04-13</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 所有车辆列表页面，建议按创建时间倒序排序</description>
+			<author>李启龙</author>
+			<revision-time>2016-04-13</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加出车实际驾驶员允许进行回车登记</description>
+			<author>李启龙</author>
+			<revision-time>2016-04-12</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建车辆申请页面，流程信息未加载出来，导致流程无法流转下去</description>
+			<author>李启龙</author>
+			<revision-time>2016-04-12</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆列表和查看页面，删除车辆建议给出提示信息</description>
+			<author>李启龙</author>
+			<revision-time>2016-04-12</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 IE10浏览器下新建车队页面,页面报找不到路径的错误消息“无法获取未定义或 null 引用的属性“ContextPath”</description>
+			<author>李启龙</author>
+			<revision-time>2016-04-12</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端进入车辆管理模块，在进入的瞬间可以很明显看到多标签栏和左侧的蓝色返模块主页按钮闪过</description>
+			<author>李启龙</author>
+			<revision-time>2016-03-23</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 用车查询，点击查询之后，拖动滚动条，选择数据的时候，选择的阴影显示错行</description>
+			<author>李启龙</author>
+			<revision-time>2016-03-22</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建用车申请，偶发流程信息丢失</description>
+			<author>李启龙</author>
+			<revision-time>2016-03-22</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建车辆违章信息页面，违章人非必填，不填写无法保存违章信息，而且创建人字段丢失</description>
+			<author>李启龙</author>
+			<revision-time>2016-03-11</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 查看 历史调度信息行颜色出现模糊的情况</description>
+			<author>李启龙</author>
+			<revision-time>2016-03-11</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆管理用车调度页面，如果所选车辆的座位数小于随车人，应该给出建议换车的提示</description>
+			<author>陈晓文</author>
+			<revision-time>2016-02-19</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 车辆管理新建车队配置，脚本报错</description>
+			<author>陈晓文</author>
+			<revision-time>2016-02-19</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 车辆保养信息、调度信息、违章信息等内容加入修改时间和修改人</description>
+			<author>陈晓文</author>
+			<revision-time>2016-02-19</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 将车辆管理行驶路径输入框延长</description>
+			<author>陈晓文</author>
+			<revision-time>2016-01-22</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 驾驶员信息里，手机号和证件号建议不要在最后提交的时候做验证，直接在页面验证比较友好</description>
+			<author>朱国荣</author>
+			<revision-time>2016-01-14</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建车队信息时设置调度员为岗位名，处理调度待办后待办未消失</description>
+			<author>朱国荣</author>
+			<revision-time>2016-01-11</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 将系统中接口HQLUtil.buildPreparedLogicIN 无别名参数的方法替换成带别名alias参数的buildPreparedLogicIN的接口以改善性能</description>
+			<author>李启龙</author>
+			<revision-time>2016-01-04</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+	</modifies>
+</version>

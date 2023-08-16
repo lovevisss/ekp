@@ -1,0 +1,2627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+	
+	<!--统计拓展点 -->
+	<extension-point
+		id="com.landray.kmss.km.imissive.stat">
+		<item 
+			name="stat">
+			<param 
+				name="type" 
+				required="true"
+				kind="unid">
+				<description>查询类型，要求唯一</description>
+			</param>
+			<param 
+				name="executor" 
+				kind="spring"
+				required="true"
+				basedOn="com.landray.kmss.km.imissive.service.stat.KmImissiveStatExecutor">
+				<description>统计查询执行器，提供此种场景下报表数据的统计查询</description>
+			</param>
+			<param 
+				name="showForward" 
+				kind="string"
+				required="true">
+				<description>报表展现JSP，可以做数报表展现js的引入等等</description>
+			</param>
+			<param 
+				name="chartType" 
+				kind="string">
+				<description>解析器展现图表类型</description>
+			</param>
+			<param 
+				name="conditionJsp" 
+				kind="string">
+				<description>条件JSP</description>
+			</param>
+			<param 
+				name="conditionJsp4m" 
+				kind="string">
+				<description>移动端条件JSP</description>
+			</param>
+			<param 
+				name="extJs" 
+				kind="string">
+				<description>拓展JS</description>
+			</param>
+			<description>报表统计查询定义</description>
+		</item>
+		<description>报表统计查询定义</description>
+	</extension-point>
+	
+	<!-- 公文关联其他模块文档拓展点 -->
+	<extension-point
+		id="com.landray.kmss.km.imissive.relationDoc">
+		<item 
+			name="relationDoc">
+			<param 
+				name="fdModelName" 
+				required="true"
+				kind="unid">
+				<description>其他模块主文档的modelName，配置该拓展点的唯一标识</description>
+			</param>
+			<param 
+				name="fdJspUrl" 
+				required="true"
+				kind="string">
+				<description>其他模块列表页jsp文件的URL</description>
+			</param>
+			<param 
+				name="fdMobileDataUrl" 
+				required="true"
+				kind="string">
+				<description>其他模块移动端获取数据的URL</description>
+			</param>
+			<param 
+				name="messageKey" 
+				required="false"
+				kind="string">
+				<description>关联文件“选择摁钮”显示信息的messageKey，为空则默认显示“选择文件”</description>
+			</param>
+			<param
+				name="bizKey"
+				kind="string"
+				required="true">
+				<description>标识业务的key，如：meetingSummary(会议纪要)，由于模板可能给同一个模块不同业务使用，使用最终模板保存的fdTempModelKey为fdModelName_bizKey</description>
+			</param>
+			<param 
+				name="bizMessageKey" 
+				required="false"
+				kind="string">
+				<description>业务显示的文字，如:km-imeeting:table.kmImeetingSummary(会议纪要)</description>
+			</param>
+			<description>
+					配置的其他模块列表页jsp做如下规约：
+						1、必须将列表选项设置为单选
+						2、选择完对应的数据之后回调的数据需要是Object对象，结构如下：
+						{
+							fdId : "",
+							docSubject : ""
+						}
+					具体可参考 /km/imeeting/include/km_imeeting_main/index_dialog_select.jsp
+			</description>
+		</item>
+		<description>公文关联其他模块文档</description>
+	</extension-point>
+	
+	<!-- 公文 启用 业务权限 -->
+	<extension-point
+		id="com.landray.kmss.km.imissive.businessAuth">
+		<item name="businessAuth">
+			<param
+				name="fdKey"
+				kind="unid"
+				required="true">
+				<description>扩展对应的key值，如：businessAuth</description>
+			</param>
+			<param
+				name="provider"
+				kind="spring"
+				basedOn="com.landray.kmss.km.imissive.interfaces.IKmImissiveBusinessAuth"
+				required="true">
+				<description>公文业务权限配置扩展实现，详见IKmImissiveBusinessAuth接口说明</description>
+			</param>
+			<description>公文业务权限配置</description>
+		</item>
+		<description>公文业务权限配置</description>
+	</extension-point>
+
+	<!-- 公文 启用 意见类型 -->
+	<extension-point
+		id="com.landray.kmss.km.imissive.auditNoteType">
+		<item name="auditNoteType">
+			<param
+				name="fdKey"
+				kind="unid"
+				required="true">
+				<description>扩展对应的key值，如：auditNoteType</description>
+			</param>
+			<param
+				name="provider"
+				kind="spring"
+				basedOn="com.landray.kmss.km.imissive.interfaces.IKmImissiveAuditNoteType"
+				required="true">
+				<description>公文意见类型配置扩展实现，详见IKmImissiveAuditNoteType接口说明</description>
+			</param>
+			<description>公文意见类型配置</description>
+		</item>
+		<description>公文意见类型配置</description>
+	</extension-point>
+
+	<extension-point id="com.landray.kmss.km.imissive.business">
+		<item name="extendSupervise">
+			<param name="key" kind="unid" required="true">
+				<description>扩展对应的key值，如：gkp</description>
+			</param>
+			<param name="name" kind="unid" required="true">
+				<description>扩展名称，如：督办管理高级版</description>
+			</param>
+			<param name="provider"
+					kind="spring"
+					basedOn="com.landray.kmss.common.interfaces.ISuperviseProvider"
+					required="true">
+				<description>督办管理高级版扩展实现</description>
+			</param>
+			<param name="order" default="50" kind="int">
+				<description> 排序号，序号小的优先被调用。 </description>
+			</param>
+			<description>
+			</description>
+		</item>
+		<description>督办管理高级版扩展</description>
+	</extension-point>
+
+	<extension-point id="com.landray.kmss.km.imissive.business">
+		<item name="extendMeetingTopic">
+			<param name="key" kind="unid" required="true">
+				<description>扩展对应的key值，如：gkp</description>
+			</param>
+			<param name="name" kind="unid" required="true">
+				<description>扩展名称，如：会议管理高级版</description>
+			</param>
+			<param name="provider"
+				   kind="spring"
+				   basedOn="com.landray.kmss.common.interfaces.IMeetingTopicProvider"
+				   required="true">
+				<description>会议管理高级版扩展实现</description>
+			</param>
+			<param name="order" default="50" kind="int">
+				<description> 排序号，序号小的优先被调用。 </description>
+			</param>
+			<description>
+			</description>
+		</item>
+		<description>会议管理高级版扩展</description>
+	</extension-point>
+
+
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.nav.OffLine.Send" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/listOffLine/send" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdDraftDept.fdName;fdDrafter.fdName;fdDraftTime;" />
+			<param
+				name="customized"
+				value="" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.nav.OffLine.Receive" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+				name="page"
+				value="/listOffLine/receive" />
+			<param
+				name="default"
+				value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;" />	
+			<param
+				name="customized"
+				value="" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.nav.OffLine.Sign" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+				name="page"
+				value="/listOffLine/sign" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdDraftDept.fdName;fdDrafter.fdName;fdDraftTime" />	
+			<param
+				name="customized"
+				value="" />				
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.all.Send" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/listAll/send" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.Send.finished" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/listAllPublish/send" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.create.my.summary" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/summaryDraft" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.myapproval.summary" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/summaryApproval/summaryMyTodo" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.myapproved.summary" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/summaryApproval/summaryMyDone" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.all.summary" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/summaryView" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.discard.summary" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/discard/summaryDiscard" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.Receive.finished" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+				name="page"
+				value="/listAllPublish/receive" />
+			<param
+				name="default"
+				value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />	
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.Sign.finished" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+				name="page"
+				value="/listAllPublish/sign" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus" />	
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />				
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.all.Receive" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+				name="page"
+				value="/listAll/receive" />
+			<param
+				name="default"
+				value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />	
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.all.Sign" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+				name="page"
+				value="/listAll/sign" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />	
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />				
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReg">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.mydistribute" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReg" />
+			<param
+				name="page"
+				value="/exchange/mydistribute" />
+			<param
+				name="default"
+				value="docCreateTime;fdName;fdDetailList;fdDeliverType;fdRegType;" />
+			<param
+				name="customized"
+				value="fdDetailList;km-imissive:kmImissiveReg.fdUnit" />				
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReg">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.myreport" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReg" />
+			<param
+				name="page"
+				value="/exchange/myreport" />
+			<param
+				name="default"
+				value="docCreateTime;fdName;fdDetailList;fdDeliverType;fdRegType;" />
+			<param
+				name="customized"
+				value="fdDetailList;km-imissive:kmImissiveReg.fdUnit" />				
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveRegDetailList">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.mysign" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveRegDetailList" />
+			<param
+				name="page"
+				value="/exchange/mysign" />
+			<param
+				name="default"
+				value="kmImissiveRegDetailList.fdReg.fdName;kmImissiveRegDetailList.fdReg.fdDeliverType;fdFromUnit;fdUnit.fdName;docCreateTime;fdOrgNames;fdStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor,fdOrgNames;km-imissive:kmImissiveReg.fdOrgNames,fdFromUnit;km-imissive:kmImissiveReg.fdSendUnit,fdUnitName;km-imissive:kmImissiveRegDetailList.fdUnitName,fdReturnOrg;km-imissive:kmImissiveRegDetailList.fdReturnOrg,fdReturnTime;km-imissive:kmImissiveRegDetailList.fdReturnTime,fdContent;km-imissive:kmImissiveRegDetailList.fdContent" />				
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveRegDetailList">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.myreceive" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveRegDetailList" />
+			<param
+				name="page"
+				value="/exchange/myreceive" />
+			<param
+				name="default"
+				value="kmImissiveRegDetailList.fdReg.fdName;kmImissiveRegDetailList.fdReg.fdDeliverType;fdFromUnit;fdUnit.fdName;docCreateTime;fdOrgNames;fdStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor,fdOrgNames;km-imissive:kmImissiveReg.fdOrgNames,fdFromUnit;km-imissive:kmImissiveReg.fdSendUnit,fdUnitName;km-imissive:kmImissiveRegDetailList.fdUnitName,fdReturnOrg;km-imissive:kmImissiveRegDetailList.fdReturnOrg,fdReturnTime;km-imissive:kmImissiveRegDetailList.fdReturnTime,fdContent;km-imissive:kmImissiveRegDetailList.fdContent" />				
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.nav.Create.my.Send" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/listCreate/send" />
+			<param
+				name="default"
+					value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />				
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.nav.Create.my.Receive" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+				name="page"
+				value="/listCreate/receive" />
+			<param
+				name="default"
+				value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.nav.Create.my.Sign" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+				name="page"
+				value="/listCreate/sign" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.fillingBox.Send" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/filing/send" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />				
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.fillingBox.Receive" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+				name="page"
+				value="/filing/receive" />
+			<param
+				name="default"
+				value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName;docStatus" />	
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.fillingBox.Sign" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+				name="page"
+				value="/filing/sign" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus" />	
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />				
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.discardBox.Send" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="page"
+				value="/discard/send" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName" />
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />				
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.discardBox.Receive" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+				name="page"
+				value="/discard/receive" />
+			<param
+				name="default"
+				value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName" />	
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-imissive:kmImissive.tree.discardBox.Sign" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+				name="page"
+				value="/discard/sign" />
+			<param
+				name="default"
+				value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName" />	
+			<param
+				name="customized"
+				value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />				
+		</item>
+	</extension>
+	
+	
+	<extension point="com.landray.kmss.sys.number.config" model="*">
+		<item name="extend">
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="moduleName" value="{km-imissive:kmImissive.meun.send}" />
+			<param name="isReform" value="false" />
+			<param name="order" value="1" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.number.config" model="*">
+		<item name="extend">
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="moduleName" value="{km-imissive:kmImissive.meun.receive}" />
+			<param name="isReform" value="false" />
+			<param name="order" value="1" />
+		</item>
+	</extension>
+		<extension point="com.landray.kmss.sys.number.config" model="*">
+		<item name="extend">
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="moduleName" value="{km-imissive:kmImissive.meun.sign}" />
+			<param name="isReform" value="false" />
+			<param name="order" value="1" />
+		</item>
+	</extension>
+	
+	<!-- 征求意见机器人 -->
+	<extension
+	      point="com.landray.kmss.lbpm.engine.robot">
+	      <item name="robot">
+	      	<param name="unid" value="kmImissiveSendMain_advice"/>
+	      	<param name="category" value="{km-imissive:module.km.imissive}"/>
+	      	<param name="type" value="{km-imissive:robot.kmImissiveSendMain.advice}"/>
+	      	<param name="bean" value="kmImissiveSendAdviceRobotService"/>
+	      	<param name="url" value="/km/imissive/lbpmExtend/robot/advice.jsp" />
+	      	<param name="class" value="app"/>
+	      	<param name="description" value="{km-imissive:robot.kmImissiveSendMain.advice.description}"/>
+	      </item>
+	</extension>
+	<!-- 征求意见稿激活操作 -->
+	<extension
+		point="com.landray.kmss.lbpm.engine.operation">
+		<item
+			name="operation"
+			id="145eada836c62a0898787a04487abcdf">
+			<param
+				name="type"
+				value="active_advice" />
+			<param
+				name="messageKey"
+				value="km-imissive:robot.kmImissiveSendMain.advice.active" />
+			<param
+				name="behaviour"
+				value="imissiveActiveAdviceOperationBehaviour" />
+			<param
+				name="binder"
+				value="imissiveActiveAdviceOperationBinder" />
+			<param
+				name="handlerType"
+				value="system" />
+			<param
+				name="display"
+				value="false" />
+		</item>
+	</extension>
+	
+	
+	<!-- 会签机器人 -->
+	<extension
+	      point="com.landray.kmss.lbpm.engine.robot">
+	      <item name="robot">
+	      	<param name="unid" value="kmImissiveSendMain"/>
+	      	<param name="category" value="{km-imissive:module.km.imissive}"/>
+	      	<param name="type" value="{km-imissive:robot.fdCounterSign}"/>
+	      	<param name="bean" value="kmImissiveSendRobotService"/>
+	      	<param name="class" value="app"/>
+	      	<param name="description" value="{km-imissive:robot.fdCounterSign.description}"/>
+	      </item>
+	</extension>
+	<!-- 会签激活操作 -->
+	<extension
+		point="com.landray.kmss.lbpm.engine.operation">
+		<item
+			name="operation"
+			id="145eada836c62a0898787a04487abcdf">
+			<param
+				name="type"
+				value="active_sign" />
+			<param
+				name="messageKey"
+				value="km-imissive:robot.fdCounterSign.active" />
+			<param
+				name="behaviour"
+				value="imissiveActiveSignOperationBehaviour" />
+			<param
+				name="binder"
+				value="imissiveActiveSignOperationBinder" />
+			<param
+				name="handlerType"
+				value="system" />
+			<param
+				name="display"
+				value="false" />
+		</item>
+	</extension>
+	<!-- 系统废弃操作 -->
+	<extension
+		point="com.landray.kmss.lbpm.engine.operation">
+		<item
+			name="operation"
+			id="14a7158d6c462e324259fd344d8998b7">
+			<param
+				name="type"
+				value="system_abandan" />
+			<param
+				name="messageKey"
+				value="km-imissive:sign.systemAbandan" />
+			<param
+				name="behaviour"
+				value="imissiveSystemAbandanOperationBehaviour" />
+			<param
+				name="binder"
+				value="imissiveSystemAbandanOperationBinder" />
+			<param
+				name="handlerType"
+				value="system" />
+			<param
+				name="display"
+				value="false" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{km-imissive:module.km.imissive}" />
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveMain" />
+			<param name="defaultUrl" value="/km/imissive/mobile/nav.json" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{km-imissive:kmImissive.nav.SendManagement}" />
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{km-imissive:kmImissive.nav.ReceiveManagement}" />
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{km-imissive:kmImissive.nav.SignManagement}" />
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.mobile.compress" model="*">
+		<item name="js-pkg">
+			<param name="name" value="mui-kmImissive-indexMain.js" />
+			<param name="targetFile" value="/km/imissive/mobile/module/js/mui-kmImissive-indexMain.js" />
+			<param name="tinyId" value="kmImissiveIndexMainTiny" />
+		</item>	
+		<item name="js-pkg">
+			<param name="name" value="mui-kmImissive-imissiveLibrary.js" />
+			<param name="targetFile" value="/km/imissive/mobile/imissive_library/js/mui-kmImissive-imissiveLibrary.js" />
+			<param name="tinyId" value="kmImissiveLibraryTiny" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-kmImissive-imissiveApproval.js" />
+			<param name="targetFile" value="/km/imissive/mobile/imissive_approval/js/mui-kmImissive-imissiveApproval.js" />
+			<param name="tinyId" value="kmImissiveApprovalTiny" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-kmImissive-imissiveApprovaled.js" />
+			<param name="targetFile" value="/km/imissive/mobile/imissive_approvaled/js/mui-kmImissive-imissiveApprovaled.js" />
+			<param name="tinyId" value="kmImissiveApprovaledTiny" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-kmImissive-imissiveSend.js" />
+			<param name="targetFile" value="/km/imissive/mobile/imissive_send/js/mui-kmImissive-imissiveSend.js" />
+			<param name="tinyId" value="kmImissiveSendTiny" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-kmImissive-imissiveReceive.js" />
+			<param name="targetFile" value="/km/imissive/mobile/imissive_receive/js/mui-kmImissive-imissiveReceive.js" />
+			<param name="tinyId" value="kmImissiveReceiveTiny" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-kmImissive-imissiveSign.js" />
+			<param name="targetFile" value="/km/imissive/mobile/imissive_sign/js/mui-kmImissive-imissiveSign.js" />
+			<param name="tinyId" value="kmImissiveSignTiny" />
+		</item>									
+		<item name="js-pkg">
+			<param name="name" value="mui-kmImissive-exchangeLibrary.js" />
+			<param name="targetFile" value="/km/imissive/mobile/exchange_library/js/mui-kmImissive-exchangeLibrary.js" />
+			<param name="tinyId" value="kmImissiveExchangeLibraryTiny" />
+		</item>
+	</extension>	
+	
+	<extension point="com.landray.kmss.lbpm.engine.node" model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="nodeAttributeExtend">
+			<param
+				name="nodeType"
+				value="draftNode" />
+			<param
+				name="position"
+				value="newtag" />
+			<param
+				name="includeJsp"
+				value="/km/imissive/lbpmExtend/draftNode4Send.jsp" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.lbpm.engine.node" model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+			name="nodeAttributeExtend">
+			<param
+				name="nodeType"
+				value="draftNode" />
+			<param
+				name="position"
+				value="newtag" />
+			<param
+				name="includeJsp"
+				value="/km/imissive/lbpmExtend/draftNode4Receive.jsp" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.lbpm.engine.node" model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+			name="nodeAttributeExtend">
+			<param
+				name="nodeType"
+				value="draftNode" />
+			<param
+				name="position"
+				value="newtag" />
+			<param
+				name="includeJsp"
+				value="/km/imissive/lbpmExtend/draftNode4Sign.jsp" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item name="config">
+			<param name="unid" value="com.landray.kmss.km.imissive.model.KmImissiveMain" />
+			<param name="name" value="{km-imissive:kmImissiveMain.transfer.fdName}" />
+			<param name="type" value="notify"/>
+			<param name="path" value="/km/imissive/" />
+			<param name="description" value="{km-imissive:kmImissiveMain.transfer.desc}" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveMain" />
+			<param
+				name="name"
+				value="公文政务版数据迁移" />
+			<param
+				name="path"
+				value="/km/imissive/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveTask" />
+			<param
+				name="description"
+				value="流程审批人看不到审批页签"/>
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveSendUnit" />
+			<param
+				name="name"
+				value="公文政务版单位数据迁移" />
+			<param
+				name="path"
+				value="/km/imissive/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveUnitChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveUnitTask" />
+			<param
+				name="description"
+				value="处理主送，抄送和抄报单位偶发出现显示顺序不正确问题。（注：迁移之前请先对以下表进行备份km_imissive_send_mainto，km_imissive_send_copyto，km_imissive_send_reporttoto，km_imissive_send_maintoG，km_imissive_send_copytoG，km_imissive_send_reporttotoG）"/>
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveSendPerson" />
+			<param
+				name="name"
+				value="公文政务版主送个人（抄送个人，抄报个人）数据迁移" />
+			<param
+				name="path"
+				value="/km/imissive/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.imissive.transfer.KmImissivePersonChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.imissive.transfer.KmImissivePersonTask" />
+			<param
+				name="description"
+				value="处理主送，抄送和抄报个人偶发出现显示顺序不正确问题。（注：迁移之前请先对以下表进行备份km_imissive_send_mperson，km_imissive_send_cperson，km_imissive_send_rperson）"/>
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveTransferTask" />
+			<param
+				name="name"
+				value="政府版公文数据迁移" />
+			<param
+				name="path"
+				value="/km/imissive/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveOldChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveOldTask" />
+			<param
+				name="description"
+				value="政府版公文数据迁移到政务版公文"/>
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveReceiveRelation" />
+			<param
+				name="name"
+				value="发文和收文之间关联关系数据迁移" />
+			<param
+				name="path"
+				value="/km/imissive/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveReceiveRelationChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.imissive.transfer.KmImissiveReceiveRelationTask" />
+			<param
+				name="description"
+				value="发文和收文之间目前增加了文档之间的关联关系,fdMainId字段记录了这个关联关系，fdDetailId字段记录的是来源签收单的id，但原来收文转收文（或转发文）操作也把fdDetaiId传过来，导致关联关系有可能不准确，此迁移任务可以修正关联关系（特别注意：1、执行前先备份好数据库。2、执行前全部应用服务器需要停止用户访问。3、执行过程可能比较久，请耐心等待。建议：先在测试环境执行成功，才到生产环境执行。）"/>
+		</item>
+	</extension>
+	
+	<!-- 订阅管理 -->
+	<extension
+		point="com.landray.kmss.sys.follow.setting"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item name="followSetting">
+			<param name="methodName" value="add" />
+			<param name="templateModel"  value="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate" />
+			<param name="templateField"  value="fdTemplate.fdId"/>
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.follow.setting"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item name="followSetting">
+			<param name="methodName" value="add" />
+			<param name="templateModel"  value="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate" />
+			<param name="templateField"  value="fdTemplate.fdId"/>
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.follow.setting"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item name="followSetting">
+			<param name="methodName" value="add" />
+			<param name="templateModel"  value="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate" />
+			<param name="templateField"  value="fdTemplate.fdId"/>
+		</item>
+	</extension>
+	
+	<!-- 公文管理政务版 发文主文档流程 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param name="templateModelName" value="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate" />
+			<param name="key" value="kmImissiveSend" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="moduleMessageKey" value="km-imissive:menu.kmImissiveSend.title" />
+			<param name="base" value="imissive" />
+			<param name="baseDisplayMessageKey" value="km-imissive:module.km.imissive" />
+		</item>
+	</extension>
+	
+	<!-- 公文管理政务版 收文主文档流程 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param name="templateModelName" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate" />
+			<param name="key" value="kmImissiveReceive" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="moduleMessageKey" value="km-imissive:menu.kmImissiveReceive.title" />
+			<param name="base" value="imissive" />
+			<param name="baseDisplayMessageKey" value="km-imissive:module.km.imissive" />
+		</item>
+	</extension>
+	
+	<!-- 公文管理政务版 内部请示主文档流程 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param name="templateModelName" value="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate" />
+			<param name="key" value="kmImissiveSign" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="moduleMessageKey" value="km-imissive:menu.kmImissiveSign.title" />
+			<param name="base" value="imissive" />
+			<param name="baseDisplayMessageKey" value="km-imissive:module.km.imissive" />
+		</item>
+	</extension>
+	
+	<!--发文一键选择分类扩展点实现 -->
+	<extension point="com.landray.kmss.sys.person.categoryUrl" model="com.landray.kmss.km.imissive.model.KmImissiveSendMain" >
+		<item name="categoryUrl">
+			<param name="addUrl" value="/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=add&amp;fdTemplateId={0}" />
+			<param name="templateModel" value="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate" />
+		</item>
+	</extension>
+	
+	<!--收文一键选择分类扩展点实现 -->
+	<extension point="com.landray.kmss.sys.person.categoryUrl" model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" >
+		<item name="categoryUrl">
+			<param name="addUrl" value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=add&amp;fdTemplateId={0}" />
+			<param name="templateModel" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate" />
+		</item>
+	</extension>
+	
+	<!--签报一键选择分类扩展点实现 -->
+	<extension point="com.landray.kmss.sys.person.categoryUrl" model="com.landray.kmss.km.imissive.model.KmImissiveSignMain" >
+		<item name="categoryUrl">
+			<param name="addUrl" value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=add&amp;fdTemplateId={0}" />
+			<param name="templateModel" value="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate" />
+		</item>
+	</extension>
+	
+	<!-- 软删除功能扩展点实现 -->
+	<extension point="com.landray.kmss.sys.recycle">
+		<item name="softDelete">
+			<!-- 模块(文档)名称 -->
+			<param
+				name="modelName"
+				value="km-imissive:module.km.imissive" />
+			<!-- 主文档全名称 -->
+			<param
+				name="modelClassName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<!-- 主文档对应的分类(模板)全名称 -->
+			<param
+				name="categoryClassName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate" />
+			<!-- 主文档中分类(模板)的属性名称 -->
+			<param
+				name="categoryField"
+				value="fdTemplate" />
+			<!-- 主文档中标题的属性名称 -->
+			<param
+				name="titleField"
+				value="docSubject" />
+		</item>
+		<item name="softDelete">
+			<!-- 模块(文档)名称 -->
+			<param
+				name="modelName"
+				value="km-imissive:module.km.imissive" />
+			<!-- 主文档全名称 -->
+			<param
+				name="modelClassName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<!-- 主文档对应的分类(模板)全名称 -->
+			<param
+				name="categoryClassName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate" />
+			<!-- 主文档中分类(模板)的属性名称 -->
+			<param
+				name="categoryField"
+				value="fdTemplate" />
+			<!-- 主文档中标题的属性名称 -->
+			<param
+				name="titleField"
+				value="docSubject" />
+		</item>
+		<item name="softDelete">
+			<!-- 模块(文档)名称 -->
+			<param
+				name="modelName"
+				value="km-imissive:module.km.imissive" />
+			<!-- 主文档全名称 -->
+			<param
+				name="modelClassName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<!-- 主文档对应的分类(模板)全名称 -->
+			<param
+				name="categoryClassName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate" />
+			<!-- 主文档中分类(模板)的属性名称 -->
+			<param
+				name="categoryField"
+				value="fdTemplate" />
+			<!-- 主文档中标题的属性名称 -->
+			<param
+				name="titleField"
+				value="docSubject" />
+		</item>
+	</extension>
+	<!-- 附件历史版本功能扩展点实现 -->
+	<extension point="com.landray.kmss.sys.attachment.history">
+		<item name="historyVersion">
+			<!-- 模块(文档)名称 -->
+			<param
+					name="modelName"
+					value="km-imissive:module.km.imissive" />
+			<!-- 主文档全名称 -->
+			<param
+					name="modelClassName"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+		</item>
+		<item name="historyVersion">
+			<!-- 模块(文档)名称 -->
+			<param
+					name="modelName"
+					value="km-imissive:module.km.imissive" />
+			<!-- 主文档全名称 -->
+			<param
+					name="modelClassName"
+					value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+		</item>
+		<item name="historyVersion">
+			<!-- 模块(文档)名称 -->
+			<param
+					name="modelName"
+					value="km-imissive:module.km.imissive" />
+			<!-- 主文档全名称 -->
+			<param
+					name="modelClassName"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+		</item>
+	</extension>
+	<!--表单模板国际化导入日志扩展点-->  
+	<extension point="com.landray.kmss.sys.formMultiLang.import.log">
+		<item name="item">
+			<param name="uuid" value="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate" />
+			<param name="model" value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param name="template" value="kmImissiveSendTemplate" />
+			<param name="name" value ="{km-imissive:kmImissive.meun.send}"/>
+			<param name="view" value="km/imissive/km_imissive_send_template/kmImissiveSendTemplate.do?method=view" />
+			<param name="edit" value="km/imissive/km_imissive_send_template/kmImissiveSendTemplate.do?method=edit" />
+			<param name="commonEdit" value="sys/xform/sys_form_common_template/sysFormCommonTemplate.do?method=edit;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate;fdKey=sendMainDoc;fdMainModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param name="commonView" value="sys/xform/sys_form_common_template/sysFormCommonTemplate.do?method=view;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendTemplate;fdKey=sendMainDoc;fdMainModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+		</item>
+		<item name="item">
+			<param name="uuid" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate" />
+			<param name="model" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param name="template" value="kmImissiveReceiveTemplate" />
+			<param name="name" value ="{km-imissive:kmImissive.meun.receive}"/>
+			<param name="view" value="km/imissive/km_imissive_receive_template/kmImissiveReceiveTemplate.do?method=view" />
+			<param name="edit" value="km/imissive/km_imissive_receive_template/kmImissiveReceiveTemplate.do?method=edit" />
+			<param name="commonEdit" value="sys/xform/sys_form_common_template/sysFormCommonTemplate.do?method=edit;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate;fdKey=receiveMainDoc;fdMainModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param name="commonView" value="sys/xform/sys_form_common_template/sysFormCommonTemplate.do?method=view;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate;fdKey=receiveMainDoc;fdMainModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+		</item>
+		<item name="item">
+			<param name="uuid" value="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate" />
+			<param name="model" value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param name="template" value="kmImissiveSignTemplate" />
+			<param name="name" value ="{km-imissive:kmImissive.meun.sign}"/>
+			<param name="view" value="km/imissive/km_imissive_sign_template/kmImissiveSignTemplate.do?method=view" />
+			<param name="edit" value="km/imissive/km_imissive_sign_template/kmImissiveSignTemplate.do?method=edit" />
+			<param name="commonEdit" value="sys/xform/sys_form_common_template/sysFormCommonTemplate.do?method=edit;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate;fdKey=signMainDoc;fdMainModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param name="commonView" value="sys/xform/sys_form_common_template/sysFormCommonTemplate.do?method=view;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignTemplate;fdKey=signMainDoc;fdMainModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+		</item>
+	</extension>
+	
+	<!-- 自定义表单的稿纸签章  -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls" model="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate;com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate;com.landray.kmss.km.imissive.model.KmImissiveSignTemplate">
+		<!-- 用于公文管理政务版的流程节点控件 -->
+		<item name="control">
+			<param name="class" value="com.landray.kmss.sys.xform.base.service.controls.SysFormTemplateApprovalNodeControl" />
+			<param name="file"  value="/sys/xform/designer/approvalnode.js" />
+		</item>
+	</extension>
+	
+	<!-- 表单的模式 -->
+	<extension point="com.landray.kmss.sys.xform.mode" model="*">
+		<item name="baseConfig">
+			<param name="mainModelName" value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param name="templateModelName" value="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="fdKey" value="sendMainDoc" />
+			<param name="name" value="sys-xform:sysFormTemplate.fdTemplateType.nouse|sys-xform:sysFormTemplate.fdTemplateType.define|sys-xform:sysFormTemplate.fdTemplateType.other|sys-xform:sysFormTemplate.fdTemplateType.subForm" />
+			<param name="value" value="1|3|2|4" />
+		</item>
+		<item name="baseConfig">
+			<param name="mainModelName" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param name="templateModelName" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="fdKey" value="receiveMainDoc" />
+			<param name="name" value="sys-xform:sysFormTemplate.fdTemplateType.nouse|sys-xform:sysFormTemplate.fdTemplateType.define|sys-xform:sysFormTemplate.fdTemplateType.other|sys-xform:sysFormTemplate.fdTemplateType.subForm" />
+			<param name="value" value="1|3|2|4" />
+		</item>
+		<item name="baseConfig">
+			<param name="mainModelName" value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param name="templateModelName" value="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="fdKey" value="signMainDoc" />
+			<param name="name" value="sys-xform:sysFormTemplate.fdTemplateType.nouse|sys-xform:sysFormTemplate.fdTemplateType.define|sys-xform:sysFormTemplate.fdTemplateType.other|sys-xform:sysFormTemplate.fdTemplateType.subForm" />
+			<param name="value" value="1|3|2|4" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.km.imissive.stat">
+		<item name="stat">
+			<param
+				name="type"
+				value="type.stat" />
+			<param 
+				name="executor" 
+				value="kmImissiveStatTypeExecutor"/>
+			<param
+				name="chartType"
+				value="barLine" />
+			<param
+				name="conditionJsp"
+				value="/km/imissive/km_imissive_stat/common/common_condition.jsp" />
+			<param
+				name="showForward"
+				value="typeStat" />
+			<param
+				name="conditionJsp4m"
+				value="/km/imissive/mobile/stat/common/common_condition.jsp" />	
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.km.imissive.stat">
+		<item name="stat">
+			<param
+				name="type"
+				value="deliver.stat" />
+			<param 
+				name="executor" 
+				value="kmImissiveStatDeliverExecutor"/>
+			<param
+				name="chartType"
+				value="barLine" />
+			<param
+				name="conditionJsp"
+				value="/km/imissive/km_imissive_stat/deliver_stat/deliver_condition.jsp" />
+			<param
+				name="showForward"
+				value="deliverStat" />
+			<param
+				name="conditionJsp4m"
+				value="/km/imissive/km_imissive_stat/deliver_stat/deliver_condition.jsp" />	
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.km.imissive.stat">
+		<item name="stat">
+			<param
+				name="type"
+				value="trend.stat" />
+			<param 
+				name="executor" 
+				value="kmImissiveStatTrendExecutor"/>
+			<param
+				name="chartType"
+				value="barLine" />
+			<param
+				name="conditionJsp"
+				value="/km/imissive/km_imissive_stat/trend_stat/trend_condition.jsp" />
+			<param
+				name="showForward"
+				value="trendStat" />
+			<param
+				name="conditionJsp4m"
+				value="/km/imissive/km_imissive_stat/trend_stat/trend_condition.jsp" />	
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.search.dict.config"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="dict">
+			<param
+				name="name" 
+				value="{km-imissive:module.km.imissive}"/>
+			<param
+				name="templateName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate" />
+			<param
+				name="templatePropertyName"
+				value="fdTemplate" />
+			<param
+				name="key"
+				value="sendMainDoc" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.search.dict.config"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+			name="dict">
+			<param
+				name="name" 
+				value="{km-imissive:module.km.imissive}"/>
+			<param
+				name="templateName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate" />
+			<param
+				name="templatePropertyName"
+				value="fdTemplate" />
+			<param
+				name="key"
+				value="receiveMainDoc" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.search.dict.config"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+			name="dict">
+			<param
+				name="name" 
+				value="{km-imissive:module.km.imissive}"/>
+			<param
+				name="templateName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate" />
+			<param
+				name="templatePropertyName"
+				value="fdTemplate" />
+			<param
+				name="key"
+				value="signMainDoc" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+			name="listener">
+			<param
+				name="unid"
+				value="kmImissiveSignArchivesAutoFileListener" />
+			<param
+				name="messageKey"
+				value="km-imissive:kmImissive.event.lbpmEndOnfile" />
+			<param
+				name="eventTypes"
+				value="lbpmProcessFinishEvent" />
+			<param
+				name="listener"
+				value="kmImissiveArchivesAutoFileListener" />
+			<param
+				name="conditionJsp"
+				value="/km/imissive/kmImissiveArchives.jsp" />
+			<param
+				name="description"
+				value="km-imissive:kmImissive.event.lbpmEndOnfileDescription" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listener">
+			<param
+				name="unid"
+				value="kmImissiveSendArchivesAutoFileListener" />
+			<param
+				name="messageKey"
+				value="km-imissive:kmImissive.event.lbpmEndOnfile" />
+			<param
+				name="eventTypes"
+				value="lbpmProcessFinishEvent" />
+			<param
+				name="listener"
+				value="kmImissiveArchivesAutoFileListener" />
+			<param
+				name="conditionJsp"
+				value="/km/imissive/kmImissiveArchives.jsp" />
+			<param
+				name="description"
+				value="km-imissive:kmImissive.event.lbpmEndOnfileDescription" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+			name="listener">
+			<param
+				name="unid"
+				value="kmImissiveReceiveArchivesAutoFileListener" />
+			<param
+				name="messageKey"
+				value="km-imissive:kmImissive.event.lbpmEndOnfile" />
+			<param
+				name="eventTypes"
+				value="lbpmProcessFinishEvent" />
+			<param
+				name="listener"
+				value="kmImissiveArchivesAutoFileListener" />
+			<param
+				name="conditionJsp"
+				value="/km/imissive/kmImissiveArchives.jsp" />
+			<param
+				name="description"
+				value="km-imissive:kmImissive.event.lbpmEndOnfileDescription" />
+		</item>
+	</extension>
+	
+	<!-- 自动沉淀 -->
+	<extension
+		point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+			name="listener">
+			<param
+				name="unid"
+				value="kmImissiveSignSubsideAutoFileListener" />
+			<param
+				name="messageKey"
+				value="km-imissive:kmImissive.event.lbpmEndSubsideOnfile" />
+			<param
+				name="eventTypes"
+				value="lbpmProcessFinishEvent" />
+			<param
+				name="listener"
+				value="kmImissiveSubsideAutoFileListener" />
+			<param
+				name="conditionJsp"
+				value="/km/imissive/kmImissiveSubside.jsp" />
+			<param
+				name="description"
+				value="km-imissive:kmImissive.event.lbpmEndSubsideOnfileDescription" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+			name="listener">
+			<param
+				name="unid"
+				value="kmImissiveSendSubsideAutoFileListener" />
+			<param
+				name="messageKey"
+				value="km-imissive:kmImissive.event.lbpmEndSubsideOnfile" />
+			<param
+				name="eventTypes"
+				value="lbpmProcessFinishEvent" />
+			<param
+				name="listener"
+				value="kmImissiveSubsideAutoFileListener" />
+			<param
+				name="conditionJsp"
+				value="/km/imissive/kmImissiveSubside.jsp" />
+			<param
+				name="description"
+				value="km-imissive:kmImissive.event.lbpmEndSubsideOnfileDescription" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+			name="listener">
+			<param
+				name="unid"
+				value="kmImissiveReceiveSubsideAutoFileListener" />
+			<param
+				name="messageKey"
+				value="km-imissive:kmImissive.event.lbpmEndSubsideOnfile" />
+			<param
+				name="eventTypes"
+				value="lbpmProcessFinishEvent" />
+			<param
+				name="listener"
+				value="kmImissiveSubsideAutoFileListener" />
+			<param
+				name="conditionJsp"
+				value="/km/imissive/kmImissiveSubside.jsp" />
+			<param
+				name="description"
+				value="km-imissive:kmImissive.event.lbpmEndSubsideOnfileDescription" />
+		</item>
+	</extension>
+	
+	<!-- 匿名机制 发文 -->
+	<extension point="com.landray.kmss.sys.anonym.relation">
+		<item name="mapRelation">
+			<param name="categoryModelName" value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param name="targetModelName" value="com.landray.kmss.sys.anonym.model.SysAnonymCommon" />
+			<param name="fieldMap" value="docSubject:fdName;docCreator.fdName:docCreatorName;docCreateTime:docCreateTime;fdDocNum:fdNumber;docStatus:docField1;fdEmergencyGrade.fdName:docField2;fdSecretGrade.fdName:docField3;fdTemplate.fdName:docField4;mainonline:fileContentKey" />
+			<param name="formatKeys" value="classic" />
+			<param name="viewUrl" value="/km/imissive/anonym/kmImissiveSendMain_view.jsp" />
+		</item>
+	</extension>
+	
+	<!-- 匿名机制 收文 -->
+	<extension point="com.landray.kmss.sys.anonym.relation">
+		<item name="mapRelation">
+			<param name="categoryModelName" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param name="targetModelName" value="com.landray.kmss.sys.anonym.model.SysAnonymCommon" />
+			<param name="fieldMap" value="docSubject:fdName;docCreator.fdName:docCreatorName;docCreateTime:docCreateTime;fdDocNum:fdNumber;docStatus:docField1;fdEmergencyGrade.fdName:docField2;fdSecretGrade.fdName:docField3;fdTemplate.fdName:docField4;mainonline:fileContentKey" />
+			<param name="formatKeys" value="classic" />
+			<param name="viewUrl" value="/km/imissive/anonym/kmImissiveReceiveMain_view.jsp" />
+		</item>
+	</extension>
+	
+	<!-- 匿名机制 签报 -->
+	<extension point="com.landray.kmss.sys.anonym.relation">
+		<item name="mapRelation">
+			<param name="categoryModelName" value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param name="targetModelName" value="com.landray.kmss.sys.anonym.model.SysAnonymCommon" />
+			<param name="fieldMap" value="docSubject:fdName;docCreator.fdName:docCreatorName;docCreateTime:docCreateTime;fdDocNum:fdNumber;docStatus:docField1;fdEmergencyGrade.fdName:docField2;fdSecretGrade.fdName:docField3;fdTemplate.fdName:docField4;mainonline:fileContentKey" />
+			<param name="formatKeys" value="classic" />
+			<param name="viewUrl" value="/km/imissive/anonym/kmImissiveSignMain_view.jsp" />
+		</item>
+	</extension>
+	
+	<!-- 自定义附件权限实现 -->
+	<extension point="com.landray.kmss.sys.attachment.validator"
+		model="com.landray.kmss.km.imissive.model.KmImissiveRegDetailListOuter">
+		<item name="validator">
+			<param name="bean" value="kmImissiveRegDetailListAttValidator" />
+		</item>
+	</extension>
+	
+	
+	<extension 
+		point="com.landray.kmss.elec.device.ansyService"
+		model="com.landray.kmss.elec.device.client.IElecChannelRequestMessage">
+    	<item name="convertor">
+      		<param name="bean" value="kmImissiveYqqSignService" />
+      		<param name="channel" value="yqq" />
+      		<param name="receiver" value="km-ImissiveSend" />
+    	</item>
+  	</extension>
+  	
+  	<extension 
+		point="com.landray.kmss.elec.device.ansyService"
+		model="com.landray.kmss.elec.device.client.IElecChannelRequestMessage">
+    	<item name="convertor">
+      		<param name="bean" value="kmImissiveReceiveYqqSignService" />
+      		<param name="channel" value="yqq" />
+      		<param name="receiver" value="km-ImissiveReceive" />
+    	</item>
+  	</extension>
+  	
+  	<extension 
+		point="com.landray.kmss.elec.device.ansyService"
+		model="com.landray.kmss.elec.device.client.IElecChannelRequestMessage">
+    	<item name="convertor">
+      		<param name="bean" value="kmImissiveSignYqqSignService" />
+      		<param name="channel" value="yqq" />
+      		<param name="receiver" value="km-ImissiveSign" />
+    	</item>
+  	</extension>
+  	
+	 <extension 
+        point="com.landray.kmss.elec.core.signature"
+        model="*">
+        <item name="coreService">
+            <param 
+                name="bean"
+                value="kmImissiveOutSignService"/>
+            <param 
+                name="providerName" 
+                value="km-imissive"/>
+            <param 
+                name="providerNameKey" 
+                value="km-imissive:plugin.management"/>
+            <param 
+                name="order" 
+                value="10"/>
+        </item>
+    </extension>
+  	
+  	<!-- 自定义附件权限实现 -->
+	<extension point="com.landray.kmss.sys.attachment.validator"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReturnOpinion">
+		<item name="validator">
+			<param name="bean" value="kmImissiveReturnOpinionAttValidator" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.attachment.validator"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReg">
+		<item name="validator">
+			<param name="bean" value="kmImissiveRegAttValidator" />
+		</item>
+	</extension>
+	
+	<!-- 发文纳入会议议题 -->
+	<extension
+		point="com.landray.kmss.km.imeeting.addTopic">
+		<item name="addTopic">
+			<param
+				name="fdModelName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param 
+				name="attributeMap" 
+				value="docSubject:fdSourceSubject"/>
+			<param
+				name="attachmentMap"
+				value="m-mainonline,e-editonline:mainonline;attachment:attachment" />
+		</item>
+	</extension>
+	
+	<!-- 收文纳入会议议题 -->
+	<extension
+		point="com.landray.kmss.km.imeeting.addTopic">
+		<item name="addTopic">
+			<param
+				name="fdModelName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param 
+				name="attributeMap" 
+				value="docSubject:fdSourceSubject"/>
+			<param
+				name="attachmentMap"
+				value="m-mainonline,e-editonline:mainonline;attachment:attachment" />
+		</item>
+	</extension>
+	
+	<!-- 签报纳入会议议题 -->
+	<extension
+		point="com.landray.kmss.km.imeeting.addTopic">
+		<item name="addTopic">
+			<param
+				name="fdModelName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param 
+				name="attributeMap" 
+				value="docSubject:fdSourceSubject"/>
+			<param
+				name="attachmentMap"
+				value="m-mainonline,e-editonline:mainonline;attachment:attachment" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.filestore.convert.callback">
+		<item name="callbackService">
+			<param name="bean" value="kmImissiveFileConvertCallbackService" />
+		</item>
+	</extension>
+	
+	
+	<!-- 敏感词过滤 -->
+	<extension point="com.landray.sys.profile.sensitive.config" model="*">
+		<item
+			name="sensitiveConfig">
+			<param
+				name="name" 
+				value="{km-imissive:menu.kmImissiveSend.title}" />
+			<param 
+				name="formName" 
+				value="kmImissiveSendMainForm" />
+		</item>
+		<item
+			name="sensitiveConfig">
+			<param
+				name="name" 
+				value="{km-imissive:menu.kmImissiveReceive.title}" />
+			<param 
+				name="formName" 
+				value="kmImissiveReceiveMainForm" />
+		</item>
+		<item
+			name="sensitiveConfig">
+			<param
+				name="name" 
+				value="{km-imissive:menu.kmImissiveSign.title}" />
+			<param 
+				name="formName" 
+				value="kmImissiveSignMainForm" />
+		</item>
+	</extension>
+	
+	<!-- 启用 业务权限、意见类型 -->
+	<extension point="com.landray.kmss.sys.lbpmext.config.businessSwitch">
+		<item name="switch">
+			<param name="key" value="imissiveLbpmSwitch" />
+			<param name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveMain" />
+			<param name="provider" value="kmImissiveLbpmSwitchProvider" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item name="config">
+			<param name="unid" value="com.landray.kmss.km.imissive.transfer.KmImissiveTemplateCfg" />
+			<param name="name" value="公文交换配置数据迁移" />
+			<param name="path" value="/km/imissive/" />
+			<param name="check" value="com.landray.kmss.km.imissive.transfer.KmImissiveTemplateCfgChecker" />
+			<param name="upgrade" value="com.landray.kmss.km.imissive.transfer.KmImissiveTemplateCfgTask" />
+			<param name="description" value="公文交换为了减少配置工作量，配置数据支持多选，为了交融原来旧数据需要执行该迁移任务"/>
+		</item>
+	</extension>
+	
+	
+	<extension
+		point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item name="listener">
+			<param name="unid" value="kmImissiveSendOffLineListener" />
+			<param name="messageKey" value="km-imissive:kmImissive.event.lbpmSendOffLine" />
+			<param name="eventTypes" value="endedNodeEvent" />
+			<param name="listener" value="kmImissiveSendOffLineListener" />
+			<param name="description" value="km-imissive:kmImissive.event.lbpmSendOffLineDescription" />
+			<param name="enforce"  value="true" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item name="listener">
+			<param name="unid" value="kmImissiveReceiveOffLineListener" />
+			<param name="messageKey" value="km-imissive:kmImissive.event.lbpmReceiveOffLine" />
+			<param name="eventTypes" value="endedNodeEvent" />
+			<param name="listener" value="kmImissiveReceiveOffLineListener" />
+			<param name="description" value="km-imissive:kmImissive.event.lbpmReceiveOffLineDescription" />
+			<param name="enforce"  value="true" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item name="listener">
+			<param name="unid" value="kmImissiveSignOffLineListener" />
+			<param name="messageKey" value="km-imissive:kmImissive.event.lbpmSignOffLine" />
+			<param name="eventTypes" value="endedNodeEvent" />
+			<param name="listener" value="kmImissiveSignOffLineListener" />
+			<param name="description" value="km-imissive:kmImissive.event.lbpmSignOffLineDescription" />
+			<param name="enforce"  value="true" />
+		</item>
+	</extension>
+
+	<!-- e签宝回调业务处理 -->
+	<extension point="com.landray.kmss.elec.device.ansyService"
+			   model="com.landray.kmss.elec.device.client.IElecChannelRequestMessage">
+		<item name="convertor">
+			<param name="bean" value="kmImissiveEqbSignService" />
+			<param name="channel" value="eqb" />
+			<param name="receiver" value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+		</item>
+	</extension>
+
+	<extension point="com.landray.kmss.elec.device.ansyService"
+			   model="com.landray.kmss.elec.device.client.IElecChannelRequestMessage">
+		<item name="convertor">
+			<param name="bean" value="kmImissiveEqbSignService" />
+			<param name="channel" value="eqbsaas" />
+			<param name="receiver" value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+		</item>
+	</extension>
+
+	<extension point="com.landray.kmss.elec.device.ansyService"
+			   model="com.landray.kmss.elec.device.client.IElecChannelRequestMessage">
+		<item name="convertor">
+			<param name="bean" value="kmImissiveEqbSignService" />
+			<param name="channel" value="eqb" />
+			<param name="receiver" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+		</item>
+	</extension>
+
+	<extension point="com.landray.kmss.elec.device.ansyService"
+			   model="com.landray.kmss.elec.device.client.IElecChannelRequestMessage">
+		<item name="convertor">
+			<param name="bean" value="kmImissiveEqbSignService" />
+			<param name="channel" value="eqbsaas" />
+			<param name="receiver" value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+		</item>
+	</extension>
+
+	<extension point="com.landray.kmss.elec.device.ansyService"
+			   model="com.landray.kmss.elec.device.client.IElecChannelRequestMessage">
+		<item name="convertor">
+			<param name="bean" value="kmImissiveEqbSignService" />
+			<param name="channel" value="eqb" />
+			<param name="receiver" value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+		</item>
+	</extension>
+
+	<extension point="com.landray.kmss.elec.device.ansyService"
+			   model="com.landray.kmss.elec.device.client.IElecChannelRequestMessage">
+		<item name="convertor">
+			<param name="bean" value="kmImissiveEqbSignService" />
+			<param name="channel" value="eqbsaas" />
+			<param name="receiver" value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+		</item>
+	</extension>
+
+	<!--普通模式 发文-->
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:setting.navigationModel.dealtSend" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+					name="page"
+					value="simpleGw/listApprovalSend" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.all.Send" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+					name="page"
+					value="simpleGw/list/send" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.Send.finished1" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+					name="page"
+					value="simpleGw/listAllPublish/send" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.fillingBox.Send" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+					name="page"
+					value="simpleGw/filing/send" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.discardBox.Send" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+					name="page"
+					value="simpleGw/discard/send" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.nav.OffLine.Send" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+					name="page"
+					value="simpleGw/listOffLine/send" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdDraftDept.fdName;fdDrafter.fdName;fdDraftTime;" />
+			<param
+					name="customized"
+					value="" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSendMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.myapproved.MySend1" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+					name="page"
+					value="simpleGw/listApproved/send" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdSendtoUnit.fdName;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+
+	<!--普通模式 收文-->
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:setting.navigationModel.dealtReceive" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+					name="page"
+					value="simpleGw/listApprovalReceive" />
+			<param
+					name="default"
+					value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.all.Receive" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+					name="page"
+					value="simpleGw/list/receive" />
+			<param
+					name="default"
+					value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.Receive.finished1" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+					name="page"
+					value="simpleGw/listAllPublish/receive" />
+			<param
+					name="default"
+					value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.fillingBox.Receive" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+					name="page"
+					value="simpleGw/filing/receive" />
+			<param
+					name="default"
+					value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName;docStatus" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.discardBox.Receive" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+					name="page"
+					value="simpleGw/discard/receive" />
+			<param
+					name="default"
+					value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.nav.OffLine.Receive" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+					name="page"
+					value="simpleGw/listOffLine/receive" />
+			<param
+					name="default"
+					value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;" />
+			<param
+					name="customized"
+					value="" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.myapproved.MyReceive" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+					name="page"
+					value="simpleGw/listApproved/receive" />
+			<param
+					name="default"
+					value="docSubject;fdSendtoUnit.fdName;fdReceiveNum;fdReceiveTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+
+	<!--普通模式 签报-->
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:setting.navigationModel.dealtSign" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+					name="page"
+					value="simpleGw/listApprovalSign" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.all.Sign" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+					name="page"
+					value="simpleGw/list/sign" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.Sign.finished1" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+					name="page"
+					value="simpleGw/listAllPublish/sign" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.fillingBox.Sign" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+					name="page"
+					value="simpleGw/filing/sign" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.discardBox.Sign" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+					name="page"
+					value="simpleGw/discard/sign" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.nav.OffLine.Sign" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+					name="page"
+					value="simpleGw/listOffLine/sign" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdDraftDept.fdName;fdDrafter.fdName;fdDraftTime" />
+			<param
+					name="customized"
+					value="" />
+		</item>
+	</extension>
+	<extension
+			point="com.landray.kmss.sys.listshow.listShowConfig"
+			model="com.landray.kmss.km.imissive.model.KmImissiveSignMain">
+		<item
+				name="listShowConfig">
+			<param
+					name="name"
+					value="km-imissive:kmImissive.tree.myapproved.MySign1" />
+			<param
+					name="model"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+					name="page"
+					value="simpleGw/listApproved/sign" />
+			<param
+					name="default"
+					value="docSubject;fdDocNum;fdDrafter.fdName;fdDraftTime;fdEmergencyGrade.fdName;docStatus;nodeName;handlerName" />
+			<param
+					name="customized"
+					value="nodeName;km-imissive:sysWfNode.processingNode.currentProcess,handlerName;km-imissive:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+
+	<!-- 下属工作 -->
+	<extension point="com.landray.kmss.sys.subordinate">
+		<!-- 下属的发文 -->
+		<item name="config">
+			<param
+					name="modelName"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+			<param
+					name="messageKey"
+					value="km-imissive:table.kmImissiveSendMain" />
+			<param
+					name="moduleMessageKey"
+					value="km-imissive:module.km.imissive" />
+			<param
+					name="type"
+					value="person" />
+			<param
+					name="provider"
+					value="com.landray.kmss.km.imissive.subordinate.KmImissiveSendMainProvider" />
+			<param
+					name="indexPath"
+					value="/km/imissive/subordinate/kmImissiveSendMain_index.jsp" />
+			<param
+					name="listPath"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_list.jsp" />
+			<param
+					name="viewPath"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_view.jsp" />
+		</item>
+		<!-- 下属的收文 -->
+		<item name="config">
+			<param
+					name="modelName"
+					value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+			<param
+					name="messageKey"
+					value="km-imissive:table.kmImissiveReceiveMain" />
+			<param
+					name="moduleMessageKey"
+					value="km-imissive:module.km.imissive" />
+			<param
+					name="type"
+					value="person" />
+			<param
+					name="provider"
+					value="com.landray.kmss.km.imissive.subordinate.KmImissiveReceiveMainProvider" />
+			<param
+					name="indexPath"
+					value="/km/imissive/subordinate/kmImissiveReceiveMain_index.jsp" />
+			<param
+					name="listPath"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_list.jsp" />
+			<param
+					name="viewPath"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_view.jsp" />
+		</item>
+		<!-- 下属的签报 -->
+		<item name="config">
+			<param
+					name="modelName"
+					value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+			<param
+					name="messageKey"
+					value="km-imissive:table.kmImissiveSignMain" />
+			<param
+					name="moduleMessageKey"
+					value="km-imissive:module.km.imissive" />
+			<param
+					name="type"
+					value="person" />
+			<param
+					name="provider"
+					value="com.landray.kmss.km.imissive.subordinate.KmImissiveSignMainProvider" />
+			<param
+					name="indexPath"
+					value="/km/imissive/subordinate/kmImissiveSignMain_index.jsp" />
+			<param
+					name="listPath"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_list.jsp" />
+			<param
+					name="viewPath"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_view.jsp" />
+		</item>
+	</extension>
+
+	<!--js合并压缩扩展点-->
+	<extension point="com.landray.kmss.sys.ui.compressExecutor"
+			   model="com.landray.kmss.sys.ui.service.ISysUiCompressExecutor">
+		<item name="executor">
+			<param name="unid" value="kmImissiveCompressExecutor" />
+			<param name="bean" value="kmImissiveCompressExecutor"/>
+		</item>
+	</extension>
+
+</plugin>

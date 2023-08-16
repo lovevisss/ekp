@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="http://www.landray.com.cn/schema/lui" xmlns:degign="http://www.landray.com.cn/schema/design"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.landray.com.cn/schema/lui
+	../../../sys/ui/lui.xsd
+	http://www.landray.com.cn/schema/design
+	../../../design-xml.xsd">
+<portlet
+		id="km.imissive.latestsend"
+		name="{km-imissive:kmImissiveSend.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc1}">
+		<source
+			format="sys.ui.classic"
+			type="AjaxXml">
+			<code>
+				<![CDATA[
+				{"url":"/sys/common/dataxml.jsp?s_bean=kmImissiveSendMainPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}"}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"政府公开招标融合项目推进情况","created":"2019-10-10","href":"#","catename":"发文","creator":"朱湖强"},{"text":"职能培训通知","created":"2019-10-10","href":"#","catename":"发文","creator":"朱湖强"},{"text":"工业和信息化部关于电信服务质量的通告（2019年第2号）","created":"2019-10-10","href":"#","catename":"公函","creator":"朱湖强"},{"text":"2019世界人工智能大会举办","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"关于开展“不忘初心、牢记使命”主题教育的实施方案","created":"2019-10-10","href":"#","catename":"批复","creator":"朱湖强"},{"text":"全党开展教育活动的意义","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"新时代先锋模范作用经典分享","created":"2019-10-10","href":"#","catename":"公函","creator":"朱湖强"},{"text":"中国互联网企业社会责任论坛在京举办","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"2019地理信息系统（GIS）软件技术大会召开","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"2019中国电子政务论坛在广州开幕","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"}]					
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{km-imissive:kmImissive.portlet.docPublishTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+			<var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveSendTemplate","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_send_main/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listAll/send&amp;cri.q=fdTemplate:!{cateid};docStatus:30" />
+	    </operations>
+</portlet>
+<portlet
+		id="km.imissive.mysend"
+		name="{km-imissive:kmImissiveSendMain.Send.my}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc2}">
+		<source
+			format="sys.ui.listtable"
+			type="AjaxJson">
+			<code>
+				<![CDATA[
+				{
+				   "url":"/km/imissive/km_imissive_send_main/kmImissiveSendMainPortlet.do?method=listPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&myFlow=!{myFlow}&scope=!{scope}&orderByFiled=!{orderByFiled}&orderByType=!{orderByType}"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					{"columns":[{"property":"fdId"},{"title":"文件标题","property":"docSubject","headerStyle":"min-width: 150px;"},{"title":"发文字号","property":"fdDocNum","headerClass":"width120"},{"title":"拟稿日期","property":"fdDraftTime","headerClass":"width100"},{}],"datas":[[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019地理信息系统（GIS）软件技术大会召开","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵021","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019世界人工智能大会举办","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵022","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019中国电子政务论坛在广州开幕","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵023","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"工业和信息化部关于电信服务质量的通告（2019年第2号）","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵024","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"新时代先锋模范作用经典分享","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵025","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"劳动法律法规基础知识","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵026","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"政府公开招标融合项目推进情况","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵027","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"中国互联网企业社会责任论坛在京举办","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵028","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"关于开展“不忘初心、牢记使命”主题教育的实施方案","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵029","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"全党开展教育活动的意义","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵030","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}]]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{km-imissive:kmImissive.portlet.docCreateTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		    <var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveSendTemplate","name":"{button.select}"}
+			</var>
+		    <var name="{km-imissive:kmImissiveSendMain.Send.my}" key="myFlow" kind="enumValue" default="approval">
+			  {    "values":[{ "text":"{km-imissive:kmImissive.tree.myapproval}", "value":"approval" },{ "text":"{km-imissive:kmImissive.tree.myapproved}", "value":"approved" },{ "text":"{km-imissive:kmImissive.tree.create.my}", "value":"create" }],
+	               "showType":"radio"
+                }
+			</var>
+			<var name="{km-imissive:kmImissive.portlet.orderByFiled}" key="orderByFiled" kind="enumValue" default="docCreateTime">
+			  {    "values":[{ "text":"{km-imissive:kmImissive.portlet.orderByFiled.docCreateTime}", "value":"docCreateTime" },{ "text":"{km-imissive:kmImissive.portlet.orderByFiled.emergencyGrade}", "value":"fdEmergencyGrade" }],
+	               "showType":"radio"
+                }
+			</var>
+			<var name="{km-imissive:kmImissive.portlet.orderByType}" key="orderByType" kind="enumValue" default="down">
+			  {    "values":[{ "text":"{km-imissive:kmImissive.portlet.orderByType.down}", "value":"down" },{ "text":"{km-imissive:kmImissive.portlet.orderByType.up}", "value":"up" }],
+	               "showType":"radio"
+                }
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_send_main/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();" 
+				target="_self"/>
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_send_main/js/create'], function(create) { 
+							create.openDoc('!{cateid}','!{myFlow}');
+					 });})();"
+				target="_self"/>
+	    </operations>
+</portlet>
+<portlet
+		id="km.imissive.latestsend.table"
+		name="{km-imissive:kmImissiveSend.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc2}">
+		<source
+			format="sys.ui.listtable"
+			type="AjaxJson">
+			<code>
+				<![CDATA[
+				{
+				   "url":"/km/imissive/km_imissive_send_main/kmImissiveSendMainPortlet.do?method=listPortletNew&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&latest=true"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					{"columns":[{"property":"fdId"},{"title":"文件标题","property":"docSubject","headerStyle":"min-width: 150px;"},{"title":"发文字号","property":"fdDocNum","headerClass":"width120"},{"title":"拟稿日期","property":"fdDraftTime","headerClass":"width100"},{}],"datas":[[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019地理信息系统（GIS）软件技术大会召开","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵021","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019世界人工智能大会举办","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵022","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019中国电子政务论坛在广州开幕","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵023","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"工业和信息化部关于电信服务质量的通告（2019年第2号）","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵024","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"新时代先锋模范作用经典分享","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵025","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"劳动法律法规基础知识","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵026","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"政府公开招标融合项目推进情况","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵027","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"中国互联网企业社会责任论坛在京举办","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵028","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"关于开展“不忘初心、牢记使命”主题教育的实施方案","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵029","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"全党开展教育活动的意义","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵030","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}]]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{km-imissive:kmImissive.portlet.docCreateTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		    <var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveSendTemplate","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_send_main/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();" 
+				target="_self"/>
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listAll/send&amp;cri.q=fdTemplate:!{cateid};docStatus:30"/>
+	    </operations>
+</portlet>
+<portlet
+		id="km.imissive.latestreceive"
+		name="{km-imissive:kmImissiveReceive.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc1}">
+		<source
+			format="sys.ui.classic"
+			type="AjaxXml">
+			<code>
+				<![CDATA[
+				{"url":"/sys/common/dataxml.jsp?s_bean=kmImissiveReceiveMainPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}"}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+							[{"text":"政府公开招标融合项目推进情况","created":"2019-10-10","href":"#","catename":"发文","creator":"朱湖强"},{"text":"职能培训通知","created":"2019-10-10","href":"#","catename":"发文","creator":"朱湖强"},{"text":"工业和信息化部关于电信服务质量的通告（2019年第2号）","created":"2019-10-10","href":"#","catename":"公函","creator":"朱湖强"},{"text":"2019世界人工智能大会举办","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"关于开展“不忘初心、牢记使命”主题教育的实施方案","created":"2019-10-10","href":"#","catename":"批复","creator":"朱湖强"},{"text":"全党开展教育活动的意义","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"新时代先锋模范作用经典分享","created":"2019-10-10","href":"#","catename":"公函","creator":"朱湖强"},{"text":"中国互联网企业社会责任论坛在京举办","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"2019地理信息系统（GIS）软件技术大会召开","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"2019中国电子政务论坛在广州开幕","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"}]					
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{km-imissive:kmImissive.portlet.docPublishTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+			<var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_receive_main/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listAll/receive&amp;cri.q=fdTemplate:!{cateid};docStatus:30" />
+	    </operations>
+</portlet>
+<portlet
+		id="km.imissive.myreceive"
+		name="{km-imissive:kmImissiveReceiveMain.Receive.my}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc2}">
+		<source
+			format="sys.ui.listtable"
+			type="AjaxJson">
+			<code>
+				<![CDATA[
+				{
+				   "url":"/km/imissive/km_imissive_receive_main/kmImissiveReceiveMainPortlet.do?method=listPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&myFlow=!{myFlow}&scope=!{scope}&orderByFiled=!{orderByFiled}&orderByType=!{orderByType}"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{"columns":[{"property":"fdId"},{"title":"文件标题","property":"docSubject","headerStyle":"min-width: 150px;"},{"title":"收文字号","property":"fdReceiveNum","headerClass":"width120"},{"title":"收文日期","property":"fdReceiveTime","headerClass":"width100"},{}],"datas":[[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019地理信息系统（GIS）软件技术大会召开","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵021","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019世界人工智能大会举办","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵022","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019中国电子政务论坛在广州开幕","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵023","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"工业和信息化部关于电信服务质量的通告（2019年第2号）","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵024","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"新时代先锋模范作用经典分享","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵025","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"劳动法律法规基础知识","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵026","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"政府公开招标融合项目推进情况","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵027","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"中国互联网企业社会责任论坛在京举办","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵028","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"关于开展“不忘初心、牢记使命”主题教育的实施方案","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵029","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"全党开展教育活动的意义","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵030","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}]]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+		   <var name="{km-imissive:kmImissive.portlet.docCreateTime}" key="scope" kind="enumValue" default="no">
+                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                   "showType":"radio"
+                  }
+            </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		     <var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate","name":"{button.select}"}
+			</var>
+		    <var name="{km-imissive:kmImissiveReceiveMain.Receive.my}" key="myFlow" kind="enumValue" default="approval">
+			  {    "values":[{ "text":"{km-imissive:kmImissive.tree.myapproval}", "value":"approval" },{ "text":"{km-imissive:kmImissive.tree.myapproved}", "value":"approved" },{ "text":"{km-imissive:kmImissive.tree.create.my}", "value":"create" }],
+	               "showType":"radio"
+                }
+			</var>
+			<var name="{km-imissive:kmImissive.portlet.orderByFiled}" key="orderByFiled" kind="enumValue" default="docCreateTime">
+			  {    "values":[{ "text":"{km-imissive:kmImissive.portlet.orderByFiled.docCreateTime}", "value":"docCreateTime" },{ "text":"{km-imissive:kmImissive.portlet.orderByFiled.emergencyGrade}", "value":"fdEmergencyGrade" }],
+	               "showType":"radio"
+                }
+			</var>
+			<var name="{km-imissive:kmImissive.portlet.orderByType}" key="orderByType" kind="enumValue" default="down">
+			  {    "values":[{ "text":"{km-imissive:kmImissive.portlet.orderByType.down}", "value":"down" },{ "text":"{km-imissive:kmImissive.portlet.orderByType.up}", "value":"up" }],
+	               "showType":"radio"
+                }
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_receive_main/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();" 
+				target="_self"/>
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_receive_main/js/create'], function(create) { 
+							create.openDoc('!{cateid}','!{myFlow}');
+					 });})();"
+				target="_self"/>
+	    </operations>
+</portlet>
+<portlet
+		id="km.imissive.latestreceive.table"
+		name="{km-imissive:kmImissiveReceive.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc2}">
+		<source
+			format="sys.ui.listtable"
+			type="AjaxJson">
+			<code>
+				<![CDATA[
+				{
+				   "url":"/km/imissive/km_imissive_receive_main/kmImissiveReceiveMainPortlet.do?method=listPortletNew&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&latest=true"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+							{"columns":[{"property":"fdId"},{"title":"文件标题","property":"docSubject","headerStyle":"min-width: 150px;"},{"title":"收文字号","property":"fdReceiveNum","headerClass":"width120"},{"title":"收文日期","property":"fdReceiveTime","headerClass":"width100"},{}],"datas":[[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019地理信息系统（GIS）软件技术大会召开","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵021","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019世界人工智能大会举办","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵022","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019中国电子政务论坛在广州开幕","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵023","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"工业和信息化部关于电信服务质量的通告（2019年第2号）","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵024","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"新时代先锋模范作用经典分享","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵025","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"劳动法律法规基础知识","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵026","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"政府公开招标融合项目推进情况","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵027","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"中国互联网企业社会责任论坛在京举办","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵028","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"关于开展“不忘初心、牢记使命”主题教育的实施方案","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵029","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"全党开展教育活动的意义","style":"text-align:left;min-width:180px"},{"col":"fdReceiveNum","value":"2019年12月25日呵呵030","styleClass":"width120"},{"col":"fdReceiveTime","value":"2019-12-25","styleClass":"width100"}]]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+		   <var name="{km-imissive:kmImissive.portlet.docCreateTime}" key="scope" kind="enumValue" default="no">
+                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                   "showType":"radio"
+                  }
+            </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		     <var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_receive_main/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();" 
+				target="_self"/>
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listAll/receive&amp;cri.q=fdTemplate:!{cateid};docStatus:30"/>
+	    </operations>
+</portlet>
+<portlet
+		id="km.imissive.latestsign"
+		name="{km-imissive:kmImissiveSign.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc1}">
+		<source
+			format="sys.ui.classic"
+			type="AjaxXml">
+			<code>
+				<![CDATA[
+				{"url":"/sys/common/dataxml.jsp?s_bean=kmImissiveSignMainPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}"}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+							[{"text":"政府公开招标融合项目推进情况","created":"2019-10-10","href":"#","catename":"发文","creator":"朱湖强"},{"text":"职能培训通知","created":"2019-10-10","href":"#","catename":"发文","creator":"朱湖强"},{"text":"工业和信息化部关于电信服务质量的通告（2019年第2号）","created":"2019-10-10","href":"#","catename":"公函","creator":"朱湖强"},{"text":"2019世界人工智能大会举办","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"关于开展“不忘初心、牢记使命”主题教育的实施方案","created":"2019-10-10","href":"#","catename":"批复","creator":"朱湖强"},{"text":"全党开展教育活动的意义","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"新时代先锋模范作用经典分享","created":"2019-10-10","href":"#","catename":"公函","creator":"朱湖强"},{"text":"中国互联网企业社会责任论坛在京举办","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"2019地理信息系统（GIS）软件技术大会召开","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"},{"text":"2019中国电子政务论坛在广州开幕","created":"2019-10-10","href":"#","catename":"通告","creator":"朱湖强"}]					
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{km-imissive:kmImissive.portlet.docPublishTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+			<var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveSignTemplate","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_sign_main/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listAll/sign&amp;cri.q=fdTemplate:!{cateid};docStatus:30" />
+	    </operations>
+</portlet>
+<portlet
+		id="km.imissive.mysign"
+		name="{km-imissive:kmImissiveSignMain.Sign.my}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc2}">
+		<source
+			format="sys.ui.listtable"
+			type="AjaxJson">
+			<code>
+				<![CDATA[
+				{
+				   "url":"/km/imissive/km_imissive_sign_main/kmImissiveSignMainPortlet.do?method=listPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&myFlow=!{myFlow}&scope=!{scope}&orderByFiled=!{orderByFiled}&orderByType=!{orderByType}"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					{"columns":[{"property":"fdId"},{"title":"文件标题","property":"docSubject","headerStyle":"min-width: 150px;"},{"title":"签报字号","property":"fdDocNum","headerClass":"width120"},{"title":"拟稿日期","property":"fdDraftTime","headerClass":"width100"},{}],"datas":[[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019地理信息系统（GIS）软件技术大会召开","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵021","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019世界人工智能大会举办","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵022","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019中国电子政务论坛在广州开幕","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵023","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"工业和信息化部关于电信服务质量的通告（2019年第2号）","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵024","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"新时代先锋模范作用经典分享","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵025","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"劳动法律法规基础知识","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵026","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"政府公开招标融合项目推进情况","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵027","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"中国互联网企业社会责任论坛在京举办","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵028","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"关于开展“不忘初心、牢记使命”主题教育的实施方案","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵029","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"全党开展教育活动的意义","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵030","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}]]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{km-imissive:kmImissive.portlet.docCreateTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		     <var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveSignTemplate","name":"{button.select}"}
+			</var>
+		    <var name="{km-imissive:kmImissiveSignMain.Sign.my}" key="myFlow" kind="enumValue" default="approval">
+			  {    "values":[{ "text":"{km-imissive:kmImissive.tree.myapproval}", "value":"approval" },{ "text":"{km-imissive:kmImissive.tree.myapproved}", "value":"approved" },{ "text":"{km-imissive:kmImissive.tree.create.my}", "value":"create" }],
+	               "showType":"radio"
+                }
+			</var>
+			<var name="{km-imissive:kmImissive.portlet.orderByFiled}" key="orderByFiled" kind="enumValue" default="docCreateTime">
+			  {    "values":[{ "text":"{km-imissive:kmImissive.portlet.orderByFiled.docCreateTime}", "value":"docCreateTime" },{ "text":"{km-imissive:kmImissive.portlet.orderByFiled.emergencyGrade}", "value":"fdEmergencyGrade" }],
+	               "showType":"radio"
+                }
+			</var>
+			<var name="{km-imissive:kmImissive.portlet.orderByType}" key="orderByType" kind="enumValue" default="down">
+			  {    "values":[{ "text":"{km-imissive:kmImissive.portlet.orderByType.down}", "value":"down" },{ "text":"{km-imissive:kmImissive.portlet.orderByType.up}", "value":"up" }],
+	               "showType":"radio"
+                }
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_sign_main/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();" 
+				target="_self"/>
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_sign_main/js/create'], function(create) { 
+							create.openDoc('!{cateid}','!{myFlow}');
+					 });})();"
+				target="_self"/>
+	    </operations>
+</portlet>
+<portlet
+		id="km.imissive.latestsign.table"
+		name="{km-imissive:kmImissiveSign.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc2}">
+		<source
+			format="sys.ui.listtable"
+			type="AjaxJson">
+			<code>
+				<![CDATA[
+				{
+				   "url":"/km/imissive/km_imissive_sign_main/kmImissiveSignMainPortlet.do?method=listPortletNew&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&latest=true"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{"columns":[{"property":"fdId"},{"title":"文件标题","property":"docSubject","headerStyle":"min-width: 150px;"},{"title":"签报字号","property":"fdDocNum","headerClass":"width120"},{"title":"拟稿日期","property":"fdDraftTime","headerClass":"width100"},{}],"datas":[[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019地理信息系统（GIS）软件技术大会召开","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵021","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019世界人工智能大会举办","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵022","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"2019中国电子政务论坛在广州开幕","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵023","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"工业和信息化部关于电信服务质量的通告（2019年第2号）","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵024","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"新时代先锋模范作用经典分享","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵025","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"劳动法律法规基础知识","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵026","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"政府公开招标融合项目推进情况","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵027","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"中国互联网企业社会责任论坛在京举办","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵028","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"关于开展“不忘初心、牢记使命”主题教育的实施方案","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵029","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}],[{"col":"fdId","value":"16f3bcbfab6c6056c142d4346fa9d96e"},{"col":"docSubject","value":"全党开展教育活动的意义","style":"text-align:left;min-width:180px"},{"col":"fdDocNum","value":"2019年12月25日呵呵030","styleClass":"width120"},{"col":"fdDraftTime","value":"2019-12-25","styleClass":"width100"}]]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{km-imissive:kmImissive.portlet.docCreateTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		     <var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveSignTemplate","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/imissive/km_imissive_sign_main/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();" 
+				target="_self"/>
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listAll/sign&amp;cri.q=fdTemplate:!{cateid};docStatus:30"/>
+	    </operations>
+</portlet>
+
+<!-- 以下为支持cloud数据源 -->
+<!-- 最新发文 -->
+<portlet
+		id="km.imissive.latestsend"
+		name="{km-imissive:kmImissiveSend.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc1}"
+		forSystem="cloud"
+		varExtend="km.imissive.latestsend">
+		<source
+			id="km-imissive.latestsend"
+			format="data.list"
+			type="xml">
+			<code>
+				<![CDATA[
+				{"url":"/data/sys-common/dataxml?s_bean=kmImissiveSendMainPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}"}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"新员工培训通知","created":1559637598000,"cateHref":"/km/imissive/#j_path=/listAll/send&cri.q=fdTemplate:16b2013aea7d3b9089db9084b55874a1","href":"/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view&fdId=16b21a4b49ab26fa2028db74a64b6048","cateName":"职能培训通知","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"郑超","fdLoginName":"zhengc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"},{"text":"职业技能提升培训通知","created":1559613985000,"cateHref":"/km/imissive/#j_path=/listAll/send&cri.q=fdTemplate:16b2013aea7d3b9089db9084b55874a1","href":"/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view&fdId=16b203c651a234ab7359cea4875bab97","cateName":"职能培训通知","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"郑超","fdLoginName":"zhengc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"},{"text":"关于完善政策法规标准化工作的指导意见","created":1540276731658,"cateHref":"/km/imissive/#j_path=/listAll/send&cri.q=fdTemplate:16b2013aea7d3b9089db9084b55874a1","href":"/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view&fdId=16b203c651a234ab7359cea4875bab97","cateName":"公司公告","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"郑超","fdLoginName":"zhengc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"},{"text":"关于工伤保险基数调整的通知","created":1529649570921,"cateHref":"/km/imissive/#j_path=/listAll/send&cri.q=fdTemplate:16b2013aea7d3b9089db9084b55874a1","href":"/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view&fdId=16b203c651a234ab7359cea4875bab97","cateName":"公司公告","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"郑超","fdLoginName":"zhengc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listAll/send&amp;cri.q=fdTemplate:!{cateid};docStatus:30" />
+	    </operations>
+</portlet>
+<!-- 我的发文 -->
+<portlet
+		id="km.imissive.mysend"
+		name="{km-imissive:kmImissiveSendMain.Send.my}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc2}"
+		forSystem="cloud"
+		varExtend="km.imissive.mysend">
+		<source
+			id="km-imissive.mysend"
+			format="data.table"
+			type="json">
+			<code>
+				<![CDATA[
+				{
+				   "url":"/data/km-imissive/kmImissiveSendMainPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&myFlow=!{myFlow}&scope=!{scope}"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{"columns":[{"property":"fdId","renderType":"hidden"},{"property":"docSubject","title":"文件标题"},{"property":"fdDocNum","title":"发文字号"},{"property":"fdDraftTime","title":"拟稿日期"}],"data":[{"href":null,"cells":[{"col":"fdId","value":"16b21a4b49ab26fa2028db74a64b6048"},{"col":"docSubject","value":"新员工培训通知","href":"/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view&fdId=16b21a4b49ab26fa2028db74a64b6048"},{"col":"fdDocNum","value":"20190604002"},{"col":"fdDraftTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"16b203c651a234ab7359cea4875bab97"},{"col":"docSubject","value":"职业技能提升培训通知","href":"/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view&fdId=16b203c651a234ab7359cea4875bab97"},{"col":"fdDocNum","value":"20190604001"},{"col":"fdDraftTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"16b202eb84cbe160ed1c69d45c2be491"},{"col":"docSubject","value":"职业技能培训通知","href":"/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view&fdId=16b202eb84cbe160ed1c69d45c2be491"},{"col":"fdDocNum","value":"XX字【2019】001号"},{"col":"fdDraftTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"16b202c4f7bcf46169f9d0046afad60d"},{"col":"docSubject","value":"产品质量部团建通知","href":"/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view&fdId=16b202c4f7bcf46169f9d0046afad60d"},{"col":"fdDocNum","value":"20190604T001"},{"col":"fdDraftTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"1620dde9cc0c2c500deab134403a0e50"},{"col":"docSubject","value":" 2018年度员工体检通知  ","href":"/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view&fdId=1620dde9cc0c2c500deab134403a0e50"},{"col":"fdDocNum","value":"测试部[2018]006号"},{"col":"fdDraftTime","value":"2018-03-10"}]},{"href":null,"cells":[{"col":"fdId","value":"15f5682fbc4ceb6dc3d40524aebbe9b4"},{"col":"docSubject","value":"产品中心出游事宜通知","href":"/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=view&fdId=15f5682fbc4ceb6dc3d40524aebbe9b4"},{"col":"fdDocNum","value":"测试部[2017]003号"},{"col":"fdDraftTime","value":"2017-10-26"}]}]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/imissive/km_imissive_send_main/kmImissiveSendMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listCreate/send&amp;cri.q=fdTemplate:!{cateid};mydoc:!{myFlow}"/>
+	    </operations>
+</portlet>
+<!-- 最新收文 -->
+<portlet
+		id="km.imissive.latestreceive"
+		name="{km-imissive:kmImissiveReceive.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc1}"
+		forSystem="cloud"
+		varExtend="km.imissive.latestreceive">
+		<source
+			id="km-imissive.latestreceive"
+			format="data.list"
+			type="xml">
+			<code>
+				<![CDATA[
+				{"url":"/data/sys-common/dataxml?s_bean=kmImissiveReceiveMainPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}"}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"公司内部团建","created":1559618640000,"cateHref":"/km/imissive/#j_path=/listAll/receive&cri.q=fdTemplate:16b2019169e96548ee8ab004d7a82c26","href":"/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=view&fdId=16b2083914607c30e8d0760454d82ccb","cateName":"收文","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"},{"text":"公司组织出游通知","created":1559614105000,"cateHref":"/km/imissive/#j_path=/listAll/receive&cri.q=fdTemplate:16b2019169e96548ee8ab004d7a82c26","href":"/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=view&fdId=16b203d37ea861cd76200bb461c80155","cateName":"收文","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"},{"text":"国务院关于春节放假的通知","created":1540276731658,"cateHref":"/km/imissive/#j_path=/listAll/receive&cri.q=fdTemplate:16b2019169e96548ee8ab004d7a82c26","href":"/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=view&fdId=16b203d37ea861cd76200bb461c80155","cateName":"收文","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"},{"text":"天心区政务发文公告","created":1529649570921,"cateHref":"/km/imissive/#j_path=/listAll/receive&cri.q=fdTemplate:16b2019169e96548ee8ab004d7a82c26","href":"/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=view&fdId=16b203d37ea861cd76200bb461c80155","cateName":"请示","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listAll/receive&amp;cri.q=fdTemplate:!{cateid};docStatus:30" />
+	    </operations>
+</portlet>
+<!-- 我的收文 -->
+<portlet
+		id="km.imissive.myreceive"
+		name="{km-imissive:kmImissiveReceiveMain.Receive.my}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc2}"
+		forSystem="cloud"
+		varExtend="km.imissive.myreceive">
+		<source
+			id="km-imissive.myreceive"
+			format="data.table"
+			type="json">
+			<code>
+				<![CDATA[
+				{
+				   "url":"/data/km-imissive/kmImissiveReceiveMainPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&myFlow=!{myFlow}&scope=!{scope}"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{"columns":[{"property":"fdId","renderType":"hidden"},{"property":"docSubject","title":"文件标题"},{"property":"fdReceiveNum","title":"收文字号"},{"property":"fdReceiveTime","title":"收文日期"}],"data":[{"href":null,"cells":[{"col":"fdId","value":"16b2083914607c30e8d0760454d82ccb"},{"col":"docSubject","value":"公司内部团建","href":"/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=view&fdId=16b2083914607c30e8d0760454d82ccb"},{"col":"fdReceiveNum","value":"2019-06-0402"},{"col":"fdReceiveTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"16b203d37ea861cd76200bb461c80155"},{"col":"docSubject","value":"公司组织出游通知","href":"/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=view&fdId=16b203d37ea861cd76200bb461c80155"},{"col":"fdReceiveNum","value":"2019-06-0401"},{"col":"fdReceiveTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"16b2084620dc9af9931227e49ae92171"},{"col":"docSubject","value":"产品研发中心文件","href":"/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=view&fdId=16b2084620dc9af9931227e49ae92171"},{"col":"fdReceiveNum","value":"2019-06-0403"},{"col":"fdReceiveTime","value":"2019-06-04"}]}]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listCreate/receive&amp;cri.q=fdTemplate:!{cateid};mydoc:!{myFlow}"/>
+	    </operations>
+</portlet>
+<!-- 最新签报 -->
+<portlet
+		id="km.imissive.latestsign"
+		name="{km-imissive:kmImissiveSign.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc1}"
+		forSystem="cloud"
+		varExtend="km.imissive.latestsign">
+		<source
+			id="km-imissive.latestsign"
+			format="data.list"
+			type="xml">
+			<code>
+				<![CDATA[
+				{"url":"/data/sys-common/dataxml?s_bean=kmImissiveSignMainPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&dataview=classic"}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"内部签报","created":1559618760000,"cateHref":"/km/imissive/#j_path=/listAll/sign&cri.q=fdTemplate:16b201c3a06dc31622e038c4fc2983d4","href":"/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=view&fdId=16b208587ba9859994c0eaf480fb4c19","cateName":"签报","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"},{"text":"产品质量签报","created":1559614527000,"cateHref":"/km/imissive/#j_path=/listAll/sign&cri.q=fdTemplate:16b201c3a06dc31622e038c4fc2983d4","href":"/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=view&fdId=16b204475b70e44acf1f60b45028f65f","cateName":"签报","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"},{"text":"雨花区政府发文单","created":1529649570921,"cateHref":"/km/imissive/#j_path=/listAll/sign&cri.q=fdTemplate:16b201c3a06dc31622e038c4fc2983d4","href":"/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=view&fdId=16b204475b70e44acf1f60b45028f65f","cateName":"签报","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"},{"text":"产品质量签报","created":1559614527000,"cateHref":"/km/imissive/#j_path=/listAll/sign&cri.q=fdTemplate:16b201c3a06dc31622e038c4fc2983d4","href":"/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=view&fdId=16b204475b70e44acf1f60b45028f65f","cateName":"签报","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"结束","statusColor":"success"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listAll/sign&amp;cri.q=fdTemplate:!{cateid};docStatus:30" />
+	    </operations>
+</portlet>
+<!-- 我的签报 -->
+<portlet
+		id="km.imissive.mysign"
+		name="{km-imissive:kmImissiveSignMain.Sign.my}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc2}"
+		forSystem="cloud"
+		varExtend="km.imissive.mysign">
+		<source
+			id="km-imissive.mysign"
+			format="data.table"
+			type="json">
+			<code>
+				<![CDATA[
+				{
+				   "url":"/data/km-imissive/kmImissiveSignMainPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&myFlow=!{myFlow}&scope=!{scope}"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{"columns":[{"property":"fdId","renderType":"hidden"},{"property":"docSubject","title":"文件标题"},{"property":"fdDocNum","title":"签报字号"},{"property":"fdDraftTime","title":"拟稿日期"}],"data":[{"href":null,"cells":[{"col":"fdId","value":"16b208587ba9859994c0eaf480fb4c19"},{"col":"docSubject","value":"内部签报","href":"/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=view&fdId=16b208587ba9859994c0eaf480fb4c19"},{"col":"fdDocNum","value":"2019060402"},{"col":"fdDraftTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"16b204475b70e44acf1f60b45028f65f"},{"col":"docSubject","value":"产品质量签报","href":"/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=view&fdId=16b204475b70e44acf1f60b45028f65f"},{"col":"fdDocNum","value":"2019060401"},{"col":"fdDraftTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"16b2085de1b6bce0f80dad04059b80ac"},{"col":"docSubject","value":"产品签报","href":"/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=view&fdId=16b2085de1b6bce0f80dad04059b80ac"},{"col":"fdDocNum","value":"发布后自动生成(字号)"},{"col":"fdDraftTime","value":"2019-06-04"}]}]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/imissive/#j_path=/listCreate/sign&amp;cri.q=fdTemplate:!{cateid};mydoc:!{myFlow}"/>
+	    </operations>
+</portlet>
+
+	<!-- 匿名门户 开始 -->
+	<!-- 最新发文 简单列表 -->
+	<portlet 
+		id="km.imissive.anonym.latestsend"
+		name="{km-imissive:kmImissiveSend.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc1}"
+		anonymous="true">
+		<source format="sys.ui.classic" type="AjaxJson">
+			<code>
+				<![CDATA[
+					{"url":"/sys/anonym/sysAnonymData.do?method=dataList&formatKey=classic&fdCategoryId=!{cateid}&scope=!{scope}&fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain&rowsize=!{rowsize}&ordertype=down&orderby=sysAnonymCommon.docCreateTime"}
+				]]>
+			</code>
+		</source>
+		<vars>
+			<var name="{km-imissive:anonym.publishTime}" key="scope" kind="enumValue" default="no">
+                 {"values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                        { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                        { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                        { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                        { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	              "showType":"radio"
+	              }
+       		</var>
+			<var name="{sys-anonym:table.sysAnonymCate}" key="cateid" kind="dialogJs" >
+		    	{"jsp":"/sys/anonym/sys_anonym_cate/selectCate.jsp?modelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain","help":""}
+		    </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		</vars>
+		<operations>
+			<operation
+		        name="{operation.more}"
+		        type="more"
+		        href="/sys/anonym/sysAnonymData.do?method=dataList&amp;fdCategoryId=!{cateid}&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSendMain&amp;ordertype=down&amp;orderby=sysAnonymCommon.docCreateTime"/>
+		</operations>
+	</portlet>
+	
+	<!-- 最新收文 简单列表 -->
+	<portlet 
+		id="km.imissive.anonym.latestreceive"
+		name="{km-imissive:kmImissiveReceive.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc1}"
+		anonymous="true">
+		<source format="sys.ui.classic" type="AjaxJson">
+			<code>
+				<![CDATA[
+					{"url":"/sys/anonym/sysAnonymData.do?method=dataList&formatKey=classic&fdCategoryId=!{cateid}&scope=!{scope}&fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain&rowsize=!{rowsize}&ordertype=down&orderby=sysAnonymCommon.docCreateTime"}
+				]]>
+			</code>
+		</source>
+		<vars>
+			<var name="{km-imissive:anonym.publishTime}" key="scope" kind="enumValue" default="no">
+                 {"values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                        { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                        { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                        { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                        { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	              "showType":"radio"
+	              }
+       		</var>
+			<var name="{sys-anonym:table.sysAnonymCate}" key="cateid" kind="dialogJs" >
+		    	{"jsp":"/sys/anonym/sys_anonym_cate/selectCate.jsp?modelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain","help":""}
+		    </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		</vars>
+		<operations>
+			<operation
+		        name="{operation.more}"
+		        type="more"
+		        href="/sys/anonym/sysAnonymData.do?method=dataList&amp;fdCategoryId=!{cateid}&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveReceiveMain&amp;ordertype=down&amp;orderby=sysAnonymCommon.docCreateTime"/>
+		</operations>
+	</portlet>
+	
+	<!-- 最新签报 简单列表 -->
+	<portlet 
+		id="km.imissive.anonym.latestsign"
+		name="{km-imissive:kmImissiveSign.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		description="{portlet.list.desc1}"
+		anonymous="true">
+		<source format="sys.ui.classic" type="AjaxJson">
+			<code>
+				<![CDATA[
+					{"url":"/sys/anonym/sysAnonymData.do?method=dataList&formatKey=classic&fdCategoryId=!{cateid}&fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain&scope=!{scope}&rowsize=!{rowsize}&ordertype=down&orderby=sysAnonymCommon.docCreateTime"}
+				]]>
+			</code>
+		</source>
+		<vars>
+			<var name="{km-imissive:anonym.publishTime}" key="scope" kind="enumValue" default="no">
+                 {"values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                        { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                        { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                        { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                        { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	              "showType":"radio"
+	              }
+       		</var>
+			<var name="{sys-anonym:table.sysAnonymCate}" key="cateid" kind="dialogJs" >
+		    	{"jsp":"/sys/anonym/sys_anonym_cate/selectCate.jsp?modelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain","help":""}
+		    </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		</vars>
+		<operations>
+			<operation
+		        name="{operation.more}"
+		        type="more"
+		        href="/sys/anonym/sysAnonymData.do?method=dataList&amp;fdCategoryId=!{cateid}&amp;fdModelName=com.landray.kmss.km.imissive.model.KmImissiveSignMain&amp;ordertype=down&amp;orderby=sysAnonymCommon.docCreateTime"/>
+		</operations>
+	</portlet>
+	<!-- 匿名门户 结束 -->
+</root>

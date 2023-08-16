@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.km.carmng.model.KmCarmngEvaluation"
+		table="km_carmng_evaluation">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator class="assigned" />
+		</id>
+		<property
+			name="fdEvaluationTime"
+			column="fd_evaluation_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdEvaluationScore"
+			column="fd_evaluation_score"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+		<property
+			name="fdEvaluationContent"
+			column="fd_evaluation_content"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1500" />
+
+		<many-to-one
+			name="fdEvaluator"
+			column="fd_evaluator_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+			
+		<many-to-one
+			name="fdApplication"
+			column="fd_application_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+
+	</class>
+</hibernate-mapping>

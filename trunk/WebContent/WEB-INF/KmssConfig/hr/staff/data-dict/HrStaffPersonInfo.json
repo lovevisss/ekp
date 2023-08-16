@@ -1,0 +1,713 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.hr.staff.model.HrStaffPersonInfo",
+        "messageKey": "hr-staff:table.HrStaffPersonInfo",
+        "serviceBean": "hrStaffPersonInfoService",
+        "displayProperty": "fdName",
+        "table": "hr_staff_person_info",
+        "url": "/hr/staff/hr_staff_person_info/hrStaffPersonInfo.do?method=view&fdId=${fdId}",
+        "extendClass": "com.landray.kmss.hr.organization.model.HrOrganizationElement",
+        "discriminatorValue": "8"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"},
+            "type": "String"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "true",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "100"
+        },
+        "fdSex":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdSex",
+            "type": "String",
+            "column": "fd_sex",
+            "notNull": "true",
+            "unique": "false",
+            "length": "10",
+            "enumType": "sys_org_person_sex",
+            "canSearch": "true"
+        },
+        "fdDateOfBirth":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdDateOfBirth",
+            "type": "Date",
+            "column": "fd_date_of_birth",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdStaffNo":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdStaffNo",
+            "type": "String",
+            "column": "fd_staff_no",
+            "notNull": "true",
+            "unique": "true",
+            "canSearch": "true",
+            "validate": "true",
+            "length": "50"
+        },
+        "fdIdCard":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdIdCard",
+            "type": "String",
+            "column": "fd_id_card",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdWorkTime":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdWorkTime",
+            "type": "Date",
+            "column": "fd_work_time",
+            "notNull": "true",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdTimeOfEnterprise":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdTimeOfEnterprise",
+            "type": "Date",
+            "column": "fd_time_of_enterprise",
+            "notNull": "true",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdTrialExpirationTime":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdTrialExpirationTime",
+            "type": "Date",
+            "column": "fd_trial_expiration_time",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdTrialOperationPeriod":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdTrialOperationPeriod",
+            "type": "String",
+            "column": "fd_trial_operation_period",
+            "notNull": "true",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "5"
+        },
+        "fdEntryTime":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdEntryTime",
+            "type": "Date",
+            "column": "fd_entry_time",
+            "notNull": "true",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdPositiveTime":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdPositiveTime",
+            "type": "Date",
+            "column": "fd_positive_time",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdActualPositiveTime":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdActualPositiveTime",
+            "type": "Date",
+            "column": "fd_actual_positive_time",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdPositiveRemark":        {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdPositiveRemark",
+            "type": "String",
+            "column": "fd_positive_remark",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdLeaveTime":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdLeaveTime",
+            "type": "Date",
+            "column": "fd_leave_time",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdIsRehire":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdIsRehire",
+            "type": "Boolean",
+            "column": "fd_is_rehire",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "fdRehireTime":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdRehireTime",
+            "type": "Date",
+            "column": "fd_rehire_time",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdEmploymentPeriod":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdEmploymentPeriod",
+            "type": "Integer",
+            "column": "fd_employmentperiod",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdStaffType":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdStaffType",
+            "type": "String",
+            "column": "fd_staff_type",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdNameUsedBefore":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdNameUsedBefore",
+            "type": "String",
+            "column": "fd_name_used_before",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdNation":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdNation",
+            "type": "String",
+            "column": "fd_nation",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdPoliticalLandscape":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdPoliticalLandscape",
+            "type": "String",
+            "column": "fd_political_landscape",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdDateOfGroup":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdDateOfGroup",
+            "type": "Date",
+            "column": "fd_date_of_group",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdDateOfParty":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdDateOfParty",
+            "type": "Date",
+            "column": "fd_date_of_party",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdHighestEducation":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdHighestEducation",
+            "type": "String",
+            "column": "fd_highest_education",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdHighestDegree":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdHighestDegree",
+            "type": "String",
+            "column": "fd_highest_degree",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdMaritalStatus":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdMaritalStatus",
+            "type": "String",
+            "column": "fd_marital_status",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdHealth":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdHealth",
+            "type": "String",
+            "column": "fd_health",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdStature":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdStature",
+            "type": "Integer",
+            "column": "fd_stature",
+            "notNull": "false",
+            "unique": "false",
+            "canSearch": "true",
+            "validate": "true",
+            "length": "50"
+        },
+        "fdWeight":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdWeight",
+            "type": "Integer",
+            "column": "fd_weight",
+            "notNull": "false",
+            "unique": "false",
+            "canSearch": "true",
+            "validate": "true",
+            "length": "50"
+        },
+        "fdLivingPlace":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdLivingPlace",
+            "type": "String",
+            "column": "fd_living_place",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdNativePlace":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdNativePlace",
+            "type": "String",
+            "column": "fd_native_place",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdHomeplace":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdHomeplace",
+            "type": "String",
+            "column": "fd_homeplace",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdAccountProperties":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdAccountProperties",
+            "type": "String",
+            "column": "fd_account_properties",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdRegisteredResidence":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdRegisteredResidence",
+            "type": "String",
+            "column": "fd_registered_residence",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdResidencePoliceStation":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdResidencePoliceStation",
+            "type": "String",
+            "column": "fd_residence_police_station",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdStatus":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdStatus",
+            "type": "String",
+            "column": "fd_status",
+            "notNull": "true",
+            "unique": "false",
+            "validate": "true",
+            "enumType": "hrStaffPersonInfo_fdStatus",
+            "length": "50"
+        },
+        "fdMobileNo":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdMobileNo",
+            "type": "String",
+            "column": "fd_mobile_no",
+            "notNull": "true",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "150"
+        },
+        "fdEmail":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdEmail",
+            "type": "String",
+            "column": "fd_email",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "200"
+        },
+        "fdOfficeLocation":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdOfficeLocation",
+            "type": "String",
+            "column": "fd_office_location",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdWorkPhone":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdWorkPhone",
+            "type": "String",
+            "column": "fd_work_phone",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdEmergencyContact":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdEmergencyContact",
+            "type": "String",
+            "column": "fd_emergency_contact",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdEmergencyContactPhone":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdEmergencyContactPhone",
+            "type": "String",
+            "column": "fd_emergency_contact_phone",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "150"
+        },
+        "fdOtherContact":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdOtherContact",
+            "type": "String",
+            "column": "fd_other_contact",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdOrgPerson":         {
+            "propertyType": "model",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdOrgPerson",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "fd_org_person_id",
+            "notNull": "false"
+        },
+        "fdOrgParentOrg":         {
+            "propertyType": "model",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdOrgParentOrg",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_org_parent_org_id",
+            "notNull": "false"
+        },
+        "fdOrgRank":         {
+            "propertyType": "model",
+            "messageKey": "hr-organization:table.hrOrganizationRank",
+            "type": "com.landray.kmss.hr.organization.model.HrOrganizationRank",
+            "column": "fd_org_rank_id",
+            "notNull": "false"
+        },        
+        "fdOrgParent":         {
+            "propertyType": "model",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdOrgParent",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_org_parent_id",
+            "notNull": "false"
+        },
+        "hbmParent":         {
+            "propertyType": "model",
+            "messageKey": "hr-organization:hrOrganizationElement.fdParent.title",
+            "type": "com.landray.kmss.hr.organization.model.HrOrganizationElement",
+            "column": "fd_parentid",
+            "notNull": "true",
+            "unique": "false",
+            "canDisplay": "false"
+        },		
+        "hbmPosts":         {
+            "propertyType": "list",
+            "messageKey": "hr-organization:hrOrganizationElement.fdPosts",
+            "column": "fd_personid",
+            "type": "com.landray.kmss.hr.organization.model.HrOrganizationPost",
+            "table": "hr_org_post_person",
+            "elementColumn": "fd_postid",
+            "canDisplay": "false"
+        },      
+        "fdStaffingLevel":         {
+            "propertyType": "model",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdStaffingLevel",
+            "type": "com.landray.kmss.sys.organization.model.SysOrganizationStaffingLevel",
+            "column": "fd_staffing_level_id",
+            "notNull": "false"
+        },
+        "fdOrgPosts":         {
+            "propertyType": "list",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdOrgPosts",
+            "column": "fd_personid",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPost",
+            "table": "hr_staff_person_post",
+            "elementColumn": "fd_postid",
+            "canDisplay": "false",
+            "notNull": "true"
+        },
+        "fdHierarchyId":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdHierarchyId",
+            "canDisplay": "false",
+            "type": "String",
+            "column": "fd_hierarchy_id",
+            "length": "2000"
+        },
+        "fdBirthdayOfYear":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdBirthdayOfYear",
+            "type": "Integer",
+            "column": "fd_birthday_of_year",
+            "canDisplay": "false"
+        },
+        "fdRelatedProcess":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdRelatedProcess",
+            "type": "String",
+            "column": "fd_related_process",
+            "length": "500",
+            "canDisplay": "false"
+        },
+        "fdStaffEntry":         {
+            "propertyType": "model",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdStaffEntry",
+            "type": "com.landray.kmss.hr.staff.model.HrStaffEntry",
+            "column": "fd_staff_entry_id",
+            "notNull": "false"
+        },
+        "fdLeaveApplyDate":     {
+        	"propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdLeaveApplyDate",
+            "type": "Date",
+            "column": "fd_leave_apply_date",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdLeavePlanDate":     {
+        	"propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdLeavePlanDate",
+            "type": "Date",
+            "column": "fd_leave_plan_date",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdLeaveSalaryEndDate":     {
+        	"propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdLeaveSalaryEndDate",
+            "type": "Date",
+            "column": "fd_leave_salary_end_dare",
+            "notNull": "false",
+            "canSearch": "true",
+            "unique": "false"
+        },
+        "fdLeaveReason":        {
+        	"propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdLeaveReason",
+            "type": "String",
+            "column": "fd_leave_reason",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdLeaveRemark":        {
+        	"propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdLeaveRemark",
+            "type": "String",
+            "column": "fd_leave_remark",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdNextCompany":        {
+        	"propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdNextCompany",
+            "type": "String",
+            "column": "fd_next_company",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdNatureWork":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdNatureWork",
+            "type": "String",
+            "column": "fd_nature_work",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "50"
+        },
+        "fdLeaveStatus" : {
+        	"propertyType" : "simple",
+            "messageKey" : "hr-staff:hrStaffPersonInfo.fdLeaveStatus",
+            "type" : "String",
+            "column" : "fd_leave_status",
+            "notNull" : "false",
+            "readOnly" : "true",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "2"
+        },
+        "fdReportLeader":         {
+            "propertyType": "model",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdReportLeader",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_report_leader_id",
+            "notNull": "false"
+        },
+        "fdWorkAddress":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdWorkAddress",
+            "type": "String",
+            "column": "fd_work_address",
+            "notNull": "false",
+            "unique": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "length": "254"
+        },
+        "fdLoginName":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdLoginName",
+            "type": "String",
+            "column": "fd_login_name",
+            "notNull": "false",
+            "unique": "false",
+            "length": "200",
+            "canSearch": "true",
+            "validate": "true"
+        },
+        "fdActualLeaveTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "column": "fd_actual_leave_time",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdActualLeaveTime"
+        },
+        "fdHrReportLeader":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.hr.organization.model.HrOrganizationElement",
+            "column": "fd_hr_report_leader_id",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdHrReportLeader"
+        },
+        "fdSalary":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "Double",
+            "column": "fd_salary"
+        },
+        "fdWorkTimeDiff":         {
+            "propertyType": "simple",
+            "type": "Integer",
+            "column": "fd_work_time_diff",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdWorkTimeDiff"
+        },
+        "fdWorkingYearsDiff":         {
+            "propertyType": "simple",
+            "type": "Integer",
+            "column": "fd_work_year_diff",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdWorkingYearsDiff"
+        },
+        "fdCanLogin":         {
+            "propertyType": "simple",
+            "messageKey": "hr-staff:hrStaffPersonInfo.fdCanLogin",
+            "type": "Boolean",
+            "canSearch": "true",
+            "canDisplay": "true"
+        }
+    },
+    "attachments": {"hrStaffPerson":     {
+        "propertyType": "att",
+        "messageKey": "hr-staff:hrStaffPersonInfo.att"
+    }}
+}

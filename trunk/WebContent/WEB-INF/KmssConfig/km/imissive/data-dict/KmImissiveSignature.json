@@ -1,0 +1,34 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveSignature",
+        "messageKey": "km-imissive:table.kmImissiveSignature",
+        "displayProperty": "DocumentID",
+        "serviceBean": "kmImissiveSignatureService",
+        "table": "km_imissive_signature",
+        "url": "/km/imissive/km_imissive_signature/kmImissiveSignature.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "DocumentID":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveSignature.fdDocumentId",
+            "type": "String",
+            "column": "DocumentID",
+            "notNull": "false",
+            "length": "255",
+            "validate": "false"
+        },
+        "Signature":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveSignature.fdSignature",
+            "type": "RTF",
+            "column": "Signature",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "false"
+        }
+    }
+}

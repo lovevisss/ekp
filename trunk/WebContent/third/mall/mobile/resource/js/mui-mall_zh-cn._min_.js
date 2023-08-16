@@ -1,0 +1,1 @@
+define([],function(){return{"mui.thirdMall.use":"使用","mui.thirdMall.noAuth":"抱歉，暂未启用云商城模板中心，请联系管理员开通!"}});

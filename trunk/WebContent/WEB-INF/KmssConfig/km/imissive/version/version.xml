@@ -1,0 +1,5752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#171736 新增 在移动端稿纸的最下面增加关联文档的展示</description>
+			<author>邓良宇</author>
+			<revision-time>2022-09-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#172581 修复 公文修改附件附加的选项在移动端不生效</description>
+			<author>邓良宇</author>
+			<revision-time>2022-09-05</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170426 修复 国产统信uos浏览器内嵌式加载项暂存后再次编辑，无法正常打开正文</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#172439 修复 审批完后审批列表未刷新，优化点击页签标题刷新</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#171356 修复 ASPOSE文件转化HTML后没有显示正文下载按钮</description>
+			<author>邓良宇</author>
+			<revision-time>2022-08-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170926 修复 文种标题只显示文中类别，不拼文种数量</description>
+			<author>邓良宇</author>
+			<revision-time>2022-08-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#171259 修复 公文工作台，在收到一个公文审批的时候，会在待处理的公文、已办的发文都显示为1</description>
+			<author>邓良宇</author>
+			<revision-time>2022-08-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#171563 修复 公文交换的待发送列表，点击重新发送报错</description>
+			<author>郑操辉</author>
+			<revision-time>2022-08-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#171575 修复 执行公文发往交换中心任务定时任务后，公文追踪列表无法更新发送队列状态的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2022-08-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#171331 优化 参数设置开启了收发文必填开关，右侧审批模式下默认切到正文</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#171084 修复 收文转发文的时候应该要将正文和附件带入到发文的附件中去的</description>
+			<author>邓良宇</author>
+			<revision-time>2022-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169799 优化 签收或转收发文附件不可查看</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#172060 优化 无督办or会议去除附加选项相关逻辑按钮</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#171754 修复 公文常量更新文档编号不成功</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168178 新增 移动端右侧审批模式正文下载逻辑优化</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168957 优化 移动端kk版式批注功能兼容三种审批模式</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169922 新增 移动端主送机关增加自动分发上报功能。</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170589 优化 归档开关关闭后隐藏归档箱入口</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170592 修复 后台参数设置中的优先打开正文页签开关按钮设置失效</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#171522 修复 表单添加(关联文档)控件，关联了文档后导致套红异常</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166315 优化 办结和废弃的公文增加状态图标显示</description>
+			<author>朱湖强</author>
+			<revision-time>2022-08-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169668 新增 移动端查看痕迹稿交互体验优化</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168343 优化 收转收来文机关与收文机关不变</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170944 修复 签收环节暂存文档会生成“成文日期”值</description>
+			<author>邓良宇</author>
+			<revision-time>2022-08-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169093 优化 右侧审批模式点击正文页签右侧切换到审批页签</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#171219 优化 公文配置无初始值导致升级大版本新建报错</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170696 修复 公文签收单收件人交接成功后，工作交接记录没有显示成功数量，显示了忽略数量(同步代码)</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#171048 修复 签报编号校验问题</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170729 修复 wps中台kk签收会生成两个正文</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170509 修复 公文库筛选草稿状态只能看到自己创建的文档</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170836 修复 去除wps强关联</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170424 优化 wps模式下签报增加书签说明</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170598 修复 点聚签章后分发后无显示盖章文件</description>
+			<author>郑鑫</author>
+			<revision-time>2022-08-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170519 修复 工作台设置模板的时候不生效</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170403 修复 工作交接签收单，接多了一条已处理</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170264 修复 收文签章结束后,分发出去单位进行签收的时候没有将签署文件带入到收文和发文中去</description>
+			<author>邓良宇</author>
+			<revision-time>2022-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170244 修复 收文的金格PDF签章节点，签章结束后不提交直接转收文,此时带过去的收文正文显示的是没签过章的文件。应该要带签过章的文件过去的</description>
+			<author>邓良宇</author>
+			<revision-time>2022-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170318 修复 E签宝签署结束后有专门的已签署附件来存放，不需要再在放到表单附件中去</description>
+			<author>邓良宇</author>
+			<revision-time>2022-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170259 修复 公文归档附件一直处于加载状态</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169590 修复 审批人有分发、上报发文的附加选项，分发上报时同时选择A单位和B单位作为主送单位，同时勾选了签收人可阅读原审批意和分发原审批意见，签收后的收文原审批意见展示异常</description>
+			<author>邓良宇</author>
+			<revision-time>2022-07-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168829 修复 金格PDF签章，签章结束后点击保存按钮报错</description>
+			<author>邓良宇</author>
+			<revision-time>2022-07-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169762 修复 起草人移动端查看草稿发文/收文/签报，仅有编辑和收藏两个按钮，不需要分开展示</description>
+			<author>邓良宇</author>
+			<revision-time>2022-07-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170086 优化 签收单中的原表单信息不展示</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#170034 修复 暂存的时候不校验是否核发督办</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169660 修复 公文审批人移动端暂存报错</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169589 修复 已核发督办，刷新当前页核发督办按钮又出现了</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169591 修复 移动端分发上报选择不到流版签或转换后的文件</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169592 优化 去除撤销套红无效操作列表</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169595 优化 是否纳入督办移动端修改为只读</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169598 优化 去除收文的附件跟踪</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165160 新增 公文管理归档部署调整为新的归档机制</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-19</revision-time>
+			<relation>
+				<relation-module>sys/archives</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169629 修复 oracle数据库在办公文、待办公文页面报错，发生异常</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169645 修复 签收单正文是pdf，签收后切换到在线编辑正文无展示</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169660 修复 拥有是否纳入督办字段暂存报错</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169596 修复 wps套红防止多次点击</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169426 修复 转pdf或者转ofd，根据wps集成开关为条件</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164863 优化 findList查询</description>
+			<author>凌海洋</author>
+			<revision-time>2022-07-14</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168943 优化 增加debugger日志开关判断</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168952 优化 GBT 2016 国标适配符合性测试优化</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#169015 修复 顶部页签模式去除公文默认展现配置显示</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168994 修复 公文引用了任务管理模块的多语言</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#167709 优化 ekp的公文升级gkp公文之后，文档附件无法显示</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168751 修复 中台模式下的签收单已签署文件打不开，一直转圈</description>
+			<author>郑鑫</author>
+			<revision-time>2022-07-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#168071 优化 收文选择单位性能优化</description>
+			<author>郑鑫</author>
+			<revision-time>2022-06-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#167052 新增 部署下属机制功能</description>
+			<author>凌海洋</author>
+			<revision-time>2022-06-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#167289 优化 分发选择单位过多提交慢</description>
+			<author>郑鑫</author>
+			<revision-time>2022-06-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164989 新增 wps文档中台新增实时转换接口</description>
+			<author>郑鑫</author>
+			<revision-time>2022-06-10</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>third/filestore</relation-module>
+				<relation-module>third/wps</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#167580 修复 内嵌式加载项模式下，套完红头之后红头选择框不消失</description>
+			<author>郑鑫</author>
+			<revision-time>2022-06-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#167453 修复 公文工作台点击待阅公文，待阅没有消失</description>
+			<author>郑鑫</author>
+			<revision-time>2022-06-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#167023 修复 收文门户部件展示的是发文的数据</description>
+			<author>郑鑫</author>
+			<revision-time>2022-06-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#154323 修复 发文盖章节点，未盖章流程也能进行提交通过，应该需要进行强控，未盖章不然提交； 2、发文拟稿时，正文无内容流程也能提交，应该需要进行强控，正文无内容时无法提交 请产品评估处理</description>
+			<author>邓良宇</author>
+			<revision-time>2022-06-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166585 修复 普通模式下，进入公文默认页面后默认显示了聚合模式的公文登记页面</description>
+			<author>郑鑫</author>
+			<revision-time>2022-06-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166482 修复 多附件目录设置为默认附件目录，会导致公文正文转换成PDF后，不会出现下载pdf按钮</description>
+			<author>郑鑫</author>
+			<revision-time>2022-06-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165714 新增 公文传阅时 ，增加在发起传阅的时候可以设置 被传阅人填写了意见后提示我。</description>
+			<author>郑鑫</author>
+			<revision-time>2022-06-06</revision-time>
+			<relation>
+				<relation-module>sys/circulation</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166370 修复 全文搜索页面中，公文的分类不显示</description>
+			<author>郑鑫</author>
+			<revision-time>2022-06-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164126 修复 IE浏览器加载正文，页面进入正常加载显示正文，然后页面自动刷新正文空白了</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-31</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165668 优化 移除后台无用的列表显示设置项</description>
+			<author>郑操辉</author>
+			<revision-time>2022-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#166083 修复 E签宝签章的时报undefined</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164735 修复 当用户只有正文套红权限的时候，移动端也是要能编辑正文的</description>
+			<author>邓良宇</author>
+			<revision-time>2022-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164863 优化 service里面使用findFirstOne方法用于替换findList().get(0)</description>
+			<author>邓良宇</author>
+			<revision-time>2022-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165715 修复 公文打印页面打印预览显示不全</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164782 优化 金格pdf签章审批节点如果是流式文件按照附件机制所选的类型展开</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160133 优化 延长公文交换场景请求交换平台的时长</description>
+			<author>郑操辉</author>
+			<revision-time>2022-05-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#134796 修复 当公文在线编辑正文之后，纳入议题的正文附件并未更新编辑之后的内容的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2022-05-24</revision-time>
+			<relation>
+				<relation-module>km/imeeting</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#155459 优化 转pdf或转ofd替换正文并且签章完下载版式文件还是未签章的文件</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165544 优化 标准审批模式底部页签默认展开</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165477 修复 AndroidKK移动端正文生成两份文件问题</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#163384 优化 编号锁等问题</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165352 修复 移动端上报提示显示不全</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#165112 优化 公文二级导航菜单优化与列表显示设置优化</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-18</revision-time>
+			<relation>
+				<relation-module>sys/profile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164217 新增 政务公文移动端的发文新增套红和清稿功能，签报新增套红功能</description>
+			<author>邓良宇</author>
+			<revision-time>2022-05-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164718 修复 公文盖章后移动端无法显示</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#163540 修复 办理要报附件移动端打开报错</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164644 修复 移动端点击上报选择机关单位报错问题</description>
+			<author>郑鑫</author>
+			<revision-time>2022-05-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#162425 优化 在金格模式下，移除撤回套红按钮</description>
+			<author>郑操辉</author>
+			<revision-time>2022-05-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#163261 修复 公文归档箱出现流程状态筛选项的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2022-04-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#163438 修复 公文归档箱数据不正确的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2022-04-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#164204 修复 公文签收移动端发往机关信息无法传参到收文机关</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#163822 修复 门户最新发文取的是创建时间非发布时间</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#147554 新增 公文增加一套前端页面进行改造</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#163291 修复 通过转换版式文件为正文没有带出文件</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#162736 修复 默认模式下在线编辑切换到附件上传位置错乱</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160932 优化 开启软删除时，删除发文时不删除相关的登记单</description>
+			<author>朱湖强</author>
+			<revision-time>2022-04-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#154322 新增 公文管理收发文正文增加必填设置</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#162705 修复 postgres数据库兼容问题</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#163123 修复 起草收文时必填项为空无法暂存文档</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#161701 优化 新建 or 修改时编号相同，同时点击提交编号会存在问题</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#158003 新增 pc端页面合并压缩js</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-02</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#161880 修复 金格模式下转换为Html还是以金格控件打开</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#162271 修复 查看发文模板内容为空展示不正常</description>
+			<author>郑鑫</author>
+			<revision-time>2022-04-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#161988 修复 书签年月日时间格式问题</description>
+			<author>郑鑫</author>
+			<revision-time>2022-03-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#159278 修复 公文打印问题优化</description>
+			<author>郑鑫</author>
+			<revision-time>2022-03-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160882 修复 政务公文，公文分发后普通用户在待办公文和在办公文下的阅件报错</description>
+			<author>凌海洋</author>
+			<revision-time>2022-03-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#156801 修复 政务公文，在办和待办公文报600错误</description>
+			<author>凌海洋</author>
+			<revision-time>2022-03-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160886 修复 配合e签宝问题修改参数</description>
+			<author>郑鑫</author>
+			<revision-time>2022-03-16</revision-time>
+			<relation>
+				<relation-module>elec/eqbh</relation-module>
+				<relation-module>elec/eqbs</relation-module>
+				<relation-module>elec/eqb</relation-module>
+				<relation-module>elec/core</relation-module>
+				<relation-module>elec/device</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#161389 修复 公文的审批意见pc与移动保持一致</description>
+			<author>郑鑫</author>
+			<revision-time>2022-03-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#159755 新增 公文沉淀知识库版式文件集成</description>
+			<author>郑鑫</author>
+			<revision-time>2022-03-15</revision-time>
+			<relation>
+				<relation-module>kms/multidoc</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#152065 新增 集成福昕转换</description>
+			<author>郑鑫</author>
+			<revision-time>2022-03-11</revision-time>
+			<relation>
+				<relation-module>sys/filestore</relation-module>
+				<relation-module>third/foxit</relation-module>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#160613 修复 右侧审批模式下超阅偶发打开失败问题</description>
+			<author>郑鑫</author>
+			<revision-time>2022-03-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#159893 优化 管理员可以查看所有分发上报数据</description>
+			<author>朱湖强</author>
+			<revision-time>2022-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#159905 优化 postgres数据库兼容问题</description>
+			<author>郑鑫</author>
+			<revision-time>2022-02-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#159934 修复 签收单展示优化</description>
+			<author>郑鑫</author>
+			<revision-time>2022-02-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#158098 修复 移动端签收单附件下载到钉盘权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2022-02-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#157754 修复 金格编辑模式下多次转换优化</description>
+			<author>郑鑫</author>
+			<revision-time>2022-02-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#159576 修复 二维码分享配置关闭后，仍有二维码</description>
+			<author>郑鑫</author>
+			<revision-time>2022-02-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#158927 修复 移动端无正文时正文页签点击没反应和移动端报错处理</description>
+			<author>郑鑫</author>
+			<revision-time>2022-02-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#159097 修复 发文签收为收文附件丢失问题</description>
+			<author>郑鑫</author>
+			<revision-time>2022-02-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#133668 发文跟踪里面的文件增加下载功能</description>
+			<author>朱湖强</author>
+			<revision-time>2022-01-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#157505 优化 优化附件版本管理开关。</description>
+			<author>郑鑫</author>
+			<revision-time>2022-01-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#158649 优化 项目反馈正文偶发丢失问题优化</description>
+			<author>郑鑫</author>
+			<revision-time>2022-01-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#157289 优化 暂存的公文查看页取消显示撤回套红摁扭</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#157144 修复 使用中台或者云文档撤回套红，提示“ 目前仅支持WPS云文档和WPS中台撤销内容”的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#156824 修复 加载项套红后，正文和红头都没显示出来</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#156881 修复 收文和签报的书签说明，内容显示的是发文的书签说明</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#156665 修复 附件已经转换为PDF，但是下载PDF页面空白</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#152866 修复 痕迹展示方式问题</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#155469 修复 当模板自带书签时，普通用户新建公文，暂存。会自动生成历史版本文件。</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#155961 优化 WPS中台清稿、套红优化</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-17</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#156081 修复 新增的必填字段，启动系统会导致新增字段未创建成功</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#155093 优化 撤回套红摁扭显示逻辑</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151417 修复 督办模板被删除或被置为无效后，公文后台重新选择弹出框报错的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#155152 修复 中文格式的成文日期，当日期是二十以上的时候第一位数字会消失</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#155477 修复 中台转OFD按钮提示参数错误</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#144713 优化 使用WPS中台，在无附件时正文页签展示逻辑</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#154972 优化 加载项套红获红头书签优化</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-03</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#150988 修复 金格+aspose模式下。新建的公文在移动端正文显示不了</description>
+			<author>郑鑫</author>
+			<revision-time>2021-12-03</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#153648 优化 政务公文新建和查看页面js文件压缩</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#154248 修复 公文移动端首页公文库统计不正确</description>
+			<author>郑操辉</author>
+			<revision-time>2021-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#154070 优化 正文套红提示语优化</description>
+			<author>郑鑫</author>
+			<revision-time>2021-11-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#152873 修复 重复弹出选择框并且套红失败问题</description>
+			<author>郑鑫</author>
+			<revision-time>2021-11-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#149820 优化 政务公文数据字典完善</description>
+			<author>郑操辉</author>
+			<revision-time>2021-11-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#149844 优化 政务公文对接交换平台restful接口服务文档说明完善</description>
+			<author>郑操辉</author>
+			<revision-time>2021-11-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#152135 修复 公文无法撤回套红的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-11-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#152228 新增 书生ofd签章</description>
+			<author>郑鑫</author>
+			<revision-time>2021-11-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#152694 修复 使用E签宝本地化签署，签署后文件下载失败</description>
+			<author>郑操辉</author>
+			<revision-time>2021-11-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#153184 修复 公文结束节点设置自动归档，公文发布后没有生成对应的沉淀记录</description>
+			<author>郑鑫</author>
+			<revision-time>2021-11-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#150939 新增 iwebPdf功能优化</description>
+			<author>郑鑫</author>
+			<revision-time>2021-11-08</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#147777 修复 发文字号特殊字符处理</description>
+			<author>郑鑫</author>
+			<revision-time>2021-11-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#152873 修复 重复弹出选择框并且套红失败问题</description>
+			<author>郑鑫</author>
+			<revision-time>2021-11-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#152729 优化 列表页进行标题搜索之后，列表显示字段没有按后台配置的显示</description>
+			<author>朱湖强</author>
+			<revision-time>2021-11-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#153184 修复 公文结束节点设置自动归档，公文发布后没有生成对应的沉淀记录</description>
+			<author>郑鑫</author>
+			<revision-time>2021-11-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#148124 新增 加载项嵌入开发</description>
+			<author>郑鑫</author>
+			<revision-time>2021-11-05</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#149787 修复 使用wps中台新建公文，提交之后正文没有展示书签内容</description>
+			<author>郑鑫</author>
+			<revision-time>2021-10-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151202 修复 当前页签不在稿纸信息时，必填项提示错乱的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-10-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#148830 发文主送（抄送、抄报）支持选择群组</description>
+			<author>朱湖强</author>
+			<revision-time>2021-10-21</revision-time>
+			<relation>
+				<relation-module>sys/unit</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151550 优化 线下公文的导航栏不应该展示“部门公文”筛选项</description>
+			<author>朱湖强</author>
+			<revision-time>2021-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#143401 新增 增加转ofd和pdf按钮</description>
+			<author>郑鑫</author>
+			<revision-time>2021-10-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#151050 修复 文公编辑页添加附件之后或者在查看页面加载后，在右侧的附件列表未能显示附件信息</description>
+			<author>郑操辉</author>
+			<revision-time>2021-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145295 新增 点聚模块公文集成</description>
+			<author>郑鑫</author>
+			<revision-time>2021-09-26</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>third/dianju</relation-module>
+				<relation-module>third/filestore</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#149695 修复 公文工作台常用模板报错问题</description>
+			<author>郑鑫</author>
+			<revision-time>2021-09-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#148331 优化 公文查询筛选项中新增部门公文筛选项</description>
+			<author>朱湖强</author>
+			<revision-time>2021-09-16</revision-time>
+			<relation>
+				<relation-module>sys/lbpm</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#148713 优化 新建公文时，如果稿纸信息必填项没填写完整，提交时默认切换回稿纸页签</description>
+			<author>朱湖强</author>
+			<revision-time>2021-09-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#148842 优化 联合发文时，其他发文单位默认带入收文的其他来文字段</description>
+			<author>朱湖强</author>
+			<revision-time>2021-09-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#148467 修复 标题的最后一位是反斜杠的时候，删除会报错</description>
+			<author>郑鑫</author>
+			<revision-time>2021-09-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#147883 优化 rest帮助文档补充</description>
+			<author>郑鑫</author>
+			<revision-time>2021-09-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145496 修复 文档中台套红问题</description>
+			<author>朱湖强</author>
+			<revision-time>2021-08-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#146122 新增 附件后台增加强制使用在线预览查看（金格+加载项）</description>
+			<author>郑鑫</author>
+			<revision-time>2021-08-25</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#146176 新增 公文签收单展开正文</description>
+			<author>郑鑫</author>
+			<revision-time>2021-08-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145818 修复 E签宝普通模式下没有已签署列表</description>
+			<author>郑鑫</author>
+			<revision-time>2021-08-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145856 修复 修改发文单位，主送、抄送、抄报、会签单位中选择的外部单位未清除</description>
+			<author>蒋志广</author>
+			<revision-time>2021-08-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145298 修复 收文分发上报E签宝OFD签章附件获取的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-08-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145867 修复 收文转收文的时候，提交时提示无权限</description>
+			<author>郑操辉</author>
+			<revision-time>2021-08-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#147427 修复 公文管理后台设置，如果没有设置附件文件来源，新建公文的时候报错</description>
+			<author>郑操辉</author>
+			<revision-time>2021-08-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#146576 修复 用户没有查看线下公文权限时，可以通过链接访问的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2021-08-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145969 修复 没有发布匿名的用户，展示了发布匿名的相关信息</description>
+			<author>郑操辉</author>
+			<revision-time>2021-08-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#143398 优化 多表单模板打印支持</description>
+			<author>朱湖强</author>
+			<revision-time>2021-08-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#146058 征求意见稿到机器节点后，收文审批人收到待办后审批无权限</description>
+			<author>朱湖强</author>
+			<revision-time>2021-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#146968 优化文档暂存时不需要选择下一节点流</description>
+			<author>朱湖强</author>
+			<revision-time>2021-08-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#146238 修复 移动门户配置最新发文和最新收文无法显示出内容</description>
+			<author>郑操辉</author>
+			<revision-time>2021-08-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#146138 修复 设置了必须修改节点流程处理人，线下公文提交时不需要提示</description>
+			<author>朱湖强</author>
+			<revision-time>2021-08-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#146235 修复 签报线下编号问题</description>
+			<author>朱湖强</author>
+			<revision-time>2021-08-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#146292 修复 线下公文单位选择问题</description>
+			<author>朱湖强</author>
+			<revision-time>2021-08-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#144798 修复 默认模式下，移动端公文表单里面的在某些情况下内容不会自动换行</description>
+			<author>郑操辉</author>
+			<revision-time>2021-08-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#141237 修复 易企签或者E签宝签完章后，转发文和转收文的时候，正文没有带过去</description>
+			<author>郑操辉</author>
+			<revision-time>2021-08-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#144813 修复 E签宝ofd文件签署完成后上报的时候看不到已签署文件</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#144933 新增 新建线下公文URL权限控制</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#141237 修复 企签或者E签宝签完章后，转发文和转收文的时候，正文没有带过去</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#144798 修复 移动端中，公文表单里面的内容不会自动换行</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145463 修复 E签宝未签署可以提交问题</description>
+			<author>郑鑫</author>
+			<revision-time>2021-07-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#143651 新增 意见类型和业务权限设置的可使用者要支持选择人员和部门</description>
+			<author>郑鑫</author>
+			<revision-time>2021-07-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#144725 修复 正文为txt时，打开方式跟pc保持一致</description>
+			<author>朱湖强</author>
+			<revision-time>2021-07-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#145468 优化 公文与会议和督办解耦</description>
+			<author>朱湖强</author>
+			<revision-time>2021-07-23</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#144983 优化 去除废弃的状态下编辑的摁扭</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#144981 修复 IE浏览器下附件进行“重命名”操作，右侧附件列表的名字没有相应进行修改</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#142826 新增 移动端文档锁功能</description>
+			<author>蒋志广</author>
+			<revision-time>2021-07-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#137988 新增 对接同一个交换中心支持配置多个对接单位</description>
+			<author>蒋志广</author>
+			<revision-time>2021-07-14</revision-time>
+			<relation>
+				<relation-module>sys/unit</relation-module>
+				<relation-module>sys/dec</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#142989 新增 公文管理支持e签宝OFD签章</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-14</revision-time>
+			<relation>
+				<relation-module>elec/core</relation-module>
+				<relation-module>elec/device</relation-module>
+				<relation-module>elec/eqb</relation-module>
+				<relation-module>elec/eqbh</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#141636 修复 收文漏号没有显示出来</description>
+			<author>朱湖强</author>
+			<revision-time>2021-07-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#143374 修复 审批节点后面如果为人工决策节点，审批人进行文件编号后暂存，下个人新建文档进行文件编号，编号无法加1</description>
+			<author>朱湖强</author>
+			<revision-time>2021-07-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#143695 优化 分发/上报时可选择pdf文件转换的来源</description>
+			<author>朱湖强</author>
+			<revision-time>2021-07-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#137340 新增 分发上报批量撤回操作</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#140885 新增 ofd金格签章超阅阅读器</description>
+			<author>郑鑫</author>
+			<revision-time>2021-07-14</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#142006 优化 wps加载通过监听页签显示事件，避免加载卡死</description>
+			<author>朱湖强</author>
+			<revision-time>2021-07-14</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#141090 优化 公文列表页增加其他排序字段</description>
+			<author>朱湖强</author>
+			<revision-time>2021-07-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#141560 修复 移动端表单“限办日期”显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2021-07-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#144145 修复 公文工作台XSS漏洞</description>
+			<author>郑操辉</author>
+			<revision-time>2021-07-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#140225 新增 附件查看页签点击在左侧展示功能</description>
+			<author>郑鑫</author>
+			<revision-time>2021-06-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#141030 修复 pc端不显示签报附件，移动端正常</description>
+			<author>郑鑫</author>
+			<revision-time>2021-06-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#137911 优化 模板流水号设置增加注释信息</description>
+			<author>朱湖强</author>
+			<revision-time>2021-06-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#140346 优化 右侧审批模式下，右侧附加列表显示附件个数</description>
+			<author>朱湖强</author>
+			<revision-time>2021-06-03</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#139479 修复 公文正文金格场景附件上传然后编辑的情况下还是会走加载项</description>
+			<author>郑鑫</author>
+			<revision-time>2021-05-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#139062 优化 收文模板不绑定编号规则，且审批过程中不进行编号，收文发布后支持编号</description>
+			<author>朱湖强</author>
+			<revision-time>2021-05-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#138349 优化 公文管理新增公文工作台</description>
+			<author>朱湖强</author>
+			<revision-time>2021-05-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#136238 新增 公文支持线下发文功能</description>
+			<author>朱湖强</author>
+			<revision-time>2021-04-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#136678 优化 编号跨年份生成功能</description>
+			<author>朱湖强</author>
+			<revision-time>2021-04-20</revision-time>
+			<relation>
+				<relation-module>sys/number</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#136709 修复 移动端明细表文本输入框无法聚焦问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-04-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#135440 新增 政务公文业务权限和意见类型功能开关</description>
+			<author>郑操辉</author>
+			<revision-time>2021-04-08</revision-time>
+			<relation>
+				<relation-module>sys/lbpm</relation-module>
+				<relation-module>sys/lbpmext</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#136636 修复 公文打印页面，先导出PDF，再进行打印样式错乱的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2021-04-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#136372 新增 移动端登记单退回功能</description>
+			<author>郑操辉</author>
+			<revision-time>2021-04-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#136373 修复 分发登记单撤回后，还可以签收的错误</description>
+			<author>郑操辉</author>
+			<revision-time>2021-04-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#135910 修复 审批人无正文编辑权限，查看正文时显示空白</description>
+			<author>蒋志广</author>
+			<revision-time>2021-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#135037 修复 ie浏览器下js报错</description>
+			<author>蒋志广</author>
+			<revision-time>2021-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#135477 修复 文档附件转圈圈</description>
+			<author>蒋志广</author>
+			<revision-time>2021-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#135006 修复 批量打印，附件一直转圈</description>
+			<author>蒋志广</author>
+			<revision-time>2021-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#134640 新增 同步普通版本公文管理的功能到高级版中去</description>
+			<author>郑鑫</author>
+			<revision-time>2021-03-24</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/lbpm</relation-module>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#135287 优化 gkp自由流同步到公文政务高级版</description>
+			<author>郑鑫</author>
+			<revision-time>2021-03-24</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/lbpm</relation-module>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>移除 公文交换模块类关联，使用公文模块的类</description>
+			<author>蒋志广</author>
+			<revision-time>2021-03-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#134461 修复 公文导出HTML后，打开该文件页面一直闪动</description>
+			<author>蒋志广</author>
+			<revision-time>2021-03-05</revision-time>
+			<relation>
+				<relation-module>sys/circulation</relation-module>
+				<relation-module>sys/news</relation-module>
+				<relation-module>sys/readlog</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#133647 修复 发文统计概览，图表显示样式问题</description>
+			<author>朱湖强</author>
+			<revision-time>2021-02-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#134031 优化 wps模式下，清稿后高度显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2021-02-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#133666 新增 移动端流程业务权限</description>
+			<author>郑鑫</author>
+			<revision-time>2021-02-23</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/lbpm</relation-module>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#133515 修复 附件预览模式使用wps云文档，有正文下载权限的用户，无法下载正文</description>
+			<author>蒋志广</author>
+			<revision-time>2021-02-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#130555 优化 套红成功后，自动切换到正文页签加载，避免正文显示乱了</description>
+			<author>朱湖强</author>
+			<revision-time>2021-02-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#132611 优化 收文转发文时，收文的正文作为发文的普通附件</description>
+			<author>朱湖强</author>
+			<revision-time>2021-02-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#132837 优化 公文发布后，进行“修改字号”操作，修改后的字号还出现在漏号中</description>
+			<author>朱湖强</author>
+			<revision-time>2021-02-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#132597 优化 清稿、套红和保存痕迹稿时手动触发形成版本</description>
+			<author>朱湖强</author>
+			<revision-time>2021-02-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#132246 优化 后台设置支持“是否优先使用漏号”开关</description>
+			<author>朱湖强</author>
+			<revision-time>2021-02-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#131141 修复 移动端上报的时候没有选择签署附件的选项</description>
+			<author>郑鑫</author>
+			<revision-time>2021-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#130101 新增 流程审批意见类型设置功能</description>
+			<author>郑操辉</author>
+			<revision-time>2021-01-06</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/xform</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#130092 新增 自由流中附加选项与基本流程可配置功能</description>
+			<author>郑鑫</author>
+			<revision-time>2021-01-06</revision-time>
+			<relation>
+				<relation-module>sys/lbpm</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#123379 新增 公文交换支持xml格式数据</description>
+			<author>蒋志广</author>
+			<revision-time>2021-01-04</revision-time>
+			<relation>
+				<relation-module>sys/dec</relation-module>
+				<relation-module>sys/unit</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#130031 优化 表单没有纳入督办字段，不要显示督办信息</description>
+			<author>朱湖强</author>
+			<revision-time>2020-12-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#129595 修复 签报正文显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-12-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#129824 优化 流程审批过程中，多人同时编辑主文档（表单信息），提交时校验</description>
+			<author>朱湖强</author>
+			<revision-time>2020-12-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#124791 优化 “收文转收文”和“收文转发文”时，带出办理要报附件</description>
+			<author>朱湖强</author>
+			<revision-time>2020-12-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#129824 优化 流程审批过程中，多人同时编辑主文档（表单信息），提交时校验</description>
+			<author>朱湖强</author>
+			<revision-time>2020-12-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#126539 修复 wps云文档模式下，模板查看页wps显示高度问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-12-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#125145 修复 流程驳回后，重新流经征求意见机器人节点报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-11-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#116204 增加 收文签报分发增加签署文件</description>
+			<author>郑鑫</author>
+			<revision-time>2020-09-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#103269 修复 360浏览器V12(内核78版本)，点击签章后不操作，过一会提示控件崩溃但实际上控件在正常运行</description>
+			<author>张成才</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 标准模式下 签报查看报错</description>
+			<author>蒋志广</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#110063 修复 控件作为属性变更控件的目标控件时，模板提交一直提示不能为空，无法被选中</description>
+			<author>蒋志广</author>
+			<revision-time>2020-07-08</revision-time>
+			<relation>
+				<relation-module>sys/xform</relation-module>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#100753 修复 发文使用金格新建正文之后自动沉淀和手动沉淀生成的文件不一样</description>
+			<author>朱湖强</author>
+			<revision-time>2020-07-07</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#110941 优化 sql查询优化</description>
+			<author>朱湖强</author>
+			<revision-time>2020-07-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#110897 修复 模板新建页面切换页签后，word打印不显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-07-06</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#110637 优化 归档样式显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-07-02</revision-time>
+			<relation>
+				<relation-module>km/archives</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#110418 修复 签报右侧审批模式下正文显示不全</description>
+			<author>蒋志广</author>
+			<revision-time>2020-07-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#110130 修复 IE 新建发文页面，无法提交</description>
+			<author>蒋志广</author>
+			<revision-time>2020-06-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#109285 修复 公文登记单权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-06-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#109622 修复 移动端稿纸信息无法滚动问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-06-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#106999 优化 移动端原审批意见显示</description>
+			<author>朱湖强</author>
+			<revision-time>2020-06-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#97555 修复 谷歌、IE8浏览器，公文在流程流转过程中，使用有公文在线编辑的流程，操作按钮会显示在word在线编辑的下方</description>
+			<author>潘永辉</author>
+			<revision-time>2020-06-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#109585 修复 暂存文档时，如果起草节点设置了必须修改节点，会提示必须修改节点处理人</description>
+			<author>朱湖强</author>
+			<revision-time>2020-06-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#107559 优化 编号漏号查询</description>
+			<author>朱湖强</author>
+			<revision-time>2020-06-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#109280 优化 wps私有化下，新建和查看正文页签显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-06-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#108628 修复 新建模板，不修改正文编辑方式，提交后自动显示为在线编辑方式</description>
+			<author>朱湖强</author>
+			<revision-time>2020-06-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#106870 优化 WPS移动端新建支持</description>
+			<author>朱湖强</author>
+			<revision-time>2020-06-12</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#108561 修复 部分环境下编译时提示文件过大报错问题</description>
+			<author>郑鑫</author>
+			<revision-time>2020-06-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#102036 新增 安证通集成</description>
+			<author>黄伟强</author>
+			<revision-time>2020-06-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#103463 修复 筛选条件组合报错</description>
+			<author>郑鑫</author>
+			<revision-time>2020-06-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#98940 新增 WPS模式下支持打开本地初稿</description>
+			<author>蒋志广</author>
+			<revision-time>2020-06-08</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#101462 优化 自动归档调整为使用异步的方式进行处理</description>
+			<author>林宇超</author>
+			<revision-time>2020-06-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#101463 优化 自动沉淀调整为使用异步的方式进行处理</description>
+			<author>林宇超</author>
+			<revision-time>2020-06-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#107078 修复 公文设置的编号没有添加流水号时，审批人修改编号时无法点击确定</description>
+			<author>叶正平</author>
+			<revision-time>2020-05-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#103776 修复 签报模板查看报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-05-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#105279 优化 公文传阅功能性能优化</description>
+			<author>叶正平</author>
+			<revision-time>2020-05-23</revision-time>
+			<relation>
+				<relation-module>sys/circulation</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#103781 修复【EKPV15.0.4.R回归测试 -政务公文】编号缓存栏，编号名称和当前编号模拟名称没有显示出来</description>
+			<author>徐斌</author>
+			<revision-time>2020-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#97751 修复 催办分发时报错</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#103808 修复 收文带意见分发签收为收文后，签收的收文分发记录显示错误</description>
+			<author>朱湖强</author>
+			<revision-time>2020-05-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#104854 优化 移动端分发页面样式调整</description>
+			<author>朱湖强</author>
+			<revision-time>2020-05-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#104068 修复 公文签报的签发人是空时，记录日志会报错</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-05-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端三级页面</description>
+			<author>洪泽铨</author>
+			<revision-time>2020-04-29</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#103175 修复 收文模板中，选择启动子流程，在赋值表达式中没有正文编辑方式的变量</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-04-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 易企签支持选择已经填写过的个人签署信息</description>
+			<author>蒋志广</author>
+			<revision-time>2020-04-23</revision-time>
+			<relation>
+				<relation-module>elec/yqqs</relation-module>
+				<relation-module>elec/device</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#102275 修复 点击导出PDF，然后点击打印，会将打印选项展现出来</description>
+			<author>叶正平</author>
+			<revision-time>2020-04-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#98750 优化 发文易企签支持企业盖章</description>
+			<author>蒋志广</author>
+			<revision-time>2020-04-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#100533 新增 wps私有化集成</description>
+			<author>蒋志广</author>
+			<revision-time>2020-04-14</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>third/wps</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#99936 修复 编号漏号查询问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-04-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#101885 优化 文档发布匿名后，根据不同的文件格式选择不同的文件展现方式</description>
+			<author>郑操辉</author>
+			<revision-time>2020-04-09</revision-time>
+			<relation>
+				<relation-module>sys/anonym</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#101519 优化 顶部页签快速审批定位问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-04-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94582 新增 公文管理政务版部署匿名机制</description>
+			<author>郑操辉</author>
+			<revision-time>2020-04-07</revision-time>
+			<relation>
+				<relation-module>sys/anonym</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#100922 修复 自动归档后，状态还是未归档问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-04-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#100234 修复 发文自动沉淀之后，html文件中没有展示"附件跟踪记录"</description>
+			<author>朱道标</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94286 新增 政务版公文模块部署帮助中心</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95422 优化 公文政务版后台查看列表中 增加“当前审批环节”，“当前处理人”字段</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95482 优化 公文后台设置页面多语言支持</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95487 优化 书签说明页面部分内容优化英文翻译</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#98750 新增 发文新增正文易企签签署</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-30</revision-time>
+			<relation>
+				<relation-module>elec/device</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94101 优化 进入模块，点击“后台配置”目录，请求的url需要显示在地址栏中</description>
+			<author>钟清学</author>
+			<revision-time>2020-03-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#62428 新增 流程管理和公文管理政务版新增流程结束事件自动沉淀功能</description>
+			<author>朱道标</author>
+			<revision-time>2020-03-28</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/cache</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#99504 修复 自动归档发起请求超时时，请求未及时释放一直挂起</description>
+			<author>朱道标</author>
+			<revision-time>2020-03-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#95462 新增 集团分级授权下，拥有场所XXXX_阅读文档权限的用户不能通过url访问其他场所的文档</description>
+			<author>叶正平</author>
+			<revision-time>2020-03-18</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/authorization</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#97816 修复 移动端签收和pc端签收编号重复报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#98077 优化 单位支持移动端搜索</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-27</revision-time>
+			<relation>
+				<relation-module>sys/unit</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92305 优化 流程审批人和超管才允许在审批过程中编辑正文</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92609 优化 公文交换增加开关控制</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-27</revision-time>
+			<relation>
+				<relation-module>sys/unit</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89223 优化 分发/上报支持意见</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-27</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/unit</relation-module>
+				<relation-module>sys/dec</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94286 新增 政务版公文部署帮助中心</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#96363 新增 金格国产化控件在国产操作系统下的适配</description>
+			<author>张成才</author>
+			<revision-time>2020-03-24</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93773 修复 编号规则修改导致的报错</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94586 优化 附件重命名后附件汇总名字不变问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-02-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93123 修复 附件汇总中附件全选问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-02-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88779 优化 移动端政务公文二级页面UI调整</description>
+			<author>杨铮</author>
+			<revision-time>2020-01-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94144 修复 组织层级设置为显示部门全路径，拟稿部门显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-01-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#94489 修复 缓存编号空判断处理</description>
+			<author>朱湖强</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93888 修复 移动端非提交人或非管理员无法打开公文查看页</description>
+			<author>郑操辉</author>
+			<revision-time>2020-01-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#93699 优化 顶部页签模式没有快速审批问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-01-10</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89029 修复 政务版公文中的发文、收文、签报添加数据时，附件与正文切换控件没有消失</description>
+			<author>张成才</author>
+			<revision-time>2019-12-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89029 修复 政务版公文中的发文、收文、签报添加数据时，附件与正文切换控件没有消失</description>
+			<author>张成才</author>
+			<revision-time>2019-12-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92179 优化 移动端分发记录页面底部操作栏显示位置优化</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92052 优化 顶部页签模式下，正文滚动条显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-12-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#92317 修复 档案管理模块关闭了归档功能其他模块还可以看见归档按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-26</revision-time>
+			<relation>
+				<relation-module>km/archives</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#91386 优化 公文政务版，提交之后的查看页面没有显示自由流信息</description>
+			<author>王逍</author>
+			<revision-time>2019-12-20</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#91024 修复 移动端分发上报记录显示不完整问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-12-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88822 优化 书签获取代码优化 version</description>
+			<author>朱湖强</author>
+			<revision-time>2019-12-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#91242 修复 公文模块模块没有查看文档权限，通过搜索员工黄页的话，还是可以看到标题</description>
+			<author>陈尉建</author>
+			<revision-time>2019-12-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88061 修复 F4环境归档和沉淀报错问题</description>
+			<author>朱道标</author>
+			<revision-time>2019-12-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#90286 优化 没有分发上报记录时，页面上撤回、催办、补签操作栏的显示逻辑</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89038 新增 移动端增加分发后的 催办，撤回，补发功能</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#90742 修复 移动端分发后撤回、催办、补签的权限问题</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#90743 修复 移动端点击催办、撤回都没有反应的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#82030 修复 审批公文时，通过 驳回 转办 沟通 废弃 加签 暂存。按钮选择后无法提交</description>
+			<author>洪健</author>
+			<revision-time>2019-12-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87960 优化 移动性能体验</description>
+			<author>陈平山</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/mportal</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#90379 修复 签报编号锁释放问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-12-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88256 修复 文件名包含英文冒号导致金格打开无法下载</description>
+			<author>朱湖强</author>
+			<revision-time>2019-12-03</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#81495 新增 公文管理政务版收文模块，来文单位可设置多个单位</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89576 修复 正文书签选择的是其他来文单位，实际上显示的是来文单位的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#89079 修复 收文转发文失败问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-12-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88818 修复 我的发文、我的收文、我的签报门户更多按钮未跳转到对应导航栏</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87472 新增 发文库、收文库、签报库新增限办日期筛选项</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#88235 优化 右侧审批模式支持pdf直接打开</description>
+			<author>朱湖强</author>
+			<revision-time>2019-11-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#53359 新增 移动门户快捷方式选择系统引入的时候没有任何EKP模块</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87499 优化 列表显示设置权限设置优化</description>
+			<author>朱湖强</author>
+			<revision-time>2019-11-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87022 修复 模板审批记录可阅读者重复显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-11-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#86780 修复 ie8下文件编号窗口滚动问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-11-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#87044 修复 审批过程中传阅报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#82020 修复 自动归档后，附件跟踪最终稿名称显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#83644 优化 知识沉淀支持HTML转化PDF</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#84080 修复 属性列表中，默认发文单位不选择，新建发文时显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#83564 新增 后台配置优化，ekp各模块后台配置调整</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-21</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#83282 优化 正文为在线编辑方式，在非kk客户端中签收默认处理为附件上传</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#82021 优化 审批过程中传阅不出现”追加审批意见到可阅读者“选项</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#82160 修复 点击数据，页面跳转，相关类型数据显示不一致</description>
+			<author>郑超</author>
+			<revision-time>2019-10-11</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#83475 修复 交换库标题筛选问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#62427 新增 公文管理新增流程结束自动归档功能</description>
+			<author>简建红</author>
+			<revision-time>2019-09-17</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>km/archives</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#81883 修复 自动分发和上报时，正文没带过去问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-09-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#81548 修复 签报中明细表附件加载问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-09-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#77163 优化 提交编号重复校验加锁</description>
+			<author>朱湖强</author>
+			<revision-time>2019-09-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#74801 新增 公文与数据交换中心对接</description>
+			<author>朱湖强</author>
+			<revision-time>2019-09-08</revision-time>
+			<relation>
+				<relation-module>sys/unit</relation-module>
+				<relation-module>sys/dec</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#80860 修复 签收页面流程页签审批记录显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-09-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#80749 修复 归档后附件跟踪的附件名称显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-09-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#80043 优化 金格控件未加载提示</description>
+			<author>朱湖强</author>
+			<revision-time>2019-09-08</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#78286 门户最新公文portlet增加配置题头显示模式</description>
+			<author>朱湖强</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69669 新增 分发、上报、退文记录导出</description>
+			<author>朱湖强</author>
+			<revision-time>2019-08-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72559 优化 驳回起草节点支持直接编辑正文</description>
+			<author>朱湖强</author>
+			<revision-time>2019-08-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#79962 修复 附件信息页签路径问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-08-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#79925 修复 非右侧审批模式签收失败问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-08-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#76290 修复 安全漏洞报告，请产品评估处理</description>
+			<author>郑操辉</author>
+			<revision-time>2019-08-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#77616 修复 sql盲注入</description>
+			<author>叶正平</author>
+			<revision-time>2019-07-30</revision-time>
+			<relation>
+				<relation-module>sys/category</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#78122 修复 发文单位在节点中可编辑时，单位不显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#70687 新增 公文三级页改造 ，传阅功能优化</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-11</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/lbpmext</relation-module>
+				<relation-module>sys/relation</relation-module>
+				<relation-module>sys/circulation</relation-module>
+				<relation-module>sys/unit</relation-module>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#75666 修复 传阅删除权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#75087 修复 后台列表设置权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#74887 优化 自动分发上报时，待办发起人问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#75369 优化 页面自适应问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#74542 修复 流程结束主送（抄送，抄报）个人待办发送人取值问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-06-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#74372 优化 驳回支持暂存</description>
+			<author>朱湖强</author>
+			<revision-time>2019-06-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#74209 优化 顶部页签下，不上传正文不出现收缩按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2019-06-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#74107 优化 漏号的查询逻辑修改为完整编号串</description>
+			<author>朱湖强</author>
+			<revision-time>2019-06-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#74199 修复 切换场所新建数据时，场所获取不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-06-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#68523 新增 公文支持沉淀功能</description>
+			<author>朱湖强</author>
+			<revision-time>2019-06-11</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>kms/multidoc</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/xform</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72877 修复 归档新审批控件乱码问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-24</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#70861 优化 工作交接明细列表添加按标题搜索功能</description>
+			<author>杨铮</author>
+			<revision-time>2019-07-06</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73483 优化 收文排序</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73359 修复 表单没有发布时间字段，签发报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#73071 优化 编号时，流水号数字类型校验</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72575 修复 签收时起草节点编号附加选项不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72526 优化 关联收文增加创建人和发布时间显示</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72136 优化 归档时附件跟踪权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72421 修复 移动端分发上报按钮显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72489 优化 后台文档维护不过滤废弃文档</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72130 修复 批量归档权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#70238 新增 ofd分发上报支持</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-13</revision-time>
+			<relation>
+				<relation-module>kms/multidoc</relation-module>
+				<relation-module>core</relation-module>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/filestore</relation-module>
+				<relation-module>AttConvert_suwell</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72285 修复 收文编号书签问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#72071 优化 流程审批页面引用的样式非系统统一的，导致审批模式的默认值设置不生效</description>
+			<author>王逍</author>
+			<revision-time>2019-04-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69797 修复 英文环境下显示中文问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#71921 修复 标题含有单双引号，保存痕迹稿报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-04-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#70808 修复 附件书签不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-04-22</revision-time>
+			<relation>
+				<relation-module>sys/print</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67324 优化 收文转成发文或收文之后体现文档直接的关联关系</description>
+			<author>朱湖强</author>
+			<revision-time>2019-04-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69983 优化 收文审批过程中支持转收发文</description>
+			<author>朱湖强</author>
+			<revision-time>2019-04-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69991 优化 顶部页签模式支持左右收缩</description>
+			<author>朱湖强</author>
+			<revision-time>2019-04-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65428 新增 部署事项（业务）工作交接，交接字段为“签收人”</description>
+			<author>潘永辉</author>
+			<revision-time>2019-04-09</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69328 修复 非签收过来的收文转收发文报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69089 优化 编号跳号优化</description>
+			<author>朱湖强</author>
+			<revision-time>2019-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#68904 修复 pdf正文下载没记录日志问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#26261 新增 公文签收单工作交接</description>
+			<author>朱湖强</author>
+			<revision-time>2019-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65997 新增 分发上报执行勾选附件范围</description>
+			<author>朱湖强</author>
+			<revision-time>2019-03-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#68485 修复 起草节点拥有附加选项，签收时收文字号不自动加1问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67378 修复 某些情况下，无法编辑正文问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#68009 优化 手动修改流水号，当流水号由大改为小时，不更新回编号机制</description>
+			<author>朱湖强</author>
+			<revision-time>2019-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67333#59966 新增 移动端支持分发，上报和签收</description>
+			<author>朱湖强</author>
+			<revision-time>2019-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#56227 优化 公文模板支持单独流水编号设置</description>
+			<author>朱湖强</author>
+			<revision-time>2019-03-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#69384 优化 后台单位设置新增时初始化单位分类为当前选择单位</description>
+			<author>蒋志广</author>
+			<revision-time>2019-03-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67916 修复 公文发布后修订提交，书签报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-02-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67839 修复 移动端会签单位必填校验</description>
+			<author>朱湖强</author>
+			<revision-time>2019-02-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67637 修复 签报正文展开问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-02-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67612 修复 有编辑主文档的权限时，查看页不允许增删改附件</description>
+			<author>朱湖强</author>
+			<revision-time>2019-02-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#67642 修复 书签说明查看页面报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-02-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#66912 修复 未启用pdf以及附件转换，公文正文应该以附件方式存放</description>
+			<author>张成才</author>
+			<revision-time>2019-01-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#63418 新增 归档支持aspose转换PDF</description>
+			<author>严明镜</author>
+			<revision-time>2019-01-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#66293 修复 明细表在表格内，以桌面端在移动端打开，添加两行后，文字不见了</description>
+			<author>王逍</author>
+			<revision-time>2019-01-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65182 修复 后台模板“批量修改权限”按钮权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-17</revision-time>
+			<relation>
+				<relation-module>sys/right</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>66934 修复 流水号元素放第一位时修改编号问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#66177 新增 收文，签报模板支持拓思德点阵数码笔手写</description>
+			<author>王逍</author>
+			<revision-time>2019-01-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#63318 新增 手写签批新增拓思德点阵数码笔集成</description>
+			<author>王逍</author>
+			<revision-time>2019-01-17</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#66557 修复 单位空值搜索问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64758 优化 打印页面附件不显示操作按钮及下载次数</description>
+			<author>林秀贤</author>
+			<revision-time>2019-01-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#66305 优化 退回查看信息</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64474 新增 正文pdf下载</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-04</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65392 优化 传阅和打印角色调整为普通角色</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65513 优化 调用打印机制时，不需要显示标题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64108 修复 漏号查询不准确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65730 优化 文件编号时，手动修改流水号，提交后把流水号更新到编号机制</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65809 修复 属性列表控件的设置参数，存在未做多语言字段</description>
+			<author>王逍</author>
+			<revision-time>2018-12-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65986 修复 直接签收后，按钮就不再显示</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65534 修复 编辑页面标题转义问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65204 修复 后台设置正文默认不展开时，pdf形式的正文展开后无法显示</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#63130 优化 默认归档发文跟踪内容</description>
+			<author>郑超</author>
+			<revision-time>2018-12-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65185 修复 收文正文为pdf显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#65032 修复 列表自定义配置显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64909 修复 上报单位多选问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64808 优化 分发和上报时不更新稿纸主送、抄送和抄报单位</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#63302 修复 金格2015谷歌下套红不成功问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#64205 修复 如果没有正文和附件时，顶部页签下关联信息无法显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#59381 优化 公文正文支持转成pdf分发上报</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-12</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/filestore</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#48237 优化 后台设置，操作按钮统一交互优化，页面内容大于一屏时，保存按钮悬浮在底部</description>
+			<author>杨铮</author>
+			<revision-time>2018-11-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表草稿删除问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 拥有“保存痕迹稿”附加选项，编辑正文默认保存留痕</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 去除新建页面退出和首页按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文发布后自动生成文号问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报红头模板权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 发布时间添加索引</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 切换公文类型字段，单位保存为空问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 查看编号页面新增“清除”功能</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 上报文退回时给发送人发送待阅通知</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 新闻管理新建页、政务公文收文新建页面来回切换正文和附件形式，控件word丢失</description>
+			<author>张成才</author>
+			<revision-time>2018-11-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 正文为附件上传方式时，启动子流程问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收发统计数据视图显示null问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件上传后支持预览－－第二阶段</description>
+			<author>安浩峰</author>
+			<revision-time>2018-11-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表“当前节点”和“当前处理人”显示优化</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 将打印选项进行平铺后，导出html、导出pdf中打印选项优化</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文分发上报后，签收单“来文单位”不显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 政务版公文发文和签报，金格控件2015在谷歌浏览器下，正文方式来回切换后出现控件不加载现象</description>
+			<author>张成才</author>
+			<revision-time>2018-11-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 政务版公文发文和签报，金格控件2015在谷歌浏览器下，正文方式来回切换后出现控件不加载现象</description>
+			<author>张成才</author>
+			<revision-time>2018-11-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 收文和签报修改字号角色</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 给用户赋予“公文管理_阅读发文”权限角色，可查看发文及审批记录</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 流程通用模板“导出”按钮权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 编号窗口打开无响应问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 套红痕迹显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-25</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 员工黄页中的排序切换不生效</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 待我审我已审的无法显示人员为岗位的数据</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 多个主送、抄送和抄报（单位，个人），书签用顿号隔开</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 提交自动生成或发布后自动生成的编号先取缓存的编号</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie8下样式文件过多导致页面空白问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文删除报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 文号重复校验排查废弃的文档</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 附件跟踪权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 保存痕迹稿失败问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 首次编号预览报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 编辑附件附件选项</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 保存痕迹稿附加选项</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 书签支持普通自定义表单字段</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<relation>
+				<relation-module>sys/print</relation-module>
+				<relation-module>sys/xform</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 转发文/收文时在当前窗口打开</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 起草节点“签发人”设置了默认值，在只读模式下不显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 修订稿保存路径问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-10-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 首次分发单位默认带出</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板默认编辑方式不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 分发/上报后审批意见权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分发/上报选择支持后台统一设置默认值</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 上报时，抄送抄报多选显示不全问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 没有任何审批节点，提交文档后书签不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 发文新增拟稿部门（选组织架构）</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 普通用户转收/发文报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 文件编号允许设置是否必填</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文类别支持层级</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie8下页面显示空白问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 旧政府版公文迁移字段新增创建人和创建时间</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 驳回起草节点移动端支持编辑提交</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 发布后修订文档功能</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 公文统计功能</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 编号缓存去除用户相关限制</description>
+			<author>朱湖强</author>
+			<revision-time>2018-08-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报阅读权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-08-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端收文来文单位显示重复问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-08-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 印发日期【中文】书签</description>
+			<author>朱湖强</author>
+			<revision-time>2018-08-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 正文下载后可编辑角色</description>
+			<author>朱湖强</author>
+			<revision-time>2018-08-02</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端正文操作优化</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-31</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 顶部页签查看方式附件显示优化</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-09</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 含有公式定义器的编号规则缓存后获取不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-05</revision-time>
+			<relation>
+				<relation-module>sys/number</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 金格控件2015集成部署</description>
+			<author>张成才</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板自定义编号规则，“保存并新建”后编号规则设置报错</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 审批过程支持传阅</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 标题必填设置不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文库默认文档状态为“不限”</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 印发日期支持设置样式</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 引用其他编号规则的模板查看漏号不显示</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 筛选到模板下新建问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>#修复 收文跟踪筛选问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 公文推送到新闻偶发收不到待阅</description>
+			<author>林秀贤</author>
+			<revision-time>2018-06-30</revision-time>
+			<relation>
+				<relation-module>sys/news</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 正文编辑方式切换问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-06-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 限办日期配置</description>
+			<author>朱湖强</author>
+			<revision-time>2018-06-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 编号弹出框显示</description>
+			<author>朱湖强</author>
+			<revision-time>2018-06-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 pdf高度显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-06-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 印发部门选择报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-06-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 表单必选字段调整</description>
+			<author>朱湖强</author>
+			<revision-time>2018-06-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 政务版公文支持多表单模式</description>
+			<author>王逍</author>
+			<revision-time>2018-06-20</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 流程页签展现</description>
+			<author>朱湖强</author>
+			<revision-time>2018-06-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 有编辑正文权限，下载正文后无法编辑问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-18</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 审批过程中修改表单字段后再套红，书签显示不实时问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报修改文号问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 pdf正文显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台文档维护无法显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 非ie下红头模板新建问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 暂存是去除必填校验</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 文件编号，主送（抄送、抄报）字段加上权限区段后，审批过程中无法显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 导航栏添加公文交换</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 大分辨率下，查看页面不居中问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端正文下载问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-16</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 流程归档路径为空时，前端点击归档，弹出路径选择框，支持用户级配置</description>
+			<author>郑超</author>
+			<revision-time>2018-05-03</revision-time>
+			<relation>
+				<relation-module>km/archives</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 公文查看报js错误</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 稿纸新增多语言页签</description>
+			<author>王逍</author>
+			<revision-time>2018-04-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除公文内部单位时，页面一直转圈圈</description>
+			<author>潘永辉</author>
+			<revision-time>2018-01-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报起草节点套红报错</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 新增5个备用业务字段</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文支持顶部页签模式以及功能优化</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-11</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/news</relation-module>
+				<relation-module>sys/xform</relation-module>
+				<relation-module>sys/readlog</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 非ie浏览器下，流程人工决策节点点击不了问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 留痕支持业务模块自定义</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-11</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 当文书为岗位时，签收单阅读原审批意见权限不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 公文中的权限“发布签报到新闻”未生效</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 单位编辑页面“可退文”状态显示不正确</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签收时点击对话框关闭报错</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 流程管理、公文政务版、会议管理、调查管理、资产管理新增模板停用开关。</description>
+			<author>吴志斌</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 模板停用开关</description>
+			<author>胡耀华</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 密级程度设置 、紧急程度设置 、单位分类设置 新建页面名称字段支持多语言</description>
+			<author>陈经纬</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 list页面新增导出功能，根据页面勾选的数据导出，结合自定义列表显示功能</description>
+			<author>陈经纬</author>
+			<revision-time>2018-01-11</revision-time>
+			<relation>
+				<relation-module>sys/transport</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 列表自定义按模块部署</description>
+			<author>陈经纬</author>
+			<revision-time>2018-01-11</revision-time>
+			<relation>
+				<relation-module>sys/profile</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 发送、收文及签报部署打印机制</description>
+			<author>林秀贤</author>
+			<revision-time>2018-01-11</revision-time>
+			<relation>
+				<relation-module>sys/print</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台文档维护功能改成新UI，并且增加筛选功能</description>
+			<author>张成才</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 红头模板支持导出初始数据</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 360极速模式下，单位选择空白问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 表单多浏览器提交重复提示保存版本</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-16</revision-time>
+			<relation>
+				<relation-module>sys/xform</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 由于修改文档模式导致表单模板的某些属性布局控件的属性显示不全</description>
+			<author>朱国荣</author>
+			<revision-time>2017-11-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 金格多浏览器提交报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 稿纸信息含有明细表时，打开明细表空白</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>移除 签收时多余显示的“显示审批记录”选项</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 “套红”和“强制不留痕”在同个节点时，套完红会显示留痕问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台模板支持快速新建操作</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 url中文编码问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签收人为普通用户时无法阅读原审批意见</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端草稿，驳回和待审的公文稿纸和流程默认展开</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端稿纸信息支持半屏显示查看</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表数据展示样式优化</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-09-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文在流程未审批完时支持传阅</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文支持自定义搜索</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>移除 来文文号提示信息</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 类别模板设置多语言支持</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 政务版公文打印和下载附件新增日志</description>
+			<author>郑超</author>
+			<revision-time>2017-09-08</revision-time>
+			<relation>
+				<relation-module>sys/print</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表数据展示样式优化</description>
+			<author>陈经纬</author>
+			<revision-time>2017-09-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 模板查看页面显示“审批意见可阅读者”</description>
+			<author>朱湖强</author>
+			<revision-time>2017-08-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 公文交换配置编辑问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-08-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 部门字段支持显示层级结构，可以由系统提供统一接口（显示末级或显示层级，显示最近的几级）</description>
+			<author>潘永辉</author>
+			<revision-time>2017-08-19</revision-time>
+			<relation>
+				<relation-module>sys/organization</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 审批中撤回的文档不允许删除</description>
+			<author>朱湖强</author>
+			<revision-time>2017-07-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端发文打开报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-07-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端发文打开报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-07-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 公文被审批人驳回到起草节点时，重新编辑文档，不能编辑公文文号</description>
+			<author>林彬彬</author>
+			<revision-time>2017-07-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 文档暂存后，在移动端审批页面会有“编辑”按钮，点击提示“功能建设中”，去除该按钮和提示</description>
+			<author>朱湖强</author>
+			<revision-time>2017-07-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端wps编辑</description>
+			<author> 朱湖强</author>
+			<revision-time>2017-07-06</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 属性列表字段增加样式设置</description>
+			<author>朱湖强</author>
+			<revision-time>2017-07-04</revision-time>
+			<relation>
+				<relation-module>sys/xform</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 流程机器人节点和事件增加使用说明</description>
+			<author>林彬彬</author>
+			<revision-time>2017-06-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 拥有“打印正文权限”无法打印pdf正文问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-06-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 正文为非wrod文件，发文跟踪中标题显示后缀不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 当稿纸有“会签意见”字段，而会签收文没有审批意见时，发文打开报错</description>
+			<author>朱湖强</author>
+			<revision-time>2017-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文有文件编号附加选项，修改文号不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 普通用户审批时无法查看“原发文审批意见”</description>
+			<author>朱湖强</author>
+			<revision-time>2017-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端审批，导致附件设置中“所有人不可操作”的选项失效</description>
+			<author>朱湖强</author>
+			<revision-time>2017-05-15</revision-time>
+			<relation>
+				<relation-module>sys/right</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 主送，抄送，抄报单位偶发出现显示顺序不是按新建时选择的顺序</description>
+			<author>朱湖强</author>
+			<revision-time>2017-04-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie11下控件加载宽度问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-04-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建不支持金时，是页面显示错位</description>
+			<author>朱湖强</author>
+			<revision-time>2017-04-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 发文清稿功能不生效</description>
+			<author>张成才</author>
+			<revision-time>2017-04-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 新增“修改发文文号“角色</description>
+			<author>朱湖强</author>
+			<revision-time>2017-04-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 二级页面左侧导航增加选中效果</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-31</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 上传附件方式是文档，点击正文签章没反应</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 正文签章，点击签章按钮，但没有盖章，又关闭了签章页面，提交的时候没有弹出提示签章的信息</description>
+			<author>张成才</author>
+			<revision-time>2017-03-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 普通用户添加单位权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 admin.do中金格SignatureHTML网页签章 .CAB文件 不要放在公文目录下，改为附件目录，和其他金格控件存放路径一致</description>
+			<author>张成才</author>
+			<revision-time>2017-03-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文文档维护显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-02-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 设置了权限区段后，单位选择无效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-02-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动门户portlet</description>
+			<author>朱湖强</author>
+			<revision-time>2017-02-23</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/mportal</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 EKP_Web安全漏洞扫描</description>
+			<author>陈晓文</author>
+			<revision-time>2017-02-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加关联控件的关联模块扩展点</description>
+			<author>朱国荣</author>
+			<revision-time>2017-01-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 正文为上传附件方式，清稿时会提示当前为非控件模式</description>
+			<author>朱湖强</author>
+			<revision-time>2017-01-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 文种名字修改后，模板中不跟随改变问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建时选择签发时间，提交后书签中签发时间不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑公文时，主送抄送抄报单位点击没反应</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 重新设置默认场所后，编辑原场所数据，数据的场所不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 密级和缓急字段必填默认值不生效</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 来文单位必填设置不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文环境暂存文档后，重新提交报错</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑发文和收文，正文修改后保存不成功</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 weblogic下查看公文报错</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 审批人在审批公文界面点击稿纸签章按钮无响应，页面报错</description>
+			<author>张成才</author>
+			<revision-time>2016-12-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 默认主送抄送和抄报单位保存不成功问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-02</revision-time>
+			<relation>
+				<relation-module>sys/xform</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 设置某个字段再移动端可编辑，移动端打开审批时，无法审批</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档权限交接类中的权限名称与文档的权限名称一致</description>
+			<author>潘永辉</author>
+			<revision-time>2016-12-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档权限交接，没有交接“审批意见可阅读者”的权限</description>
+			<author>潘永辉</author>
+			<revision-time>2016-12-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 漏号查找功能</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-25</revision-time>
+			<relation>
+				<relation-module>sys/number</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 工作交接将同一模块不同分类的交接内容集中显示</description>
+			<author>潘永辉</author>
+			<revision-time>2016-11-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 有计算范围的编号规则，查找漏号时切换条件后显示不正确</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 收文支持设置默认收文单位</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 钉一下配置修改</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-21</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+				<relation-module>sys/profile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 上传正文方式的文档无法套红</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 全文检索能搜出已删除的文档</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 文档权限（可阅读、可编辑、附件权限）的交接</description>
+			<author>潘永辉</author>
+			<revision-time>2016-11-08</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端收文无法审批问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 编号规则如果没有流水号元素，编号时，弹出框关闭和保存按钮无法显示</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端不支持签章，套红和编号等操作，不出现审批按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 公文模板审批节点设置，处理人为“使用公式定义器”，选择不到“可阅读者”，“可打印者”，“可拷贝者”，“可下载者”字段</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心由“后台管理”角色控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文支持订阅</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-11</revision-time>
+			<relation>
+				<relation-module>sys/follow</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 发文文档维护列表页面按文号排序报错</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 正文为附件上传模式，提交不成功问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 rtf中的表格在移动端无法显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-08</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 正文默认留痕不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-08</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 发文支持支持“在线编辑”和附件上传方式新建</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-08</revision-time>
+			<relation>
+				<relation-module>sys/news</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 拥有“签章”附加选项，上传非word正文时仍有签章提示</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 门户中配置的最新发文、最新收文、最新签报，点击更多进入的list页面默认带入 发布状态</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 引入金格签章HTML控件</description>
+			<author>张成才</author>
+			<revision-time>2016-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化【金格签章HTML】发文审批添加了金格签章，删除该发文时，对应的数据库中相应的数据未清除，导致冗余数据存在</description>
+			<author>张成才</author>
+			<revision-time>2016-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化【金格签章HTML】去掉金格签章控件中的“审批不通过”选项</description>
+			<author>张成才</author>
+			<revision-time>2016-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复【金格签章HTML】如果审批节点附件选项勾选了稿纸签章选项，且表单中没有添加流程节点DIV控件，此时审批人进行稿纸签章操作页面报js错误</description>
+			<author>张成才</author>
+			<revision-time>2016-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化【金格签章HTML】admin.do中配置了网页签章地址，异地访问带有该控件的公文时没有提示安装金格签章控件</description>
+			<author>张成才</author>
+			<revision-time>2016-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复【金格签章HTML】收文和签报不能进入稿纸签章操作，请添加</description>
+			<author>张成才</author>
+			<revision-time>2016-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复【金格签章HTML】多浏览器进行稿纸签章操作时，建议给出提示信息“暂时只支持IE8及以上版本的IE浏览器”</description>
+			<author>张成才</author>
+			<revision-time>2016-09-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文和签报归档权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-09-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 门户portlet我的公文支持分类选择</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 门户中带题头的收文点击提示文档不存在问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 单位导出为初始数据报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 默认打印字体大小</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 是否启用加速对pdf正文不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分发时，如果单位选择为空，不出现单位解析结果</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 签收时在原窗口打开新建页面</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签收页面中，原文件的办理记录以及接收反馈信息无法显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 附件跟踪标题长度不够导致流程无法结束问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加数据库标题长度</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 起草节点编号，如果编号规则含有公式定义器，出错时给出提示</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板中，”表单引用模式“修改为下拉框后引起的显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-12</revision-time>
+			<relation>
+				<relation-module>sys/xform</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 文件编号和清稿在同一节点，先编号后再清稿，文件编号因页面刷新而不显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 套红和清稿在同一节点，先套红后再清稿，提示未清稿问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中，公文参数配置调整（包括‘拥有流程附加选项“编辑正文”权限时，默认以加速模式打开’，‘ 拥有编辑主文档权限时，默认以加速模式打开’，‘公文默认展现配置’，‘发布后展现顺序配置’，‘快速阅读下，正文查看方式’）</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-11</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文上传pdf，转换成功但是没开启pdf控件时没有在线打开</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台文档维护列表中，转移分类不成功问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 有正文签章附加选项时，如果没盖章，则进行提示</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 稿纸信息如果含有明细表，在移动端点击无反应问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 发文跟踪中，点击筛选后筛选按钮消失</description>
+			<author>朱湖强</author>
+			<revision-time>2016-06-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会签记录列表显示两个状态问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-06-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 单位选择支持显示全路径</description>
+			<author>朱湖强</author>
+			<revision-time>2016-06-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端头像大小性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-12</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分类转移功能操作</description>
+			<author>朱湖强</author>
+			<revision-time>2016-06-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 pc端待审、发布状态下的收藏保持与移动端同步</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 给予用户转移文档和分类权限扩充的角色，在模块列表中转移文档时不能选择所有类别</description>
+			<author>潘永辉</author>
+			<revision-time>2016-06-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端稿纸信息查看样式</description>
+			<author>朱湖强</author>
+			<revision-time>2016-06-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端支持按分类查询</description>
+			<author>朱湖强</author>
+			<revision-time>2016-05-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分发时支持“保留原发文附件下载权限”，当保留，签收时则以金格方式打开</description>
+			<author>朱湖强</author>
+			<revision-time>2016-05-16</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 修改文号时重复校验提示</description>
+			<author>朱湖强</author>
+			<revision-time>2016-05-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>移除 收文新建页面中，外部单位手动输入框</description>
+			<author>朱湖强</author>
+			<revision-time>2016-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文和签报模板切换编辑模式，金格不加载问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-05-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 收文列表增加收文日期显示</description>
+			<author>朱湖强</author>
+			<revision-time>2016-05-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文支持直接签收</description>
+			<author>朱湖强</author>
+			<revision-time>2016-05-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 给了模块所有权限，进入列表看到所有按钮，点击分类筛选器后按钮减少了问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 访问被删除的文档链接，提示文档不存在而非报错</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 模板不支持金格提示信息显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-26</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 在选择单位弹出框中，如果先选中一级分类，再添加单位报错</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台文档维护列表，当前处理人列显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文归档按分类可维护控制，同时可结合分类维护人员和扩充权限控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 下载和打印正文权限分离</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 当文件编号在最后一个审批节点且审批人没有编辑正文权限时，正文html模式下编号无法显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-26</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 工作交接支持</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文模板中“份数”初始值不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 在单位选择弹出框中新建内部单位后变为外部单位问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分发上报时，支持勾选“分发原审批意见”</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板中设置的核稿人默认值不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报中点击常用分类报错</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报传阅权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 签收单正文附件的权限继承原发文的附件权限</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 外部单位支持动态添加</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>复 模板为分发或上报件，新建时自动分发和上报复选框不显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签章图片把下面的发文单位和日期盖住</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-23</revision-time>
+			<relation>
+				<relation-module>km/signature</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端的公文、流程等应用支持传阅操作</description>
+			<author>李启龙</author>
+			<revision-time>2016-03-22</revision-time>
+			<relation>
+				<relation-module>sys/circulation</relation-module>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 套红后显示/隐藏留痕不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-15</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 有编号和套红附加选项，暂存后重新打开无法编号套红</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 起草节点如果有【文件编号】附加选项，默认不自动生成文号，当用户点击文件编号按钮才生成文号，如果用户没有点击则以模板编号规则自动生成，如果模板编号规则为不限制，则提示用户编号</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-03</revision-time>
+			<relation>
+				<relation-module>sys/number</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 发文跟踪中，分发和上报记录如果没数据，不显示按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 正文附件为pdf时支持打印</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 批量修改权限由模块角色控制，如果模块没配置则由全局分类的“类别维护人员角色”控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-03</revision-time>
+			<relation>
+				<relation-module>sys/category</relation-module>
+				<relation-module>sys/right</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板"主送"，"抄送"，"抄报"初始值按当前用户权限过滤</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文和签报从"在线编辑"模式切换到"上传附件"模式，点击正文附件附件空白处会触发金格工具按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 支持将被传阅人追加审批意见可阅读者</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 打印页面增加字体缩放功能</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 正文附件下载（打印）角色</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-03</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 没有配公文交换时，签收可以选择收文有权限的收文模板</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文正文的展现顺序（审批过程中稿纸在前，发布后正文在前）</description>
+			<author>朱湖强</author>
+			<revision-time>2016-02-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 主送抄送和抄报支持选择岗位</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 aspose页面嵌在文档中时，不需要显示下载和aspose的logo</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-22</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端稿纸信息头部返回按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-19</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文中收文单位点击没反应问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 交换模板没配置时，签收时给出提示</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 上传附件方式新建的收文，查看时没“下载”和“切换阅读方式”按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-13</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 字段含有特殊字符时，插入到书签时被截断问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-13</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 套红模板添加说明</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板稿纸信息中添加“发文单位”字段，不设置默认默认发文单位，新建报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档发布后，流程审批人无法查看流程页签</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分发记录中收件人如果为岗位则解析出来</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 在文档维护页面，删除收文报错</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-10</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 在流程审批页面增加钉的图标，点击“钉”，可直接打开钉的页面</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-03</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 接收反馈信息中，退回意见太多时显示不全问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档发布后，流程审批人无法查看流程页签</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 发文跟踪中，退回和退文意见无法加载问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文正文保存时默认不校验文档内容是否为空</description>
+			<author>魏本源</author>
+			<revision-time>2015-11-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 兼容多转换工具</description>
+			<author>李显鹏</author>
+			<revision-time>2015-11-19</revision-time>
+			<relation>
+				<relation-module>sys/filestore</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台文档维护权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建多浏览器支持</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-13</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 审批意见可阅读者显示重复问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-04</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移除起草节点多余附加选项</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-03</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 单位选择支持搜索</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-03</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 分发时，选择一个没有单位的分类报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 was下el表达式报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 weblogic环境下，门户点击新建无效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 分发时，选择一个没有单位的分类报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 公文交换中，我接收的按标题搜索不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 当后台设置不启用快速阅读和不展开正文时，打开文档还是展开正文</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分发记录列宽调整</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 推送到新闻时支持推送普通附件</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<relation>
+				<relation-module>sys/news</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端查看页面样式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 角色名称描述</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置现在文档维护节点</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 门户带题头列表展现问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文模板编号机制支持选择自定义表单字段</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端查看样式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-13</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie11下打开文档报js错误</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 签报添加签章功能</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端审批记录按权限页签下的审批意见可阅读者控制以及查看样式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件跟踪记录显示样式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 我分发和上报的列表筛选器不要支持多选</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 门户数据排序规则（我的xx数据按创建时间降序，其他按发布时间降序）</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 编号规则宽度可设置</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 当前编号为空且模板编号规则为不限制时，把绑定的编号规则显示出来</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-06</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 发文和签报备注字段输入换行显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 取消分发时待办删除问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 暂存草稿后可以返回</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文子流程支持</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 发布的收文才允许修改文号</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-24</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 收文正文如果单独上传一个pdf或者doc格式文件，则在线打开，其他情况仍以挂附件方式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 模板“可使用者”“可维护者”描述信息</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 编号机制无法生成，导致所有流程被堵塞，无法结束</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 未开启金格多浏览器插件，在Chrome浏览器中新建公文，会看到多余的书签说明</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 流程授权时，政务版公文名称显示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 门户"最新xx"数据，选择类别后点击更多进入模块列表数据不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 删除发文时，收回文书的签收待办</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板编号规则为不限制时，新建文档后预览同一个编号规则不变号问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表页面增加“缓急程度”字段</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 字段名称显示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>移除 签报筛选器中“发文单位”字段</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会签记录出现两个状态问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 收文筛选器新增收文编号筛选项</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-14</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加后台配置角色</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端正文附件改为在线浏览模式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-08</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 修改签报套红模板类型不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 当移动端的自定义表单稿纸信息保存为桌面版时，无法滑动问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 收文和签报在新建是才允许修改正文编辑方式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 缓急密级设置不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-03</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 登记单列表和查看页面添加“来文单位”显示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报三级页面路径显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报起草节点套红报错</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 我会签的列表自适应高度问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端稿纸信息校验</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报三级页面路径显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板保存成功后点击返回提示找不到页面问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文、签报编辑页面增加长度校验</description>
+			<author>魏本源</author>
+			<revision-time>2015-06-30</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 起草节点收文编号预览问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 收文和签报切换阅读模式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-23</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端稿纸信息查看</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 按参数配置中的配置来决定收文和签报正文是否展开</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-19</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台参数配置列表添加排序号字段</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分发/上报时，增加“是否可查看原审批记录”</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 收文编号不为空时的提交提示信息</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文正文是否展开配置项</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 切换阅读模式展现</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-17</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 xform:text标签长度校验</description>
+			<author>魏本源</author>
+			<revision-time>2015-06-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 审批过程中自定义表单字段校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-05</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 审批过程默认展开流程页签</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 编号不为空时，有编号附加选项的节点直接提交会提示“编号不能为空”</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报模板设置的发布信息保存不成功问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-01</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 书签添加“主送个人”，“抄送个人”，“抄报个人”</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie8补发报js错误</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-29</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 催办时不给退回单位发送待阅</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-28</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文交换页签下模块名称没显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文交换 转换类型默认值 取左边树选中的值</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端列表背景颜色</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-26</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 查看员工换页中，他人xx数据页签不显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 交换配置提示信息</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文交换样式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-25</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 编号模块中，公文编号规则显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-21</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 员工黄页我的xx数据列表为空问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-20</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分发/上报可填写意见</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie8不支持console报错</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 收文支持修改文号</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-18</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板默认题头显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 签报排序字段显示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 修改文号按钮的权限</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端节点暂停提交失败问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 节点暂停提交时报错</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 签报关联机制模板精确搜索问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 退回意见无法显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 会签登记单无法查看正文附件和文档附件</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文终审通过后没自动生成文号问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 员工换页页签切换显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 普通用户按来文单位筛选报错</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文交换配置列表排序问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 待办提示信息</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文交换可维护者提示信息</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 文书能看到发文单位是自己所在单位但是是别人提交的草稿</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 起草节点套红提示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文转发文时，如果发文起草节点有编号附加选项时没自动生成文号问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 收文模板支持不绑定编号规则</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 分发的时候把发文的普通附件也继承过来</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 收文增加“文件编号”附加选项</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 审批过程中，如果有文件编号附件选项，不自动生成文号</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 批量修改权限按钮无法点击问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 套红时备注书签不显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中通用表单权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 主送 抄送 抄报没过滤掉无效单位</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-16</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 文种可配置是否必选</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-09</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 主送、抄送和抄报个人可多选</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 签收单位文书不可查看原发文</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-08</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 没有会签字段时发文跟踪不显示会签记录</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>移除 多余的权限角色</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 收文转收文普通附件没带过来</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 文档发布时给主送、抄送和抄报个人发送待阅</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 分发取消功能</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 公文交换添加可使用者和可维护者功能</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 单位树显示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-31</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>优化 推送到新闻功能</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-31</revision-time>
+			<relation>
+				<relation-module>sys/news</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 可见他人草稿问题处理</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-07</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>新增 公文管理政务版</description>
+			<author>朱湖强</author>
+			<revision-time>2015-02-13</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/lbpm</relation-module>
+				<relation-module>sys/xform</relation-module>
+				<relation-module>sys/circulation</relation-module>
+				<relation-module>sys/readlog</relation-module>
+				<relation-module>sys/number</relation-module>
+				<relation-module>core</relation-module>
+				<relation-module>sys/news</relation-module>
+			</relation>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+		<modify>
+			<description>修复 审批意见和签章功能梳理</description>
+			<author>魏本源</author>
+			<revision-time>2015-02-02</revision-time>
+			<baseline>V16.0.6.R.20220729</baseline>
+		</modify>
+	</modifies>
+</version>

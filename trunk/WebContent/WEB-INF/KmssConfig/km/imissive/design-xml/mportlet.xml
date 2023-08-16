@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:m="http://www.landray.com.cn/schema/mportlet" xmlns="http://www.landray.com.cn/schema/lui"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.landray.com.cn/schema/mportlet 
+	../../../sys/mobile/mportlet.xsd
+		http://www.landray.com.cn/schema/lui
+	../../../sys/ui/lui.xsd">
+	<!-- 最新发文 -->
+	<m:mportlet 
+		id="km.imissive.mportal.send"
+		name="{km-imissive:kmImissiveSend.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		moduleUrl = "/km/imissive/mobile/index.jsp"
+		jsUrl="/km/imissive/mobile/mportal/kmImissiveMportalSend.js?cateid=!{cateid}&amp;rowsize=!{rowsize}&amp;scope=!{scope}">
+		<m:vars>
+		  <var name="{km-imissive:kmImissive.portlet.docPublishTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="int" default="3"/>
+			<var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveSendTemplate","name":"{button.select}"}
+			</var>
+		</m:vars>
+		<m:operations>
+			<m:operation name="换一批" type="random" />
+		</m:operations>
+	</m:mportlet>
+	<!-- 最新收文 -->
+	<m:mportlet 
+		id="km.imissive.mportal.receive"
+		name="{km-imissive:kmImissiveReceive.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		moduleUrl = "/km/imissive/mobile/index.jsp"
+		jsUrl="/km/imissive/mobile/mportal/kmImissiveMportalReceive.js?cateid=!{cateid}&amp;rowsize=!{rowsize}&amp;scope=!{scope}">
+		<m:vars>
+		  <var name="{km-imissive:kmImissive.portlet.docPublishTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="int" default="3"/>
+			<var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate","name":"{button.select}"}
+			</var>
+		</m:vars>
+		<m:operations>
+			<m:operation name="换一批" type="random" />
+		</m:operations>
+	</m:mportlet>
+	<!-- 最新签报 -->
+	<m:mportlet 
+		id="km.imissive.mportal.sign"
+		name="{km-imissive:kmImissiveSign.portlet.latest}"
+		module="{km-imissive:module.km.imissive}"
+		moduleUrl = "/km/imissive/mobile/index.jsp"
+		jsUrl="/km/imissive/mobile/mportal/kmImissiveMportalSign.js?cateid=!{cateid}&amp;rowsize=!{rowsize}&amp;scope=!{scope}">
+		<m:vars>
+		 	<var name="{km-imissive:kmImissive.portlet.docPublishTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="int" default="3"/>
+			<var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.imissive.model.KmImissiveSignTemplate","name":"{button.select}"}
+			</var>
+		</m:vars>
+		<m:operations>
+			<m:operation name="换一批" type="random" />
+		</m:operations>
+	</m:mportlet>
+</root>

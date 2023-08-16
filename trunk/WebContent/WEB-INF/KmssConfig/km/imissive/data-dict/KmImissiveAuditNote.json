@@ -1,0 +1,55 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveAuditNote",
+        "messageKey": "km-imissive:table.kmImissiveAuditNote",
+        "displayProperty": "fdContent",
+        "serviceBean": "kmImissiveAuditNoteService",
+        "table": "km_imissive_auditnote"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdContent":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_content",
+            "length": "200",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdContent"
+        },
+        "fdApprover":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_approver",
+            "length": "200",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdApprover"
+        },
+        "fdApproverDept":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_approver_dept",
+            "length": "200",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdApproverDept"
+        },
+        "fdApprovalTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "column": "fd_approval_time",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdApprovalTime"
+        },
+        "fdApprovalRecodeId":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_approval_recode_id",
+            "length": "200",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdApprovalRecodeId"
+        },
+        "fdOpinion":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveReturnOpinion",
+            "column": "fd_opinion_id",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdOpinion"
+        }
+    }
+}

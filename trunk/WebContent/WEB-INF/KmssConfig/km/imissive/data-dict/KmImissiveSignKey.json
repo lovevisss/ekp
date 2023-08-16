@@ -1,0 +1,35 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveSignKey",
+        "messageKey": "km-imissive:table.kmImissiveSignKey",
+        "serviceBean": "kmImissiveAuditNoteService",
+        "table": "km_imissive_signkey"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdModelId":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "String",
+            "column": "fd_model_id",
+            "length": "36"
+        },
+        "fdModelName":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "String",
+            "column": "fd_model_name",
+            "length": "200"
+        },
+        "fdSignInfo":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveSignKey.fdSignInfo",
+            "column": "fd_sign_info",
+            "length": "255"
+        }
+    }
+}

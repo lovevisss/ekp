@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.km.carmng.model.KmCarmngRegisterInfo"
+		table="km_carmng_register_info">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+		<property
+			name="fdStartTime"
+			column="fd_start_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdEndTime"
+			column="fd_end_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdMileageBeforeNumber"
+			column="fd_mileage_before_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdMileageAfterNumber"
+			column="fd_mileage_after_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdMileageNumber"
+			column="fd_mileage_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdMileageStartNumber"
+			column="fd_mileage_start_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />			
+		<property
+			name="fdMileageEndNumber"
+			column="fd_mileage_end_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />		
+		<property
+			name="fdRealPath"
+			column="fd_real_path"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1500" />
+		<property
+			name="fdStopFee"
+			column="fd_stop_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdTurnpikeFee"
+			column="fd_turnpike_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdFuelFee"
+			column="fd_fuel_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdOtherFee"
+			column="fd_other_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdTotalFee"
+			column="fd_total_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdCarwashFee"
+			column="fd_carwash_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdRemark"
+			column="fd_remark"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="fdRegisterTime"
+			column="fd_register_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<many-to-one
+			name="fdRegister"
+			column="fd_register_id"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<many-to-one
+			name="fdDispatchers"
+			column="fd_dispatchers_id"
+			update="true"
+			insert="true"
+			not-null="false" 
+			unique="false"/>
+		<many-to-one
+			name="fdDispatchInfoList"
+			column="fd_dispatchinfolist_id"
+			update="true"
+			insert="true"
+			unique="true"
+			not-null="false"/>
+	</class>
+</hibernate-mapping>

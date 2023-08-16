@@ -1,0 +1,336 @@
+﻿@charset "utf-8";  
+
+/**
+** 代码制作人: xiex
+** 制作时间：2014-12-05
+** 文件内容描述：待办相关
+** 修改日期：无
+** 修改内容：无
+**********************************************/
+
+.muiFlowInfoW {
+	margin-top:0.5rem; 
+	background: #fff; 
+	border-bottom:0px;
+	padding-left:0rem;
+}
+.muiFlowInfoW .muiNavbarContainer,.muiFlowFixedItem .muiNavbarContainer{ background: #fff; border-bottom: 1px solid #f7f7f7;}
+.editPanel .muiTitle ,
+.muiFlowInfoW .muiTitle{
+	background: #fff;
+}
+
+.editPanel .muiSimple{
+	width: 97%;
+}
+
+.editPanel .muiSimple .muiTitle{
+	width: 32%;
+}
+
+/*---------------------------------------- 待审列表 ----------------------------------------*/
+
+/*** 背景图 ***/
+.muiViewBanner{ 
+	background:#915946 url(../images/view_bg.jpg) no-repeat left top; 
+	background-size:cover;
+	min-height: 10rem;
+	padding-right: 0.4rem;
+	padding-bottom: 2rem;
+}
+
+.muiViewBanner .muiSummaryImg {
+	width: 7rem;
+	height: 10rem;
+	border-radius:0;
+}
+
+.muiViewBanner .rightInfo{
+	margin-left: 9.3rem;
+}
+
+.muiViewBanner .rightInfo .title{
+	font-size:2rem;
+	font-weight: 700;
+	line-height: 2.4rem; 
+	min-height:6.2rem;
+	font-weight: normal;
+}
+.muiViewBanner ul{
+	margin-top:0.5rem;
+}
+
+.muiViewBanner ul li{
+	display:block;
+}
+.muiAccordionPanelContent {
+	color: #2f2f2f;
+	font-size: 1.8rem;
+	-webkit-transition: all 200ms linear;
+	border-top: none;
+	display: block;
+	padding: 0;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+ 
+
+/*** 公文状态 ***/
+.muiSmissiveStatus{  
+    font-size:1rem; 
+    position:absolute; right:0px; bottom:12px; padding:2px 5px; 
+    color:#fff;
+    text-align: center;
+}
+.muiSmissiveDiscard{
+	background: rgba(255,156,0,0.8);
+}
+.muiSmissiveDraft{
+	background: rgba(170,170,170,0.8);
+}
+.muiSmissiveExamine{
+	background: rgba(24,180,237,0.8);
+	}
+.muiSmissiveRefuse{
+	background: rgba(255,0,0,0.8);
+}
+.muiSmissivePublish{
+	background: rgba(76,190,69,0.8);
+}
+
+/**** 查看稿纸信息 ****/
+.detailInfo{ border-bottom:1px solid #dbdbdb; color:#989898;}
+.detailInfo .mblListItem{ color:#262626; vertical-align:middle;   font-size:1.6rem; padding-left:1rem; padding-right:1rem;height: 46px}
+.detailInfo .mblListItem{ border-bottom:none; }
+.detailInfo .mblListItemIcon{   margin-right:0.8rem;}
+.detailInfo .mui-picview{position:relative; top:2px;}
+.detailInfo .mblListItemRightIcon {
+	width: 2rem;
+	text-align: right;
+	font-size: 2rem;
+	color: #b1b1b1;
+}
+
+.flatContentView .muiAttachments:first-child{ margin-bottom:0px;}
+
+.revisionInfo_wrapper {
+	margin-top: 0rem;
+	margin-bottom: 2rem;
+	padding-left: 1rem;
+	background: #fff;
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+}
+.revisionInfo_wrapper .detailInfo:last-child{ border-bottom:none;}
+
+.detailInfo_wrapper {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding-left: 1rem;
+	background: #fff;
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+}
+.detailInfo_wrapper .detailInfo:last-child{ border-bottom:none;}
+.detailInfo .mblListItemIcon {
+	display: inline-block;
+	width: 2.6rem;
+	height: 2.6rem;
+	line-height: 2.6rem;
+	text-align: center;
+	color: #fff;
+	font-size: 1.6rem;
+	border-radius: 0.3rem;
+	background-color: #33b97e;
+}
+.detailInfo .mblListItemIcon:before {
+}
+.detailInfo .mui-bookViewDetail{ background-color:#f96a62;}
+
+@media screen (max-width: 319px) {
+   .detailInfo .mblListItem{ height:42px; line-height:42px;}
+}
+@media screen (min-width: 321px) {
+   .detailInfo .mblListItemIcon.mui{ /*font-size:1rem;*/}
+}
+
+.imissiveBaseInfo .mblScrollableViewContainer{
+	position: absolute!important;
+    padding: 0rem!important;
+}
+
+/* 
+.tabContentView .muiAttachments {
+	padding-left: .8rem;
+	padding-right: .8rem;
+}
+ */
+
+.tabContentView .muiAttachmentItem .muiReadAllItem{
+	padding-left:0px;
+}
+ 
+.flatContentView .muiReadAllItem .muiAttachments{
+	padding-left: 0rem;
+}
+
+
+.tabContentView .muiFormUploadWrap, .muiFormUploadWrap + .muiFormEleWarning{
+	padding-right: 0px;
+}
+
+.editPanel .muiXFormStandard ::-webkit-input-placeholder {
+  color: transparent !important;
+ }
+ 
+ .editPanel .muiXFormStandard .muiFormStatusEdit .muiSelInput:empty:after,
+ .editPanel .muiXFormStandard .muiFormStatusEdit .muiCateFiledShow:empty:after{
+  content:'';
+ }
+ 
+ #content .muiHeaderBasicInfo{
+ 	background-color: #4285f4!important;
+ 	border-bottom: none; 
+ }
+ #content .muiHeaderBasicInfo.muiHeader:after, 
+ #content .muiHeaderBasicInfo.muiNavHeader:after{
+ 	border-bottom: none;
+ }
+ 
+ .muiLbpmserviceAuditLabelItemSel {
+	position: absolute;
+	display: inline-block;
+}
+.muiLbpmserviceAuditNormal .muiLbpmserviceAuditLabelItemSel{ 
+	left: -1.2rem;
+	top:0.2rem;
+	width: 2.2rem;
+	height: 2.2rem;
+	vertical-align:middle;
+	text-align:center;
+	border-radius: 2px;
+	border-width: 1px;
+	border-style:solid;
+	border-color: rgba(200,200,200,0.4);
+	background-color: #fff;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+			box-orient: vertical;
+	-webkit-box-pack: center;
+			box-pack: center;
+	-webkit-box-align:center;
+			box-align:center;
+	-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+}
+
+.muiLbpmserviceAuditSelArea .muiLbpmserviceAuditLabelItemSel.muiCateSeled{
+	background-color: #4285F4;
+    color: #fff;
+    border: 0;
+    border-radius: 2px;
+    width: 2.2rem;
+	height: 2.2rem;
+	line-height: 2.2rem;
+}
+
+.muiCateSecPop .muiCateSecItems .mui-organization{
+	line-height: 7.5rem;
+	margin-right: 1.5rem;
+}
+
+.muiSimple.headTb > tbody > tr > td, .muiSimple.headTb > tr > td{
+	padding:0px;
+}
+
+.docNumBtn{
+	padding-top: 12px;
+	color: #4285f4;
+	float: none;
+	font-size: 16px;
+}
+
+.imissiveRelationSpan {
+	margin-right:2rem; 
+}
+
+.imissiveRelationA {
+	margin-right:1rem; 
+}
+
+.selectFileButton {
+	display: inline-block;
+	width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.2rem;
+    vertical-align: top!important;
+    color: rgba(66, 133, 244, 0.8);
+    text-align: center;
+    background-color: #F0F5FF;
+    border-radius: 50%;
+    float: right;
+    margin-right: 1.5rem;
+    margin-top: -0.5rem;
+}
+
+.imissiveRequiredShow {
+	color: #ff0000;
+    height: 2rem;
+    line-height: 2.4rem;
+    position: absolute;
+    right: 1.5rem;
+    z-index: 8;
+    font-size: 1.4rem;
+    margin-top: -2rem;
+}
+
+#selectSchemeButton {
+	float: right;
+	color: #C7C7CC;
+}
+#fdManualName {
+    text-align: right;
+    margin-right: 1.2rem;
+}
+
+/*正文下载 start*/
+.tabContentViewDownloadBar{
+	zoom: 1;
+	border: 1px solid #f8f8f8;
+}
+.tabContentViewDownload{
+	float: right;
+	margin: 0;
+	padding-right: 10px;
+}
+.tabContentViewDownloadBar:after {
+	content: " ";
+	display: block;
+	visibility: hidden;
+	height: 0;
+	clear: both;
+}
+.tabContentViewDownload>li{
+	display: inline-block;
+	text-align: center;
+	font-size: 10px;
+	padding: 6px 8px;
+	transform: scale(0.8);
+}
+.tabContentViewDownload>li:hover{
+	color: #5AC3F4;
+}
+div.pdf-page.preview-mode.loaded{
+	transform: translate(0px, 0px) translateZ(0px) !important;
+}
+.tabContentViewDownload>li>a{
+	display: inline-block;
+	text-align: center;
+	font-size: 10px;
+	padding: 6px 8px;
+}
+
+/*正文下载 end*/
+

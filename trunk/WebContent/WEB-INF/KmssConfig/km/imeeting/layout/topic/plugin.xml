@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+		xmlns="http://www.example.org/plugin-config"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.example.org/plugin-config ../../../plugin.xsd ">
+	<!-- 基本属性布局扩展 -->
+	<extension point="com.landray.kmss.sys.xform.fieldlayout" model="com.landray.kmss.km.imeeting.model.KmImeetingTopic">
+		<!-- 议题名称 -->
+		<item name="config">
+			<param name="fieldIds" value="docSubject"></param>
+			<param name="required" value="true"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/docsubject/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/docsubject/docSubject"></param>
+		</item>
+		<!-- 议题分类 -->
+		<item name="config">
+			<param name="fieldIds" value="fdTopicCategory"></param>
+			<param name="required" value="true"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/fdtopiccategory/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/fdtopiccategory/fdTopicCategory"></param>
+		</item>
+		<!-- 上会材料附件 -->
+		<item name="config">
+			<param name="fieldIds" value="attachment"></param>
+			<param name="fieldNames" value="{km-imeeting:kmImeetingTopic.issue.material}"></param>
+			<param name="required" value="true"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/attachment/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/attachment/attachment"></param>
+		</item>
+		<!-- 正文附件 -->
+		<item name="config">
+			<param name="fieldIds" value="mainonline"></param>
+			<param name="fieldNames" value="{km-imeeting:kmImeetingTopic.issue.text}"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="sys/xform/designer/fieldlayout/default_layout/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/mainonline/mainonline"></param>
+		</item>
+		<!-- 承办单位 -->
+		<item name="config">
+			<param name="fieldIds" value="fdChargeUnit"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/fdchargeunit/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/fdchargeunit/fdChargeUnit"></param>
+		</item>
+		<!-- 汇报人 -->
+		<item name="config">
+			<param name="fieldIds" value="fdReporter"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/fdreporter/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/fdreporter/fdReporter"></param>
+		</item>
+		<!-- 材料负责人 -->
+		<item name="config">
+			<param name="fieldIds" value="fdMaterialStaff"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/fdmaterialstaff/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/fdmaterialstaff/fdMaterialStaff"></param>
+		</item>
+		<!-- 建议列席单位 -->
+		<item name="config">
+			<param name="fieldIds" value="fdAttendUnit"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/fdattendunit/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/fdattendunit/fdAttendUnit"></param>
+		</item>
+		<!-- 建议旁听单位 -->
+		<item name="config">
+			<param name="fieldIds" value="fdListenUnit"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/fdlistenunit/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/fdlistenunit/fdListenUnit"></param>
+		</item>
+		<!-- 议题编号 -->
+		<item name="config">
+			<param name="fieldIds" value="docNumber"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/docnumber/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/docnumber/docNumber"></param>
+		</item>
+		<!-- 议题来源 -->
+		<item name="config">
+			<param name="fieldIds" value="fdSourceSubject"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/fdsourcesubject/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/fdsourcesubject/fdSourceSubject"></param>
+		</item>
+		<!-- 上会理由 -->
+		<item name="config">
+			<param name="fieldIds" value="fdContent"></param>
+			<param name="required" value="false"></param>
+			<param name="jspParams" value="km/imeeting/fieldlayout/topic/fdcontent/param.jsp"></param>
+			<param name="jspRunProfix" value="km/imeeting/fieldlayout/topic/fdcontent/fdContent"></param>
+		</item>
+	</extension>
+</plugin>

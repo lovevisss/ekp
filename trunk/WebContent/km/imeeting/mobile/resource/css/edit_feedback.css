@@ -1,0 +1,97 @@
+.feedbackTitleDiv {
+	margin:1rem auto;
+	text-align: center;
+	font-size: 1.8rem;
+	font-weight:bold;
+}
+
+#feedbackSignButton {
+	font-size: 1.5rem;
+	text-align: center;
+	color: #4285f4;
+	margin-bottom: 1rem;
+}
+
+.muiDetailTableDel {
+	display: inline-block;
+	float: right;
+}
+
+.kmImeetingFeedbackContent {
+	padding: 0 1rem;
+}
+
+.detailTitle {
+	text-align: center;
+}
+
+.fdAgendaIdsBox  >  div:first-child {
+	display:none;
+}
+
+.meetingRightBox {
+	text-align: right;
+	padding-right: 2rem;
+}
+
+.feedbackTopicBox {
+	position: relative;
+	text-align: right;
+	padding-right: 2rem;
+}
+
+.fdReasonBox {
+
+}
+
+.fdReasonBox .muiTextarea {
+	text-align: right!important;
+	height: 5.5rem;
+}
+
+.feedbackTopicRequired {
+	display: block;
+	color: #ff0000;
+	right: 0.5rem;
+	top: 0.3rem;
+	position: absolute;
+}
+
+.selectButton {
+	display: inline-block;
+	width: 3rem;
+	height: 3rem;
+	line-height: 3rem;
+	font-size: 1.2rem;
+	vertical-align: top!important;
+	color: rgba(66, 133, 244, 0.8);
+	text-align: center;
+	background-color: #F0F5FF;
+	border-radius: 50%;
+}
+
+.docAttendBox .muiCateFiledShow {
+	text-align: right;
+}
+
+.docAttendBox .muiAddressOrg {
+	margin-right: 0;
+}
+
+.muiCateHeaderContent {
+	vertical-align: top;
+}
+
+.feedback-submit-confirm {
+	text-align: center;
+	height: 7rem;
+	padding: 2rem 1rem 1rem 1rem;
+}
+
+.feedback-topic-index {
+	color: #4285F4;
+}
+
+.feedback-submit-confirm-text {
+	font-size: 1.5rem;
+}

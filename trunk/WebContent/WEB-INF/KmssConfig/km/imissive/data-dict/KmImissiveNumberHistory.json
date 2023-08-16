@@ -1,0 +1,54 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveNumberHistory",
+        "messageKey": "km-imissive:table.kmImissiveNumberHistory",
+        "serviceBean": "kmImissiveAuditNoteService",
+        "table": "km_imissive_number_history"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdNumberId":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveNumberHistory.fdNumberId",
+            "column": "fd_number_id",
+            "length": "200"
+        },
+        "fdFlowId":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_flow_id",
+            "messageKey": "km-imissive:kmImissiveNumberHistory.fdFlowId",
+            "length": "200"
+        },
+        "fdFlowNo":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_flow_no",
+            "messageKey": "km-imissive:kmImissiveNumberHistory.fdFlowNo",
+            "length": "200"
+        },
+        "fdYear":         {
+            "propertyType": "simple",
+            "type": "Integer",
+            "column": "fd_year",
+            "messageKey": "km-imissive:kmImissiveNumberHistory.fdYear",
+            "length": "200"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_create_id"
+        }
+    }
+}

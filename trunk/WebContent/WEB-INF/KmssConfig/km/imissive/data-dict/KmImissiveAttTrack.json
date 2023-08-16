@@ -1,0 +1,129 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveAttTrack",
+        "messageKey": "km-imissive:table.kmImissiveAttTrack",
+        "displayProperty": "fileName",
+        "serviceBean": "kmImissiveAttTrackService",
+        "table": "km_imissive_att_track",
+        "url": "/km/imissive/km_imissive_att_track/kmImissiveAttTrack.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdMainId":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveAttTrack.fdMainId",
+            "type": "String",
+            "column": "fd_main_id",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdNodeName":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveAttTrack.fdNodeName",
+            "type": "String",
+            "column": "fd_node_name",
+            "notNull": "false",
+            "length": "200",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fileId":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveAttTrack.fileId",
+            "type": "String",
+            "column": "file_id",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fileName":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveAttTrack.fileName",
+            "type": "String",
+            "column": "file_name",
+            "notNull": "false",
+            "length": "2000",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fileType":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveAttTrack.fileType",
+            "type": "String",
+            "column": "file_type",
+            "notNull": "false",
+            "length": "10",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveAttTrack.docCreateTime",
+            "type": "Date",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveAttTrack.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_create_id",
+            "notNull": "false",
+            "canSearch": "true",
+            "where": "sysOrgElement.fdOrgType=8",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}', '!{nameField}', null, ORG_TYPE_PERSON);",
+            "canRelation": "true"
+        },
+        "authAttNodownload":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.att.authAttNodownload",
+            "type": "Boolean",
+            "column": "auth_att_nodownload",
+            "length": "1"
+        },
+        "authAttNocopy":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.att.authAttNocopy",
+            "type": "Boolean",
+            "column": "auth_att_nocopy",
+            "length": "1"
+        },
+        "authAttNoprint":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.att.authAttNoprint",
+            "type": "Boolean",
+            "column": "auth_att_noprint",
+            "length": "1"
+        },
+        "authAttPrints":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.att.authAttPrints",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_track_id",
+            "elementColumn": "auth_att_print_id",
+            "table": "km_imissive_att_track_attp"
+        },
+        "authAttCopys":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.att.authAttCopys",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_track_id",
+            "elementColumn": "auth_att_copy_id",
+            "table": "km_imissive_att_track_attc"
+        },
+        "authAttDownloads":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.att.authAttDownloads",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_track_id",
+            "elementColumn": "auth_att_download_id",
+            "table": "km_imissive_att_track_attd"
+        }
+    }
+}

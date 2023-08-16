@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean
+		name="/km/imissive/km_imissive_main/kmImissiveMain.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="approvedImissiveChart"
+					value="/km/imissive/km_imissive_main/kmImissivesMain_approvedChart.jsp" />
+				<entry
+					key="listDoc"
+					value="/km/imissive/km_imissive_main/kmImissivesMain_listDoc.jsp" />
+				<entry
+					key="listRead"
+					value="/km/imissive/km_imissive_main/kmImissivesMain_listDoc.jsp" />
+				<entry
+					key="printBatch"
+					value="/km/imissive/km_imissive_main/kmImissiveMain_print_batch.jsp" />
+			</map>
+		</property>		
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_circulation/kmImissiveCirculation.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveCirculationMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveCirculationForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_circulation/kmImissivesCirculation_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/imissive/mobile/circulation/edit.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_deadline_config/kmImissiveDeadLineConfig.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveDeadLineConfigAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveDeadLineConfigForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_deadline_config/kmImissiveDeadLineConfig_edit.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_spreadauth_log/kmImissiveSpreadAuthLog.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSpreadAuthLogAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_spreadauth_log/kmImissiveSpreadAuthLog_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_type/kmImissiveType.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveTypeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveTypeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_type/kmImissiveType_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_type/kmImissiveType_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_type/kmImissiveType_list.jsp" />
+				<entry
+					key="config"
+					value="/km/imissive/km_imissive_type/kmImissiveTypeConfig_edit.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_rule/kmImissiveRule.do"
+		class="com.landray.kmss.km.imissive.actions.KmimissiveRuleAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveRuleForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_rule/kmImissiveRule_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_rule/kmImissiveRule_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_rule/kmImissiveRule_list.jsp" />
+				<entry
+					key="config"
+					value="/km/imissive/km_imissive_rule/kmImissiveRuleConfig_edit.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_att_track/kmImissiveAttTrack.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveAttTrackAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveAttTrackForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_att_track/kmImissiveAttTrack_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/imissive/mobile/list4AttTrack.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_number/kmImissiveNumber.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveNumberAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveNumberForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_number/kmImissiveNumber_list.jsp" />
+			</map>
+		</property>	
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_secret_grade/kmImissiveSecretGrade.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSecretGradeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSecretGradeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_secret_grade/kmImissiveSecretGrade_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_secret_grade/kmImissiveSecretGrade_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_secret_grade/kmImissiveSecretGrade_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_template_cfg/kmImissiveTemplateCfg.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveTemplateCfgAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveTemplateCfgForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_template_cfg/kmImissiveTemplateCfg_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_template_cfg/kmImissiveTemplateCfg_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_template_cfg/kmImissiveTemplateCfg_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_emergency_grade/kmImissiveEmergencyGrade.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveEmergencyGradeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveEmergencyGradeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_emergency_grade/kmImissiveEmergencyGrade_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_emergency_grade/kmImissiveEmergencyGrade_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_emergency_grade/kmImissiveEmergencyGrade_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_send_template/kmImissiveSendTemplate.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSendTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSendTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_send_template/kmImissiveSendTemplate_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_send_template/kmImissiveSendTemplate_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_send_template/kmImissiveSendTemplate_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imissive/km_imissive_send_template/kmImissiveSendTemplate_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_sign_template/kmImissiveSignTemplate.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSignTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSignTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_sign_template/kmImissiveSignTemplate_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_sign_template/kmImissiveSignTemplate_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_sign_template/kmImissiveSignTemplate_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imissive/km_imissive_sign_template/kmImissiveSignTemplate_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_receive_template/kmImissiveReceiveTemplate.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveReceiveTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveReceiveTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_receive_template/kmImissiveReceiveTemplate_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_receive_template/kmImissiveReceiveTemplate_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_receive_template/kmImissiveReceiveTemplate_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imissive/km_imissive_receive_template/kmImissiveReceiveTemplate_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_send_main/kmImissiveSendMainPortlet.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSendMainPortletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="listPortlet"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMainPortlet_list.jsp" />
+				<entry
+					key="listPortletNew"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMainPortlet_listTable.jsp" />
+				<entry
+					key="getlatest"
+					value="/km/imissive/mobile/send/list4send.mportal.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_send_main/kmImissiveSendMain.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSendMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSendMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_view.jsp" />
+				<entry
+					key="flatview"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_flatView.jsp" />
+				<entry
+					key="tabview"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_tabView.jsp" />
+				<entry
+					key="singletabeditH"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_singleTabEditH.jsp" />
+				<entry
+					key="singletabeditV"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_singleTabEditV.jsp" />
+				<entry
+					key="singletabviewH"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_singleTabViewH.jsp" />
+				<entry
+					key="singletabviewV"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_singleTabViewV.jsp" />
+				<entry
+					key="flatview.4m"
+					value="/km/imissive/mobile/send/view4send.jsp" />
+				<entry
+					key="tabview.4m"
+					value="/km/imissive/mobile/send/tabview4send.jsp" />
+				<entry
+					key="singletabviewH.4m"
+					value="/km/imissive/mobile/send/tabview4send.jsp" />
+				<entry
+					key="singletabviewV.4m"
+					value="/km/imissive/mobile/send/tabview4send.jsp" />
+				<entry
+					key="singletabeditH.4m"
+					value="/km/imissive/mobile/send/edit4send.jsp" />
+				<entry
+					key="singletabeditV.4m"
+					value="/km/imissive/mobile/send/edit4send.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/imissive/mobile/send/edit4send.jsp" />
+				<entry
+					key="addSend.4m"
+					value="/km/imissive/mobile/send/edit4send.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imissive/mobile/send/view4send.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_edit.jsp" />
+				<entry
+					key="editOffLine"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_editOffLine.jsp" />
+				<entry
+					key="viewOffLine"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_viewOffLine.jsp" />
+				<entry
+					key="edit4Wps"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_editWps.jsp" />
+				<entry
+					key="view4Wps"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_viewWps.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_list.jsp" />
+				<entry
+					key="listSend"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_listSend.jsp" />
+				<entry
+					key="draftlist"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_draftlist.jsp" />
+				<entry
+					key="listChildren.4m"
+					value="/km/imissive/mobile/send/list4send.jsp" />
+				<entry
+					key="manageList"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_list.jsp" />
+				<entry
+					key="distribute"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_distribute.jsp" />
+				<entry
+					key="report"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_report.jsp" />
+				<entry
+					key="personalsend"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_personalsend.jsp" />
+				<entry
+					key="editdocnum"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_editdocnum.jsp" />
+				<entry
+					key="print"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_print.jsp" />
+				<entry
+					key="printBatch"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_print_batch.jsp" />
+				<entry
+					key="filePrint"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_filePrint.jsp" />
+				<entry
+					key="subFilePrint"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_subside.jsp" />
+				<entry
+					key="showCondition"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_showCondition.jsp" />
+				<entry
+					key="sysprint"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_sysprint.jsp" />
+				<entry
+					key="printLattice"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_print_lattice.jsp" />
+				<entry 
+                    key="extendinfo" 
+                    value="/km/imissive/km_imissive_send_main/yqq/extend_info.jsp"/>
+				<entry 
+                    key="extendinfo.4m" 
+                    value="/km/imissive/mobile/send/yqq/extend_info.jsp"/>
+                <entry 
+                    key="yqqLoading" 
+                    value="/km/imissive/km_imissive_send_main/yqq/yqq_loading.jsp"/>
+                 <entry 
+                    key="extendinfoCfca" 
+                    value="/km/imissive/km_imissive_send_main/cfca/extendInfo_cfca.jsp"/>
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_send_main/kmImissiveSendMainDataOther.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSendMainDataOtherAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSendMainForm" />
+		<property name="forwards">
+			<map>
+            	<entry
+					key="listChildren"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_list.jsp" />
+				<entry
+					key="listChildren.4m"
+					value="/km/imissive/mobile/send/list4send.jsp" />
+				<entry
+					key="imeetingLC.4m"
+					value="/km/imeeting/mobile/summary/imissive/list4send.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_sign_main/kmImissiveSignMainPortlet.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSignMainPortletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="listPortlet"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMainPortlet_list.jsp" />
+				<entry
+					key="listPortletNew"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMainPortlet_listTable.jsp" />
+				<entry
+					key="getlatest"
+					value="/km/imissive/mobile/sign/list4sign.mportal.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSignMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSignMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_view.jsp" />
+				<entry
+					key="flatview"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_flatView.jsp" />
+				<entry
+					key="tabview"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_tabView.jsp" />
+				<entry
+					key="singletabeditH"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_singleTabEditH.jsp" />
+				<entry
+					key="singletabeditV"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_singleTabEditV.jsp" />
+				<entry
+					key="singletabviewH"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_singleTabViewH.jsp" />
+				<entry
+					key="singletabviewV"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_singleTabViewV.jsp" />
+				<entry
+					key="flatview.4m"
+					value="/km/imissive/mobile/sign/view4sign.jsp" />
+				<entry
+					key="tabview.4m"
+					value="/km/imissive/mobile/sign/tabview4sign.jsp" />
+				<entry
+					key="singletabeditH.4m"
+					value="/km/imissive/mobile/sign/edit4sign.jsp" />
+				<entry
+					key="singletabeditV.4m"
+					value="/km/imissive/mobile/sign/edit4sign.jsp" />
+				<entry
+					key="singletabviewH.4m"
+					value="/km/imissive/mobile/sign/tabview4sign.jsp" />
+				<entry
+					key="singletabviewV.4m"
+					value="/km/imissive/mobile/sign/tabview4sign.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/imissive/mobile/sign/edit4sign.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imissive/mobile/sign/view4sign.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_edit.jsp" />
+				<entry
+					key="editOffLine"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_editOffLine.jsp" />
+				<entry
+					key="viewOffLine"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_viewOffLine.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_list.jsp" />
+				<entry
+					key="manageList"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_list.jsp" />
+				<entry
+					key="draftlist"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_draftlist.jsp" />
+				<entry
+					key="listChildren.4m"
+					value="/km/imissive/mobile/sign/list4sign.jsp" />
+				<entry
+					key="editdocnum"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_editdocnum.jsp" />
+				<entry
+					key="print"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_print.jsp" />
+				<entry
+					key="printBatch"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_print_batch.jsp" />
+				<entry
+					key="filePrint"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_filePrint.jsp" />
+				<entry
+					key="subFilePrint"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_subside.jsp" />
+				<entry
+					key="showCondition"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_showCondition.jsp" />
+				<entry
+					key="sysprint"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_sysprint.jsp" />
+				<entry
+					key="printLattice"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_print_lattice.jsp" />
+				<entry 
+                    key="extendinfo" 
+                    value="/km/imissive/km_imissive_sign_main/yqq/extend_info.jsp"/>
+				<entry 
+                    key="extendinfo.4m" 
+                    value="/km/imissive/mobile/sign/yqq/extend_info.jsp"/>
+                <entry 
+                    key="yqqLoading" 
+                    value="/km/imissive/km_imissive_sign_main/yqq/yqq_loading.jsp"/>
+				<entry 
+                    key="extendinfoCfca" 
+                    value="/km/imissive/km_imissive_sign_main/cfca/extendInfo_cfca.jsp"/>
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMainPortlet.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveReceiveMainPortletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="listPortlet"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMainPortlet_list.jsp" />
+				<entry
+					key="listPortletNew"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMainPortlet_listTable.jsp" />
+				<entry
+					key="getlatest"
+					value="/km/imissive/mobile/receive/list4receive.mportal.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveReceiveMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveReceiveMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="listChildren"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_list.jsp" />
+				<entry
+					key="draftlist"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_draftlist.jsp" />
+				<entry
+					key="listChildren.4m"
+					value="/km/imissive/mobile/receive/list4receive.jsp" />
+				<entry
+					key="manageList"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_list.jsp" />
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_view.jsp" />
+				<entry
+					key="flatview"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_flatView.jsp" />
+				<entry
+					key="tabview"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_tabView.jsp" />
+				<entry
+					key="singletabeditH"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_singleTabEditH.jsp" />
+				<entry
+					key="singletabeditV"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_singleTabEditV.jsp" />
+				<entry
+					key="singletabviewH"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_singleTabViewH.jsp" />
+				<entry
+					key="singletabviewV"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_singleTabViewV.jsp" />
+				<entry
+					key="flatview.4m"
+					value="/km/imissive/mobile/receive/view4receive.jsp" />
+				<entry
+					key="tabview.4m"
+					value="/km/imissive/mobile/receive/tabview4receive.jsp" />
+				<entry
+					key="singletabeditH.4m"
+					value="/km/imissive/mobile/receive/edit4receive.jsp" />
+				<entry
+					key="singletabeditV.4m"
+					value="/km/imissive/mobile/receive/edit4receive.jsp" />
+				<entry
+					key="singletabviewH.4m"
+					value="/km/imissive/mobile/receive/tabview4receive.jsp" />
+					<entry
+					key="singletabviewV.4m"
+					value="/km/imissive/mobile/receive/tabview4receive.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/imissive/mobile/receive/edit4receive.jsp" />
+				<entry
+					key="addReceive.4m"
+					value="/km/imissive/mobile/receive/addReceive.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imissive/mobile/receive/view4receive.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_edit.jsp" />
+				<entry
+					key="editOffLine"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_editOffLine.jsp" />
+				<entry
+					key="viewOffLine"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_viewOffLine.jsp" />
+				<entry
+					key="editdocnum"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_editdocnum.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_list.jsp" />
+				<entry
+					key="listReceive"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_listReceive.jsp" />
+				<entry
+					key="print"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_print.jsp" />
+				<entry
+					key="printBatch"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_print_batch.jsp" />
+				<entry
+					key="filePrint"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_filePrint.jsp" />
+				<entry
+					key="subFilePrint"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_subside.jsp" />
+				<entry
+					key="showCondition"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_showCondition.jsp" />
+				<entry
+					key="sysprint"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_sysprint.jsp" />
+				<entry
+					key="printLattice"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_print_lattice.jsp" />
+				<entry 
+                    key="extendinfo" 
+                    value="/km/imissive/km_imissive_receive_main/yqq/extend_info.jsp"/>
+                <entry 
+                    key="extendinfo.4m" 
+                    value="/km/imissive/mobile/receive/yqq/extend_info.jsp"/>
+                <entry 
+                    key="yqqLoading" 
+                    value="/km/imissive/km_imissive_receive_main/yqq/yqq_loading.jsp"/>
+				<entry 
+                    key="extendinfoCfca" 
+                    value="/km/imissive/km_imissive_receive_main/cfca/extendInfo_cfca.jsp"/>
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_send_dr/kmImissiveSendDR.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSendDRAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSendDRForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="distribute"
+					value="/km/imissive/km_imissive_send_dr/kmImissiveSendDR_distribute.jsp" />
+				<entry
+					key="report"
+					value="/km/imissive/km_imissive_send_dr/kmImissiveSendDR_report.jsp" />
+				<entry
+					key="distribute.4m"
+					value="/km/imissive/mobile/send/distribute4send.jsp" />
+				<entry
+					key="report.4m"
+					value="/km/imissive/mobile/send/report4send.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_receive_dr/kmImissiveReceiveDR.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveReceiveDRAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveReceiveDRForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="distribute"
+					value="/km/imissive/km_imissive_receive_dr/kmImissiveReceiveDR_distribute.jsp" />
+				<entry
+					key="report"
+					value="/km/imissive/km_imissive_receive_dr/kmImissiveReceiveDR_report.jsp" />
+				<entry
+					key="distribute.4m"
+					value="/km/imissive/mobile/receive/distribute4receive.jsp" />
+				<entry
+					key="report.4m"
+					value="/km/imissive/mobile/receive/report4receive.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_redhead_template/kmImissiveRedHeadTemplate.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveRedHeadTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveRedHeadTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_redhead_template/kmImissiveRedHeadTemplate_edit.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/imissive/km_imissive_redhead_template/kmImissiveRedHeadTemplate_list.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_redhead_template/kmImissiveRedHeadTemplate_list.jsp" />
+				<entry
+					key="copyTemplate"
+					value="/km/imissive/km_imissive_redhead_template/kmImissiveRedHeadTemplate_copyTemplate.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_sign_redhead_template/kmImissiveSignRedHeadTemplate.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSignRedHeadTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSignRedHeadTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_sign_redhead_template/kmImissiveSignRedHeadTemplate_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_sign_redhead_template/kmImissiveSignRedHeadTemplate_list.jsp" />
+				<entry
+					key="copyTemplate"
+					value="/km/imissive/km_imissive_sign_redhead_template/kmImissiveSignRedHeadTemplate_copyTemplate.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_modify_record/kmImissiveModifyRecord.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveModifyRecordAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveModifyRecordForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_modify_record/kmImissiveModifyRecord_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_modify_record/kmImissiveModifyRecord_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_regdetail_opinion/kmImissiveRegDetailOpinion.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveRegDetailOpinionAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveRegDetailOpinionForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_regdetail_opinion/kmImissiveRegDetailOpinion_edit.jsp" />
+				<entry
+					key="editOuter"
+					value="/km/imissive/km_imissive_regdetail_opinion/kmImissiveRegDetailOpinion_editOuter.jsp" />
+				<entry
+					key="addSignOpinion"
+					value="/km/imissive/km_imissive_regdetail_opinion/kmImissiveRegDetailOpinion_editSignOpinion.jsp" />
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_regdetail_opinion/kmImissiveRegDetailOpinion_view.jsp" />
+				<entry
+					key="viewByDetail"
+					value="/km/imissive/km_imissive_regdetail_opinion/kmImissiveRegDetailOpinion_viewByDetail.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_return_opinion/kmImissiveReturnOpinion.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveReturnOpinionAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveReturnOpinionForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_return_opinion/kmImissiveReturnOpinion_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/imissive/mobile/return_opinion/returnOpinion_edit.jsp" />
+				<entry
+					key="addSignOpinion"
+					value="/km/imissive/km_imissive_return_opinion/kmImissiveReturnOpinion_editSignOpinion.jsp" />
+				<entry
+					key="addAdviceOpinion"
+					value="/km/imissive/km_imissive_return_opinion/kmImissiveReturnOpinion_editAdviceOpinion.jsp" />
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_return_opinion/kmImissiveReturnOpinion_view.jsp" />
+				<entry
+					key="viewByDetail"
+					value="/km/imissive/km_imissive_return_opinion/kmImissiveReturnOpinion_viewByDetail.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imissive/mobile/view4returnOpinion.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_return_opinion/kmImissiveReturnOpinion_list.jsp" />
+				<entry
+					key="listOpinion"
+					value="/km/imissive/km_imissive_return_opinion/kmImissiveReturnOpinion_listOpinion.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_reg/kmImissiveReg.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveRegAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveRegForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_reg/kmImissiveReg_view.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_reg/kmImissiveReg_list.jsp" />
+				<entry
+					key="listNote"
+					value="/km/imissive/km_imissive_reg/kmImissiveReg_listNote.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/imissive/mobile/list4reg.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imissive/mobile/view4reg.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_regdetail_list/kmImissiveRegDetailList.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveRegDetailListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveRegDetailListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_regdetail_list/kmImissiveRegDetailList_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imissive/mobile/view4detailList.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_regdetail_list/kmImissiveRegDetailList_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/imissive/mobile/list4detailList.jsp" />
+				<entry
+					key="list4track.4m"
+					value="/km/imissive/mobile/list4detailList.jsp" />
+				<entry
+					key="list4track"
+					value="/km/imissive/km_imissive_regdetail_list/kmImissiveRegDetailList_list4track.jsp" />
+				<entry
+					key="list4ReturnDoc"
+					value="/km/imissive/km_imissive_regdetail_list/kmImissiveRegDetailList_list4ReturnDoc.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_regdetail_list_outer/kmImissiveRegDetailListOuter.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveRegDetailListOuterAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveRegDetailListOuterForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_regdetail_list_outer/kmImissiveRegDetailListOuter_view.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_regdetail_list_outer/kmImissiveRegDetailListOuter_list.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/imissive/mobile/view4detailListOuter.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/imissive/mobile/list4detailListOuter.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_opinion_in_qu/kmImissiveOpinionInQu.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveOpinionInQuAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveOpinionInQuForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_opinion_in_qu/kmImissiveOpinionInQu_view.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_opinion_in_qu/kmImissiveOpinionInQu_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_opinion_out_qu/kmImissiveOpinionOutQu.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveOpinionOutQuAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveOpinionOutQuForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_opinion_out_qu/kmImissiveOpinionOutQu_view.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_opinion_out_qu/kmImissiveOpinionOutQu_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_reg_qu/kmImissiveRegQu.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveRegQuAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveRegQuForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_reg_qu/kmImissiveRegQu_view.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_reg_qu/kmImissiveRegQu_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	
+	<bean
+		name="/km/imissive/km_imissive_regdetail_list_qu/kmImissiveRegDetailListQu.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveRegDetailListQuAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveRegDetailListQuForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_regdetail_list_qu/kmImissiveRegDetailListQu_view.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_regdetail_list_qu/kmImissiveRegDetailListQu_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_signature/kmImissiveSignature.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSignatureAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSignatureForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_signature/kmImissiveSignature_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_signature/kmImissiveSignature_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_signature/kmImissiveSignature_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_stat/kmImissiveStat.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveStatAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveStatForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/imissive/km_imissive_stat/kmImissiveStat_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/imissive/km_imissive_stat/kmImissiveStat_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/imissive/km_imissive_stat/kmImissiveStat_list.jsp" />
+				<entry
+					key="typeStat"
+					value="/km/imissive/km_imissive_stat/type_stat/kmImissiveStatType_result.jsp" />
+				<entry
+					key="type_overview"
+					value="/km/imissive/km_imissive_stat/kmImissiveStatType_overview.jsp" />
+				<entry
+					key="num_overview"
+					value="/km/imissive/km_imissive_stat/kmImissiveStatNum_overview.jsp" />
+				<entry
+					key="emergency_overview"
+					value="/km/imissive/km_imissive_stat/kmImissiveStatEmergency_overview.jsp" />
+				<entry
+					key="status_overview"
+					value="/km/imissive/km_imissive_stat/kmImissiveStatStatus_overview.jsp" />
+				<entry
+					key="deliverStat"
+					value="/km/imissive/km_imissive_stat/deliver_stat/kmImissiveStatDeliver_result.jsp" />
+				<entry
+					key="trendStat"
+					value="/km/imissive/km_imissive_stat/trend_stat/kmImissiveStatTrend_result.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean id="kmImissiveSendMainPortletController"
+        class="com.landray.kmss.km.imissive.actions.KmImissiveSendMainPortletController">
+        <property name="kmImissiveSendMainService">
+        	<ref bean="kmImissiveSendMainService" />
+        </property>
+    </bean>
+    <bean id="kmImissiveReceiveMainPortletController"
+    	class="com.landray.kmss.km.imissive.actions.KmImissiveReceiveMainPortletController">
+    	<property name="kmImissiveReceiveMainService">
+    		<ref bean="kmImissiveReceiveMainService" />
+    	</property>
+    </bean>
+    <bean id="kmImissiveSignMainPortletController"
+    	class="com.landray.kmss.km.imissive.actions.KmImissiveSignMainPortletController">
+    	<property name="kmImissiveSignMainService">
+    		<ref bean="kmImissiveSignMainService" />
+    	</property>
+    </bean>
+    <bean
+		name="/km/imissive/km_imissive_send_main/kmImissiveSendMainArchives.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSendMainArchivesAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSendMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="filePrint"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_filePrint.jsp" />
+				<entry
+					key="viewXformInfo"
+					value="/km/imissive/km_imissive_send_main/kmImissiveSendMain_viewXformInfo.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMainArchives.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveReceiveMainArchivesAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveReceiveMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="filePrint"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_filePrint.jsp" />
+				<entry
+					key="viewXformInfo"
+					value="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain_viewXformInfo.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/imissive/km_imissive_sign_main/kmImissiveSignMainArchives.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveSignMainArchivesAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.imissive.forms.KmImissiveSignMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="filePrint"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_filePrint.jsp" />
+				<entry
+					key="viewXformInfo"
+					value="/km/imissive/km_imissive_sign_main/kmImissiveSignMain_viewXformInfo.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/imissive/km_imissive_main/kmImissiveSubside.do"
+		class="com.landray.kmss.km.imissive.actions.KmImissiveMainSubsideAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+	</bean>
+	
+	<bean 
+        class="com.landray.kmss.km.imissive.actions.KmImissiveOutSignAction" 
+        parent="KmssBaseAction" 
+        name="/km/imissive/km_imissive_out_sign/kmImissiveOutSign.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.km.imissive.forms.KmImissiveOutSignForm"/>
+        <property 
+            name="forwards">
+            <map/>
+        </property>
+    </bean>
+</beans>

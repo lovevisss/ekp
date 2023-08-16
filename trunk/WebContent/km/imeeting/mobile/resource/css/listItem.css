@@ -1,0 +1,229 @@
+@charset "UTF-8";
+.muiProcessRight {
+	width: 7.1rem !important;
+    text-align: center;
+    overflow: hidden;
+    float: right;
+}
+
+.muiProcessCreated {
+	font-size: 1.22rem !important;
+    color: #999999!important;
+    line-height: 1!important;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    margin-right: 2.3rem;
+}
+
+.muiTextItemTitle {
+    font-size: 1.5rem;
+    color: #2A304A;
+    margin-bottom: .01rem;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    vertical-align: middle;
+    line-height: 2rem;
+}
+
+.muiTextItemTag {
+	margin-left: 0.5rem;
+}
+
+.muiTextItemInfo >div > li{
+	margin-top : 0.5rem;
+	display : inline-block;
+	font-size: 1.2rem;
+    color: #999FB7;
+    margin-right: .6rem;
+}
+
+.muiTextItem .item_icon_person {
+	background-image: url(./../images/person.png);
+	display: inline-block;
+    width: 1.6rem;
+    height: 1.4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.4rem auto;
+    vertical-align: bottom;
+    margin-right: 0.5rem;
+}
+
+.muiTextItem .item_icon_time {
+	background-image: url(./../images/time.png);
+	display: inline-block;
+    width: 1.6rem;
+    height: 1.4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.4rem auto;
+    vertical-align: bottom;
+    margin-right: 0.5rem;
+}
+
+.muiListItemCreator {
+	display : block!important;
+	margin-top:0!important;
+	margin-left:0!important;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.muiListItemTime {
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/**
+* 即将召开
+*/
+.muiTextItemTag.muiMeetingComing { 
+	color: #FF682B;
+	background-color: #ffefe9;
+}
+
+.muiTextItemTag.muiMeetingDiscard {
+	color: #999999;
+	background-color: #F4F4F4;
+}
+
+.muiTextItemTag.muiMeetingDraft {
+	color: #8790B5;
+	background-color: #E8ECFF;
+}
+
+.muiTextItemTag.muiMeetingRefuse {
+	color: #FF682B;
+	background-color: #ffefe9;
+}
+
+.muiTextItemTag.muiMeetingExamine {
+	color: #4285F4;
+	background-color: #EEF4FF;
+}
+
+.muiTextItemTag.muiMeetingUnhold {
+	background-color: rgba(81,183,73,0.20);
+	color: #51b749;
+} 
+
+.muiTextItemTag.muiMeetingHolding {
+	background-color: rgba(84,132,237,0.20);
+	color: #5484ed;
+}
+
+.muiTextItemTag.muiMeetingHold {
+	background-color: rgba(251,215,91,0.20);
+	color: #fbd75b;
+}
+
+.muiTextItemTag.muiMeetingCancel {
+	background-color: rgba(81,183,73,0.20);
+	color: #51b749;
+}
+
+..kmImeetingIndexItemTitle {
+	font-size: 1.35rem!important;
+	font-weight: 530;
+}
+
+.kmImeetingIndexItemHTime {
+	display: inline-block;
+	font-size: 1.2rem;
+}
+
+.kmImeetingIndexItemETime {
+	display: inline-block;
+	font-size: 1.2rem;
+	margin-left: 4.5rem;
+}
+
+.itemHoldTimeTitle , .itemEndTimeTitle{
+	padding: 0.3rem 0;
+	color: #999FB7;
+}
+
+.meetingHoldTime, .meetingEndTime {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #2A304A;
+}
+
+.meetingHoldDate, .meetingEndDate {
+	margin-left: 0.5rem;
+	color: #999FB7;
+}
+
+.meetingCrossDaysPlus {
+	 margin-left: 0.2rem;
+	font-size: 1.0rem;
+	font-weight: normal;
+	color: #FFB900;
+}
+
+.meetingCrossDaysCounts {
+	font-size: 1.2rem;
+	font-weight: normal;
+	color: #FFB900;
+}
+
+.kmImeetingIndexItemTag {
+	display:inline-block;
+	font-size: 1rem;
+    position: relative;
+    top: -0.15rem;
+}
+
+.kmImeetingStatusDiscard, .kmImeetingStatusDraft, .kmImeetingStatusHolded, .kmImeetingStatusCancel {
+	border: 1px solid #999999;
+    margin-right: 0.5rem;
+    border-radius: 0.9rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: inline-block;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    color: #999999;
+}
+.kmImeetingStatusRefuse {
+	border: 1px solid #F33333;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: inline-block;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    color: #F33333;
+}
+.kmImeetingStatusExamine, .kmImeetingStatusUnhold {
+	border: 1px solid #FF9046;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: inline-block;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    color: #ff9046;
+}
+.kmImeetingStatusHolding {
+	border: 1px solid #4285F4;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: inline-block;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    color: #4285F4;
+}
+

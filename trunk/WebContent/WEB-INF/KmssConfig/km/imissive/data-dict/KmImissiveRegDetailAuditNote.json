@@ -1,0 +1,54 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveRegDetailAuditNote",
+        "messageKey": "km-imissive:table.kmImissiveRegDetailAuditNote",
+        "serviceBean": "kmImissiveAuditNoteService",
+        "table": "km_imissive_regdetail_adnote"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdContent":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_content",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdContent",
+            "length": "200"
+        },
+        "fdApprover":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdApprover",
+            "column": "fd_approver",
+            "length": "200"
+        },
+        "fdApproverDept":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdApproverDept",
+            "column": "fd_approver_dept",
+            "length": "200"
+        },
+        "fdApprovalTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdApprovalTime",
+            "column": "fd_approval_time"
+        },
+        "fdApprovalRecodeId":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_approval_recode_id",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdApprovalRecodeId",
+            "length": "200"
+        },
+        "fdOpinion":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveRegDetailOpinion",
+            "messageKey": "km-imissive:kmImissiveAuditNote.fdOpinion",
+            "column": "fd_opinion_id"
+        }
+    }
+}

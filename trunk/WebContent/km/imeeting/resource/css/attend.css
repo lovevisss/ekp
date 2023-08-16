@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.lui_attendBottom_container {
+	display : flex;
+	margin: 0 auto;
+    padding: 40px 40px 40px 30px!important;
+    width: 93%!important;
+    vertical-align: top;
+    text-align: center;
+	
+}
+
+.lui_attendTime_container > .lui_attendTime_item {
+	margin: 0px 60px!important;
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+}
+
+.lui_attendBottom_item {
+	margin: auto!important;
+}

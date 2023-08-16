@@ -1,0 +1,47 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveDeadLineConfig",
+        "messageKey": "km-imissive:table.kmImissiveDeadLineConfig",
+        "displayProperty": "",
+        "serviceBean": "kmImissiveDeadLineConfigService",
+        "table": "km_imissive_deadling_cfg",
+        "url": "/km/imissive/km_imissive_deadline_config/kmImissiveDeadLineConfig.do?method=edit&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdRefer":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveDeadLineConfig.fdRefer",
+            "type": "String",
+            "column": "fd_refer",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false",
+            "canSearch": "true",
+            "enumType": "kmImissiveDeadLineConfig_refer"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveDeadLineConfig.fdType",
+            "type": "String",
+            "column": "fd_type",
+            "notNull": "false",
+            "length": "10",
+            "validate": "false",
+            "canSearch": "true",
+            "enumType": "kmImissiveDeadLineConfig_type"
+        },
+        "fdDetails":         {
+            "propertyType": "list",
+            "messageKey": "km-imissive:kmImissiveDeadLineConfig.fdDetails",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveDeadLineConfigDetail",
+            "column": "fd_config_id",
+            "cascade": "all-delete-orphan",
+            "inverse" : "true",
+            "table": "km_imissive_deadline_cfgdetail"
+        }
+    }
+}

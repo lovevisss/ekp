@@ -1,0 +1,217 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveRegDetailListOuter",
+        "messageKey": "km-imissive:table.kmImissiveRegDetailListOuter",
+        "displayProperty": "fdId",
+        "serviceBean": "kmImissiveRegDetailListOuterService",
+        "table": "km_imissive_reglist_outer",
+        "url": "/km/imissive/km_imissive_regdetail_list_outer/kmImissiveRegDetailListOuter.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdBizId":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveReg.fdName",
+            "type": "String",
+            "column": "fd_biz_id",
+            "notNull": "false",
+            "length": "100",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdRegName":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveReg.fdName",
+            "type": "String",
+            "column": "fd_reg_name",
+            "notNull": "false",
+            "length": "200",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdRegDeliverType":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveReg.from",
+            "type": "String",
+            "column": "fd_reg_deliver_type",
+            "notNull": "false",
+            "length": "2",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdRegNo":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveReg.fdNo",
+            "type": "String",
+            "column": "fd_reg_no",
+            "notNull": "false",
+            "length": "200",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdRegType":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveReg.fdRegType",
+            "type": "String",
+            "column": "fd_reg_type",
+            "length": "36"
+        },
+        "fdStatus":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegDetailList.fdStatus",
+            "type": "String",
+            "column": "fd_status",
+            "notNull": "false",
+            "length": "2",
+            "canDisplay": "true",
+            "enumType": "kmImissiveReg_status"
+        },
+        "authAttNodownload":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.att.authAttNodownload",
+            "type": "Boolean",
+            "column": "auth_att_nodownload",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "authAttNocopy":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.att.authAttNocopy",
+            "type": "Boolean",
+            "column": "auth_att_nocopy",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "authAttNoprint":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.att.authAttNoprint",
+            "type": "Boolean",
+            "column": "auth_att_noprint",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "authAttPrints":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.att.authAttPrints",
+            "column": "fd_detail_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_att_print_id",
+            "table": "km_imissive_reglisto_attp",
+            "canDisplay": "false"
+        },
+        "authAttCopys":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.att.authAttCopys",
+            "column": "fd_detail_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_att_copy_id",
+            "table": "km_imissive_reglisto_attc",
+            "canDisplay": "false"
+        },
+        "authAttDownloads":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.att.authAttDownloads",
+            "column": "fd_detail_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_att_download_id",
+            "table": "km_imissive_reglisto_attd",
+            "canDisplay": "false"
+        },
+        "fdUnit":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveRegDetailList.fdUnit",
+            "type": "com.landray.kmss.sys.unit.model.KmImissiveUnit",
+            "column": "fd_unit_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdOrg":         {
+            "propertyType": "list",
+            "messageKey": "km-imissive:kmImissiveRegDetailList.fdOrg",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_detail_id",
+            "notNull": "false",
+            "validate": "false",
+            "elementColumn": "fd_org_id",
+            "table": "km_imissive_regdetail_orgout"
+        },
+        "fdSignType":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveRegDetailList.fdSignType",
+            "column": "fd_sign_type",
+            "length": "10"
+        },
+        "fdReceiveId":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegDetailList.fdReceiveId",
+            "type": "String",
+            "column": "fd_receiveid",
+            "length": "36"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveRegDetailList.fdType",
+            "column": "fd_type",
+            "length": "10"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time"
+        },
+        "fdSigner":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveRegDetailList.fdSigner",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_signer_id"
+        },
+        "fdSignTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "km-imissive:kmImissiveRegDetailList.fdSignTime",
+            "column": "fd_sign_time"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_create_id"
+        },
+        "fdReadReviewOpinion":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:KmImissiveRegDetailListOuter.fdReadReviewOpinion",
+            "column": "fd_readreview_opinion",
+            "length": "2"
+        },
+        "fdReadSendOpinion":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:KmImissiveRegDetailListOuter.fdReadSendOpinion",
+            "column": "fd_readsend_opinion",
+            "length": "2"
+        },
+        "fdJson":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "RTF",
+            "column": "fd_json",
+            "length": "1000000"
+        },
+        "fdFromUnit":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:KmImissiveRegDetailListOuter.fdFromUnit",
+            "type": "com.landray.kmss.sys.unit.model.KmImissiveUnit",
+            "column": "fd_fromunit_id"
+        }
+    }
+}

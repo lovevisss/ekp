@@ -1,0 +1,10 @@
+{
+	"id": "kmImissiveSignTiny",
+	"title": "公文政务版签报二级页面列表",
+	"desc": "公文政务版签报二级页面列表个性文件",
+	"jsList": [
+	    "/km/imissive/mobile/imissive_sign/js/",
+	    "/sys/mobile/js/mui/list/CardItemDListMixin.js",
+		"/sys/mobile/js/mui/list/item/CardItemDMixin.js"
+	]
+}

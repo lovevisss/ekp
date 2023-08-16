@@ -1,0 +1,623 @@
+/* create 190627 公文工作台 */
+/* 整体框架 */
+.lui_imissive_platform_container {
+    /* padding: 15px; */
+    background: #f8f8f8;
+}
+
+.lui_imissive_platform_container ul {
+    /* margin-top: -10px; */
+    list-style: none;
+    /* padding-top: 15px; */
+    /* padding-bottom: 20px; */
+}
+
+.lui_imissive_platform_container em {
+    font-style: normal;
+}
+
+.lui_imissive_platform_top {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.lui_imissive_platform_content {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.lui_imissive_platform_contentL {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.lui_imissive_platform_contentR {
+    vertical-align: top;
+    display: table-cell;
+    padding-left: 10px;
+    width: 367px;
+}
+
+/* 公共部件样式 */
+.lui_imissive_platform_component {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
+}
+
+/* 公告 */
+.lui_imissive_notice_bar {
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 10px;
+    padding-left: 24px;
+    position: relative;
+    padding-right: 20px;
+}
+
+.lui_imissive_notice_bar em {
+    font-size: 18px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.lui_imissive_notice_bar .lui_imissive_icon {
+    display: inline-block;
+    width: 32px;
+    height: 24px;
+    background: url(../images/icon-notice.png) no-repeat center;
+    vertical-align: middle;
+    margin-right: 10px;
+    background-size: 29px auto;
+}
+.lui_imissive_btn_close{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    background:url(../images/icon-close.png) no-repeat center;
+    position: absolute;
+    right: 21px;
+    top: 24px;
+    cursor: pointer;
+    background-size:16px auto;
+}
+.lui_imissive_btn_close:hover{
+    /* background-color: #0000000d; */
+    /* background-image:url(../images/icon-close-cur.png) */
+}
+
+.lui_imissive_notice_bar .status_urgent {
+    color: #F33333;
+}
+
+/* 公共-多标签 */
+.lui_imissive_tabpanel_frame {
+}
+
+.lui_imissive_tabpanel_nav {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.lui_imissive_tabpanel_content {
+    padding: 15px;
+    padding-top:5px;
+}
+
+.lui_imissive_tabpanel_nav ul {
+}
+
+.lui_imissive_tabpanel_nav li {
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 2px solid transparent;
+}
+
+.lui_imissive_tabpanel_nav li.lui_tabpanel_imissive_navs_item_selected,.lui_imissive_tabpanel_nav li:hover {
+    border-bottom-color: #4285F4;
+    color: #4285F4;
+}
+
+.lui_imissive_tabpanel_footer {
+    line-height: 32px;
+    text-align: right;
+    padding-right: 15px;
+    position: relative;
+    top: -7px;
+}
+
+.lui_imissive_tabpanel_footer a {
+    color: #999;
+    font-size: 12px;
+}
+
+/* 公共-面板 */
+.lui_imissive_panel_iframe {
+}
+
+.lui_imissive_panel_nav {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.lui_imissive_panel_nav:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.lui_imissive_panel_nav .lui_text_primary {
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    border-left: 4px solid;
+    vertical-align: middle;
+    margin-right: 10px;
+    position: relative;
+    top: -2px;
+}
+
+.lui_imissive_panel_content {
+    padding: 0 15px;
+}
+
+.lui_imissive_panel_title {
+}
+.lui_imissive_panel_footer{
+    overflow:hidden;
+    padding: 10px 0;
+}
+.lui_imissive_panel_footer a{
+    float:right;
+    color:#999;
+    line-height: 26px;
+    font-size:12px;
+    margin-right:10px;
+}
+
+.lui_imissive_panel_opt {
+    float: right;
+}
+/* 搜索 */
+.lui_imissive_search_bar{
+    width:128px;
+    padding:0 5px;
+    border:1px solid #ddd;
+    line-height:24px;
+    position:relative;
+    margin-right:15px;
+    /* margin-top:10px; */
+}
+.lui_imissive_search_bar input{
+border:none;
+width:100px;font-size:12px;
+}
+.lui_imissive_search_bar i{
+    position:absolute;right:5px;top:0;
+    display:inline-block;
+    width:16px;
+    height:24px;
+    background:url(../images/icon-search.png) no-repeat center;
+    cursor:pointer;
+}
+.lui_imissive_search_bar i:hover{
+    background-image:url(../images/icon-search-cur.png);
+    cursor:pointer;
+}
+
+
+.lui_imissive_panel_opt_item {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 12px;
+    position: relative;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.lui_imissive_panel_opt_item:after,.lui_imissive_panel_opt_item:before {
+    /*     content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-color: #EAEDF3;
+    position: absolute;
+    left: 50%;
+    top: -12px;
+    margin-left: -5px; */
+}
+
+.lui_imissive_panel_opt_item:after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url(../images/icon-arrow-down.png) no-repeat center;
+    position:relative;
+    top: 2px;
+}
+
+.lui_imissive_panel_opt_item:hover:after {
+    background-image: url(../images/icon-arrow-up-cur.png);
+}
+/* .lui_imissive_panel_opt_item_dropdown:hover ul{
+    display:block;
+} */
+
+.lui_imissive_panel_opt_item_dropdown ul {
+    display: none;
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid #EAEDF3;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.04);
+    border-radius: 4px;
+    border-radius: 2px;
+    left: 50%;
+    top: 26px;
+    margin-left: -32px;
+}
+
+.lui_imissive_panel_opt_item_dropdown ul:before,.lui_imissive_panel_opt_item_dropdown ul:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-color: #EAEDF3;
+    position: absolute;
+    left: 50%;
+    top: -12px;
+    margin-left: -5px;
+}
+
+.lui_imissive_panel_opt_item_dropdown ul:after {
+    border-bottom-color: #fff;
+    top: -11px;
+}
+
+.lui_imissive_panel_opt_item_dropdown li {
+    line-height: 33px;
+    background: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: nowrap;
+    min-width: 45px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.lui_imissive_panel_opt_item_dropdown li:hover:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #4285F4;
+    opacity: .1;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* 公文数据列表 */
+.lui_imissive_data_iconList {
+}
+
+.lui_imissive_data_iconList {
+    display: table;
+    width: 100%;
+}
+
+.lui_imissive_data_iconList li {
+    display: table-cell;
+    width: 16.67%;
+}
+
+.lui_imissive_data_iconList a {
+    display: block;
+    overflow: hidden;
+}
+
+.lui_imissive_data_iconList .lui_imissive_icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 4px;
+    background-size: 35px;
+}
+
+.lui_imissive_data_content {
+    margin-left: 45px;
+    font-size: 12px;
+    color: #999;
+}
+
+.lui_imissive_data_content em {
+    font-size: 22px;
+    color: #333;
+    font-style: normal;
+}
+.lui_imissive_data_content p{
+    position:relative;
+    top:-3px;
+}
+
+/* 发起的公文 */
+.data_imissive_launch {
+    background-image: url(../images/data_imissive_launch.png);
+}
+
+/* 待处理的公文 */
+.data_imissive_pending {
+    background-image: url(../images/data_imissive_pending.png);
+}
+
+/* 暂存的公文 */
+.data_imissive_temporary {
+    background-image: url(../images/data_imissive_temporary.png);
+}
+
+/* 已办的发文 */
+.data_outgoing_done {
+    background-image: url(../images/data_outgoing_done.png);
+}
+
+/* 已办的收文 */
+.icon_incoming_done {
+    background-image: url(../images/icon_incoming_done.png);
+}
+
+/* 已办的签到 */
+.icon_report_done {
+    background-image: url(../images/icon_report_done.png);
+}
+
+/*===== 快捷方式 =====*/
+.lui_imissive_shortcut_iframe {
+    /* font-size: 0; */
+    overflow: hidden;
+    height: 80px;
+    line-height: 80px;
+}
+
+.lui_imissive_shortcut_item {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all .2s;
+}
+.lui_imissive_shortcut_item:hover{
+    background: rgb(229, 229, 229);
+}
+
+.lui_imissive_shortcut_iframe .lui_imissive_shortcut_item:first-child:before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 22px;
+    background: #eee;
+    position: absolute;
+    right: 0;
+    top: 35px;
+}
+
+.lui_imissive_shortcut_icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 18px;
+    background-size: 48px;
+}
+
+.lui_imissive_shortcut_content {
+    margin-left: 85px;
+    /* float: left; */
+}
+
+/* 发文拟稿 */
+.shortcut_create {
+    background-image: url(../images/shortcut-create.png);
+}
+
+/* 收文等级 */
+.shortcut_register {
+    background-image: url(../images/shortcut-register.png);
+}
+
+/*===== 模板列表 =====*/
+.lui_imissive_templateList {
+}
+
+.lui_imissive_templateList li {
+    line-height: 44px;
+    position: relative;
+}
+
+.lui_imissive_templateList li:after {
+    content: "";
+    position: absolute;
+    left: 28px;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background: #eee;
+}
+.lui_imissive_templateList li:first-child:after {
+    display:none;
+}
+
+.lui_imissive_templateList a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+
+.lui_imissive_templateList .lui_imssive_icon {
+    display: inline-block;
+    background: url(../images/icon-template.png);
+    width: 20px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: -8px;
+    margin-right: 10px;
+    background-size: 20px auto;
+}
+
+.lui_imissive_templateList span {
+}
+
+/* 公文列表 */
+.lui_imissive_doc_list {
+}
+
+.lui_imissive_doc_list ul {
+}
+
+.lui_imissive_doc_list li {
+    border-bottom: 1px solid #eee;
+    /* padding: 10px 0; */
+}
+
+.lui_imissive_doc_list li a {
+    display: block;
+    padding:8px 0;
+}
+
+.lui_imissive_doc_list h3 {
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 13px;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    text-overflow: ellipsis;
+}
+
+.lui_imissive_doc_list .status_item {
+    display: inline-block;
+    height: 17px;
+    line-height: 17px;
+    font-size: 12px;
+    border: 1px solid;
+    padding: 0 7px;
+    color: #F33333;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.lui_imissive_doc_list .status_item.status_urgent {
+    color: #F33333;
+}
+
+.lui_imissive_doc_list p {
+    color: #999;
+    font-size: 12px;
+}
+
+.lui_imissive_doc_list p span {
+    margin-right: 40px;
+}
+.lui_imissive_doc_list p span:last-child,
+.lui_imissive_doc_list p span.lui_imissive_date{
+    float:right;
+    margin-right:0;
+}
+/* 多标签 */
+.lui_imissive_platform_container .lui_tabpanel_list_navs_c{
+    line-height:50px;
+    background: #fff;
+    border-bottom-color: #eeeeee;
+    height: 50px;
+}
+.lui_imissive_platform_container .lui_tabpanel_list_navs_item_selected .lui_tabpanel_list_navs_item_c .lui_tabpanel_navs_item_title{
+    border-bottom-color:inherit;
+}
+.lui_imissive_platform_container .lui_tabpanel_list_navs_item_c .lui_tabpanel_navs_item_title{
+    padding:0;
+    line-height:50px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+    .lui_imissive_btn_close{
+        background-image:url(../images/icon-close@2x.png); 
+    }
+    .lui_imissive_btn_close:hover{
+/*         background-image:url(../images/icon-close-cur@2x.png) */
+    }
+    .lui_imissive_notice_bar .lui_imissive_icon {
+    /* background-image: url(../images/icon-notice@2x.png); */
+    }
+
+    /* 发起的公文 */
+    .data_imissive_launch {
+        background-image: url(../images/data_imissive_launch@2x.png);
+    }
+
+    /* 待处理的公文 */
+    .data_imissive_pending {
+        background-image: url(../images/data_imissive_pending@2x.png);
+    }
+
+    /* 暂存的公文 */
+    .data_imissive_temporary {
+        background-image: url(../images/data_imissive_temporary@2x.png);
+    }
+
+    /* 已办的发文 */
+    .data_outgoing_done {
+        background-image: url(../images/data_outgoing_done@2x.png);
+    }
+
+    /* 已办的收文 */
+    .icon_incoming_done {
+        background-image: url(../images/icon_incoming_done@2x.png);
+    }
+
+    /* 已办的签到 */
+    .icon_report_done {
+        background-image: url(../images/icon_report_done@2x.png);
+    }
+
+    .lui_imissive_templateList .lui_imssive_icon{
+        background-image: url(../images/icon-template@2x.png);
+    }
+
+    /* 发文拟稿 */
+    .shortcut_create {
+        background-image: url(../images/shortcut-create@2x.png);
+    }
+
+    /* 收文等级 */
+    .shortcut_register {
+        background-image: url(../images/shortcut-register@2x.png);
+    }
+    
+}

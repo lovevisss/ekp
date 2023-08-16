@@ -1,0 +1,61 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveDeadLineConfigDetail",
+        "messageKey": "km-imissive:table.kmImissiveDeadLineConfigDetail",
+        "displayProperty": "",
+        "serviceBean": "kmImissiveDeadLineConfigDetailService",
+        "table": "km_imissive_deadline_cfgdetail",
+        "url": "/km/imissive/km_imissive_deadline_cfgdetail/kmImissiveDeadLineConfigDetail.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+         "fdConfig":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveDeadLineConfigDetail.fdConfig",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveDeadLineConfig",
+            "column": "fd_config_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdExpression":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveDeadLineConfig.fdExpression",
+            "type": "String",
+            "column": "fd_expression",
+            "notNull": "false",
+            "length": "36",
+            "canDisplay": "true",
+            "enumType": "kmImissiveDeadLineConfig_fdDetails_fomula"
+        },
+        "fdDay":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveDeadLineConfig.fdDay",
+            "type": "String",
+            "column": "fd_day",
+            "notNull": "false",
+            "length": "36",
+            "canDisplay": "true"
+        },
+        "fdDay2":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveDeadLineConfig.fdDay2",
+            "type": "String",
+            "column": "fd_day2",
+            "notNull": "false",
+            "length": "36",
+            "canDisplay": "true"
+        },
+         "fdColor":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveDeadLineConfig.fdColor",
+            "type": "String",
+            "column": "fd_color",
+            "notNull": "false",
+            "length": "36",
+            "canDisplay": "true"
+        }
+    }
+}

@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<log-oper>
+	<logset>
+		<oper
+            id="kmImissiveSendMainOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+            action="/km/imissive/km_imissive_send_main/kmImissiveSendMain.do">
+             <ignoreFields>authChangeEditorFlag;fdOldData</ignoreFields>
+           <query
+				method="listChildren|manageList"
+				logPoint="Base_UrlParam;Action_FindAll" 
+				messageKey="button.list" />
+           <query
+				method="saveSend"
+				logPoint="Service_Add"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.saveSend" />
+			<query
+				method="approveSend"
+				logPoint="Service_Update"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.approveSend"  />
+			<query
+				method="printFileDoc" logPoint="Base_UrlParam;Action_Find"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.printFileDoc" />
+			<query
+				method="print" logPoint="Base_UrlParam;Action_Find"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.print" />
+			<query
+				method="generateNumByNumberId" logPoint="Base_UrlParam"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.generateNumByNumberId" />
+			<query
+				method="saveDocNum" logPoint="saveDocNum"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.saveDocNum" />
+			<query
+				method="saveSignatureAndTime" logPoint="saveSignatureAndTime"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.saveSignatureAndTime" />						
+			<query
+				method="updateDocNum" logPoint="updateDocNum"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.updateDocNum" />
+			<query
+				method="updateSigner" logPoint="Base_UrlParam;updateSigner"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.updateSigner" />
+			<query
+				method="filing" logPoint="filing"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.filing" />	
+			<query
+				method="filingall" logPoint="filingall"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.filingall" />	
+			<query
+				method="changeTemplate" logPoint="changeTemplate"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.changeTemplate" />
+			<query
+				method="printBatch" logPoint="Action_printBatch"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.printBatch" />
+			<query
+				method="addAttTrack" logPoint="Base_UrlParam;addAttTrack"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.addAttTrack"/>	
+			 <query
+				method="getNumber" logPoint="Base_UrlParam;getNumber"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.getNumber" />
+        </oper>
+        
+        <oper
+            id="kmImissiveSendTemplateOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate"
+            action="/km/imissive/km_imissive_send_template/kmImissiveSendTemplate.do">
+            <ignoreFields>authAttNoprint;authAttNodownload;authAttNocopy;authChangeEditorFlag</ignoreFields>
+             <query
+				method="listChildren"
+				logPoint="Base_UrlParam;Action_FindAll" 
+				messageKey="button.list" />
+			<query
+				method="clone"
+				logPoint="Base_UrlParam;Action_Find" 
+				messageKey="km-imissive:button.copy" />
+        </oper>
+        
+        <oper
+            id="kmImissiveSendMainPortletOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveSendMain"
+            action="/km/imissive/km_imissive_send_main/kmImissiveSendMainPortlet.do">
+            <query
+				method="listPortlet" logPoint="Base_UrlParam;listPortlet"
+				messageKey="km-imissive:kmImissiveSendMain.Send.my"  />
+        </oper>
+        
+        <oper
+            id="kmImissiveSendPortletOperLog"
+            extends="BaseOperLog"
+            model="*"
+            action="/sys/common/dataxml.jsp">
+            <query
+            	paramName="s_bean"
+            	paramValue="kmImissiveSendMainPortlet"
+            	logPoint="Base_UrlParam;kmImissiveSendMainPortlet"
+            	messageKey="km-imissive:kmImissiveSend.portlet.latest">
+            </query>
+        </oper>
+        
+        
+		<oper
+            id="kmImissiveReceiveMainOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+            action="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMain.do">
+            <ignoreFields>authChangeEditorFlag;fdOldData</ignoreFields>
+            <query
+				method="listChildren|manageList"
+				logPoint="Base_UrlParam;Action_FindAll"
+				messageKey="button.list"  />
+			<query
+				method="approveReceive"
+				logPoint="Service_Update"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.approveReceive"  />
+			<query
+				method="manageList"
+				logPoint="Base_UrlParam;Action_FindAll" 
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.manageList" />
+            <query
+				method="printFileDoc" logPoint="Base_UrlParam;Action_Find"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.printFileDoc" />
+			<query
+				method="print" logPoint="Base_UrlParam;Action_Find"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.print" />
+			<query
+				method="saveReceive" logPoint="Service_Add"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.saveReceive" />
+			<query
+				method="saveReceiveOnly" logPoint="Base_UrlParam"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.saveReceiveOnly" />
+			<query
+				method="generateNumByNumberId" logPoint="Base_UrlParam"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.generateNumByNumberId" />
+			<query
+				method="saveDocNum" logPoint="saveDocNum"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.saveDocNum" />	
+			<query
+				method="updateDocNum" logPoint="updateDocNum"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.updateDocNum" />
+			<query
+				method="filing" logPoint="filing"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.filing" />	
+			<query
+				method="filingall" logPoint="filingall"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.filingall" />	
+			<query
+				method="changeTemplate" logPoint="changeTemplate"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.changeTemplate" />
+			<query
+				method="printBatch" logPoint="Action_printBatch"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.printBatch" />
+			 <query
+				method="getNumber" logPoint="Base_UrlParam;getNumber"
+				messageKey="km-imissive:kmImissiveReceiveMain.logOper.getNumber" />	
+			
+        </oper>
+        
+         <oper
+            id="kmImissiveReceiveTemplateOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate"
+            action="/km/imissive/km_imissive_receive_template/kmImissiveReceiveTemplate.do">
+             <ignoreFields>authAttNoprint;authAttNodownload;authAttNocopy;authChangeEditorFlag</ignoreFields>
+             <query
+				method="listChildren"
+				logPoint="Base_UrlParam;Action_FindAll" 
+				messageKey="button.list" />
+			<query
+				method="clone"
+				logPoint="Base_UrlParam;Action_Find" 
+				messageKey="km-imissive:button.copy" />
+        </oper>
+        
+         <oper
+            id="kmImissiveReceiveMainPortletOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain"
+            action="/km/imissive/km_imissive_receive_main/kmImissiveReceiveMainPortlet.do">
+           <query
+				method="listPortlet" logPoint="Base_UrlParam;listPortlet" 
+				messageKey="km-imissive:kmImissiveReceiveMain.Receive.my" />
+        </oper>
+        
+          <oper
+            id="kmImissiveReceivePortletOperLog"
+            extends="BaseOperLog"
+            model="*"
+            action="/sys/common/dataxml.jsp">
+            <query
+            	paramName="s_bean"
+            	paramValue="kmImissiveReceiveMainPortlet"
+            	logPoint="Base_UrlParam;kmImissiveReceiveMainPortlet"
+            	messageKey="km-imissive:kmImissiveReceive.portlet.latest">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmImissiveSignMainOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+            action="/km/imissive/km_imissive_sign_main/kmImissiveSignMain.do">
+            <ignoreFields>authChangeEditorFlag;fdOldData</ignoreFields>
+             <query
+				method="listChildren|manageList"
+				logPoint="Base_UrlParam;Action_FindAll"
+				messageKey="button.list"  />
+			<query
+				method="approveSign"
+				logPoint="Service_Update"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.approveSign"  />
+			<query
+				method="manageList"
+				logPoint="Base_UrlParam;Action_FindAll" 
+				messageKey="km-imissive:kmImissiveSignMain.logOper.manageList" />
+             <query
+				method="printFileDoc" logPoint="Base_UrlParam;Action_Find"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.printFileDoc" />
+			<query
+				method="print" logPoint="Base_UrlParam;Action_Find"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.print" />
+			<query
+				method="generateNumByNumberId" logPoint="Base_UrlParam"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.generateNumByNumberId" />
+			<query
+				method="saveDocNum" logPoint="saveDocNum"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.saveDocNum" />	
+			<query
+				method="saveSignatureAndTime" logPoint="saveSignatureAndTime"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.saveSignatureAndTime" />						
+			<query
+				method="updateDocNum" logPoint="updateDocNum"
+				messageKey="km-imissive:kmImissiveSendMain.logOper.updateDocNum" />
+			<query
+				method="filing" logPoint="filing"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.filing" />	
+			<query
+				method="filingall" logPoint="filingall"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.filingall" />	
+			<query
+				method="changeTemplate" logPoint="changeTemplate"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.changeTemplate" />
+			<query
+				method="printBatch" logPoint="Action_printBatch"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.printBatch" />	
+			 <query
+				method="getNumber" logPoint="Base_UrlParam;getNumber"
+				messageKey="km-imissive:kmImissiveSignMain.logOper.getNumber" />
+        </oper>
+        <oper
+            id="kmImissiveSignTemplateOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate"
+            action="/km/imissive/km_imissive_sign_template/kmImissiveSignTemplate.do">
+             <ignoreFields>authAttNoprint;authAttNodownload;authAttNocopy;authChangeEditorFlag</ignoreFields>
+             <query
+				method="listChildren"
+				logPoint="Base_UrlParam;Action_FindAll" 
+				messageKey="button.list" />
+			<query
+				method="clone"
+				logPoint="Base_UrlParam;Action_Find" 
+				messageKey="km-imissive:button.copy" />
+        </oper>
+         <oper
+            id="kmImissiveSignMainPortletOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveSignMain"
+            action="/km/imissive/km_imissive_sign_main/kmImissiveSignMainPortlet.do">
+            <query
+				method="listPortlet" logPoint="Base_UrlParam;listPortlet" 
+				messageKey="km-imissive:kmImissiveSignMain.Sign.my" />
+        </oper>
+        
+        <oper
+            id="kmImissiveSignPortletOperLog"
+            extends="BaseOperLog"
+            model="*"
+            action="/sys/common/dataxml.jsp">
+            <query
+            	paramName="s_bean"
+            	paramValue="kmImissiveSignMainPortlet"
+            	logPoint="Base_UrlParam;kmImissiveSignMainPortlet"
+            	messageKey="km-imissive:kmImissiveSign.portlet.latest">
+            </query>
+        </oper>
+        
+         <oper
+            id="kmImissiveSendDROperLog"
+            extends="BaseOperLog"
+            model="*"
+            action="/km/imissive/km_imissive_send_dr/kmImissiveSendDR.do">
+           <query
+				method="updateDistribute" logPoint="updateDeliver"
+				messageKey="km-imissive:kmImissiveSendDR.logOper.updateDistribute" />	
+		   <query
+				method="updateReport" logPoint="updateDeliver"
+				messageKey="km-imissive:kmImissiveSendDR.logOper.updateReport" />	
+        </oper>
+         <oper
+            id="kmImissiveReceiveDROperLog"
+            extends="BaseOperLog"
+            model="*"
+             action="/km/imissive/km_imissive_receive_dr/kmImissiveReceiveDR.do">
+            <query
+				method="updateDistribute" logPoint="updateDeliver"
+				messageKey="km-imissive:kmImissiveReceiveDR.logOper.updateDistribute" />	
+		   <query
+				method="updateReport" logPoint="updateDeliver"
+				messageKey="km-imissive:kmImissiveReceiveDR.logOper.updateReport" />
+        </oper>
+         <oper
+            id="kmImissiveRegDetailListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveRegDetailList"
+            action="/km/imissive/km_imissive_regdetail_list/kmImissiveRegDetailList.do">
+           <query
+				method="view" logPoint="Base_UrlParam;Action_Find;Action_view"
+				messageKey="km-imissive:kmImissiveRegDetailList.logOper.view" />
+		  <query
+				method="urgeSign" logPoint="addUrgeSign"
+				messageKey="km-imissive:kmImissiveRegDetailList.logOper.urgeSign" />
+	      <query
+				method="cancelDR" logPoint="Base_UrlParam;deleteDR"
+				messageKey="km-imissive:kmImissiveRegDetailList.logOper.cancelDR" />
+        </oper>
+        <oper
+            id="kmImissiveReturnOpinionOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveReturnOpinion"
+            action="/km/imissive/km_imissive_return_opinion/kmImissiveReturnOpinion.do">
+        </oper>
+        
+        <oper
+            id="kmImissiveUnitOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveUnit"
+            action="/km/imissive/km_imissive_unit/kmImissiveUnit.do">
+            <query
+				method="addUnit" logPoint="addUnit" 
+				messageKey="km-imissive:kmImissiveUnit.logOper.addUnit"/>
+        </oper>
+        
+        <oper
+            id="kmImissiveUnitCategoryOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveUnitCategory"
+            action="/km/imissive/km_imissive_unit_category/kmImissiveUnitCategory.do">
+        </oper>
+        
+         <oper
+            id="kmImissiveEmergencyGradeOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveEmergencyGrade"
+            action="/km/imissive/km_imissive_emergency_grade/kmImissiveEmergencyGrade.do">
+        </oper>
+        
+         <oper
+            id="kmImissiveSecretGradeOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveSecretGrade"
+            action="/km/imissive/km_imissive_secret_grade/kmImissiveSecretGrade.do">
+        </oper>
+        
+         <oper
+            id="kmImissiveTypeOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveType"
+            action="/km/imissive/km_imissive_type/kmImissiveType.do">
+        </oper>
+        
+        <oper
+            id="kmImissiveTemplateCfgOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveTemplateCfg"
+            action="/km/imissive/km_imissive_template_cfg/kmImissiveTemplateCfg.do">
+            <query
+				method="clone"
+				logPoint="Base_UrlParam;Action_Find" 
+				messageKey="km-imissive:button.copy" />
+        </oper>
+        
+        <oper
+            id="kmImissiveCirculationOperLog"
+            desc="日志配置"
+            extends="BaseOperLog"
+            model="*"
+            action="/km/imissive/km_imissive_circulation/kmImissiveCirculation.do">
+            <query
+                method="save"
+                logPoint="Base_UrlParam;Service_Add"
+                messageKey="sys-circulation:sysCirculationMain.button.circulation" />
+            <query
+            	method="listData|viewAll|viewlist"
+            	logPoint="Base_UrlParam;Action_FindAll"
+            	messageKey="button.list" />
+        </oper>
+        
+         <oper
+            id="kmImissiveDeadLineConfigOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveDeadLineConfig"
+            action="/km/imissive/km_imissive_deadline_config/kmImissiveDeadLineConfig.do">
+        </oper>
+        
+         <oper
+            id="kmImissiveDeadLineConfigDetailOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveDeadLineConfigDetail"
+            action="/km/imissive/km_imissive_deadline_cfgdetail/kmImissiveDeadLineConfigDetail.do">
+        </oper>
+        
+        
+        <oper
+            id="kmImissiveRedHeadTemplateOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveRedHeadTemplate"
+            action="/km/imissive/km_imissive_redhead_template/kmImissiveRedHeadTemplate.do">
+             <ignoreFields>authAttNoprint;authAttNodownload;authAttNocopy;authChangeEditorFlag;authChangeReaderFlag;authChangeAtt</ignoreFields>
+			<query
+				method="copy"
+				logPoint="Base_UrlParam;Action_Find" 
+				messageKey="km-imissive:button.copy" />
+        </oper>
+        <oper
+            id="kmImissiveSignRedHeadTemplateOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveSignRedHeadTemplate"
+            action="/km/imissive/km_imissive_sign_redhead_template/kmImissiveSignRedHeadTemplate.do">
+             <ignoreFields>authAttNoprint;authAttNodownload;authAttNocopy;authChangeEditorFlag;authChangeReaderFlag;authChangeAtt</ignoreFields>
+			<query
+				method="copy"
+				logPoint="Base_UrlParam;Action_Find" 
+				messageKey="km-imissive:button.copy" />
+        </oper>
+        
+        <oper
+            id="kmImissiveStatOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.imissive.model.KmImissiveStat"
+            action="/km/imissive/km_imissive_stat/kmImissiveStat.do">
+			<query
+				method="save"
+				logPoint="Service_Add;Service_Update" 
+				messageKey="km-imissive:kmImissiveStat.logOper.saveOrUpdate" />
+			<query
+				method="getChartByType"
+				logPoint="Base_UrlParam;getChartByType"/>	
+				
+        </oper>
+	</logset>
+</log-oper>

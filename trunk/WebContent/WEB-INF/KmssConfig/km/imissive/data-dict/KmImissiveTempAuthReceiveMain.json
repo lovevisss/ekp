@@ -1,0 +1,32 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveTempAuthReceiveMain",
+        "messageKey": "km-imissive:table.kmImissiveTempAuthReceiveMain",
+        "table": "km_imissive_tempanth_receive"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdMain":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveReceiveMain",
+            "messageKey": "km-imissive:kmImissiveStat.fdMainType.receive",
+            "column": "fd_main_id"
+        },
+        "fdFrom":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveTempAuthReceiveMain.fdFrom",
+            "column": "fd_from",
+            "length": "200"
+        },
+        "fdPerson":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "messageKey": "km-imissive:kmImissiveTempAuthReceiveMain.fdPerson",
+            "column": "fd_person_id"
+        }
+    }
+}

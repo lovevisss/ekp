@@ -1,0 +1,89 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveRegDetailOpinion",
+        "messageKey": "km-imissive:table.kmImissiveRegDetailOpinion",
+        "serviceBean": "kmImissiveRegDetailOpinionService",
+        "table": "km_imissive_regdetail_opinion",
+        "url": "/km/imissive/km_imissive_regdetail_opinion/kmImissiveRegDetailOpinion.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docContent":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docContent",
+            "type": "String",
+            "column": "doc_content",
+            "notNull": "true",
+            "length": "1500"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "fdImissiveId":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegDetailOpinion.fdImissiveId",
+            "type": "String",
+            "column": "fd_imissive_id",
+            "notNull": "false",
+            "length": "36"
+        },
+        "fdDetailId":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegDetailOpinion.fdDetailId",
+            "type": "String",
+            "column": "fd_detail_id",
+            "notNull": "false",
+            "length": "36"
+        },
+        "fdAuditNoteIds":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegDetailOpinion.fdAuditNoteIds",
+            "type": "String",
+            "column": "fd_auditnote_ids",
+            "notNull": "false",
+            "length": "2000"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_create_id",
+            "notNull": "false"
+        },
+        "fdDeliverType":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveRegDetailOpinion.fdDeliverType",
+            "column": "fd_deliver_type",
+            "length": "2"
+        },
+        "fdUnit":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.unit.model.KmImissiveUnit",
+            "messageKey": "km-imissive:kmImissiveRegDetailOpinion.fdUnit",
+            "column": "fd_unit_id"
+        },
+        "fdAuditNoteList":         {
+            "propertyType": "list",
+            "messageKey": "km-imissive:kmImissiveRegDetailOpinion.fdAuditNoteList",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveRegDetailAuditNote",
+            "column": "fd_opinion_id",
+            "cascade": "all-delete-orphan",
+            "table": "km_imissive_regdetail_adnote"
+        },
+        "fdRegType":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveReg.fdRegType",
+            "column": "fd_reg_type",
+            "length": "2"
+        }
+    }
+}

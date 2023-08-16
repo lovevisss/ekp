@@ -1,0 +1,21 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveNumberLock",
+        "messageKey": "km-imissive:table.kmImissiveNumberLock",
+        "table": "km_imissive_number_lock",
+        "serviceBean": "kmImissiveNumberService"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "version":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveNumberLock.version",
+            "type": "Integer",
+            "column": "fd_version",
+            "length": "10"
+        }
+    }
+}

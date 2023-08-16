@@ -1,0 +1,83 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveOutSign",
+        "messageKey": "km-imissive:table.kmImissiveOutSign",
+        "serviceBean": "kmImissiveAuditNoteService",
+        "table": "km_imissive_out_sign"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdMainId":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveOutSign.fdMainId",
+            "column": "fd_main_id",
+            "length": "200"
+        },
+        "fdMainName":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveOutSign.fdMainId",
+            "column": "fd_main_name",
+            "length": "200"
+        },
+        "fdStatus":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveOutSign.fdStatus",
+            "column": "fd_status",
+            "length": "200"
+        },
+        "fdUrl":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveOutSign.fdUrl",
+            "column": "fd_url",
+            "length": "200"
+        },
+        "fdExtmsg":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveOutSign.fdExtmsg",
+            "column": "fd_extmsg",
+            "length": "200"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveOutSign.fdType",
+            "column": "fd_type",
+            "length": "200"
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "Integer",
+            "column": "fd_order",
+            "length": "100"
+        },
+        "fdSignatoryId":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "String",
+            "column": "fd_signatory_id",
+            "length": "200"
+        }
+    }
+}

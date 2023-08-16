@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/**
+* 用于分发撤回、催办、补签页面
+*/
+#content .optView .optHead{
+	background-color: #4285f4!important;
+}
+
+#content .optView .optFoot{
+    background-color: #fff!important; 
+	color: #4285f4;
+	border-top: 1px solid #eeeeee;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.45);
+}
+
+.optFoot .muiHeaderBasicInfoBack{
+	width:70px;
+	color:#333;
+}
+.optFoot .muiHeaderBasicInfoTitle{
+	font-size: 1.6rem;
+    font-weight: normal;
+}
+.optFoot .muiHeaderBasicInfoTitle:before{
+	content: '';
+    display: block;
+    height: 20px;
+    border-left: 1px solid #efefef;
+    position: absolute;
+}
+.optFoot .muiCateSelArea {
+	float:left;
+}
+#recallView .optFoot .muiCateSelArea .muiCateSel{
+	white-space:nowrap;
+	color: #585858;
+	/* padding-left: 10px; */
+}
+#recallView .muiCateSelArea .muiCateSel i{
+	margin-right: 8px;
+	display:inline-block;
+	color:#fff;
+}
+#recallView{
+
+}
+.muiSimple > tbody > tr > td, 
+.muiSimple > tr > td{
+	height: 22px;
+	/* line-height: 30px; */
+}

@@ -1,0 +1,10 @@
+{
+	"id": "kmImissiveExchangeLibraryTiny",
+	"title": "公文政务版交换库二级页面列表",
+	"desc": "公文政务版交换库二级页面列表个性文件",
+	"jsList": [
+	    "/km/imissive/mobile/exchange_library/js/",
+	    "/sys/mobile/js/mui/list/CardItemListMixin.js",
+		"/sys/mobile/js/mui/list/item/CardItemMixin.js"
+	]
+}

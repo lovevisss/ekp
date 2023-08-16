@@ -1,0 +1,172 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveTemplateCfg",
+        "messageKey": "km-imissive:table.kmImissiveTemplateCfg",
+        "displayProperty": "fdName",
+        "serviceBean": "kmImissiveTemplateCfgService",
+        "table": "km_imissive_tmplcfg",
+        "url": "/km/imissive/km_imissive_template_cfg/kmImissiveTemplateCfg.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "true",
+            "length": "200",
+            "validate": "true",
+            "canSearch": "true"
+        },
+        "fdTableHead":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdTableHead",
+            "type": "String",
+            "column": "fd_tablehead",
+            "notNull": "false",
+            "length": "200",
+            "validate": "true",
+            "canSearch": "true",
+            "canDisplay": "true"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdType",
+            "type": "String",
+            "column": "fd_type",
+            "notNull": "true",
+            "length": "10",
+            "enumType": "kmImissiveTemplateCfg_type",
+            "canSearch": "true",
+            "canDisplay": "true"
+        },
+        "authReaderFlag":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.authReaderFlag",
+            "type": "Boolean",
+            "column": "auth_reader_flag",
+            "notNull": "false",
+            "unique": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "authReaders":         {
+            "propertyType": "list",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.authReaders",
+            "column": "fd_cfg_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_reader_id",
+            "table": "km_imissive_tempcfg_reader",
+            "canDisplay": "true"
+        },
+        "authEditors":         {
+            "propertyType": "list",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.authEditors",
+            "column": "fd_cfg_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_editor_id",
+            "table": "km_imissive_tempcfg_editor",
+            "canDisplay": "true"
+        },
+        "fdSendTempOne":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdSendTemplate",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveSendTemplate",
+            "column": "fd_stmpl_one_id",
+            "notNull": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "validate": "true",
+            "dialogJS": "Dialog_Template('com.landray.kmss.km.imissive.model.KmImissiveSendTemplate','!{idField}::!{nameField}',false,true,null,null,false,true)"
+        },
+        "fdSendTempTwo":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdSendTemplate",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveSendTemplate",
+            "column": "fd_stmpl_two_id",
+            "notNull": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "validate": "true",
+            "dialogJS": "Dialog_Template('com.landray.kmss.km.imissive.model.KmImissiveSendTemplate','!{idField}::!{nameField}',false,true,null,null,false,true)"
+        },
+        "fdReceiveTempOne":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdReceiveTemplate",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate",
+            "column": "fd_rtmpl_one_id",
+            "notNull": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "validate": "true",
+            "dialogJS": "Dialog_Template('com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate','!{idField}::!{nameField}',false,true,null,null,false,true)"
+        },
+        "fdReceiveTempTwo":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdReceiveTemplate",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate",
+            "column": "fd_rtmpl_two_id",
+            "notNull": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "validate": "true",
+            "dialogJS": "Dialog_Template('com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate','!{idField}::!{nameField}',false,true,null,null,false,true)"
+        },
+        "fdSendTempListOne":         {
+            "propertyType": "list",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdSendTemplate",
+            "column": "fd_cfg_id",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveSendTemplate",
+            "elementColumn": "fd_temp_id",
+            "table": "km_imissive_tempcfg_sone",
+            "canDisplay": "true",
+            "dialogJS": "Dialog_Template('com.landray.kmss.km.imissive.model.KmImissiveSendTemplate','!{idField}::!{nameField}',true,true,null,null,false,true)"
+        },
+        "fdSendTempListTwo":         {
+            "propertyType": "list",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdSendTemplate",
+            "column": "fd_cfg_id",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveSendTemplate",
+            "elementColumn": "fd_temp_id",
+            "table": "km_imissive_tempcfg_stwo",
+            "canDisplay": "true",
+            "dialogJS": "Dialog_Template('com.landray.kmss.km.imissive.model.KmImissiveSendTemplate','!{idField}::!{nameField}',true,true,null,null,false,true)"
+        },
+        "fdReceiveTempListOne":         {
+            "propertyType": "list",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdReceiveTemplate",
+            "column": "fd_cfg_id",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate",
+            "elementColumn": "fd_temp_id",
+            "table": "km_imissive_tempcfg_rone",
+            "canDisplay": "true",
+            "dialogJS": "Dialog_Template('com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate','!{idField}::!{nameField}',true,true,null,null,false,true)"
+        },
+        "fdReceiveTempListTwo":         {
+            "propertyType": "list",
+            "messageKey": "km-imissive:kmImissiveTemplateCfg.fdReceiveTemplate",
+            "column": "fd_cfg_id",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate",
+            "elementColumn": "fd_temp_id",
+            "table": "km_imissive_tempcfg_rtwo",
+            "canDisplay": "true",
+            "dialogJS": "Dialog_Template('com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate','!{idField}::!{nameField}',true,true,null,null,false,true)"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_create_id"
+        }
+    }
+}

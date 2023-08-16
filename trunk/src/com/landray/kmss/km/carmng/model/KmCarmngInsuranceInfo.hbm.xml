@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.km.carmng.model.KmCarmngInsuranceInfo"
+		table="km_carmng_insurance_info">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+		<property
+			name="fdProductBrand"
+			column="fd_product_brand"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdRegisterTime"
+			column="fd_register_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdInsuranceStartTime"
+			column="fd_insurance_start_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdInsuranceEndTime"
+			column="fd_insurance_end_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdInsurancePrice"
+			column="fd_insurance_price"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdIsDamag"
+			column="fd_is_damag"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+			<property
+			name="fdIsNotify"
+			column="fd_is_notify"
+			update="true"
+			insert="true"
+			length="1"
+			not-null="false" />
+		<property
+			name="fdIsThirdInsurance"
+			column="fd_is_third_insurance"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+		<property
+			name="fdIsRobInsurance"
+			column="fd_is_rob_insurance"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+		<property
+			name="fdIsGlassInsurance"
+			column="fd_is_glass_insurance"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+		<property
+			name="fdIsAbatement"
+			column="fd_is_abatement"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+		<property
+			name="fdIsHeadline"
+			column="fd_is_headline"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+		<property
+			name="fdIsLiability"
+			column="fd_is_liability"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+		<property
+			name="fdInsuranceFee"
+			column="fd_insurance_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdInsuranceNo"
+			column="fd_insurance_no"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdRemark"
+			column="fd_remark"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+			<property
+			name="fdNotifyBeforeDay"
+			column="fd_notify_before_day"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="10" />
+		<property
+			name="docCreateTime"
+			column="doc_create_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="docModifyTime"
+			column="doc_modify_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<many-to-one
+			name="docModifier"
+			column="doc_modifier_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+		<many-to-one
+			name="docCreator"
+			column="doc_creator_id"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<many-to-one
+			name="fdVehiclesInfo"
+			column="fd_vehicles_info_id"
+			update="true"
+			insert="true"
+			not-null="false" />
+			<bag
+			name="fdNotifyPersons"
+			table="km_carmng_insurance_notify"
+			lazy="true">
+			<key column="fd_insurance_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="fd_notify_person_id" />
+		</bag>
+	</class>
+</hibernate-mapping>

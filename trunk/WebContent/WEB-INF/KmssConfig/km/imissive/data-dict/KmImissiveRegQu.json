@@ -1,0 +1,108 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveRegQu",
+        "messageKey": "km-imissive:table.kmImissiveRegQu",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmImissiveRegQuService",
+        "table": "km_imissive_reg_qu",
+        "url": "/km/imissive/km_imissive_reg_qu/kmImissiveRegQu.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdRegId":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegQu.fdRegId",
+            "type": "String",
+            "column": "fd_reg_id",
+            "notNull": "false",
+            "length": "100",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegQu.docSubject",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "false",
+            "length": "200",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegQu.fdType",
+            "type": "String",
+            "column": "fd_type",
+            "notNull": "false",
+            "length": "10",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdDetail":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegQu.fdDetail",
+            "type": "RTF",
+            "column": "fd_detail",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdStatus":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegQu.fdStatus",
+            "type": "String",
+            "column": "fd_status",
+            "notNull": "false",
+            "length": "2",
+            "canDisplay": "true",
+            "enumType": "kmImissiveRegQu_status"
+        },
+        "fdErrorMsg":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegQu.fdErrorMsg",
+            "type": "RTF",
+            "column": "fd_error_msg",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdErrorTimes":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegQu.fdErrorTimes",
+            "type": "Integer",
+            "column": "fd_error_times",
+            "notNull": "false",
+            "length": "10",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveRegQu.docCreateTime",
+            "type": "Date",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_create_id"
+        },
+        "logDetails":         {
+            "propertyType": "list",
+            "type": "com.landray.kmss.km.imissive.model.KmImissiveRegQuLogDetail",
+            "column": "fd_reg_qu_id",
+            "messageKey": "km-imissive:KmImissiveRegQu.logDetails",
+            "table": "km_imissive_reg_qu_log_detail",
+            "cascade": "all-delete-orphan",
+            "inverse": "false"
+        }
+    }
+}

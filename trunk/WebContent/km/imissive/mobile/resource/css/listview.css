@@ -1,0 +1,129 @@
+@charset "utf-8"; 
+
+/*  上下结构卡片式列表    Start */
+.muiMissiveItemD:first-child {
+    margin-top: 1.2rem;
+}
+.muiMissiveItemD{
+	position: relative;
+}
+
+.muiMissiveItemD .muiMissiveItemDContainer{
+	position: relative;
+    display: table;
+    width: 100%;
+    min-height: 6rem;
+}
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDVerticalAlignTop{
+	vertical-align: top;
+	padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDVerticalAlignMiddle{
+	vertical-align: middle;
+	padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDRight{
+    display: table-cell;
+    position: relative;
+     padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDRight:after{
+	content: " ";
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: .1rem solid #EEEEEE;
+    transform-origin: 0 0;
+    transform: scaleY(.5);
+}
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDSubject{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: start;
+    -webkit-box-align: start;
+}
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDSubjectLeft>span{
+   margin: 5px;
+}
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDSubjectLeft{
+  display: inline-block;
+}
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDSubjectRight{
+  display: inline-block;
+}
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDSummary{
+	margin-top: 1rem;
+	color: #646A86;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: start;
+    -webkit-box-align: start;
+    display: inline-block;
+}
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDSummaryRight{
+	color:#4285f4;
+}
+
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDRightFooter{
+	margin-top: 1rem;
+	position: relative;
+}
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDRightFooter>div{
+    display: inline-block;
+}
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDRightFooter>div:not(:last-child){
+	margin-right: 1rem;
+	height: 1.8rem;
+    line-height: 1.8rem;
+}
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDRightFooter.muiMissiveItemDHasReadCount{
+	padding-right: 8rem;
+}
+
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDRightFooter .muiMissiveItemDReadInfo{
+    position: absolute;
+    right: 0;	
+    top: 0;
+}
+.muiMissiveItemD .muiMissiveItemDContainer .muiMissiveItemDRightFooter .muiMissiveItemDReadInfo>.muiMissiveItemDReadCount{
+	margin-right: .2rem;
+}
+
+.muiMissiveItemD .muiMissiveItemDLock{
+    position: absolute;
+    background: url(images/data-bg-lock.png) no-repeat center;
+    width: 12rem;
+    height: 12rem;
+    bottom: -3rem;
+    background-size: 5rem 5.8rem;
+    right: -3.6rem;
+    background-repeat: no-repeat;
+    opacity: .8;
+    filter: alpha(opacity=20);
+}

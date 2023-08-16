@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.km.carmng.model.KmCarmngApplication"
+		table="km_carmng_application">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+		<property
+			name="docSubject"
+			column="doc_subject"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdOtherUsers"
+			column="fd_other_users"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdApplicationTime"
+			column="fd_application_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdApplicationPersonPhone"
+			column="fd_application_person_phone"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdUserNumber"
+			column="fd_user_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="10" />
+			<property
+			name="fdNo"
+			column="fd_No"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdApplicationReason"
+			column="fd_application_reason"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1500" />
+		<property
+			name="fdStartTime"
+			column="fd_start_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdEndTime"
+			column="fd_end_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdDeparture"
+			column="fd_departure"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdDepartureCoordinate"
+			column="fd_depart_coordinate"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdDepartureDetail"
+			column="fd_depart_detail"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="500" />
+		<property
+			name="fdDestination"
+			column="fd_destination"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdDestinationCoordinate"
+			column="fd_des_coordinate"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdDestinationDetail"
+			column="fd_des_detail"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="500" />
+		<property
+			name="fdApplicationPath"
+			column="fd_application_path"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="fdRemark"
+			column="fd_remark"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="docStatus"
+			column="doc_status"
+			update="true"
+			insert="true"
+			not-null="false"/>
+		 <property
+			name="fdIsDispatcher"
+			column="fd_is_dispatcher"
+			update="true"
+			insert="true"
+			not-null="false"/>
+		<property
+			name="fdNotifyPerson"
+			column="fd_notify_person"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="docCreateTime"
+			column="doc_create_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdLastModifiedTime"
+			column="fd_last_modified_time"
+			update="true"
+			insert="true" />
+		<many-to-one
+			name="docCreator"
+			column="doc_creator_id"
+			insert="true"
+			update="true">
+		</many-to-one>
+		<many-to-one
+			name="fdApplicationPerson"
+			column="fd_application_person"
+			insert="true"
+			update="true">
+		</many-to-one>
+		<many-to-one
+			name="fdApplicationDept"
+			column="fd_application_dept"
+			insert="true"
+			update="true">
+		</many-to-one>		
+		<many-to-one
+			name="fdMotorcade"
+			column="fd_motorcade_id"
+			insert="true"
+			update="true">
+		</many-to-one>
+		<bag
+			table="km_carmng_app_user"
+			name="fdUserPersons"
+			lazy="true">
+			<key
+				column="fd_application_id"></key>
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="fd_person_id" />
+		</bag>
+		
+		<!-- 权限 -->
+		<property
+			name="authReaderFlag"
+			column="auth_reader_flag"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+		<property
+			name="authEditorFlag"
+			column="auth_editor_flag"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+		<bag
+			name="authAllReaders"
+			table="km_carmng_apply_areader"
+			lazy="true">
+			<key column="fd_application_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_all_reader_id" />
+		</bag>
+
+		<bag
+			name="authAllEditors"
+			table="km_carmng_apply_aeditor"
+			lazy="true">
+			<key column="fd_application_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_all_editor_id" />
+		</bag>
+
+		<bag
+			name="authEditors"
+			table="km_carmng_apply_editor"
+			lazy="true">
+			<key column="fd_application_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_editor_id" />
+		</bag>
+		
+		
+		<bag
+			name="authOtherEditors"
+			table="km_carmng_apply_oeditor"
+			lazy="true">
+			<key column="fd_application_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="fd_org_id" />
+		</bag>
+
+
+		<bag
+			name="authReaders"
+			table="km_carmng_apply_reader"
+			lazy="true">
+			<key column="fd_application_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_reader_id" />
+		</bag>
+		
+		<bag
+			name="authOtherReaders"
+			table="km_carmng_apply_oreader"
+			lazy="true">
+			<key column="fd_application_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="fd_org_id" />
+		</bag>
+		<bag
+			name="fdPaths"
+			inverse="true"
+			cascade="all-delete-orphan"
+			lazy="true">
+			<key
+				column="fd_application_id" />
+			<one-to-many
+				class="com.landray.kmss.km.carmng.model.KmCarmngPath"/>
+		</bag>
+	</class>
+</hibernate-mapping>

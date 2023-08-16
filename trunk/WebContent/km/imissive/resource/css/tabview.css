@@ -1,0 +1,100 @@
+
+.contentTbDiv #Label_Tabel{
+	min-height: 600px;
+}
+.contentTbDiv #Label_Tabel .td_label{
+	vertical-align: top;
+}
+.contentTbDiv #Label_Tabel .td_label0{
+	border-bottom: 2px solid #d2d2d2!important;
+}
+.td_label0 > nobr > input{
+ 	border-bottom: 0px;
+}
+
+
+
+ /* 公文样式 */
+ /* 公文查看页 Starts */
+ .lui_form_imissive {
+ 	margin: 0 auto;
+ 	position: absolute;
+ 	left: 5%;
+ 	right: 5%;
+ 	top: 54px;
+ 	bottom: 0;
+ 	overflow: hidden;
+ 	padding-top: 0;
+ }
+ 
+ .lui_form_imissive:after {
+ 	display: table;
+ 	content: "";
+ 	clear: both;
+ }
+ 
+ .lui_form_imissive .content {
+ 	
+ }
+ 
+ .lui_form_imissive .content form {
+ 	
+ }
+ 
+ .lui_form_imissive .bar-right {
+ 	padding-top: 0;
+ }
+ /* 稿纸选项卡固定 */
+ .lui_form_imissive .content {
+ 	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow:auto;
+ }
+ .lui_form_imissive .content .lui_tabpanel_frame{
+   position: absolute;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+}
+ 
+ .lui_form_imissive .content .lui_tabpanel_navs_l {
+ 	position: absolute;
+ 	left: 0;
+ 	right: 0;
+ 	top: 0;
+ }
+ 
+ .lui_form_imissive .content .lui_tabpanel_content_c {
+ 	position: absolute;
+ 	top: 38px;
+ 	bottom: 0;
+ 	left: 0;
+ 	right: 0;
+ 	z-index: 11;
+ 	background: #fff;
+ 	overflow: auto;
+ }
+ #barRightPanel{
+ 	height: 100%;
+ }
+ .bar-right,
+ .bar-right .lui_tabpanel_frame{
+ 	height: 100%;
+ }
+ 
+ .contentAttTb tr{
+ 	line-height: 30px;
+ }
+ .contentAttTb .attachment_list_tr .fileicon{
+ 	vertical-align:middle;
+ }
+ #attachment_content{
+ 	overflow:auto;
+ }
+ 
+ 
+ /* 公文查看页 End */

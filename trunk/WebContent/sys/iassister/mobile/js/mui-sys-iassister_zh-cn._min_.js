@@ -1,0 +1,1 @@
+define([],function(){return{"mui.dialog.more":"详情","mui.button.iassister":"智能检查","mui.dialog.more.link":"链接","mui.dialog.more.title":"检查结果","mui.dialog.more.pic":"图片","mui.dialog.more.text":"文本"}});

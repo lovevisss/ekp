@@ -1,0 +1,103 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveOpinionInQu",
+        "messageKey": "km-imissive:table.kmImissiveOpinionInQu",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmImissiveOpinionInQuService",
+        "table": "km_imissive_opinion_in_qu",
+        "url": "/km/imissive/km_imissive_opinion_in_qu/kmImissiveOpinionInQu.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        
+        "fdBizId":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveOpinionInQu.fdBizId",
+            "type": "String",
+            "column": "fd_biz_id",
+            "notNull": "false",
+            "length": "100",
+            "validate": "false",
+            "canSearch": "true"
+        },
+         "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveOpinionInQu.docSubject",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "false",
+            "length": "200",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdReqType":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveOpinionInQu.fdReqType",
+            "type": "String",
+            "column": "fd_req_type",
+            "notNull": "false",
+            "length": "100",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdDeliverType":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveOpinionInQu.fdDeliverType",
+            "type": "String",
+            "column": "fd_deliver_type",
+            "notNull": "false",
+            "length": "100",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdCenterCode":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveOpinionInQu.fdCenterCode",
+            "type": "String",
+            "column": "fd_center_code",
+            "notNull": "false",
+            "length": "200",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdStatus":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveOpinionInQu.fdStatus",
+            "type": "String",
+            "column": "fd_status",
+            "notNull": "false",
+            "length": "2",
+            "canDisplay": "true",
+            "enumType": "kmImissiveOpinionInQu_status"
+        },
+         "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time"
+        },
+        "fdErrorMsg":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveOpinionInQu.fdErrorMsg",
+            "type": "RTF",
+            "column": "fd_error_msg",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "false",
+            "canSearch": "true"
+        },
+        "fdErrorTimes":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveOpinionInQu.fdErrorTimes",
+            "type": "Integer",
+            "column": "fd_error_times",
+            "notNull": "false",
+            "length": "10",
+            "validate": "false",
+            "canSearch": "true"
+        }
+    }
+}

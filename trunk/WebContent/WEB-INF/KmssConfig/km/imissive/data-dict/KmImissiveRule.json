@@ -1,0 +1,102 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveRule",
+        "messageKey": "km-imissive:table.kmImissiveRule",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmImissiveRuleService",
+        "table": "km_imissive_rule",
+        "url": "/km/imissive/km_imissive_rule/kmImissiveRule.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveType.fdName",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdImissiveType":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveType.fdImissiveType",
+            "type": "String",
+            "column": "fd_imissive_type",
+            "notNull": "false"
+        },
+        "fdIsAvailable":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveType.fdIsAvailable",
+            "type": "Boolean",
+            "column": "fd_is_available",
+            "notNull": "false"
+        },
+        "fdAdditionRule":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveType.fdAdditionRule",
+            "type": "RTF",
+            "column": "fd_addition_rule",
+            "notNull": "false",
+            "length": "1000000"
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveType.fdOrder",
+            "type": "Integer",
+            "column": "fd_order",
+            "notNull": "false",
+            "length": "10"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveType.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveType.docCreateId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_creator_id",
+            "notNull": "false"
+        },
+        "fdNodeRule":         {
+            "propertyType": "simple",
+            "type": "RTF",
+            "messageKey": "km-imissive:kmImissiveType.fdNodeRule",
+            "column": "fd_node_rule",
+            "length": "1000000"
+        },
+        "fdNodeRuleText":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveType.fdNodeRuleText",
+            "type": "String",
+            "column": "fd_node_rule_text"
+        },
+        "fdAdditionRuleText":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveType.fdAdditionRuleText",
+            "column": "fd_addition_rule_text",
+            "length": "2000"
+        },
+        "authReaders":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.read.authReaders",
+            "type": "Boolean",
+            "column": "auth_readers"
+        },
+        "jobsElement":         {
+            "propertyType": "list",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_rule_id",
+            "messageKey": "km-imissive:kmImissiveType.jobsElement",
+            "elementColumn": "fd_rule_jobs_id",
+            "table": "km_imissive_rule_jobs"
+        }
+    }
+}

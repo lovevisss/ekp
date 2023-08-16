@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.km.carmng.model.KmCarmngUserFeeInfo"
+		table="km_carmng_user_fee_info">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+		<many-to-one
+			name="fdUser"
+			column="fd_user_id"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<many-to-one
+			name="fdApplicationDept"
+			column="fd_application_dept"
+			insert="true"
+			update="true" />
+		<property
+			name="fdFee"
+			column="fd_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<many-to-one
+			name="fdVehicles"
+			column="fd_vehicles_id"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdMileageNumber"
+			column="fd_mileage_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdStopFee"
+			column="fd_stop_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdTurnpikeFee"
+			column="fd_turnpike_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdFuelFee"
+			column="fd_fuel_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdOtherFee"
+			column="fd_other_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdCarwashFee"
+			column="fd_carwash_fee"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="fdUseStartTime"
+			column="fd_use_start_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdUseEndTime"
+			column="fd_use_end_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<many-to-one
+			name="kmDispatchersInfo"
+			column="fd_dispatchers_id"
+			update="true"
+			insert="true"
+			not-null="false" />
+	</class>
+</hibernate-mapping>

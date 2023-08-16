@@ -1,0 +1,1 @@
+define([],function(){return{"mobile.msg.note":"笔记","mobile.msg.additionEval":"追加评论","mobile.msg.packUpEval":"收起点评","mobile.msg.moreEval":"更多点评","mobile.confirm.delete.title":"删除","mobile.msg.publishedIn":"发表于","mobile.msg.deleteSuccess":"删除成功","mobile.msg.myEva":"我的点评","mobile.confirm.delete.content":"删除后无法恢复，请谨慎操作"}});

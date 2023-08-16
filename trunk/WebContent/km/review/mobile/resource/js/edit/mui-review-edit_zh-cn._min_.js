@@ -1,0 +1,1 @@
+define([],function(){return{"mui.kmReviewMain.mobile.info":"审批内容","mui.kmReviewMain.mobile.review":"流程操作"}});

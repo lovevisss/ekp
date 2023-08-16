@@ -1,0 +1,1854 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   <!-- RestService Controller -->
+    <bean id="kmImissiveRestController" class="com.landray.kmss.km.imissive.restservice.controller.KmImissiveRestController">
+    	<property name="kmImissiveRestService">
+			<ref bean="kmImissiveRestService" />
+		</property>
+		<property name="sysUnitAuthService">
+			<ref bean="sysUnitAuthService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveOffLineListener"
+		class="com.landray.kmss.km.imissive.listener.KmImissiveOffLineListener">
+	</bean>
+	<bean
+		id="kmImissiveSendOffLineListener"
+		class="com.landray.kmss.km.imissive.listener.KmImissiveSendOffLineListener">
+	</bean>
+	<bean
+		id="kmImissiveReceiveOffLineListener"
+		class="com.landray.kmss.km.imissive.listener.KmImissiveReceiveOffLineListener">
+	</bean>
+	<bean
+		id="kmImissiveSignOffLineListener"
+		class="com.landray.kmss.km.imissive.listener.KmImissiveSignOffLineListener">
+	</bean>
+	
+	 <bean 
+        id="kmImissiveFileConvertCallbackTarget" 
+        class="com.landray.kmss.km.imissive.service.spring.KmImissiveFileConvertCallbackServiceImp" 
+        parent="KmssBaseTarget">
+       <property name="sysFileConvertQueueService">
+			<ref bean="sysFileConvertQueueService" />
+		</property>
+		<property name="sysAttMainService">
+			<ref bean="sysAttMainService" />
+		</property>
+    </bean>
+	
+	<bean id="kmImissiveFileConvertCallbackService" 
+		  parent="sysFileConvertBaseService">
+    	<property name="target">
+			<ref bean="kmImissiveFileConvertCallbackTarget" />
+		</property>
+	</bean>
+
+	<bean id="kmImissiveMyDeptValidator" class="com.landray.kmss.km.imissive.service.spring.KmImissiveMyDeptValidator">
+	</bean>
+	<bean id="kmImissiveMyDeptSendValidator" class="com.landray.kmss.km.imissive.service.spring.KmImissiveMyDeptSendValidator">
+	</bean>
+	<bean id="kmImissiveMyDeptReceiveValidator" class="com.landray.kmss.km.imissive.service.spring.KmImissiveMyDeptReceiveValidator">
+	</bean>
+	<bean id="kmImissiveMyDeptSignValidator" class="com.landray.kmss.km.imissive.service.spring.KmImissiveMyDeptSignValidator">
+	</bean>
+	
+	<bean 
+        id="kmImissiveAuditNoteDao" 
+        class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveAuditNoteDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property  name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveAuditNote"></property>
+    </bean>
+    <bean 
+        id="kmImissiveAuditNoteTarget" 
+        class="com.landray.kmss.km.imissive.service.spring.KmImissiveAuditNoteServiceImp" 
+        parent="KmssBaseTarget">
+        <property 
+            name="baseDao">
+            <ref  bean="kmImissiveAuditNoteDao"/>
+        </property>
+		<property name="sysAttMainService">
+			<ref  bean="sysAttMainService"/>
+		</property>
+    </bean>
+    <bean 
+        id="kmImissiveAuditNoteService" 
+        parent="KmssBaseService">
+        <property  name="target">
+            <ref 
+                bean="kmImissiveAuditNoteTarget"/>
+        </property>
+    </bean>
+	
+	<bean 
+        id="kmImissiveRegDetailAuditNoteDao" 
+        class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveRegDetailAuditNoteDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property  name="modelName" value="com.landray.kmss.km.imissive.model.KmImissiveRegDetailAuditNote"></property>
+    </bean>
+    <bean 
+        id="kmImissiveRegDetailAuditNoteTarget" 
+        class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegDetailAuditNoteServiceImp" 
+        parent="KmssBaseTarget">
+        <property 
+            name="baseDao">
+            <ref  bean="kmImissiveRegDetailAuditNoteDao"/>
+        </property>
+		<property name="sysAttMainService">
+			<ref  bean="sysAttMainService"/>
+		</property>
+    </bean>
+    <bean 
+        id="kmImissiveRegDetailAuditNoteService" 
+        parent="KmssBaseService">
+        <property  name="target">
+            <ref 
+                bean="kmImissiveRegDetailAuditNoteTarget"/>
+        </property>
+    </bean>
+	
+    
+    <!-- 处理Rest请求 主Service -->
+    <bean id="kmImissiveRestService" class="com.landray.kmss.km.imissive.service.spring.KmImissiveRestServiceImp">
+    	<property name="kmImissiveRegDetailListService">
+			<ref bean="kmImissiveRegDetailListService" />
+		</property>
+		<property name="kmImissiveRegDetailListOuterService">
+			<ref bean="kmImissiveRegDetailListOuterService" />
+		</property>
+		<property name="kmImissiveReturnOpinionService">
+			<ref bean="kmImissiveReturnOpinionService" />
+		</property>
+		<property name="kmImissiveRegDetailListQuService">
+			<ref bean="kmImissiveRegDetailListQuService" />
+		</property>
+	</bean>
+  
+   <bean
+		id="kmImissiveSpreadAuthLogDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveSpreadAuthLogDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveSpreadAuthLog" />
+	</bean>
+	<bean
+		id="kmImissiveSpreadAuthLogTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSpreadAuthLogServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveSpreadAuthLogDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSpreadAuthLogService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveSpreadAuthLogTarget" />
+		</property>
+	</bean>
+   
+    <bean
+		id="kmImissiveTypeDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveTypeDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveType" />
+	</bean>
+	<bean
+		id="kmImissiveTypeTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveTypeServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveTypeDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveTypeService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveTypeTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveRuleDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveRuleDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveRule" />
+	</bean>
+	<bean
+		id="kmImissiveRuleTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRuleSeriveImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveRuleDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveRuleService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveRuleTarget" />
+		</property>
+	</bean>
+	
+    <!--文种菜单树-->
+	<bean
+		id="kmImissiveTypeTreeService"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveTypeTreeServiceImp">
+		<property
+			name="kmImissiveTypeService">
+			<ref
+				bean="kmImissiveTypeService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveRuleTreeService"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRuleTreeServiceImp">
+		<property
+			name="kmImissiveRuleService">
+			<ref
+				bean="kmImissiveRuleService" />
+		</property>
+	</bean>
+	 <bean
+		id="kmImissiveAttTrackDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveAttTrackDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveAttTrack" />
+	</bean>
+	<bean
+		id="kmImissiveAttTrackTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveAttTrackServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveAttTrackDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveAttTrackService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveAttTrackTarget" />
+		</property>
+	</bean>
+	
+	
+	<bean
+		id="kmImissiveNumberDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveNumberDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveNumber" />
+	</bean>
+	<bean
+		id="kmImissiveNumberTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveNumberServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveNumberDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveNumberService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveNumberTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="copy*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="init*">PROPAGATION_REQUIRED</prop>
+				<prop key="clone*">PROPAGATION_REQUIRED</prop>			
+				<prop key="getTempNumFromDb*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	<bean
+		id="kmImissiveNumberHistoryDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveNumberHistoryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveNumberHistory" />
+	</bean>
+	<bean
+		id="kmImissiveNumberHistoryTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveNumberHistoryServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveNumberHistoryDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveNumberHistoryService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveNumberHistoryTarget" />
+		</property>
+	</bean>
+	
+	
+	<bean
+		id="kmImissiveCfgTreeService"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveCfgTreeServiceImp">		
+		<property
+			name="kmImissiveTemplateCfgService">
+			<ref
+				bean="kmImissiveTemplateCfgService" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmImissiveSecretGradeDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveSecretGradeDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveSecretGrade" />
+	</bean>
+	<bean
+		id="kmImissiveSecretGradeTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSecretGradeServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveSecretGradeDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSecretGradeService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveSecretGradeTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmImissiveEmergencyGradeDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveEmergencyGradeDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveEmergencyGrade" />
+	</bean>
+	<bean
+		id="kmImissiveEmergencyGradeTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveEmergencyGradeServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveEmergencyGradeDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveEmergencyGradeService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveEmergencyGradeTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveTemplateDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveTemplateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveTemplate" />
+	</bean>
+	<bean
+		id="kmImissiveTemplateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveTemplateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveTemplateDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveTemplateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveTemplateTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSignTemplateDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveSignTemplateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveSignTemplate" />
+	</bean>
+	<bean
+		id="kmImissiveSignTemplateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSignTemplateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveSignTemplateDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSignTemplateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveSignTemplateTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSendTemplateDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveSendTemplateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveSendTemplate" />
+	</bean>
+	<bean
+		id="kmImissiveSendTemplateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSendTemplateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveSendTemplateDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSendTemplateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveSendTemplateTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveReceiveTemplateDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveReceiveTemplateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveReceiveTemplate" />
+	</bean>
+	<bean
+		id="kmImissiveReceiveTemplateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveReceiveTemplateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveReceiveTemplateDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveReceiveTemplateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveReceiveTemplateTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveTemplateCfgDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveTemplateCfgDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveTemplateCfg" />
+	</bean>
+	<bean
+		id="kmImissiveTemplateCfgTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveTemplateCfgServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveTemplateCfgDao" />
+		</property>
+		<property
+			name="kmImissiveSendMainService">
+			<ref
+				bean="kmImissiveSendMainService" />
+		</property>
+		<property
+			name="kmImissiveReceiveMainService">
+			<ref
+				bean="kmImissiveReceiveMainService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveTemplateCfgService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveTemplateCfgTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveRedHeadTemplateDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveRedHeadTemplateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveRedHeadTemplate" />
+	</bean>
+	<bean
+		id="kmImissiveRedHeadTemplateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRedHeadTemplateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveRedHeadTemplateDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveRedHeadTemplateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveRedHeadTemplateTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveSignRedHeadTemplateDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveSignRedHeadTemplateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveSignRedHeadTemplate" />
+	</bean>
+	<bean
+		id="kmImissiveSignRedHeadTemplateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSignRedHeadTemplateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveSignRedHeadTemplateDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSignRedHeadTemplateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveSignRedHeadTemplateTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveRegDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveRegDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveReg" />
+	</bean>
+	<bean
+		id="kmImissiveRegTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveRegDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveRegService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveRegTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveRegDetailListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveRegDetailListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveRegDetailList" />
+	</bean>
+	<bean
+		id="kmImissiveRegDetailListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegDetailListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveRegDetailListDao" />
+		</property>
+		<property
+			name="sysNotifyMainCoreService">
+			<ref
+				bean="sysNotifyMainCoreService" />
+		</property>
+		<property
+			name="kmImissiveRegService">
+			<ref
+				bean="kmImissiveRegService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveRegDetailListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveRegDetailListTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveRegDetailListOuterDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveRegDetailListOuterDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveRegDetailListOuter" />
+	</bean>
+	<bean
+		id="kmImissiveRegDetailListOuterTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegDetailListOuterServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveRegDetailListOuterDao" />
+		</property>
+		<property
+			name="sysNotifyMainCoreService">
+			<ref
+				bean="sysNotifyMainCoreService" />
+		</property>
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				bean="kmImissiveUnitService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveRegDetailListOuterService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveRegDetailListOuterTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveRegQuDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveRegQuDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveRegQu" />
+	</bean>
+	<bean
+		id="kmImissiveRegQuTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegQuServiceImp">
+		<property
+			name="baseDao">
+			<ref bean="kmImissiveRegQuDao" />
+		</property>
+		<property
+			name="kmImissiveRegService">
+			<ref bean="kmImissiveRegService" />
+		</property>
+		<property
+			name="kmImissiveSendMainService">
+			<ref bean="kmImissiveSendMainService" />
+		</property>
+		<property
+			name="kmImissiveReceiveMainService">
+			<ref bean="kmImissiveReceiveMainService" />
+		</property>
+		<property name="kmImissiveRestService">
+			<ref bean="kmImissiveRestService" />
+		</property>
+		<property
+			name="kmImissiveRegDetailListService">
+			<ref bean="kmImissiveRegDetailListService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveRegQuService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveRegQuTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveRegQuLogDetailDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveRegQuLogDetailDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveRegQuLogDetail" />
+	</bean>
+	<bean
+		id="kmImissiveRegQuLogDetailTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegQuLogDetailServiceImp">
+		<property
+			name="baseDao">
+			<ref bean="kmImissiveRegQuLogDetailDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveRegQuLogDetailService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveRegQuLogDetailTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveOpinionInQuDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveOpinionInQuDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveOpinionInQu" />
+	</bean>
+	<bean
+		id="kmImissiveOpinionInQuTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveOpinionInQuServiceImp">
+		<property
+			name="baseDao">
+			<ref bean="kmImissiveOpinionInQuDao" />
+		</property>
+		<property name="kmImissiveRegDetailOpinionService">
+			<ref bean="kmImissiveRegDetailOpinionService" />
+		</property>
+		<property name="kmImissiveReturnOpinionService">
+			<ref bean="kmImissiveReturnOpinionService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveOpinionInQuService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveOpinionInQuTarget" />
+		</property>
+	</bean>
+	
+	
+	<bean
+		id="kmImissiveOpinionOutQuDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveOpinionOutQuDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveOpinionOutQu" />
+	</bean>
+	<bean
+		id="kmImissiveOpinionOutQuTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveOpinionOutQuServiceImp">
+		<property
+			name="baseDao">
+			<ref bean="kmImissiveOpinionOutQuDao" />
+		</property>
+		<property name="kmImissiveRestService">
+			<ref bean="kmImissiveRestService" />
+		</property>
+		<property name="kmImissiveRegDetailOpinionService">
+			<ref bean="kmImissiveRegDetailOpinionService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveOpinionOutQuService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveOpinionOutQuTarget" />
+		</property>
+	</bean>
+	
+	
+	<bean
+		id="kmImissiveRegDetailListQuDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveRegDetailListQuDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveRegDetailListQu" />
+	</bean>
+	<bean
+		id="kmImissiveRegDetailListQuTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegDetailListQuServiceImp">
+		<property
+			name="baseDao">
+			<ref bean="kmImissiveRegDetailListQuDao" />
+		</property>
+		<property name="kmImissiveRegDetailListOuterService">
+			<ref bean="kmImissiveRegDetailListOuterService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveRegDetailListQuService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveRegDetailListQuTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveMainDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveMainDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveMain" />
+	</bean>
+	<bean
+		id="kmImissiveMainTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveMainServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveMainDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveMainService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveMainTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmImissiveSendMainDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveSendMainDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveSendMain" />
+	</bean>
+	<bean
+		id="kmImissiveSendMainTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSendMainServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveSendMainDao" />
+		</property>
+		<property
+			name="sysNotifyMainCoreService">
+			<ref
+				bean="sysNotifyMainCoreService" />
+		</property>
+		<property
+			name="sysOrgElementService">
+			<ref
+				bean="sysOrgElementService" />
+		</property>
+		<property
+			name="kmImissiveSendTemplateService">
+			<ref
+				bean="kmImissiveSendTemplateService" />
+		</property>
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				bean="kmImissiveUnitService" />
+		</property>
+		<property
+			name="kmImissiveNumberService">
+			<ref
+				bean="kmImissiveNumberService" />
+		</property>
+		<property
+			name="kmImissiveUnitCategoryService">
+			<ref
+				bean="kmImissiveUnitCategoryService" />
+		</property>
+		<property name="sysNumberFlowService">
+			<ref bean="sysNumberFlowService"/>
+		</property>
+		<property
+			name="kmImissiveRegService">
+			<ref
+				bean="kmImissiveRegService" />
+		</property>
+		<property
+			name="kmImissiveRegDetailListService">
+			<ref
+				bean="kmImissiveRegDetailListService" />
+		</property>
+		<property name="kmImissiveRegDetailListOuterService">
+			<ref bean="kmImissiveRegDetailListOuterService" />
+		</property>
+		<property
+			name="kmImissiveReturnOpinionService">
+			<ref
+				bean="kmImissiveReturnOpinionService" />
+		</property>
+		<property name="processExecuteService" ref="lbpmProcessExecuteService" />
+		<property name="roleService">
+			<ref bean="sysAuthRoleService" />
+		</property>
+		<property name="kmsMultidocSubsideService">
+			<ref bean="kmsMultidocSubsideService"/>
+		</property>
+		<property name="sysWfProcessSubService">
+            <ref bean="sysWfProcessSubService"/>
+        </property>
+        <property name="wpsThreadPool">
+			<ref bean="wpsThreadPool" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSendMainService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveSendMainTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="copy*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="init*">PROPAGATION_REQUIRED</prop>
+				<prop key="clone*">PROPAGATION_REQUIRED</prop>			
+				<prop key="redirectAfterValidateUrl*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+
+    <!-- 内部请示 -->
+    <bean
+		id="kmImissiveSignMainDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveSignMainDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveSignMain" />
+	</bean>
+	<bean
+		id="kmImissiveSignMainTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSignMainServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveSignMainDao" />
+		</property>
+		<property
+			name="kmImissiveSignTemplateService">
+			<ref
+				bean="kmImissiveSignTemplateService" />
+		</property>
+		<property
+			name="kmImissiveNumberService">
+			<ref
+				bean="kmImissiveNumberService" />
+		</property>
+		<property
+			name="sysNumberFlowService">
+			<ref
+				bean="sysNumberFlowService" />
+		</property>
+		<property
+			name="sysAttachmentService">
+			<ref
+				bean="sysAttachmentService" />
+		</property>
+		<property name="kmsMultidocSubsideService">
+			<ref bean="kmsMultidocSubsideService"/>
+		</property>
+		<property name="sysWfProcessSubService">
+            <ref bean="sysWfProcessSubService"/>
+        </property>
+		<property name="wpsThreadPool">
+			<ref bean="wpsThreadPool" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSignMainService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveSignMainTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmImissiveReceiveMainDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveReceiveMainDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveReceiveMain" />
+	</bean>
+	<bean
+		id="kmImissiveReceiveMainTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveReceiveMainServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveReceiveMainDao" />
+		</property>
+		<!-- 注入sysNotifyMainCoreService -->
+		<property
+			name="sysNotifyMainCoreService">
+			<ref
+				bean="sysNotifyMainCoreService" />
+		</property>
+		<property
+			name="kmImissiveReceiveTemplateService">
+			<ref
+				bean="kmImissiveReceiveTemplateService" />
+		</property>
+		<property
+			name="sysNumberFlowService">
+			<ref
+				bean="sysNumberFlowService" />
+		</property>
+		<property
+			name="detailListService">
+			<ref
+				bean="kmImissiveRegDetailListService" />
+		</property>
+		<property
+			name="kmImissiveRegDetailListOuterService">
+			<ref
+				bean="kmImissiveRegDetailListOuterService" />
+		</property>
+		<property
+			name="kmImissiveRegService">
+			<ref
+				bean="kmImissiveRegService" />
+		</property>
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				bean="kmImissiveUnitService" />
+		</property>
+		<property
+			name="kmImissiveNumberService">
+			<ref
+				bean="kmImissiveNumberService" />
+		</property>
+		<property
+			name="kmImissiveUnitCategoryService">
+			<ref
+				bean="kmImissiveUnitCategoryService" />
+		</property>
+	    <!-- 操作服务 -->		
+		<property
+			name="processExecuteService">
+			<ref
+				bean="lbpmProcessExecuteService" />
+		</property>
+		<!-- 流程服务 -->		
+		<property
+			name="lbpmProcessService">
+			<ref
+				bean="lbpmProcessService" />
+		</property>
+		<!-- 表单模板 -->		
+		<property
+			name="sysFormTemplateService">
+			<ref
+				bean="sysFormTemplateService" />
+		</property>
+		<property name="roleService">
+			<ref bean="sysAuthRoleService" />
+		</property>
+		<property name="kmsMultidocSubsideService">
+			<ref bean="kmsMultidocSubsideService"/>
+		</property>
+		<property name="sysWfProcessSubService">
+            <ref bean="sysWfProcessSubService"/>
+        </property>
+		<property name="wpsThreadPool">
+			<ref bean="wpsThreadPool" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveReceiveMainService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveReceiveMainTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="copy*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="init*">PROPAGATION_REQUIRED</prop>
+				<prop key="clone*">PROPAGATION_REQUIRED</prop>			
+				<prop key="redirectAfterValidateUrl*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveRegDetailOpinionDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveRegDetailOpinionDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveRegDetailOpinion" />
+	</bean>
+	<bean
+		id="kmImissiveRegDetailOpinionTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegDetailOpinionServiceImp">
+		<property name="baseDao">
+			<ref bean="kmImissiveRegDetailOpinionDao" />
+		</property>
+		<property name="kmImissiveRegDetailListService">
+			<ref bean="kmImissiveRegDetailListService" />
+		</property>
+		<property name="kmImissiveRegDetailListOuterService">
+			<ref bean="kmImissiveRegDetailListOuterService" />
+		</property>
+		<property name="kmImissiveReceiveMainService">
+			<ref bean="kmImissiveReceiveMainService" />
+		</property>
+		<property name="kmImissiveRegDetailAuditNoteService">
+			<ref bean="kmImissiveRegDetailAuditNoteService" />
+		</property>
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveRegDetailOpinionService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveRegDetailOpinionTarget" />
+		</property>
+	</bean>
+	
+	
+	
+	<bean
+		id="kmImissiveReturnOpinionDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveReturnOpinionDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveReturnOpinion" />
+	</bean>
+	<bean
+		id="kmImissiveReturnOpinionTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveReturnOpinionServiceImp">
+		<property name="baseDao">
+			<ref bean="kmImissiveReturnOpinionDao" />
+		</property>
+		<property name="kmImissiveRegDetailListService">
+			<ref bean="kmImissiveRegDetailListService" />
+		</property>
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+		<property name="kmImissiveAuditNoteService">
+			<ref bean="kmImissiveAuditNoteService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveReturnOpinionService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveReturnOpinionTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveModifyRecordDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveModifyRecordDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveModifyRecord" />
+	</bean>
+	<bean
+		id="kmImissiveModifyRecordTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveModifyRecordServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveModifyRecordDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveModifyRecordService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveModifyRecordTarget" />
+		</property>
+	</bean>
+	
+	<!-- 网页签章 -->
+	<bean
+		id="kmImissiveSignatureDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveSignatureDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveSignature" />
+	</bean>
+	<bean
+		id="kmImissiveSignatureTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSignatureServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveSignatureDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSignatureService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveSignatureTarget" />
+		</property>
+	</bean>
+	<!-- 机器人服务 -->
+	<bean id="kmImissiveSendRobotTarget"
+		  class="com.landray.kmss.km.imissive.service.spring.KmImissiveSendRobotService">
+		  <property name="kmImissiveSendMainService" ref="kmImissiveSendMainService" />
+		  <property name="kmImissiveReturnOpinionService" ref="kmImissiveReturnOpinionService" />
+		  <property name="kmImissiveRegDetailListService" ref="kmImissiveRegDetailListService" />
+		  <property name="kmImissiveReceiveMainService" ref="kmImissiveReceiveMainService" />
+	</bean>
+	<bean id="kmImissiveSendRobotService" parent="KmssBaseService">
+		  <property name="target">
+				<ref bean="kmImissiveSendRobotTarget" />
+		  </property>
+	</bean>
+	<!-- 激活操作 -->
+	<bean id="imissiveActiveSignOperationBehaviour"
+		class="com.landray.kmss.km.imissive.operation.ImissiveActiveSignOperationBehaviour">
+	</bean>
+	<bean id="imissiveActiveSignOperationBinder"
+		class="com.landray.kmss.km.imissive.operation.ImissiveActiveSignOperationBinder">
+	</bean>
+	
+	
+	<!-- 征求意见机器人 -->
+	<bean id="kmImissiveSendAdviceRobotTarget"
+		  class="com.landray.kmss.km.imissive.service.spring.KmImissiveSendAdviceRobotService">
+		  <property name="kmImissiveSendMainService" ref="kmImissiveSendMainService" />
+		  <property name="kmImissiveReceiveTemplateService" ref="kmImissiveReceiveTemplateService" />
+		  <property name="sysQuartzCoreService">
+			<ref bean="sysQuartzCoreService" />
+		  </property>
+	</bean>
+	<bean id="kmImissiveSendAdviceRobotService" parent="KmssBaseService">
+		  <property name="target">
+				<ref bean="kmImissiveSendAdviceRobotTarget" />
+		  </property>
+	</bean>
+	<!-- 激活操作 -->
+	<bean id="imissiveActiveAdviceOperationBehaviour"
+		class="com.landray.kmss.km.imissive.operation.ImissiveActiveAdviceOperationBehaviour">
+	</bean>
+	<bean id="imissiveActiveAdviceOperationBinder"
+		class="com.landray.kmss.km.imissive.operation.ImissiveActiveAdviceOperationBinder">
+	</bean>
+	
+	<!-- 系统废弃操作 -->
+	<bean id="imissiveSystemAbandanOperationBehaviour"
+		class="com.landray.kmss.km.imissive.operation.ImissiveSystemAbandonOperationBehaviour">
+	</bean>
+	<bean id="imissiveSystemAbandanOperationBinder"
+		class="com.landray.kmss.km.imissive.operation.ImissiveSystemAbandonOperationBinder">
+	</bean>
+	<bean
+		id="sysAttTrackValidator"
+		class="com.landray.kmss.km.imissive.service.spring.SysAttTrackValidator">
+		<property name="kmImissiveSendMainService">
+			<ref bean="kmImissiveSendMainService" />
+		</property>
+	</bean>
+	<bean
+		id="sysAttTrackValidator2"
+		class="com.landray.kmss.km.imissive.service.spring.SysAttTrackValidator2">
+		<property name="kmImissiveAttTrackService">
+			<ref bean="kmImissiveAttTrackService" />
+		</property>
+	</bean>
+	<bean
+		id="kmReadSendOpinionValidator"
+		class="com.landray.kmss.km.imissive.service.spring.KmReadSendOpinionValidator">
+		<property name="kmImissiveReceiveMainService">
+			<ref bean="kmImissiveReceiveMainService" />
+		</property>
+		<property name="kmImissiveSendMainService">
+			<ref bean="kmImissiveSendMainService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmReadSendOpinionAdviceValidator"
+		class="com.landray.kmss.km.imissive.service.spring.KmReadSendOpinionAdviceValidator">
+		<property name="kmImissiveReceiveMainService">
+			<ref bean="kmImissiveReceiveMainService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveDRValidator"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveDRValidator">
+		<property name="kmImissiveReceiveMainService">
+			<ref bean="kmImissiveReceiveMainService" />
+		</property>
+		<property name="kmImissiveSendMainService">
+			<ref bean="kmImissiveSendMainService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveSignValidator"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSignValidator">
+		<property name="kmImissiveRegDetailListService">
+			<ref bean="kmImissiveRegDetailListService" />
+		</property>
+		<property name="kmImissiveRegDetailListOuterService">
+			<ref bean="kmImissiveRegDetailListOuterService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveChange2SendValidator"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveChange2SendValidator">
+		<property name="kmImissiveReceiveMainService">
+			<ref bean="kmImissiveReceiveMainService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveChange2ReceiveValidator"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveChange2ReceiveValidator">
+		<property name="kmImissiveReceiveMainService">
+			<ref bean="kmImissiveReceiveMainService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmReadMissiveOpinionValidator"
+		class="com.landray.kmss.km.imissive.service.spring.KmReadMissiveOpinionValidator">
+		<property name="kmImissiveRegDetailListService">
+			<ref bean="kmImissiveRegDetailListService" />
+		</property>		
+	</bean>
+	
+	<bean
+		id="kmImissiveReturnOpinionValidator"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveReturnOpinionValidator">
+		<property name="kmImissiveRegDetailListService">
+			<ref bean="kmImissiveRegDetailListService" />
+		</property>
+		<property name="kmImissiveRegDetailListOuterService">
+			<ref bean="kmImissiveRegDetailListOuterService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveRegDetailOpinionValidator"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegDetailOpinionValidator">
+		<property name="kmImissiveRegDetailListOuterService">
+			<ref bean="kmImissiveRegDetailListOuterService" />
+		</property>
+	</bean>
+
+	<bean id="kmImissiveSendTemplateTreeService"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSendTemplateTreeService">
+		<property name="kmImissiveSendTemplateService">
+			<ref bean="kmImissiveSendTemplateService" />
+		</property>
+	</bean>
+	<bean id="kmImissiveReceiveTemplateTreeService"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveReceiveTemplateTreeService">
+		<property name="kmImissiveReceiveTemplateService">
+			<ref bean="kmImissiveReceiveTemplateService" />
+		</property>
+	</bean>
+	<bean id="kmImissiveSignTemplateTreeService"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSignTemplateTreeService">
+		<property name="kmImissiveSignTemplateService">
+			<ref bean="kmImissiveSignTemplateService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSendMainPortlet"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSendMainPortlet">
+		<property
+			name="kmImissiveSendMainService">
+			<ref
+				bean="kmImissiveSendMainService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveReceiveMainPortlet"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveReceiveMainPortlet">
+		<property
+			name="kmImissiveReceiveMainService">
+			<ref
+				bean="kmImissiveReceiveMainService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSignMainPortlet"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSignMainPortlet">
+		<property
+			name="kmImissiveSignMainService">
+			<ref
+				bean="kmImissiveSignMainService" />
+		</property>
+	</bean>
+	<bean id="kmImissiveDraftValidator" class="com.landray.kmss.km.imissive.service.spring.KmImissiveDraftValidator">
+		<property name="lbpmAuditNoteService">
+			<ref bean="lbpmAuditNoteService" />
+		</property>
+	</bean>
+	<bean id="kmReturnAuthFieldValidator"
+		class="com.landray.kmss.km.imissive.auth.KmReturnAuthFieldValidator">
+		<property
+			name="kmImissiveReceiveMainService">
+			<ref
+				bean="kmImissiveReceiveMainService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSendDaoProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property
+			name="beanNames">
+			<value>kmImissiveSendMainDao</value>
+		</property>
+		<property
+			name="interceptorNames">
+			<list>
+				<value>luceneCreateAdvisor</value>
+				<value>luceneSaveAdvisor</value>
+				<value>luceneDeleteAdvisor</value>
+				<value>docKeyWriteAdvice</value>
+			</list>
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveReceiveDaoProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property
+			name="beanNames">
+			<value>kmImissiveReceiveMainDao</value>
+		</property>
+		<property
+			name="interceptorNames">
+			<list>
+				<value>luceneCreateAdvisor</value>
+				<value>luceneSaveAdvisor</value>
+				<value>luceneDeleteAdvisor</value>
+				<value>docKeyWriteAdvice</value>
+			</list>
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveSignDaoProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property
+			name="beanNames">
+			<value>kmImissiveSignMainDao</value>
+		</property>
+		<property
+			name="interceptorNames">
+			<list>
+				<value>luceneCreateAdvisor</value>
+				<value>luceneSaveAdvisor</value>
+				<value>luceneDeleteAdvisor</value>
+				<value>docKeyWriteAdvice</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveDeadLineConfigDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveDeadLineConfigDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveDeadLineConfig" />
+	</bean>
+	<bean
+		id="kmImissiveDeadLineConfigTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveDeadLineConfigServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveDeadLineConfigDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveDeadLineConfigService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveDeadLineConfigTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveDeadLineConfigDetailDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveDeadLineConfigDetailDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveDeadLineConfigDetail" />
+	</bean>
+	<bean
+		id="kmImissiveDeadLineConfigDetailTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveDeadLineConfigDetailServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				bean="kmImissiveDeadLineConfigDetailDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveDeadLineConfigDetailService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				bean="kmImissiveDeadLineConfigDetailTarget" />
+		</property>
+	</bean>
+	
+	<bean id="kmImissiveStatDao" 
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveStatDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveStat" />
+	</bean>
+	<bean id="kmImissiveStatTarget" 
+   		parent="KmssBaseTarget"
+   		class="com.landray.kmss.km.imissive.service.spring.KmImissiveStatServiceImp">
+		<property name="baseDao">
+			<ref bean="kmImissiveStatDao" />
+		</property>
+	</bean>
+	<bean id="kmImissiveStatService" 
+  		parent="KmssBaseService">
+		<property name="target">
+			<ref bean="kmImissiveStatTarget"/>
+		</property>
+	</bean>
+
+	<bean id="kmImissiveReceiveStatDao"
+		  parent="KmssAuthBaseDao"
+		  class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveReceiveStatDaoImp">
+		<property
+				name="modelName"
+				value="com.landray.kmss.km.imissive.model.KmImissiveStat" />
+	</bean>
+	<bean id="kmImissiveReceiveStatTarget"
+		  parent="KmssBaseTarget"
+		  class="com.landray.kmss.km.imissive.service.spring.KmImissiveReceiveStatServiceImp">
+		<property name="baseDao">
+			<ref bean="kmImissiveReceiveStatDao" />
+		</property>
+	</bean>
+	<bean id="kmImissiveReceiveStatService"
+		  parent="KmssBaseService">
+		<property name="target">
+			<ref bean="kmImissiveReceiveStatTarget"/>
+		</property>
+	</bean>
+	
+	<bean id="kmImissiveStatTypeExecutor" 
+		  class="com.landray.kmss.km.imissive.service.stat.executor.KmImissiveStatTypeExecutor">
+		<property name="baseDao">
+			<ref bean="KmssBaseDao" />
+		</property>
+	</bean>
+	<bean id="kmImissiveStatDeliverExecutor" 
+		  class="com.landray.kmss.km.imissive.service.stat.executor.KmImissiveStatDeliverExecutor">
+		<property name="baseDao">
+			<ref bean="KmssBaseDao" />
+		</property>
+	</bean>
+	<bean id="kmImissiveStatTrendExecutor" 
+		  class="com.landray.kmss.km.imissive.service.stat.executor.KmImissiveStatTrendExecutor">
+		<property name="baseDao">
+			<ref bean="KmssBaseDao" />
+		</property>
+	</bean>
+	
+	<bean id="kmImissiveXformDataService"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveXformDataServiceImp">
+	</bean>
+	<bean
+		id="kmImissiveArchivesAutoFileListener"
+		class="com.landray.kmss.km.imissive.listener.KmImissiveArchivesAutoFileListener">
+	</bean>
+	
+	<bean
+		id="kmImissiveSubsideAutoFileListener"
+		class="com.landray.kmss.km.imissive.listener.KmImissiveSubsideAutoFileListener">
+	</bean>
+	
+	<bean id="kmImissiveRegDetailListAttValidator" class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegDetailListAttValidator">
+		<property name="kmImissiveRegDetailListOuterService">
+        	<ref bean="kmImissiveRegDetailListOuterService"/>
+        </property>
+        <property name="sysAttMainService">
+        	<ref bean="sysAttMainService"/>
+        </property>
+        <property name="sysOrgCoreService">
+        	<ref bean="sysOrgCoreService"/>
+        </property>
+	</bean>
+	
+	<bean id="kmImissiveYqqSignService" class="com.landray.kmss.km.imissive.service.spring.KmImissiveYqqSignServiceImp"></bean>
+	
+	<bean id="kmImissiveReceiveYqqSignService" class="com.landray.kmss.km.imissive.service.spring.KmImissiveReceiveYqqSignServiceImp"></bean>
+	
+	<bean id="kmImissiveSignYqqSignService" class="com.landray.kmss.km.imissive.service.spring.KmImissiveSignYqqSignServiceImp"></bean>
+	
+
+	<!--书生签章-->
+	<bean id="kmImissiveSsSignService" class="com.landray.kmss.km.imissive.service.spring.KmImissiveSsSignServiceImp"></bean>
+	<bean id="kmImissiveSursenSignController" class="com.landray.kmss.km.imissive.controller.KmImissiveSursenSignController"/>
+
+	<bean
+		id="kmImissiveOutSignDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveOutSignDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveOutSign" />
+	</bean>
+	<bean
+		id="kmImissiveOutSignTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveOutSignServiceImp">
+		<property name="baseDao">
+			<ref bean="kmImissiveOutSignDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveOutSignService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref bean="kmImissiveOutSignTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="handleSign">PROPAGATION_REQUIRED</prop>
+				<prop key="copy*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="init*">PROPAGATION_REQUIRED</prop>
+				<prop key="clone*">PROPAGATION_REQUIRED</prop>			
+				<prop key="redirectAfterValidateUrl*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="kmImissiveReturnOpinionAttValidator" class="com.landray.kmss.km.imissive.service.spring.KmImissiveReturnOpinionAttValidator">
+		<property name="kmImissiveReturnOpinionService">
+        	<ref bean="kmImissiveReturnOpinionService"/>
+        </property>
+        <property name="kmImissiveRegDetailListService">
+        	<ref bean="kmImissiveRegDetailListService"/>
+        </property>
+        <property name="sysAttMainService">
+        	<ref bean="sysAttMainService"/>
+        </property>
+	</bean>
+	
+	
+	 <!-- 线程池 -->
+	<bean id="wpsThreadPool" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="20" />
+		<property name="maxPoolSize" value="50" />
+		<property name="keepAliveSeconds" value="200" />
+		<property name="queueCapacity" value="250" />
+		<property name="rejectedExecutionHandler">
+			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />
+		</property>
+	</bean>
+	
+	
+	<bean
+		id="kmImissiveSignKeyDao"
+		parent="KmssBaseDao"
+		class="com.landray.kmss.km.imissive.dao.hibernate.KmImissiveSignKeyDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.imissive.model.KmImissiveSignKey" />
+	</bean>
+    <bean
+		id="kmImissiveSignKeyTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.imissive.service.spring.KmImissiveSignKeyServiceImp">
+		<property name="baseDao">
+			<ref bean="kmImissiveSignKeyDao" />
+		</property>
+	</bean>
+    <bean
+		id="kmImissiveSignKeyService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref bean="kmImissiveSignKeyTarget" />
+		</property>
+	</bean>
+	
+	<bean id="kmImissiveRegAttValidator" class="com.landray.kmss.km.imissive.service.spring.KmImissiveRegAttValidator">
+		<property name="kmImissiveRegService">
+        	<ref bean="kmImissiveRegService"/>
+        </property>
+        <property name="sysOrgCoreService">
+        	<ref bean="sysOrgCoreService"/>
+        </property>
+        <property name="sysAttMainService">
+        	<ref bean="sysAttMainService"/>
+        </property>
+	</bean>
+
+	<bean id="kmImissivePrivilegerValidator" class="com.landray.kmss.km.imissive.service.spring.KmImissivePrivilegerValidator">
+	</bean>
+
+	<bean id="kmImissiveEqbSignService" class="com.landray.kmss.km.imissive.service.spring.KmImissiveEqbSignServiceImp">
+	</bean>
+	
+	<!-- 启用 业务权限、意见类型 provider -->
+	<bean id="kmImissiveLbpmSwitchProvider" class="com.landray.kmss.km.imissive.provider.KmImissiveLbpmSwitchProvider">
+	</bean>
+	<!-- JgOfdSign签章 -->
+	<bean id="kmImissiveJgOfdSignController" class="com.landray.kmss.km.imissive.controller.KmImissiveJgOfdSignController"/>
+
+	<bean id="kmImissiveConvertService" class="com.landray.kmss.km.imissive.service.spring.KmImissiveConvertServiceImp" />
+
+	<bean id="surreadProviderService" class="com.landray.kmss.km.imissive.service.spring.SurreadProviderServiceImp">
+		<property name="sysAttMainService">
+			<ref bean="sysAttMainService"/>
+		</property>
+	</bean>
+
+	<!--js合并压缩扩展点-->
+	<bean id="kmImissiveCompressExecutor"
+		  class="com.landray.kmss.km.imissive.service.spring.KmImissiveCompressExecutor">
+	</bean>
+</beans>

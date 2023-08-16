@@ -1,0 +1,161 @@
+{
+	"data": [
+	{
+		"fdName" : "公文管理政务版主页面",
+		"fdUrl" : "/km/imissive"
+	},
+	{
+		"fdName" : "公文库-发文",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistAll%2Fsend"
+	},
+	{
+		"fdName" : "公文库-收文",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistAll%2Freceive"
+	},
+	{
+		"fdName" : "公文库-签报",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistAll%2Fsign"
+	},
+	{
+		"fdName" : "交换库-我分发的",
+		"fdUrl" : "/km/imissive/#j_path=%2Fexchange%2Fmydistribute"
+	},
+	{
+		"fdName" : "交换库-我上报的",
+		"fdUrl" : "/km/imissive/#j_path=%2Fexchange%2Fmyreport"
+	},
+	{
+		"fdName" : "交换库-我会签的",
+		"fdUrl" : "/km/imissive/#j_path=%2Fexchange%2Fmysign"
+	},
+	{
+		"fdName" : "交换库-我接收的（内部）",
+		"fdUrl" : "km/imissive/#j_path=%2Fexchange%2Fmyreceive"
+	},
+	{
+		"fdName" : "交换库-我接收的（交换）",
+		"fdUrl" : "/km/imissive/#j_path=%2Fexchange%2Fmyreceiveout"
+	},
+	{
+		"fdName" : "我拟稿的发文",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistCreate%2Fsend&mydoc=create"
+	},
+	{
+		"fdName" : "我拟稿的收文",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistCreate%2Freceive&mydoc=create"
+	},
+	{
+		"fdName" : "我拟稿的签报",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistCreate%2Fsign&mydoc=create"
+	},
+	{
+		"fdName" : "待我审的发文",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistApproval%2Fsend&mydoc=approval"
+	},
+	{
+		"fdName" : "待我审的收文",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistApproval%2Freceive&mydoc=approval"
+	},
+	{
+		"fdName" : "待我审的签报",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistApproval%2Fsign&mydoc=approval"
+	},
+	
+	{
+		"fdName" : "我已审的发文",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistApproved%2Fsend&mydoc=approved"
+	},
+	{
+		"fdName" : "我已审的收文",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistApproved%2Freceive&mydoc=approved"
+	},
+	{
+		"fdName" : "我已审的签报",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistApproved%2Fsign&mydoc=approved"
+	},
+	{
+		"fdName" : "公文工作台",
+		"fdUrl" : "/km/imissive/#j_path=%2FmyWorkbench"
+	},
+	{
+		"fdName" : "发文拟稿",
+		"fdUrl" : "/km/imissive/#j_path=%2FcreateSend"
+	},
+	{
+		"fdName" : "待办发文",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistApprovalSend&mydoc=approvalSend"
+	},
+	{
+		"fdName" : "发文查询",
+		"fdUrl" : "/km/imissive/#j_path=%2FsearchSend"
+	},
+	{
+		"fdName" : "发文库",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistAllSend"
+	},
+	{
+		"fdName" : "收文登记",
+		"fdUrl" : "/km/imissive/#j_path=%2FcreateReceive"
+	},
+	{
+		"fdName" : "待办收文",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistApprovalReceive&mydoc=approvalReceive"
+	},
+	{
+		"fdName" : "收文查询",
+		"fdUrl" : "/km/imissive/#j_path=%2FsearchReceive"
+	},
+	{
+		"fdName" : "收文库",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistAllReceive"
+	},
+	{
+		"fdName" : "签报拟稿",
+		"fdUrl" : "/km/imissive/#j_path=%2FcreateSign"
+	},
+	{
+		"fdName" : "待办签报",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistApprovalSign&mydoc=approvalSign"
+	},
+	{
+		"fdName" : "签报查询",
+		"fdUrl" : "/km/imissive/#j_path=%2FsearchSign"
+	},
+	{
+		"fdName" : "签报库",
+		"fdUrl" : "/km/imissive/#j_path=%2FlistAllSign"
+	},
+	{
+		"fdName" : "我分发的",
+		"fdUrl" : "/km/imissive/#j_path=%2Fmydistribute"
+	},
+	{
+		"fdName" : "我上报的",
+		"fdUrl" : "/km/imissive/#j_path=%2Fmyreport"
+	},
+	{
+		"fdName" : "我会签的",
+		"fdUrl" : "/km/imissive/#j_path=%2Fmysign"
+	},
+	{
+		"fdName" : "我接收的",
+		"fdUrl" : "/km/imissive/#j_path=%2Fmyreceive"
+	},
+	{
+		"fdName" : "发文统计概览",
+		"fdUrl" : "/km/imissive/#j_path=%2Fpreview"
+	},
+	{
+		"fdName" : "公文收发分析",
+		"fdUrl" : "/km/imissive/#j_path=%2Fdeliver&type=2"
+	},
+	{
+		"fdName" : "公文趋势分析",
+		"fdUrl" : "/km/imissive/#j_path=%2Ftrend&type=3"
+	},
+	{
+		"fdName" : "公文文种分析",
+		"fdUrl" : "/km/imissive/#j_path=%2Ftype&type=1"
+	}
+	]
+}

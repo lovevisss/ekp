@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.km.carmng.model.KmCarmngInfomation"
+		table="km_carmng_infomation">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+		<property
+			name="fdNo"
+			column="fd_no"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="docSubject"
+			column="doc_subject"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdSeatNumber"
+			column="fd_seat_number"
+			update="true"
+			insert="true"
+			not-null="false" />
+		
+		<property
+			name="fdCardParameter"
+			column="fd_card_parameter"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdDriverId"
+			column="fd_driver_id"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="36" />
+		<property
+			name="fdDriverName"
+			column="fd_driver_name"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdFuelStandard"
+			column="fd_fuel_standard"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="10" />
+		<property
+			name="fdBuyTime"
+			column="fd_buy_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdAnnuaCheckTime"
+			column="fd_annua_check_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdAnnuaCheckFrequency"
+			column="fd_annua_check_frequency"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property 
+			name="fdUnit"
+			update="true"
+	        insert="true"
+	        not-null="true"
+	        length="1">
+        <column name="fd_unit" default="'1'"/>
+		</property>
+			
+		<property
+			name="fdInsutanceTime"
+			column="fd_insutance_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdInsutanceComputer"
+			column="fd_insutance_computer"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="500" />
+		<property
+			name="fdPassageMoney"
+			column="fd_passage_money"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdYearlongTicket"
+			column="fd_yearlong_ticket"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdRelationPhone"
+			column="fd_relation_phone"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="docStatus"
+			column="doc_status"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2" />
+		<property
+			name="fdRemark"
+			column="fd_remark"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="docCreateTime"
+			column="doc_create_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdIsNotify"
+			column="fd_is_notify"
+			update="true"
+			insert="true"
+			length="1"
+			not-null="false" />
+		<property
+			name="fdNotifyBeforeDay"
+			column="fd_notify_before_day"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="10" />
+		<property
+			name="fdVin"
+			column="fd_vin"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="30" />
+		<property
+			name="fdEngineNumber"
+			column="fd_engine_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="50" />
+		<property
+			name="fdLastModifiedTime"
+			column="fd_last_modified_time"
+			update="true"
+			insert="true"/>
+		<many-to-one
+			name="docCreator"
+			column="doc_creator_id"
+			update="true"
+			insert="true"></many-to-one>
+		<many-to-one
+			name="fdMotorcade"
+			column="fd_motorcade_id"
+			update="true"
+			insert="true"></many-to-one>
+		<many-to-one
+			name="fdVehichesType"
+			column="fd_vehiches_type"
+			update="true"
+			insert="true"></many-to-one>
+			
+		<many-to-one 
+			name="fdSysDriver"
+			column="fd_sys_driver_id"
+			update="true"
+			insert="true"
+			not-null="false"></many-to-one>
+		<bag
+			name="fdNotifyPersons"
+			table="km_carmng_info_notify"
+			lazy="true">
+			<key column="fd_carmng_info_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="fd_notify_person_id" />
+				</bag>
+	</class>
+</hibernate-mapping>

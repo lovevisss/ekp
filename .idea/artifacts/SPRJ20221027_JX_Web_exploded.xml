@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SPRJ20221027_JX:Web exploded">
+    <output-path>$PROJECT_DIR$/trunk/WebContent</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SPRJ20221027_JX/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SPRJ20221027_JX" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

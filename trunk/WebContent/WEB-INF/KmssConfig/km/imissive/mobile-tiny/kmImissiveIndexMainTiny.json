@@ -1,0 +1,9 @@
+{
+	"id": "kmImissiveIndexMainTiny",
+	"title": "公文政务版二级首页",
+	"desc": "公文政务版二级首页个性文件",
+	"jsList": [
+	    "/km/imissive/mobile/module/js/",
+	    "!{chart}"
+	]
+}

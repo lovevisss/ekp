@@ -1,0 +1,160 @@
+{
+	"data": [
+	{
+		"fdName" : "会议管理主页面",
+		"fdUrl" : "/km/imeeting"
+	},
+	{
+		"fdName" : "会议室新建页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_res/kmImeetingRes.do?method=add"
+	},
+	{
+		"fdName" : "会议室编辑页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_res/kmImeetingRes.do?method=edit"
+	},
+	{
+		"fdName" : "会议室查看页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_res/kmImeetingRes.do?method=view"
+	},
+	{
+		"fdName" : "会议安排新建页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_main/kmImeetingMain.do?method=add"
+	},
+	{
+		"fdName" : "会议安排编辑页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_main/kmImeetingMain.do?method=edit"
+	},
+	{
+		"fdName" : "会议安排查看页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_main/kmImeetingMain.do?method=view"
+	},
+	{
+		"fdName" : "会议回执页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_main_feedback/kmImeetingMainFeedback.do?method=edit"
+	},
+	{
+		"fdName" : "座席安排新建页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_seat_plan/kmImeetingSeatPlan.do?method=add"
+	},
+	{
+		"fdName" : "座席安排编辑页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_seat_plan/kmImeetingSeatPlan.do?method=edit"
+	},
+	{
+		"fdName" : "座席安排查看页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_seat_plan/kmImeetingSeatPlan.do?method=view"
+	},
+	{
+		"fdName" : "上会材料编辑页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_main/kmImeetingMain.do?method=editUpdateAtt"
+	},
+	{
+		"fdName" : "上会材料查看页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_main/kmImeetingMain.do?method=viewUpdateAtt"
+	},
+	{
+		"fdName" : "会议变更页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_main/kmImeetingMain.do?method=changeMeeting"
+	},
+	{
+		"fdName" : "会议纪要新建页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_summary/kmImeetingSummary.do?method=add"
+	},
+	{
+		"fdName" : "会议纪要编辑页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_summary/kmImeetingSummary.do?method=edit"
+	},
+	{
+		"fdName" : "会议纪要查看页面",
+		"fdUrl" : "/km/imeeting/km_imeeting_summary/kmImeetingSummary.do?method=view"
+	},
+	{
+		"fdName" : "议题类别设置",
+		"fdUrl" : "/sys/simplecategory/sys_simple_category/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.imeeting.model.KmImeetingTopicCategory&actionUrl=/km/imeeting/km_imeeting_topic_category/kmImeetingTopicCategory.do&formName=kmImeetingTopicCategoryForm&mainModelName=com.landray.kmss.km.imeeting.model.KmImeetingTopic&docFkName=kmImeetingTopicCategory"
+	},
+	{
+		"fdName" : "会议类别设置",
+		"fdUrl" : "/sys/category/sys_category_main/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.imeeting.model.KmImeetingTemplate&mainModelName=com.landray.kmss.km.imeeting.model.KmImeetingMain&categoryName=docCategory&templateName=fdTemplate&authReaderNoteFlag=2"
+	},
+	{
+		"fdName" : "卡片库",
+		"fdUrl" : "/km/imeeting/km_imeeting_template/index.jsp"
+	},
+	{
+		"fdName" : "议题通用流程模板",
+		"fdUrl" : "/sys/lbpmservice/support/lbpm_template/index.jsp?fdModelName=com.landray.kmss.km.imeeting.model.KmImeetingTopicCategory&fdKey=mainTopic"
+	},
+	{
+		"fdName" : "会议安排流程模板",
+		"fdUrl" : "/sys/lbpmservice/support/lbpm_template/index.jsp?fdModelName=com.landray.kmss.km.imeeting.model.KmImeetingTemplate&fdKey=ImeetingMain"
+	},
+	{
+		"fdName" : "会议纪要流程模板",
+		"fdUrl" : "/sys/lbpmservice/support/lbpm_template/index.jsp?fdModelName=com.landray.kmss.km.imeeting.model.KmImeetingTemplate&fdKey=ImeetingSummary"
+	},
+	{
+		"fdName" : "议题通用编号规则",
+		"fdUrl" : "/sys/number/sys_number_main/index.jsp?modelName=com.landray.kmss.km.imeeting.model.KmImeetingTopic"
+	},
+	{
+		"fdName" : "通用编号规则",
+		"fdUrl" : "/sys/number/sys_number_main/index.jsp?modelName=com.landray.kmss.km.imeeting.model.KmImeetingMain"
+	},
+	{
+		"fdName" : "参数设置",
+		"fdUrl" : "/sys/appconfig/sys_appconfig/sysAppConfig.do?method=edit&modelName=com.landray.kmss.km.imeeting.model.KmImeetingConfig"
+	},
+	{
+		"fdName" : "座席模板设置",
+		"fdUrl" : "/km/imeeting/km_imeeting_seat_template/index.jsp"
+	},
+	{
+		"fdName" : "会议安排列表显示设置",
+		"fdUrl" : "/sys/profile/listShow/sys_listshow_category/index.jsp?modelName=com.landray.kmss.km.imeeting.model.KmImeetingMain"
+	},
+	{
+		"fdName" : "会议纪要列表显示设置",
+		"fdUrl" : "/sys/profile/listShow/sys_listshow_category/index.jsp?modelName=com.landray.kmss.km.imeeting.model.KmImeetingSummary"
+	},
+	{
+		"fdName" : "会议议题列表显示设置",
+		"fdUrl" : "/sys/profile/listShow/sys_listshow_category/index.jsp?modelName=com.landray.kmss.km.imeeting.model.KmImeetingTopic"
+	},
+	{
+		"fdName" : "会议室分类",
+		"fdUrl" : "/sys/simplecategory/sys_simple_category/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.imeeting.model.KmImeetingResCategory&actionUrl=/km/imeeting/km_imeeting_res_category/kmImeetingResCategory.do&formName=kmImeetingResCategoryForm&mainModelName=com.landray.kmss.km.imeeting.model.KmImeetingRes&docFkName=docCategory"
+	},
+	{
+		"fdName" : "会议室信息",
+		"fdUrl" : "/km/imeeting/km_imeeting_res/index.jsp"
+	},
+	{
+		"fdName" : "会议辅助设备",
+		"fdUrl" : "/km/imeeting/km_imeeting_equipment/index.jsp"
+	},
+	{
+		"fdName" : "会议辅助服务",
+		"fdUrl" : "/km/imeeting/km_imeeting_device/index.jsp"
+	},
+	{
+		"fdName" : "会议室查询",
+		"fdUrl" : "/km/imeeting/km_imeeting_res/index_listuse.jsp"
+	},
+	{
+		"fdName" : "会议安排文档维护",
+		"fdUrl" : "/km/imeeting/km_imeeting_main/kmImeetingMain_manageList.jsp"
+	},
+	{
+		"fdName" : "会议纪要文档维护",
+		"fdUrl" : "/km/imeeting/km_imeeting_summary/kmImeetingSummary_manageList.jsp"
+	},
+	{
+		"fdName" : "会议议题文档维护",
+		"fdUrl" : "/km/imeeting/km_imeeting_topic/kmImeetingTopic_manageList.jsp"
+	},
+	{
+		"fdName" : "会议预约文档维护",
+		"fdUrl" : "/km/imeeting/km_imeeting_book/index.jsp"
+	}
+	]
+}

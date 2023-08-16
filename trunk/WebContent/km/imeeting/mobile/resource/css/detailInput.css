@@ -1,0 +1,6 @@
+@charset "UTF-8";
+/* #136709 该单最佳方案为公共组件修改，先暂时这么处理*/
+.detailTableSimple .muiFormStatusEdit input {
+	user-select: text;
+	-webkit-user-select: text;
+}

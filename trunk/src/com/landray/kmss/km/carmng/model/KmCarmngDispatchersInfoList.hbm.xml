@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList"
+		table="km_carmng_dispatchers_infolist">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+		<property
+			name="fdCarInfoName"
+			column="fd_carinfo_name"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdVehichesTypeId"
+			column="fd_vehichestype_id"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="36" />
+		<property
+			name="fdVehichesTypeName"
+			column="fd_vehichestype_name"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdCarInfoNo"
+			column="fd_carinfo_no"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdDriverId"
+			column="fd_driver_id"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="36" />
+		<property
+			name="fdDriverName"
+			column="fd_driver_name"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		
+		<property
+			name="fdRelationPhone"
+			column="fd_relation_phone"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdCarInfoSeatNumber"
+			column="fd_carinfo_seatnum"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="36" />
+		<property
+			name="fdMotorcadeId"
+			column="fd_motorcade_id"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="36" />
+		<property
+			name="fdMotorcadeName"
+			column="fd_motorcade_name"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdFlag"
+			column="fd_flag"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<many-to-one 
+			name="fdSysDriver"
+			column="fd_sys_driver_id"
+			update="true"
+			insert="true"
+			not-null="false"/>
+		<property
+			name="fdRegisterId"
+			column="fd_register_id"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="36" />	
+		<many-to-one
+			name="fdDispatchersInfo"
+			column="fd_dispatchers_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+		<one-to-one
+			name="fdRegisterInfo"
+			class="com.landray.kmss.km.carmng.model.KmCarmngRegisterInfo"
+			property-ref="fdDispatchInfoList" cascade="delete">
+		</one-to-one>
+		<many-to-one
+			name="fdCarInfo"
+			column="fd_carinfo_id"
+			update="true"
+			insert="true"
+			not-null="false" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,49 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveModifyRecord",
+        "messageKey": "km-imissive:table.kmImissiveModifyRecord",
+        "serviceBean": "kmImissiveModifyRecordService",
+        "table": "km_imissive_modify_record",
+        "url": "/km/imissive/km_imissive_modify_record/kmImissiveModifyRecord.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docContent":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveModifyRecord.docContent",
+            "type": "String",
+            "column": "doc_content",
+            "length": "1500",
+            "notNull": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveModifyRecord.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time"
+        },
+        "fdImissiveId":         {
+            "propertyType": "simple",
+            "type": "String",
+            "messageKey": "km-imissive:kmImissiveModifyRecord.fdImissiveId",
+            "column": "fd_imissive_id",
+            "length": "36"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_type",
+            "messageKey": "km-imissive:kmImissiveModifyRecord.fdType",
+            "length": "50"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveModifyRecord.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_create_id"
+        }
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.imissive.model.KmImissiveSpreadAuthLog",
+        "messageKey": "km-imissive:table.kmImissiveSpreadAuthLog",
+        "serviceBean": "kmImissiveSpreadAuthLogService",
+        "table": "km_imissive_spreadauth_log"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdMainId":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveSpreadAuthLog.fdMainId",
+            "type": "String",
+            "column": "fd_main_id",
+            "length": "36"
+        },
+        "fdMainModelName":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveSpreadAuthLog.fdMainModelName",
+            "type": "String",
+            "column": "fd_main_model_name",
+            "length": "200"
+        },
+        "fdMainSubject":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveSpreadAuthLog.fdMainSubject",
+            "type": "String",
+            "column": "fd_main_subject",
+            "length": "200"
+        },
+        "fdRelationDocId":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveSpreadAuthLog.fdRelationDocId",
+            "type": "String",
+            "column": "fd_relation_doc_id",
+            "length": "200"
+        },
+        "fdRelationDocModelName":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveSpreadAuthLog.fdRelationDocModelName",
+            "type": "String",
+            "column": "fd_relation_doc_model_name",
+            "length": "200"
+        },
+        "fdRelationSubject":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveSpreadAuthLog.fdRelationSubject",
+            "type": "String",
+            "column": "fd_relation_doc_subject",
+            "length": "200",
+            "notNull": "true"
+        },
+        "fdAuthOpener":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveSpreadAuthLog.fdAuthOpener",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_auth_opener_id",
+            "notNull": "true"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-imissive:kmImissiveSpreadAuthLog.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id",
+            "notNull": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-imissive:kmImissiveSpreadAuthLog.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "true"
+        }
+    }
+}
