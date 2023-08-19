@@ -552,7 +552,15 @@
 		cronExpression="0 0 2 * * ?"
 		jobMethod="synMobile"
 		description="km-carmng:kmCarmng.quartz2.description"/>
-		
+
+	<!--	定时人员同步-->
+	<quartz
+		messageKey="km-carmng:kmCarmng.quartz3"
+		jobService="kmCarmngHrQuartzService"
+		cronExpression="0 0 1 * * ?"
+		jobMethod="runHrsync"
+		description="km-carmng:kmCarmng.quartz3.description"/>
+
 	<search
 		modelName="com.landray.kmss.km.carmng.model.KmCarmngApplication"
 		messageKey="km-carmng:kmCarmngApplication.search"

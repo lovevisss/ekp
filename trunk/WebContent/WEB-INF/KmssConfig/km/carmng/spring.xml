@@ -462,6 +462,15 @@
 			<ref bean="sysNotifyMainCoreService" />
 		</property>
 	</bean>
+<!--	KmCarmngHrQuartzServiceImp-->
+	<bean id="KmCarmngHrQuartz"
+		  class="com.landray.kmss.km.carmng.service.spring.KmCarmngHrQuartzServiceImp">
+		<property name="sysOrgElementService">
+			<ref bean="sysOrgElementService" />
+		</property>
+
+	</bean>
+
 	<bean
 		id="kmCarmngApplicationDaoProxyCreator"
 		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">

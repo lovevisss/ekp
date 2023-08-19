@@ -9,7 +9,18 @@ import com.landray.kmss.sys.organization.service.ISysOrgElementService;
 import com.landray.kmss.sys.quartz.interfaces.SysQuartzJobContext;
 
 public class KmCarmngQuartzServiceImp implements IKmCarmngQuartzService {
-
+//	<property name="kmCarmngDispatchersInfoService">
+//			<ref bean="kmCarmngDispatchersInfoService" />
+//		</property>
+//		<property name="kmCarmngDriversInfoService">
+//			<ref bean="kmCarmngDriversInfoService" />
+//		</property>
+//		<property name="kmCarmngInfomationService">
+//			<ref bean="kmCarmngInfomationService" />
+//		</property>
+//		<property name="sysOrgElementService">
+//			<ref bean="sysOrgElementService" />
+//		</property>
 	private IKmCarmngDispatchersInfoService kmCarmngDispatchersInfoService;
 
 	private IKmCarmngDriversInfoService kmCarmngDriversInfoService;

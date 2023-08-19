@@ -9,11 +9,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ebad2d5-0773-4459-be67-b61ff25fefba" name="Changes" comment="" />
+    <list default="true" id="8ebad2d5-0773-4459-be67-b61ff25fefba" name="Changes" comment="add comment 2">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/KmCarmngHrQuartzService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/spring/KmCarmngHrQuartzServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPRJ20221027_JX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SPRJ20221027_JX.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/km/carmng/design.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/km/carmng/design.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/km/carmng/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/km/carmng/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/ApplicationResources.properties" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/ApplicationResources.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/spring/KmCarmngQuartzServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/spring/KmCarmngQuartzServiceImp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="da8a9dc2499ef237871fd597eb13cdc858c5c0a5" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -23,6 +51,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="2U3wD27uXU85EyQ0RAwx7BF8vwd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -30,16 +59,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/idea-landray/SPRJ20221027_JX/trunk/WebContent/WEB-INF/KmssConfig",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/tomcat8/lib",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15527344",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "File.Encoding",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -60,6 +92,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="d96c08f5-a62c-422a-950d-931a8d977e75" />
+        <option name="HTTP_PORT" value="8080" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -149,11 +182,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1692181448284</updated>
-      <workItem from="1692181449382" duration="1287000" />
+      <workItem from="1692181449382" duration="6259000" />
+      <workItem from="1692418551972" duration="6137000" />
     </task>
+    <task id="LOCAL-00001" summary="add comment">
+      <created>1692186171236</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692186171236</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add comment 2">
+      <created>1692186493226</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692186493226</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add comment" />
+    <MESSAGE value="add comment 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="add comment 2" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
