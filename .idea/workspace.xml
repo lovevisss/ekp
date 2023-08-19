@@ -9,18 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ebad2d5-0773-4459-be67-b61ff25fefba" name="Changes" comment="add comment 2">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/KmCarmngHrQuartzService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/spring/KmCarmngHrQuartzServiceImp.java" afterDir="false" />
+    <list default="true" id="8ebad2d5-0773-4459-be67-b61ff25fefba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/sys/util/SyncUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPRJ20221027_JX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SPRJ20221027_JX.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/km/carmng/design.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/km/carmng/design.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/km/carmng/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/km/carmng/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/ApplicationResources.properties" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/ApplicationResources.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/spring/KmCarmngQuartzServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/spring/KmCarmngQuartzServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Apply._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Apply._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Apply_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Apply_zh-cn._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/CarInfo._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/CarInfo._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/CarInfo_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/CarInfo_zh-cn._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Dispatch._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Dispatch._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/DispatchInfo._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/DispatchInfo._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/DispatchInfo_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/DispatchInfo_zh-cn._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Dispatch_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Dispatch_zh-cn._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Index._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Index._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Index_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Index_zh-cn._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/mui-carmng-list_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/mui-carmng-list_zh-cn._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/spring/KmCarmngHrQuartzServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/spring/KmCarmngHrQuartzServiceImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +187,7 @@
       <option name="presentableId" value="Default" />
       <updated>1692181448284</updated>
       <workItem from="1692181449382" duration="6259000" />
-      <workItem from="1692418551972" duration="6137000" />
+      <workItem from="1692418551972" duration="16761000" />
     </task>
     <task id="LOCAL-00001" summary="add comment">
       <created>1692186171236</created>
@@ -199,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692186493226</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加人员同步  测试1">
+      <created>1692432295956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692432295956</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +219,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add comment" />
     <MESSAGE value="add comment 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="add comment 2" />
+    <MESSAGE value="添加人员同步  测试1" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加人员同步  测试1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

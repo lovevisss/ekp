@@ -463,7 +463,7 @@
 		</property>
 	</bean>
 <!--	KmCarmngHrQuartzServiceImp-->
-	<bean id="KmCarmngHrQuartz"
+	<bean id="kmCarmngHrQuartzService"
 		  class="com.landray.kmss.km.carmng.service.spring.KmCarmngHrQuartzServiceImp">
 		<property name="sysOrgElementService">
 			<ref bean="sysOrgElementService" />
