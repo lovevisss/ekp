@@ -11,6 +11,14 @@
         </webroots>
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring" removed="false">
+          <dependency>web springmvc servlet context</dependency>
+          <file>file://$MODULE_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/trunk/WebContent/WEB-INF/classes" />

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean
+            id="HrSyncService"
+            class="com.landray.kmss.group.sync.service.spring.HrSyncService">
+        <property name="sysOrgElementService">
+            <ref bean="sysOrgElementService" />
+        </property>
+<!--        <property name="deptService"-->
+<!--                  ref="sysOrgDeptService"/>-->
+<!--        <property name="personService"-->
+<!--                  ref="sysOrgPersonService"/>-->
+<!--        <property name="orgService"-->
+<!--                  ref="sysOrgOrgService"/>-->
+    </bean>
+
+<!--    <bean-->
+<!--            id="beglAttendSyncZkecoproService"-->
+<!--            class="com.landray.kmss.attendance.sync.service.impl.BeglAttendSyncZkecoproServiceImpl">-->
+<!--        <property name="sysAttendWebService"-->
+<!--                  ref="sysAttendWebService"/>-->
+<!--    </bean>-->
+
+</beans>

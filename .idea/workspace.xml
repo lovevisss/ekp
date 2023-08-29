@@ -10,20 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ebad2d5-0773-4459-be67-b61ff25fefba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/sys/util/SyncUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/design.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/ApplicationResources.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/config/GroupSyncConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/constant/BeglGroupConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/IHrSyncService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/HrSyncService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/km/carmng/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/km/carmng/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Apply._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Apply._min_.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Apply_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Apply_zh-cn._min_.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/CarInfo._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/CarInfo._min_.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/CarInfo_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/CarInfo_zh-cn._min_.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Dispatch._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Dispatch._min_.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/DispatchInfo._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/DispatchInfo._min_.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/DispatchInfo_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/DispatchInfo_zh-cn._min_.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Dispatch_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Dispatch_zh-cn._min_.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Index._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Index._min_.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Index_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/Index_zh-cn._min_.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/mui-carmng-list_zh-cn._min_.js" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/km/carmng/mobile/js/mui-carmng-list_zh-cn._min_.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPRJ20221027_JX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SPRJ20221027_JX.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/spring/KmCarmngHrQuartzServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/km/carmng/service/spring/KmCarmngHrQuartzServiceImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +31,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="spring-beans.schema" />
       </list>
     </option>
   </component>
@@ -72,16 +68,20 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15527344",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "File.Encoding",
+    "spring.configuration.checksum": "d41d8cd98f00b204e9800998ecf8427e",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\idea-landray\SPRJ20221027_JX\trunk\WebContent\WEB-INF\KmssConfig" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\idea-landray\SPRJ20221027_JX\trunk\src\com\landray\kmss\sync" />
     </key>
   </component>
   <component name="RunManager">
@@ -187,7 +187,8 @@
       <option name="presentableId" value="Default" />
       <updated>1692181448284</updated>
       <workItem from="1692181449382" duration="6259000" />
-      <workItem from="1692418551972" duration="16761000" />
+      <workItem from="1692418551972" duration="17996000" />
+      <workItem from="1693217422241" duration="15727000" />
     </task>
     <task id="LOCAL-00001" summary="add comment">
       <created>1692186171236</created>
@@ -210,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692432295956</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加人员同步  fix  改为单条同步">
+      <created>1692483215057</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1692483215057</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +228,8 @@
     <MESSAGE value="add comment" />
     <MESSAGE value="add comment 2" />
     <MESSAGE value="添加人员同步  测试1" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加人员同步  测试1" />
+    <MESSAGE value="添加人员同步  fix  改为单条同步" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加人员同步  fix  改为单条同步" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

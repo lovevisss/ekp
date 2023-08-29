@@ -1,12 +1,11 @@
-package com.landray.kmss.km.carmng.service.spring;
+package com.landray.kmss.group.sync.service.spring;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.landray.kmss.common.dao.HQLInfo;
-import com.landray.kmss.common.model.BaseModel;
 import com.landray.kmss.component.dbop.model.CompDbcp;
 import com.landray.kmss.component.dbop.service.ICompDbcpService;
 import com.landray.kmss.component.dbop.util.CompDbcpUtil;
-import com.landray.kmss.km.carmng.service.KmCarmngHrQuartzService;
+import com.landray.kmss.group.sync.service.IHrSyncService;
 import com.landray.kmss.sys.organization.model.SysOrgElement;
 import com.landray.kmss.sys.organization.service.ISysOrgElementService;
 import com.landray.kmss.sys.quartz.interfaces.SysQuartzJobContext;
@@ -19,13 +18,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-import static com.landray.kmss.sys.util.SyncUtils.*;
+import static com.landray.kmss.sys.util.SyncUtils.invokeSingleApi;
 
-public class KmCarmngHrQuartzServiceImp implements KmCarmngHrQuartzService {
-
+public class HrSyncService implements IHrSyncService {
     private ISysOrgElementService sysOrgElementService;
     @Override
-    public void runHrsync(SysQuartzJobContext jobContext) throws Exception {
+    public void HrSync(SysQuartzJobContext jobContext) throws Exception {
         try{
             jobContext.logMessage("开始同步人员信息");
             HQLInfo hqlInfo = new HQLInfo();
@@ -45,22 +43,33 @@ public class KmCarmngHrQuartzServiceImp implements KmCarmngHrQuartzService {
                     .getCompDbcpByName("mmall");
 
 
-            String sql = "";
-            Connection con = getConnection(baseModel);
-            Statement stmt = con.createStatement();
-//            rs = stmt.executeUpdate(sql);
+
+//            jobContext.logMessage("执行sql语句:" + sql);
+
 
 
             for (SysOrgElement staff : lsstaff) {
 
                 jobContext.logMessage("同步人员信息" + staff.getFdName());
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("ProductID",staff.getFdId());
-                jsonObject.put("Description",staff.getFdOrgType());
-                jsonObject.put("Price",staff.getFdOrgType());
-                jsonObject.put("Quantity",staff.getFdOrgType());
-                jsonObject.put("Name",staff.getFdName());
-                invokeSingleApi(jsonObject,"http://127.0.0.1:8000/products");
+
+                String sql = "insert into hr_info values('" + staff.getFdId()+ "','"
+                        + staff.getFdName()+ "','"
+                        + staff.getFdName()+ "','"
+                        + "role"  + "','"
+                        + "嘉兴国投')";
+
+                jobContext.logMessage("执行sql语句:" + sql);
+                Connection con = getConnection(baseModel);
+                Statement stmt = con.createStatement();
+                int rs = stmt.executeUpdate(sql);
+
+//                JSONObject jsonObject = new JSONObject();
+//                jsonObject.put("ProductID",staff.getFdId());
+//                jsonObject.put("Description",staff.getFdOrgType());
+//                jsonObject.put("Price",staff.getFdOrgType());
+//                jsonObject.put("Quantity",staff.getFdOrgType());
+//                jsonObject.put("Name",staff.getFdName());
+//                invokeSingleApi(jsonObject,"http://127.0.0.1:8000/products");
             }
 //            invokeApi(personListToJsonArray((List<SysOrgElement>) lsstaff, true), "http://127.0.0.1:8000/products");
         } catch (Exception e){
@@ -85,6 +94,5 @@ public class KmCarmngHrQuartzServiceImp implements KmCarmngHrQuartzService {
         this.sysOrgElementService = sysOrgElementService;
 
     }
-
 
 }
