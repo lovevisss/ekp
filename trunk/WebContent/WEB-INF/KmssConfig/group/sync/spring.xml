@@ -7,15 +7,15 @@
     <bean
             id="HrSyncService"
             class="com.landray.kmss.group.sync.service.spring.HrSyncService">
+        <property name="hrStaffPersonInfoService">
+            <ref bean="hrStaffPersonInfoService" />
+        </property>
+        <property name="hrStaffPersonExperienceContractService">
+                <ref bean="hrStaffPersonExperienceContractService" />
+        </property>
         <property name="sysOrgElementService">
             <ref bean="sysOrgElementService" />
         </property>
-<!--        <property name="deptService"-->
-<!--                  ref="sysOrgDeptService"/>-->
-<!--        <property name="personService"-->
-<!--                  ref="sysOrgPersonService"/>-->
-<!--        <property name="orgService"-->
-<!--                  ref="sysOrgOrgService"/>-->
     </bean>
 
 <!--    <bean-->
