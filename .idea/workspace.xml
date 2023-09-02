@@ -10,13 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ebad2d5-0773-4459-be67-b61ff25fefba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/Contract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/WorkStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/IBonusPunishService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/BounsPunishSyncService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/sys/util/DBsourceUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/LandrayV16.license" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/LandrayV16.license" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/design.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/design.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/ApplicationResources.properties" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/ApplicationResources.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/constant/BeglGroupConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/constant/BeglGroupConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/HrSyncService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/HrSyncService.java" afterDir="false" />
     </list>
@@ -28,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="spring-beans.schema" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -241,7 +241,7 @@
       <workItem from="1693366269048" duration="1222000" />
       <workItem from="1693470448206" duration="10320000" />
       <workItem from="1693540265884" duration="24671000" />
-      <workItem from="1693582014261" duration="2763000" />
+      <workItem from="1693582014261" duration="11309000" />
     </task>
     <task id="LOCAL-00001" summary="add comment">
       <created>1692186171236</created>
@@ -278,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693289867935</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="HR_PERSON 定时任务">
+      <created>1693613705100</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1693613705100</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +297,8 @@
     <MESSAGE value="添加人员同步  测试1" />
     <MESSAGE value="添加人员同步  fix  改为单条同步" />
     <MESSAGE value="定时任务 独立  对接sql数据库写入" />
-    <option name="LAST_COMMIT_MESSAGE" value="定时任务 独立  对接sql数据库写入" />
+    <MESSAGE value="HR_PERSON 定时任务" />
+    <option name="LAST_COMMIT_MESSAGE" value="HR_PERSON 定时任务" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

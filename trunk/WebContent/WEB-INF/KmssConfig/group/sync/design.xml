@@ -11,6 +11,13 @@
             messageKey="group-sync:organisational.sync"
             jobMethod="HrSync"/>
 
+    <!--奖惩同步到人事定时任务-->
+    <quartz
+            cronExpression="0 0 5 * * ?"
+            jobService="BonusPunishSyncService"
+            messageKey="group-sync:bonus.sync"
+            jobMethod="BonusPunishSync"/>
+
     <!--考勤记录同步到EKP定时任务-->
 <!--    <quartz-->
 <!--            cronExpression="0 0 4 * * ?"-->

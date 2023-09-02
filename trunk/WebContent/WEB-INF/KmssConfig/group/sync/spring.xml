@@ -18,6 +18,14 @@
         </property>
     </bean>
 
+    <bean
+            id="BonusPunishSyncService"
+            class="com.landray.kmss.group.sync.service.spring.BounsPunishSyncService">
+        <property name="hrStaffPersonExperienceBonusMalusService">
+            <ref bean="hrStaffPersonExperienceBonusMalusService" />
+        </property>
+    </bean>
+
 <!--    <bean-->
 <!--            id="beglAttendSyncZkecoproService"-->
 <!--            class="com.landray.kmss.attendance.sync.service.impl.BeglAttendSyncZkecoproServiceImpl">-->

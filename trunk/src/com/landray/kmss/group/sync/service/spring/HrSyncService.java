@@ -3,7 +3,6 @@ package com.landray.kmss.group.sync.service.spring;
 import DBstep.iDBManager2000;
 import com.landray.kmss.common.dao.HQLInfo;
 import com.landray.kmss.component.dbop.model.CompDbcp;
-import com.landray.kmss.component.dbop.service.ICompDbcpService;
 import com.landray.kmss.component.dbop.util.CompDbcpUtil;
 import com.landray.kmss.group.sync.model.Contract;
 import com.landray.kmss.group.sync.model.Department;
@@ -12,9 +11,9 @@ import com.landray.kmss.hr.staff.model.HrStaffPersonExperienceContract;
 import com.landray.kmss.hr.staff.model.HrStaffPersonInfo;
 import com.landray.kmss.hr.staff.service.IHrStaffPersonExperienceContractService;
 import com.landray.kmss.hr.staff.service.IHrStaffPersonInfoService;
-import com.landray.kmss.sys.organization.model.SysOrgElement;
 import com.landray.kmss.sys.organization.service.ISysOrgElementService;
 import com.landray.kmss.sys.quartz.interfaces.SysQuartzJobContext;
+import com.landray.kmss.sys.util.DBsourceUtils;
 import com.landray.kmss.util.ClassUtils;
 import com.landray.kmss.util.SpringBeanUtil;
 
@@ -25,6 +24,8 @@ import java.util.Map;
 
 import static com.landray.kmss.group.sync.constant.BeglGroupConstant.AGREEMENTTYPE;
 import static com.landray.kmss.group.sync.constant.BeglGroupConstant.WORK_STATUS_MAP;
+import static com.landray.kmss.sys.util.DBsourceUtils.getConnection;
+import static com.landray.kmss.sys.util.DBsourceUtils.prepareSQL;
 
 public class HrSyncService implements IHrSyncService {
 //    引入hrStaffPersonInfo表
@@ -35,7 +36,7 @@ public class HrSyncService implements IHrSyncService {
     private HrStaffPersonExperienceContract contractinfo = null;
     private Contract contract = new Contract();
     private Department department = new Department();
-    private SysOrgElement sysorg = null;
+    private Map<String, Object> sqlmap = new HashMap<>();
 
 
     iDBManager2000 iDBManager2000 = new iDBManager2000();
@@ -43,7 +44,7 @@ public class HrSyncService implements IHrSyncService {
     @Override
     public void HrSync(SysQuartzJobContext jobContext) throws Exception {
         try{
-            jobContext.logMessage("开始同步人员信息");
+            jobContext.logMessage("开始同步HR_PERSON人员信息");
             HQLInfo hqlInfo = new HQLInfo();
 //            String where = "fdIsAvailable = 1";
 //            hqlInfo.setWhereBlock(where);
@@ -55,11 +56,7 @@ public class HrSyncService implements IHrSyncService {
             this.hrStaffPersonExperienceContractService = (IHrStaffPersonExperienceContractService) SpringBeanUtil.getBean("hrStaffPersonExperienceContractService");
 //            获取sysOrgElementService
             this.sysOrgElementService = (ISysOrgElementService) SpringBeanUtil.getBean("sysOrgElementService");
-            //获取第三方数据库
-            ICompDbcpService compDbcpService = (ICompDbcpService) SpringBeanUtil
-                    .getBean("compDbcpService");
-            CompDbcp baseModel = (CompDbcp) compDbcpService
-                    .getCompDbcpByName("mmall");
+            CompDbcp baseModel  = DBsourceUtils.getDBSource("mmall");
 
 //            jobContext.logMessage("执行sql语句:" + sql);
             for (HrStaffPersonInfo staff : hrStaffPersonInfoServiceList) {
@@ -67,7 +64,9 @@ public class HrSyncService implements IHrSyncService {
                 getSysOrg(jobContext, staff);
                 jobContext.logMessage("同步人员业务信息表HR_PERSON" + staff.getFdName());
                 //write a sql check if the staff.getFdId() id exist in database if exist insert else update
-                String sql = prepareSQL(staff);
+
+                this.sqlmap = setHR_PERSON(staff);
+                String sql = prepareSQL(sqlmap, "HR_PERSON");
 //                String sql = "replace into HR_PERSON(PERSONID, CORPID, CORPCODE, CORPNAME, CORPCODE_GZ) " +
 //                        "values('" + staff.getFdId()+ "','"
 //                        + staff.getFdName()+ "','"
@@ -156,37 +155,12 @@ public class HrSyncService implements IHrSyncService {
     }
 
     //编写对应的sql语句
-    private String prepareSQL(HrStaffPersonInfo staff) throws Exception {
-        Map<String, Object> sqlmap = new HashMap<>();
-        String key_string = "";
-        String value_string = "";
-        String table_name = "HR_PERSON";
-        // sql prefix using table_name
-        String sql_prefix = "replace into " + table_name + "(";
-        String sql_suffix = ") values(";
-        String sql_end = ")";
-        String full_sql = "";
-//        这里一一对应key value
-        setHR_PERSON(staff, sqlmap);
 
-//        遍历sqlmap
-        for (Map.Entry<String, Object> entry : sqlmap.entrySet()) {
-//            System.out.println("key: " + entry.getKey() + " value: " + entry.getValue());
-            key_string = key_string + entry.getKey() + ",";
-            value_string = value_string + "'" + entry.getValue() + "',";
-
-        }
-        //remove last comma
-        key_string = key_string.substring(0, key_string.length() - 1);
-        value_string = value_string.substring(0, value_string.length() - 1);
-        full_sql = sql_prefix + key_string + sql_suffix + value_string + sql_end;
-
-//        System.out.println(full_sql);
-        return full_sql;
-    }
 //按照表格填充内容
-    private void setHR_PERSON(HrStaffPersonInfo staff, Map<String, Object> sqlmap) throws Exception {
+    private Map<String, Object> setHR_PERSON(HrStaffPersonInfo staff) throws Exception {
 
+//        这里一一对应key value
+        Map<String, Object> sqlmap = new HashMap<>();
         sqlmap.put("PERSONID", staff.getFdId());
         sqlmap.put("CORPID", 101);
         sqlmap.put("CORPCODE", "浙江嘉兴国有资本投资运营有限公司(本部)");
@@ -251,15 +225,11 @@ public class HrSyncService implements IHrSyncService {
             sqlmap.put("AGREEMENT_ENDDATE", this.contractinfo.getFdEndDate());
         }
 
+        return sqlmap;
+
     }
 
-    public Connection getConnection(CompDbcp dbcp) throws ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
-        ClassUtils.forName(dbcp.getFdDriver()).newInstance();
-        Connection con = DriverManager.getConnection(dbcp.getFdUrl(),
-                dbcp.getFdUsername(),
-                CompDbcpUtil.decryptPwd(dbcp.getFdPassword()));
-        return con;
-    }
+
 
 
     public void setHrStaffPersonExperienceContractService(IHrStaffPersonExperienceContractService hrStaffPersonExperienceContractService) {
