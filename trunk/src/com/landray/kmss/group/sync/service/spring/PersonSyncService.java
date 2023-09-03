@@ -1,15 +1,89 @@
 package com.landray.kmss.group.sync.service.spring;
 
+import com.landray.kmss.common.dao.HQLInfo;
+import com.landray.kmss.component.dbop.model.CompDbcp;
 import com.landray.kmss.group.sync.service.IHrSyncService;
 import com.landray.kmss.hr.staff.model.HrStaffPersonInfo;
+import com.landray.kmss.hr.staff.service.IHrStaffPersonExperienceContractService;
+import com.landray.kmss.hr.staff.service.IHrStaffPersonInfoService;
+import com.landray.kmss.sys.organization.service.ISysOrgElementService;
+import com.landray.kmss.sys.quartz.interfaces.SysQuartzJobContext;
+import com.landray.kmss.sys.util.DBsourceUtils;
+import com.landray.kmss.util.SpringBeanUtil;
 
+import java.sql.Connection;
+import java.sql.Statement;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import static com.landray.kmss.group.sync.constant.BeglGroupConstant.AGREEMENTTYPE;
-import static com.landray.kmss.group.sync.constant.BeglGroupConstant.WORK_STATUS_MAP;
+import static com.landray.kmss.group.sync.constant.BeglGroupConstant.*;
+import static com.landray.kmss.sys.util.DBsourceUtils.getConnection;
+import static com.landray.kmss.sys.util.DBsourceUtils.prepareSQL;
 
 public class PersonSyncService extends HrSyncService implements IHrSyncService {
+
+
+    @Override
+    public void HrSync(SysQuartzJobContext jobContext) throws Exception {
+
+        try{
+            jobContext.logMessage("开始同步HR_PERSON人员信息");
+            HQLInfo hqlInfo = new HQLInfo();
+//            String where = "fdIsAvailable = 1";
+//            hqlInfo.setWhereBlock(where);
+
+//            获取hrpersoninfo
+            this.hrStaffPersonInfoService = (IHrStaffPersonInfoService) SpringBeanUtil.getBean("hrStaffPersonInfoService");
+            List<HrStaffPersonInfo> hrStaffPersonInfoServiceList = hrStaffPersonInfoService.findList(hqlInfo);
+//            获取hrStaffPersonExperienceContractService
+            this.setHrStaffPersonExperienceContractService((IHrStaffPersonExperienceContractService) SpringBeanUtil.getBean("hrStaffPersonExperienceContractService"));
+//            获取sysOrgElementService
+            this.setSysOrgElementService((ISysOrgElementService) SpringBeanUtil.getBean("sysOrgElementService"));
+            CompDbcp baseModel  = DBsourceUtils.getDBSource(THIRDDB);
+
+//            jobContext.logMessage("执行sql语句:" + sql);
+            for (HrStaffPersonInfo staff : hrStaffPersonInfoServiceList) {
+                getContract(jobContext, staff);
+                getSysOrg(jobContext, staff);
+                jobContext.logMessage("同步人员业务信息表HR_PERSON" + staff.getFdName());
+                //write a sql check if the staff.getFdId() id exist in database if exist insert else update
+
+                this.sqlmap = setHR_PERSON(staff);
+                String sql = prepareSQL(sqlmap, "PERSON");
+//                String sql = "replace into HR_PERSON(PERSONID, CORPID, CORPCODE, CORPNAME, CORPCODE_GZ) " +
+//                        "values('" + staff.getFdId()+ "','"
+//                        + staff.getFdName()+ "','"
+//                        + staff.getFdName()+ "','"
+//                        + "role"  + "','"
+//                        + "嘉兴国投2')";
+
+                jobContext.logMessage("执行sql语句:" + sql);
+                Connection con = getConnection(baseModel);
+                Statement stmt = con.createStatement();
+                int rs = stmt.executeUpdate(sql);
+                stmt.close();
+                con.close();
+
+
+
+
+
+//                JSONObject jsonObject = new JSONObject();
+//                jsonObject.put("ProductID",staff.getFdId());
+//                jsonObject.put("Description",staff.getFdOrgType());
+//                jsonObject.put("Price",staff.getFdOrgType());
+//                jsonObject.put("Quantity",staff.getFdOrgType());
+//                jsonObject.put("Name",staff.getFdName());
+//                invokeSingleApi(jsonObject,"http://127.0.0.1:8000/products");
+            }
+//            invokeApi(personListToJsonArray((List<SysOrgElement>) lsstaff, true), "http://127.0.0.1:8000/products");
+        } catch (Exception e){
+            jobContext.logError("同步人员信息失败" + e.getMessage());
+        }
+
+
+    }
 
     @Override
     public Map<String, Object> setHR_PERSON(HrStaffPersonInfo staff) throws Exception {

@@ -3,7 +3,6 @@ package com.landray.kmss.group.sync.service.spring;
 import DBstep.iDBManager2000;
 import com.landray.kmss.common.dao.HQLInfo;
 import com.landray.kmss.component.dbop.model.CompDbcp;
-import com.landray.kmss.component.dbop.util.CompDbcpUtil;
 import com.landray.kmss.group.sync.model.Contract;
 import com.landray.kmss.group.sync.model.Department;
 import com.landray.kmss.group.sync.service.IHrSyncService;
@@ -14,7 +13,6 @@ import com.landray.kmss.hr.staff.service.IHrStaffPersonInfoService;
 import com.landray.kmss.sys.organization.service.ISysOrgElementService;
 import com.landray.kmss.sys.quartz.interfaces.SysQuartzJobContext;
 import com.landray.kmss.sys.util.DBsourceUtils;
-import com.landray.kmss.util.ClassUtils;
 import com.landray.kmss.util.SpringBeanUtil;
 
 import java.sql.*;
@@ -29,16 +27,17 @@ import static com.landray.kmss.sys.util.DBsourceUtils.prepareSQL;
 public class HrSyncService implements IHrSyncService {
 //    引入hrStaffPersonInfo表
     private ISysOrgElementService sysOrgElementService;
-    private IHrStaffPersonInfoService hrStaffPersonInfoService;
+    protected IHrStaffPersonInfoService hrStaffPersonInfoService;
     private IHrStaffPersonExperienceContractService hrStaffPersonExperienceContractService;
 //合同信息
 HrStaffPersonExperienceContract contractinfo = null;
     protected Contract contract = new Contract();
     protected Department department = new Department();
-    private Map<String, Object> sqlmap = new HashMap<>();
+    protected Map<String, Object> sqlmap = new HashMap<>();
 
 
     iDBManager2000 iDBManager2000 = new iDBManager2000();
+    protected String tablename = "HR_PERSON";
 
     @Override
     public void HrSync(SysQuartzJobContext jobContext) throws Exception {
@@ -65,7 +64,7 @@ HrStaffPersonExperienceContract contractinfo = null;
                 //write a sql check if the staff.getFdId() id exist in database if exist insert else update
 
                 this.sqlmap = setHR_PERSON(staff);
-                String sql = prepareSQL(sqlmap, "HR_PERSON");
+                String sql = prepareSQL(sqlmap, tablename);
 //                String sql = "replace into HR_PERSON(PERSONID, CORPID, CORPCODE, CORPNAME, CORPCODE_GZ) " +
 //                        "values('" + staff.getFdId()+ "','"
 //                        + staff.getFdName()+ "','"
@@ -101,7 +100,7 @@ HrStaffPersonExperienceContract contractinfo = null;
 
     }
 
-    private void getSysOrg(SysQuartzJobContext jobContext, HrStaffPersonInfo staff) throws Exception {
+    protected void getSysOrg(SysQuartzJobContext jobContext, HrStaffPersonInfo staff) throws Exception {
         iDBManager2000.OpenConnection();
         String selSql = "select * "
                 + "from sys_org_element "
@@ -120,7 +119,7 @@ HrStaffPersonExperienceContract contractinfo = null;
 
 
 
-    private void getContract(SysQuartzJobContext jobContext, HrStaffPersonInfo staff) throws Exception {
+    protected void getContract(SysQuartzJobContext jobContext, HrStaffPersonInfo staff) throws Exception {
 
         iDBManager2000.OpenConnection();
         String selSql = "select * "
