@@ -4,19 +4,31 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
 
-    <!--人员同步到中控定时任务-->
+    <!--人员业务信息同步到人事定时任务-->
     <quartz
             cronExpression="0 0 4 * * ?"
             jobService="HrSyncService"
             messageKey="group-sync:organisational.sync"
             jobMethod="HrSync"/>
-
+<!--    人员PERSON同步到人事系统-->
+    <quartz
+            cronExpression="0 0 4 * * ?"
+            jobService="PersonSyncService"
+            messageKey="group-sync:person.sync"
+            jobMethod="HrSync"/>
     <!--奖惩同步到人事定时任务-->
     <quartz
             cronExpression="0 0 5 * * ?"
             jobService="BonusPunishSyncService"
             messageKey="group-sync:bonus.sync"
             jobMethod="BonusPunishSync"/>
+<!--    工作履历同步到人事定时任务-->
+    <quartz
+            cronExpression="0 0 5 * * ?"
+            jobService="WorkExpService"
+            messageKey="group-sync:experience.sync"
+            jobMethod="WorkExpSync"/>
+
 
     <!--考勤记录同步到EKP定时任务-->
 <!--    <quartz-->

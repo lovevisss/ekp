@@ -22,8 +22,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.landray.kmss.group.sync.constant.BeglGroupConstant.AGREEMENTTYPE;
-import static com.landray.kmss.group.sync.constant.BeglGroupConstant.WORK_STATUS_MAP;
+import static com.landray.kmss.group.sync.constant.BeglGroupConstant.*;
 import static com.landray.kmss.sys.util.DBsourceUtils.getConnection;
 import static com.landray.kmss.sys.util.DBsourceUtils.prepareSQL;
 
@@ -33,9 +32,9 @@ public class HrSyncService implements IHrSyncService {
     private IHrStaffPersonInfoService hrStaffPersonInfoService;
     private IHrStaffPersonExperienceContractService hrStaffPersonExperienceContractService;
 //合同信息
-    private HrStaffPersonExperienceContract contractinfo = null;
-    private Contract contract = new Contract();
-    private Department department = new Department();
+HrStaffPersonExperienceContract contractinfo = null;
+    protected Contract contract = new Contract();
+    protected Department department = new Department();
     private Map<String, Object> sqlmap = new HashMap<>();
 
 
@@ -56,7 +55,7 @@ public class HrSyncService implements IHrSyncService {
             this.hrStaffPersonExperienceContractService = (IHrStaffPersonExperienceContractService) SpringBeanUtil.getBean("hrStaffPersonExperienceContractService");
 //            获取sysOrgElementService
             this.sysOrgElementService = (ISysOrgElementService) SpringBeanUtil.getBean("sysOrgElementService");
-            CompDbcp baseModel  = DBsourceUtils.getDBSource("mmall");
+            CompDbcp baseModel  = DBsourceUtils.getDBSource(THIRDDB);
 
 //            jobContext.logMessage("执行sql语句:" + sql);
             for (HrStaffPersonInfo staff : hrStaffPersonInfoServiceList) {
@@ -157,7 +156,7 @@ public class HrSyncService implements IHrSyncService {
     //编写对应的sql语句
 
 //按照表格填充内容
-    private Map<String, Object> setHR_PERSON(HrStaffPersonInfo staff) throws Exception {
+public Map<String, Object> setHR_PERSON(HrStaffPersonInfo staff) throws Exception {
 
 //        这里一一对应key value
         Map<String, Object> sqlmap = new HashMap<>();

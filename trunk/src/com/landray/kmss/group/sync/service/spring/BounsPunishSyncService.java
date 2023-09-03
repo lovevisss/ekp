@@ -30,13 +30,13 @@ public class BounsPunishSyncService implements IBonusPunishService {
     public void BonusPunishSync(SysQuartzJobContext jobContext) throws Exception {
         try {
 
-            jobContext.logMessage("开始同步HR_PERSON人员信息");
+            jobContext.logMessage("开始同步奖惩人员信息");
             HQLInfo hqlInfo = new HQLInfo();
 //        获取人员奖惩信息
             this.hrStaffPersonExperienceBonusMalusService = (IHrStaffPersonExperienceBonusMalusService) SpringBeanUtil.getBean("hrStaffPersonExperienceBonusMalusService");
             List<HrStaffPersonExperienceBonusMalus> bonusMalusServiceList = hrStaffPersonExperienceBonusMalusService.findList(hqlInfo);
 //获取第三方数据库
-            CompDbcp baseModel  = DBsourceUtils.getDBSource("mmall");
+            CompDbcp baseModel  = DBsourceUtils.getDBSource(THIRDDB);
             if (baseModel == null) {
                 jobContext.logMessage("同步HR_PERSON人员信息失败，未找到数据源");
                 return;

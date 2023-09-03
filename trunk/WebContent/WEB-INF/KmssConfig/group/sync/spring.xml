@@ -26,6 +26,30 @@
         </property>
     </bean>
 
+    <bean
+            id="PersonSyncService"
+            class="com.landray.kmss.group.sync.service.spring.PersonSyncService">
+        <property name="hrStaffPersonInfoService">
+            <ref bean="hrStaffPersonInfoService" />
+        </property>
+        <property name="hrStaffPersonExperienceContractService">
+                <ref bean="hrStaffPersonExperienceContractService" />
+        </property>
+        <property name="sysOrgElementService">
+            <ref bean="sysOrgElementService" />
+        </property>
+    </bean>
+
+    <bean
+            id="WorkExpService"
+            class="com.landray.kmss.group.sync.service.spring.WorkExpService">
+        <property name="hrStaffPersonExperienceWorkService">
+                <ref bean="hrStaffPersonExperienceWorkService" />
+        </property>
+    </bean>
+
+
+
 <!--    <bean-->
 <!--            id="beglAttendSyncZkecoproService"-->
 <!--            class="com.landray.kmss.attendance.sync.service.impl.BeglAttendSyncZkecoproServiceImpl">-->

@@ -10,6 +10,9 @@ public interface BeglGroupConstant {
 
     public static final String CORP_NAME = "浙江嘉兴国有资本投资运营有限公司(本部)";
 
+
+    public static final String THIRDDB = "mmall";
+
     public static final Integer CORP_CODE = 101;
 
     public static final HashMap<Object, WorkStatus> WORK_STATUS_MAP = new HashMap<Object, WorkStatus>() {
