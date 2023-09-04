@@ -28,6 +28,8 @@ public class WorkExpService implements IWorkExpService {
 
                 jobContext.logMessage("开始同步人员工作履历信息");
                 HQLInfo hqlInfo = new HQLInfo();
+//                String where = "fdIsAvailable = 1";
+//                hqlInfo.setWhereBlock(where);
 //        获取人员工作履历信息
                 this.hrStaffPersonExperienceWorkService = (IHrStaffPersonExperienceWorkService) com.landray.kmss.util.SpringBeanUtil.getBean("hrStaffPersonExperienceWorkService");
                 List<HrStaffPersonExperienceWork> workServiceList = this.hrStaffPersonExperienceWorkService.findList(hqlInfo);

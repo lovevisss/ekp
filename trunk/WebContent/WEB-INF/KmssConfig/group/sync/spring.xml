@@ -48,6 +48,14 @@
         </property>
     </bean>
 
+    <bean
+            id="FamilyMemberService"
+            class="com.landray.kmss.group.sync.service.spring.FamilyMemberService">
+        <property name="hrStaffPersonFamilyService">
+                <ref bean="hrStaffPersonFamilyService" />
+        </property>
+    </bean>
+
 
 
 <!--    <bean-->

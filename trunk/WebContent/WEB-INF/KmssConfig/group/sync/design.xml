@@ -29,6 +29,13 @@
             messageKey="group-sync:experience.sync"
             jobMethod="WorkExpSync"/>
 
+<!--    同步家庭成员定时任务-->
+    <quartz
+            cronExpression="0 0 5 * * ?"
+            jobService="FamilyMemberService"
+            messageKey="group-sync:family.sync"
+            jobMethod="FamilyMemberSync"/>
+
 
     <!--考勤记录同步到EKP定时任务-->
 <!--    <quartz-->
