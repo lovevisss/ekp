@@ -39,7 +39,17 @@ public interface BeglGroupConstant {
             put("3",5);
         }
     };
-
+//"OA系统内存的是数字，注意转换
+//        1 表示正常     对应中间库 1
+//            2 表示已到期   对应中间库 0
+//            3 表示已解除   对应中间库 0"
+    public static final Map<String, Integer>  AGREEMENTMEMO = new HashMap<String, Integer>(){
+    {
+        put("1",1);
+        put("2",0);
+        put("3",0);
+    }
+};
 
 
 }

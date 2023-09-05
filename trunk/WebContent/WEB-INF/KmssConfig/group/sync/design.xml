@@ -35,6 +35,12 @@
             jobService="FamilyMemberService"
             messageKey="group-sync:family.sync"
             jobMethod="FamilyMemberSync"/>
+<!--    合同服务定时任务-->
+    <quartz
+            cronExpression="0 0 5 * * ?"
+            jobService="WorkContractService"
+            messageKey="group-sync:contract.sync"
+            jobMethod="WorkContractSync"/>
 
 
     <!--考勤记录同步到EKP定时任务-->

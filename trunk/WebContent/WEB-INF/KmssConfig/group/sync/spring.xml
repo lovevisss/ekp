@@ -56,13 +56,12 @@
         </property>
     </bean>
 
-
-
-<!--    <bean-->
-<!--            id="beglAttendSyncZkecoproService"-->
-<!--            class="com.landray.kmss.attendance.sync.service.impl.BeglAttendSyncZkecoproServiceImpl">-->
-<!--        <property name="sysAttendWebService"-->
-<!--                  ref="sysAttendWebService"/>-->
-<!--    </bean>-->
+    <bean
+            id="WorkContractService"
+            class="com.landray.kmss.group.sync.service.spring.WorkContractService">
+        <property name="hrStaffPersonExperienceContractService">
+                <ref bean="hrStaffPersonExperienceContractService" />
+        </property>
+    </bean>
 
 </beans>
