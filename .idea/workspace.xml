@@ -10,22 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ebad2d5-0773-4459-be67-b61ff25fefba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/IWorkShiftSyncService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/WorkShiftSyncService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/Creator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/WorkChange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/design.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/design.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/ApplicationResources.properties" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/ApplicationResources.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/Contract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/BounsPunishSyncService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/BounsPunishSyncService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/FamilyMemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/FamilyMemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/HrSyncService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/HrSyncService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/PersonSyncService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/PersonSyncService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/WorkContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/WorkContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/sys/util/DBsourceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/sys/util/DBsourceUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/constant/BeglGroupConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/constant/BeglGroupConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/WorkShiftSyncService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/WorkShiftSyncService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +244,7 @@
       <workItem from="1693540265884" duration="24671000" />
       <workItem from="1693582014261" duration="13070000" />
       <workItem from="1693719619497" duration="12301000" />
-      <workItem from="1693920246374" duration="33383000" />
+      <workItem from="1693920246374" duration="40812000" />
     </task>
     <task id="LOCAL-00001" summary="add comment">
       <created>1692186171236</created>
@@ -334,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693923512818</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="extract role and add work shiftsync">
+      <created>1694076899046</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1694076899046</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +348,8 @@
     <MESSAGE value="PERSON和工作履历同步  补丁" />
     <MESSAGE value="家庭成员同步  补丁" />
     <MESSAGE value="合同成员同步  补丁" />
-    <option name="LAST_COMMIT_MESSAGE" value="合同成员同步  补丁" />
+    <MESSAGE value="extract role and add work shiftsync" />
+    <option name="LAST_COMMIT_MESSAGE" value="extract role and add work shiftsync" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

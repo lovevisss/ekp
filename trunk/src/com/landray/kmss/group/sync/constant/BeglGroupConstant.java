@@ -1,5 +1,6 @@
 package com.landray.kmss.group.sync.constant;
 
+import com.landray.kmss.group.sync.model.WorkChange;
 import com.landray.kmss.group.sync.model.WorkStatus;
 
 import java.util.HashMap;
@@ -43,13 +44,29 @@ public interface BeglGroupConstant {
 //        1 表示正常     对应中间库 1
 //            2 表示已到期   对应中间库 0
 //            3 表示已解除   对应中间库 0"
-    public static final Map<String, Integer>  AGREEMENTMEMO = new HashMap<String, Integer>(){
-    {
-        put("1",1);
-        put("2",0);
-        put("3",0);
-    }
-};
+
+    public static final Map<String, Integer>  AGREEMENTMEMO = new HashMap<String, Integer>() {
+        {
+            put("1", 1);
+            put("2", 0);
+            put("3", 0);
+        }
+    };
+
+    public static final HashMap<Object, WorkChange> WORK_CHANGE_MAP = new HashMap<Object, WorkChange>() {
+        {
+            put("员工增加", new WorkChange("员工增加", "101", 1));
+            put("重新入职", new WorkChange("重新入职", "102", 1));
+            put("员工离职", new WorkChange("员工离职", "301", 3));
+            put("员工退休", new WorkChange("员工退休", "305", 3));
+            put("员工死亡", new WorkChange("员工死亡", "307", 3));
+            put("员工岗位调动", new WorkChange("员工岗位调动", "501", 5));
+            put("员工转正", new WorkChange("员工转正", "502", 5));
+            put("员工其他变更", new WorkChange("员工其他变更", "590", 5));
+
+        }
+    };
+
 
 
 }
