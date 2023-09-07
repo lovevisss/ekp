@@ -10,13 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ebad2d5-0773-4459-be67-b61ff25fefba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/IWorkContractService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/WorkContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/IWorkShiftSyncService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/WorkShiftSyncService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/design.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/design.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/WebContent/WEB-INF/KmssConfig/group/sync/spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/ApplicationResources.properties" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/ApplicationResources.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/constant/BeglGroupConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/constant/BeglGroupConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/model/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/BounsPunishSyncService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/BounsPunishSyncService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/FamilyMemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/FamilyMemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/HrSyncService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/HrSyncService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/PersonSyncService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/PersonSyncService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/WorkContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/group/sync/service/spring/WorkContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trunk/src/com/landray/kmss/sys/util/DBsourceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/trunk/src/com/landray/kmss/sys/util/DBsourceUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,26 +68,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/idea-landray/SPRJ20221027_JX/trunk/WebContent/WEB-INF/KmssConfig&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15527344&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;e31161c669b640667c3659e658589241&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Administrator/Documents/WeChat Files/wxid_e5p5bs7hcoi711/FileStorage/File/2023-09/20230906/20230906.sql",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15527344",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "e31161c669b640667c3659e658589241",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\idea-landray\SPRJ20221027_JX\trunk\WebContent\WEB-INF\KmssConfig" />
@@ -241,7 +255,7 @@
       <workItem from="1693540265884" duration="24671000" />
       <workItem from="1693582014261" duration="13070000" />
       <workItem from="1693719619497" duration="12301000" />
-      <workItem from="1693920246374" duration="3162000" />
+      <workItem from="1693920246374" duration="33383000" />
     </task>
     <task id="LOCAL-00001" summary="add comment">
       <created>1692186171236</created>
@@ -313,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693799377753</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="合同成员同步  补丁">
+      <created>1693923512818</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1693923512818</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +351,8 @@
     <MESSAGE value="PERSON和工作履历同步" />
     <MESSAGE value="PERSON和工作履历同步  补丁" />
     <MESSAGE value="家庭成员同步  补丁" />
-    <option name="LAST_COMMIT_MESSAGE" value="家庭成员同步  补丁" />
+    <MESSAGE value="合同成员同步  补丁" />
+    <option name="LAST_COMMIT_MESSAGE" value="合同成员同步  补丁" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

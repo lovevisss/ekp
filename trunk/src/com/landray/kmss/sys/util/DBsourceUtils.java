@@ -1,13 +1,21 @@
 package com.landray.kmss.sys.util;
 
+import DBstep.iDBManager2000;
+import com.landray.kmss.common.dao.HQLInfo;
+import com.landray.kmss.common.service.IBaseService;
 import com.landray.kmss.component.dbop.model.CompDbcp;
 import com.landray.kmss.component.dbop.service.ICompDbcpService;
 import com.landray.kmss.component.dbop.util.CompDbcpUtil;
+import com.landray.kmss.group.sync.model.Role;
+import com.landray.kmss.hr.staff.model.HrStaffPersonInfo;
+import com.landray.kmss.sys.organization.model.SysOrgElement;
+import com.landray.kmss.sys.quartz.interfaces.SysQuartzJobContext;
 import com.landray.kmss.util.ClassUtils;
 import com.landray.kmss.util.SpringBeanUtil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
 
@@ -55,6 +63,46 @@ public class DBsourceUtils {
                 dbcp.getFdUsername(),
                 CompDbcpUtil.decryptPwd(dbcp.getFdPassword()));
         return con;
+    }
+
+
+    public static Role getRole(SysQuartzJobContext jobContext, HrStaffPersonInfo staff, IBaseService service) throws Exception {
+        jobContext.logMessage("get role");
+        iDBManager2000 iDBManager2000 = new iDBManager2000();
+        iDBManager2000.OpenConnection();
+//        String selSql = "select * "
+//                + "from sys_org_element "
+//                + "where fd_id = '"+ staff.getFdId() + " '";
+
+        String selSql = "select * "
+                + "from sys_org_post_person "
+                + "where fd_personid = '"+ staff.getFdId() + " '";
+        System.out.println(selSql);
+        ResultSet result = iDBManager2000.ExecuteQuery(selSql);
+        jobContext.logMessage("result" + result);
+        Role role = new Role();
+        while (result.next()){
+            String postId = result.getString("fd_postid");
+            role.setId(role.getId() + postId + ",");
+            HQLInfo hqlInfo = new HQLInfo();
+            String where = "fdId ='" +  postId + "'";
+            hqlInfo.setWhereBlock(where);
+            SysOrgElement lsstaff = (SysOrgElement) service.findFirstOne(hqlInfo);
+            role.setName(role.getName() + lsstaff.getFdName() + ",");
+        }
+
+//            remove last comma check if it is not empty
+        if(role.getId().length() > 0)
+        {
+            role.setId(role.getId().substring(role.getId().length()-1));
+        }
+        if(role.getName().length() > 0)
+        {
+            role.setName(role.getName().substring(role.getName().length()-1));
+        }
+
+        iDBManager2000.CloseConnection();
+        return role;
     }
 
 }

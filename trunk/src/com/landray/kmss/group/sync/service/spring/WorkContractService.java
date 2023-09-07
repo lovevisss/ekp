@@ -1,10 +1,13 @@
 package com.landray.kmss.group.sync.service.spring;
 
 import com.landray.kmss.common.dao.HQLInfo;
+import com.landray.kmss.common.service.IBaseService;
 import com.landray.kmss.component.dbop.model.CompDbcp;
+import com.landray.kmss.group.sync.model.Role;
 import com.landray.kmss.group.sync.service.IWorkContractService;
 import com.landray.kmss.hr.staff.model.HrStaffPersonExperienceContract;
 import com.landray.kmss.hr.staff.service.IHrStaffPersonExperienceContractService;
+import com.landray.kmss.sys.organization.service.ISysOrgElementService;
 import com.landray.kmss.sys.quartz.interfaces.SysQuartzJobContext;
 import com.landray.kmss.sys.util.DBsourceUtils;
 
@@ -21,19 +24,25 @@ import java.util.Map;
 
 import static com.landray.kmss.group.sync.constant.BeglGroupConstant.*;
 import static com.landray.kmss.sys.util.DBsourceUtils.getConnection;
+import static com.landray.kmss.sys.util.DBsourceUtils.getRole;
 
 public class WorkContractService implements IWorkContractService {
     private IHrStaffPersonExperienceContractService hrStaffPersonExperienceContractService;
     private Map<String, Object> sqlmap = new HashMap<>();
+    protected Role role = new Role();
+    private ISysOrgElementService sysOrgElementService;
+
     @Override
     public void WorkContractSync(SysQuartzJobContext jobContext) throws Exception {
         try {
 
-            jobContext.logMessage("开始同步人员工作履历信息");
+            jobContext.logMessage("开始同步人员劳动合同信息");
             HQLInfo hqlInfo = new HQLInfo();
 //        获取人员工作履历信息
-            this.hrStaffPersonExperienceContractService = (IHrStaffPersonExperienceContractService) com.landray.kmss.util.SpringBeanUtil.getBean("hrStaffPersonExperienceContract");
+            this.hrStaffPersonExperienceContractService = (IHrStaffPersonExperienceContractService) com.landray.kmss.util.SpringBeanUtil.getBean("hrStaffPersonExperienceContractService");
             List<HrStaffPersonExperienceContract> workServiceList = this.hrStaffPersonExperienceContractService.findList(hqlInfo);
+
+            this.sysOrgElementService = (ISysOrgElementService) com.landray.kmss.util.SpringBeanUtil.getBean("sysOrgElementService");
 
             //获取第三方数据库
             CompDbcp baseModel  = DBsourceUtils.getDBSource(THIRDDB);
@@ -44,6 +53,7 @@ public class WorkContractService implements IWorkContractService {
 
             for (HrStaffPersonExperienceContract work : workServiceList) {
                 jobContext.logMessage("同步人员业务信息表WORKCONTRACT" + work.getFdPersonInfo());
+                role = getRole(jobContext, work.getFdPersonInfo(),this.sysOrgElementService);
                 this.sqlmap = setWorkSqlMap(work);
                 String sql = DBsourceUtils.prepareSQL(sqlmap, "PERSON_WORKCONTRACT");
 
@@ -96,7 +106,7 @@ public class WorkContractService implements IWorkContractService {
         sqlmap.put("CONTRACT_STATUS", AGREEMENTTYPE.get(work.getFdContStatus()));
         sqlmap.put("INPUT_DATE", work.getFdCreateTime());
         sqlmap.put("INPUT_USERID", work.getFdCreator().getFdId());
-        sqlmap.put("INPUT_PERSON", work.getFdCreator().getFdName());
+        sqlmap.put("INPUT_USERNAME", work.getFdCreator().getFdName());
         return sqlmap;
     }
 
@@ -115,5 +125,9 @@ public class WorkContractService implements IWorkContractService {
 
     public void setHrStaffPersonExperienceContractService(IHrStaffPersonExperienceContractService hrStaffPersonExperienceContractService) {
         this.hrStaffPersonExperienceContractService = hrStaffPersonExperienceContractService;
+    }
+
+    public void setSysOrgElementService(ISysOrgElementService sysOrgElementService) {
+        this.sysOrgElementService = sysOrgElementService;
     }
 }

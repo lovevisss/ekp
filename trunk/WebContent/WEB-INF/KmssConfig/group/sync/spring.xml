@@ -62,6 +62,23 @@
         <property name="hrStaffPersonExperienceContractService">
                 <ref bean="hrStaffPersonExperienceContractService" />
         </property>
+        <property name="sysOrgElementService">
+            <ref bean="sysOrgElementService" />
+        </property>
+
+    </bean>
+
+    <bean
+            id="WorkShiftSyncService"
+            class="com.landray.kmss.group.sync.service.spring.WorkShiftSyncService">
+        <property name="sysOrgElementService">
+            <ref bean="sysOrgElementService" />
+        </property>
+
+        <property name="hrStaffTrackRecordService">
+            <ref bean="hrStaffTrackRecordService" />
+        </property>
+
     </bean>
 
 </beans>

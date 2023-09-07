@@ -10,6 +10,7 @@ import com.landray.kmss.sys.organization.service.ISysOrgElementService;
 import com.landray.kmss.sys.quartz.interfaces.SysQuartzJobContext;
 import com.landray.kmss.sys.util.DBsourceUtils;
 import com.landray.kmss.util.SpringBeanUtil;
+import org.springframework.util.StringUtils;
 
 import java.sql.Connection;
 import java.sql.Statement;
@@ -18,8 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.landray.kmss.group.sync.constant.BeglGroupConstant.*;
-import static com.landray.kmss.sys.util.DBsourceUtils.getConnection;
-import static com.landray.kmss.sys.util.DBsourceUtils.prepareSQL;
+import static com.landray.kmss.sys.util.DBsourceUtils.*;
 
 public class PersonSyncService extends HrSyncService implements IHrSyncService {
 
@@ -46,6 +46,7 @@ public class PersonSyncService extends HrSyncService implements IHrSyncService {
             for (HrStaffPersonInfo staff : hrStaffPersonInfoServiceList) {
                 getContract(jobContext, staff);
                 getSysOrg(jobContext, staff);
+                this.role = getRole(jobContext, staff,this.sysOrgElementService);
                 jobContext.logMessage("同步人员业务信息表HR_PERSON" + staff.getFdName());
                 //write a sql check if the staff.getFdId() id exist in database if exist insert else update
 
@@ -129,9 +130,9 @@ public class PersonSyncService extends HrSyncService implements IHrSyncService {
         sqlmap.put("DEPT_NAME", this.department.getName());
         sqlmap.put("DEPT_CODE", this.department.getCode());
         sqlmap.put("DEPT_ID", this.department.getId());
-        sqlmap.put("ROLE_NAME", "待定");
-        sqlmap.put("ROLE_CODE", "待定");
-        sqlmap.put("ROLE_ID", "待定");
+        sqlmap.put("ROLE_NAME", this.role.getName());
+        sqlmap.put("ROLE_CODE", this.role.getId());
+        sqlmap.put("ROLE_ID", this.role.getId());
 //        sqlmap.put("JOBDATE", staff.getFdWorkTime());
 //        sqlmap.put("CORPDATE", staff.getFdTimeOfEnterprise());
         sqlmap.put("SERVICESTATUS_MODEL", WORK_STATUS_MAP.get(staff.getFdStatus()).getWorkCode());
@@ -142,12 +143,16 @@ public class PersonSyncService extends HrSyncService implements IHrSyncService {
         sqlmap.put("PERSONKIND", staff.getFdStaffType());
 
         sqlmap.put("AGREEMENT_SIGN", 1);
-        if(this.contractinfo != null)
+        System.out.println("StringUtils.getFdStaffType() = " + StringUtils.isEmpty(this.contract.getAgreementType()));
+        if(!StringUtils.isEmpty(this.contract.getAgreementType()))
         {
-            sqlmap.put("AGREEMENT_TYPE", AGREEMENTTYPE.get(this.contractinfo.getFdContType()));
+            sqlmap.put("AGREEMENT_TYPE", AGREEMENTTYPE.get(this.contract.getAgreementType()));
 //        sqlmap.put("AGREEMENTPERIOD", )     //合同期限待定
-            sqlmap.put("AGREEMENTDATE", this.contractinfo.getFdBeginDate());
-            sqlmap.put("AGREEMENT_ENDDATE", this.contractinfo.getFdEndDate());
+            sqlmap.put("AGREEMENTDATE", this.contract.getAgreementBeginDate());
+            if(!this.contract.getIsLongTerm())
+            {
+                sqlmap.put("AGREEMENT_ENDDATE", this.contract.getAgreementEndDate());
+            }
         }
 
         return sqlmap;

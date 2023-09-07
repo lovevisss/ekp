@@ -44,7 +44,6 @@ public class BounsPunishSyncService implements IBonusPunishService {
 
             for (HrStaffPersonExperienceBonusMalus bonusMalus : bonusMalusServiceList)
             {
-                jobContext.logMessage("同步人员业务信息表HR_PERSON" + bonusMalus.getFdPersonInfo());
                 this.sqlmap = setBonusPunishSqlMap(bonusMalus);
                 String sql = DBsourceUtils.prepareSQL(sqlmap, "PERSON_RESUME");
 

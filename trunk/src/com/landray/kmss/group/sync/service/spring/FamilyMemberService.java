@@ -76,8 +76,8 @@ public class FamilyMemberService implements IFamilyMemberService {
             sqlmap.put("PERSONID", "NULL");
         }
 
-        sqlmap.put("SORTCODE", index++);
-        sqlmap.put("FAMILYNAME", family.getFdName());
+        sqlmap.put("SORT_CODE", index++);
+        sqlmap.put("FAMILY_NAME", family.getFdName());
         sqlmap.put("FAMILY_RELATION", family.getFdRelated());
         sqlmap.put("FINISHSCHOOL", family.getFdCompany()+" "+family.getFdOccupation());
         sqlmap.put("MAINDEPTNAME", family.getFdConnect());

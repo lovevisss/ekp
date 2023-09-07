@@ -41,6 +41,12 @@
             jobService="WorkContractService"
             messageKey="group-sync:contract.sync"
             jobMethod="WorkContractSync"/>
+<!--    员工变动定时任务-->
+    <quartz
+            cronExpression="0 0 5 * * ?"
+            jobService="WorkShiftSyncService"
+            messageKey="group-sync:staff.change.sync"
+            jobMethod="StaffChangeSync"/>
 
 
     <!--考勤记录同步到EKP定时任务-->
